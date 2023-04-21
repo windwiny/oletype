@@ -19,5 +19,10 @@ setup(
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.8",
-    ]
+    ],
+    keywords=[
+        'win32com',
+        'excel.application'
+    ],
+
 )
