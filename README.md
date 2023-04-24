@@ -1,8 +1,6 @@
-
 # What's this
 
 python win32com excel object pyi file
-
 
 # Install
 
@@ -14,7 +12,7 @@ python win32com excel object pyi file
 git clone https://github.com/windwiny/oletype
 
 cd oletype
-python gen_win32com.py > oletype\__init__.py
+python gen_win32com.py > oletype\excel.py
 
 python demo.py
 ```

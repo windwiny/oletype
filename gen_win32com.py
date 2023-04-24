@@ -1,3 +1,4 @@
+from io import StringIO
 import sys
 import inspect
 import win32com.client
@@ -57,7 +58,7 @@ def conv2cls(ff,
             f"  def {na}(self{(', ' + ars) if ars else ''}){' -> '+ret if ret!='None' else ''}:  pass", file=ff)
     print(file=ff)
 
-    print(f'  #whats:', file=ff)
+    print(f'  #unknow:', file=ff)
     for i in o_unknows:
         na, ee = i
         print(f"    # {na}:  {ee}", file=ff)
@@ -75,8 +76,6 @@ def conv2cls(ff,
         print(f"    # {na}:  {ee}", file=ff)
     print(file=ff)
     print(f'# Summary "{ex.__class__.__mro__}", attrs:{len(o_attrs)}, methods:{len(o_methods)}, whats:{len(o_unknows)},   ok:{len(o_attrs) + len(o_methods) + len(o_unknows)}, er:{len(e_noattr)}, er:{ len(e_ee)}', file=ff)
-    if ff != sys.stdout:
-        ff.close()
 
 
 def showinfo(ff, cls_name: str, ex):
@@ -116,8 +115,6 @@ def showinfo(ff, cls_name: str, ex):
         except Exception as e:
             e_ee.append((i, e))
 
-    print(f"# just stub file, import it , declare app obj, get ide auto type hit", file=ff)
-
     conv2cls(ff, ex, cls_name, o_attrs, o_methods, o_unknows, e_noattr, e_ee)
 
     # print("\n".join([i[0] for i in o_unknows]))
@@ -127,7 +124,12 @@ cls_name = 'Application'
 all_cls[cls_name] = exapp
 
 
-ff = sys.stdout
+ff = StringIO()
+print(f"# just stub file, import it , declare app obj, get ide auto type hit\n", file=ff)
+print(f"import os", file=ff)
+print(f"import sys", file=ff)
+print(f"import datetime", file=ff)
+print(file=ff)
 for _ in range(10000):
     if all_cls.keys() == already_pr:
         print("## ALL DONE", file=sys.stderr)
@@ -135,12 +137,22 @@ for _ in range(10000):
     for clsn in list(all_cls):
         exx = all_cls[clsn]
         showinfo(ff, clsn, exx)
-print(f'## PRINT  {len(all_cls)},  {all_cls.keys()}', file=sys.stderr)
-
-for i in all_cls.keys():
-    print(f"class {i}:  pass", file=sys.stderr)
+print(f'## PRINT  {len(all_cls)}\n', file=sys.stderr)
 
 
+data = ff.getvalue()
+
+hasbaseclss = list(
+    filter(lambda x: True if x[0] == '_' else False, all_cls.keys()))
+
+for _base in hasbaseclss:
+    cls = _base[1:]
+    data = data.replace(f'class {cls}:', f'class {cls}({_base}):')
+
+print(data)
+
+print('all cls', len(all_cls), sorted(all_cls.keys()), file=sys.stderr)
+print('base cls', len(hasbaseclss), sorted(hasbaseclss), file=sys.stderr)
 
 ws.Name = 'test'
 wb.Saved = True
