@@ -16,6 +16,7 @@ end
 
 # TODO FIXME      vba's type to python type
 VBAtype2pytype = {
+  'Boolean'=>'bool',
   'Byte'=>'str',
   'Currency'=>'float',
   'Date'=>'datetime.datetime',
@@ -29,6 +30,12 @@ VBAtype2pytype = {
   'Single'=>'float',
   'String'=>'str',
   'Variant'=>'list',
+
+  'Nothing'=>'None',
+  'VOID'=>'None',
+  'Void'=>'None',
+  'OBJECT'=>'object',
+  'object'=>'object',
 }
 
 class DownAPI
@@ -39,6 +46,7 @@ class DownAPI
 
     @undown = []
     @downloaded = Set.new()
+    @parameter_type = StringIO.new
     @method_return = StringIO.new
   end
 
@@ -73,9 +81,14 @@ class DownAPI
   end
 
   def finish()
+    puts
     puts "ALL Class.Method => Return:"
     puts @method_return.string
     puts @method_return.string.lines.size
+    puts
+    puts "ALL Class.Parameter => Type:"
+    puts @parameter_type.string
+    puts @parameter_type.string.lines.size
   end
 
 
@@ -87,15 +100,15 @@ protected
     when HtmlType::EVENT
       parse_event_html(url, txt)
     when HtmlType::PARAMETER
-      parse_parameter_html(url,txt)
+      parse_parameter_html(url, txt)
     when HtmlType::METHOD
-      parse_method_html(url,txt)
+      parse_method_html(url, txt)
     else # HtmlType::OBJECT
       es, ms, ps= parse_object_html(url, txt)
       # TODO not need
-      # es.map {|t,href| @links_all[href, HtmlType::EVENT }
-      # ps.map {|t,href| @links_all[href, HtmlType::PARAMETER }
-      ms.map {|t,href| @links_all[href] = HtmlType::METHOD }
+      # es.map { |t,href| @links_all[href] = HtmlType::EVENT }
+      ps.map { |t,href| @links_all[href] = HtmlType::PARAMETER }
+      ms.map { |t,href| @links_all[href] = HtmlType::METHOD }
     end
   end
 
@@ -134,7 +147,7 @@ protected
   end
 
   def baseurl_to_fullurl(baseurl, url)
-    url = if url.include?('/')
+    url = if url.include?('/') && url[0] != '.'
       url
     else
       baseurl + url
@@ -153,30 +166,30 @@ protected
   def save_html(url, txt)
     fn = url_fn(url)
     if !txt || txt.strip == ''
-      STDERR.puts %{SKIP EMPTY #{url}}
+      STDERR.puts %{SKIP EMPTY #{url}} if $DEBUG
       return
     end
-    STDERR.puts %{ SAVE#{File.basename(fn)},  #{txt.size}}
+    STDERR.puts %{ SAVE #{File.basename(fn)},  #{txt.size}} if $DEBUG
     File.write(fn, txt)
   end
 
   def download_page(url)
     fn = url_fn(url)
     if File.exist?(fn)
-      STDERR.puts %{SKIP #{url} }
+      STDERR.puts %{SKIP #{url} } if $DEBUG
       txt = File.read(fn)
       return txt
     end
 
     url = URI(url)
-    STDERR.puts %{DOWNLOADING #{url} }
+    STDERR.puts %{DOWNLOADING #{url} }  if $DEBUG
     begin
       r = Net::HTTP.get_response( url)
       txt = r.body
       save_html(url, txt)
       return txt
     rescue Exception => e
-      STDERR.puts %{Net::HTTP ERROR #{e}}
+      STDERR.puts %{Net::HTTP ERROR #{e} on #{url}}
     end
     ''
   end
@@ -188,26 +201,21 @@ protected
 
   def parse_parameter_html(url, txt)
     h = Nokogiri::HTML txt
-    raise 'No implement yet'  # TODO FIXME
-  end
+    cls_member = h.css 'div > h1'
+    assert(cls_member.size == 1, 'not get Cls.Method title')
+    clsn, member = cls_member[0].text.split()[0].split('.')
 
-  def parse_method_html(url, txt)
-    h = Nokogiri::HTML txt
-    cls_method = h.css 'div > h1'
-    assert(cls_method.size == 1, 'not get Cls.Method title')
-    clsn, method = cls_method[0].text.split()[0].split('.')
-
-    returns = h.css 'div > h2[id="return-value"] + p'
+    returns = h.css 'nav[id="center-doc-outline"] + p'
+    assert(returns.size <= 1, "get parameter type ,size!=1 #{returns.size}")
     if returns.size > 0
-
       aas = returns[0].css('a')
       if aas.size > 0   # return object, find sit
         assert(aas.size > 0, "#{url_fn(url)} return what?")
 
         a = aas[0]
         returnobj = a.text
-        baseurl = a['href']
-        @links_all.add( baseurl_to_fullurl(baseurl))
+        aurl = a['href']
+        @links_all[baseurl_to_fullurl(url_base(url), aurl)] = HtmlType::OBJECT
       else
         returnobj = returns[0].text
         # Manual check
@@ -220,7 +228,39 @@ protected
     else
       returnobj = ''
     end
-    @method_return.puts %{  #{clsn}.#{method} -> #{returnobj}}
+    @parameter_type.puts %{  #{clsn}.#{member} -> #{returnobj}}
+  end
+
+  def parse_method_html(url, txt)
+    h = Nokogiri::HTML txt
+    cls_member = h.css 'div > h1'
+    assert(cls_member.size == 1, 'not get Cls.Method title')
+    clsn, member = cls_member[0].text.split()[0].split('.')
+
+    returns = h.css 'div > h2[id="return-value"] + p'
+    if returns.size > 0
+
+      aas = returns[0].css('a')
+      if aas.size > 0   # return object, find sit
+        assert(aas.size > 0, "#{url_fn(url)} return what?")
+
+        a = aas[0]
+        returnobj = a.text
+        aurl = a['href']
+        @links_all[baseurl_to_fullurl(url_base(url), aurl)] = HtmlType::OBJECT
+      else
+        returnobj = returns[0].text
+        # Manual check
+        if returnobj =~ /True.*False/
+          returnobj = 'bool'
+        elsif VBAtype2pytype.has_key?(returnobj)
+          returnobj = VBAtype2pytype[returnobj]
+        end
+      end
+    else
+      returnobj = ''
+    end
+    @method_return.puts %{  #{clsn}.#{member} -> #{returnobj}}
   end
 
   def parse_object_html(url, txt)
@@ -249,7 +289,7 @@ protected
     else
       []
     end
-    STDERR.puts %{ HTML #{txt.size} bytes. SUMMARY: events #{events.size},  methods #{methods.size}, properties #{properties.size}}
+    STDERR.puts %{ HTML #{txt.size} bytes. SUMMARY: events #{events.size},  methods #{methods.size}, properties #{properties.size}} if $DEBUG
 
 
     [events, methods, properties]

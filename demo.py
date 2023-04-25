@@ -1,14 +1,14 @@
 import random
 
 import win32com.client
-import oletype
+from oletype import excel
 
-exapp: oletype.Application = None
+exapp: excel.Application = None
 exapp = win32com.client.Dispatch('excel.application')
 exapp.Visible = True
 
 exapp.Workbooks.Add()
-wb: oletype._Workbook = exapp.ActiveWorkbook
+wb: excel._Workbook = exapp.ActiveWorkbook
 ws = wb.ActiveSheet
 
 
@@ -21,7 +21,7 @@ print(ws.Name)
 
 rs = 'A3:B6'
 
-r: oletype.Range = ws.Range(rs)
+r: excel.Range = ws.Range(rs)
 r.Value = [(random.random(), random.random()),
            (random.random(), random.random()),
            (random.random(), random.random()),

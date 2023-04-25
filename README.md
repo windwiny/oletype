@@ -12,6 +12,12 @@ python win32com excel object pyi file
 git clone https://github.com/windwiny/oletype
 
 cd oletype
+
+# download web api
+ruby downapi.rb > excel.api.txt
+
+# python inspect objecty, list win32com objects's methods, and parameters
+#  method return type may not show, find from download api
 python gen_win32com.py > oletype\excel.py
 
 python demo.py
@@ -31,14 +37,14 @@ let var type
 
 ```python
 import win32com.client
-import oletype
+from oletype import excel
 
-exapp: oletype.Application = None
+exapp: excel.Application = None
 exapp = win32com.client.Dispatch('excel.application')
 exapp.Visible = True
 
 exapp.Workbooks.Add()
-wb: oletype._Workbook = exapp.ActiveWorkbook
+wb: excel._Workbook = exapp.ActiveWorkbook
 ws = exapp.ActiveSheet
 
 
