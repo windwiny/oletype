@@ -182,7 +182,7 @@ protected
     end
 
     url = URI(url)
-    STDERR.puts %{DOWNLOADING #{url} }  if $DEBUG
+    STDERR.puts %{DOWNLOADING #{url} }
     begin
       r = Net::HTTP.get_response( url)
       txt = r.body

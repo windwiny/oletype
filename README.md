@@ -18,7 +18,7 @@ ruby downapi.rb > excel.api.txt
 
 # python inspect objecty, list win32com objects's methods, and parameters
 #  method return type may not show, find from download api
-python gen_win32com.py > oletype\excel.py
+python gen_win32com.py > oletype\excel.pyi
 
 python demo.py
 ```

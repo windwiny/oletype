@@ -99,7 +99,7 @@ autoclsn2: str = "win32com.gen_py.00020813-0000-0000-C000-000000000046x0x1x9."
 mypkgname = 'excel.'
 mypkgname = ''
 
-
+num = 0
 def conv2cls(ex,
              cls_name: str,
              o_attrs: list[tuple],
@@ -108,8 +108,12 @@ def conv2cls(ex,
              e_noattr: list[tuple],
              e_ee: list[tuple]
              ):
+    global num
+    num += 1
+
     ff = StringIO()
     print(file=ff)
+    print(f'# num={num}', file=ff)
     print(f'class {cls_name}:', file=ff)
 
     print('  def __init__(self):', file=ff)
@@ -139,8 +143,7 @@ def conv2cls(ex,
             rets = ' -> ' + str(ret)
         else:
             rets = ''
-        print(
-            f"  def {na}(self{(', ' + ars) if ars else ''}){rets}:  pass", file=ff)
+        print( f"  def {na}(self{(', ' + ars) if ars else ''}){rets}:  pass", file=ff)
     print(file=ff)
 
     print(f'  #unknow:', file=ff)
@@ -219,13 +222,14 @@ for _ in range(10000):
     for clsn in list(all_cls):
         exx = all_cls[clsn]
         cls_def_str = showinfo(clsn, exx)
-        all_cls_def_strs.append(cls_def_str)
-        hasfindtype[clsn] = 1
+        if cls_def_str:
+            hasfindtype[clsn] = 1
+            all_cls_def_strs.append(cls_def_str)
 
 
-def output_all():
+def output_all_cls_pyi():
     global unparsedtype, all_cls_def_strs
-    global hasfindtype, nofindtype, unparsedtype
+    global hasfindtype, unparsedtype
     ff = StringIO()
 
     # head
@@ -248,11 +252,9 @@ def output_all():
             print(f'class {i}: pass', file=ff)
     print(file=ff)
 
-    # reverse class define order
-    while True:
-        if len(all_cls_def_strs) == 0:
-            break
-        data = all_cls_def_strs.pop()
+    # print each class define
+    for i in range(len(all_cls_def_strs)):
+        data = all_cls_def_strs[i] # order or reverse
         print(data, file=ff)
 
     print(f'## PRINT  {len(all_cls)}\n', file=sys.stderr)
@@ -274,7 +276,14 @@ def output_all():
     print('base cls', len(hasbaseclss), sorted(hasbaseclss), file=sys.stderr)
 
 
-output_all()
+def output_all_cls_pyfake():
+    with open('oletype/excel.py', 'w') as ff:
+        for cl in all_cls:
+            print(f'class {cl}: pass', file=ff)
+    print(f'output py class file: ', file=sys.stderr)
+
+output_all_cls_pyi()
+output_all_cls_pyfake()
 
 ws.Name = 'test'
 wb.Saved = True
