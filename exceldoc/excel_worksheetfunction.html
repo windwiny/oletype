@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light" lang="en-us" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="false" data-target="docs" x-ms-format-detection="none">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="WorksheetFunction object (Excel)" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://learn.microsoft.com/en-us/office/vba/api/excel.worksheetfunction" />
+			<meta property="og:description" content="Office VBA reference topic" />
+
+	<meta property="og:image" content="https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png" />
+
+	<meta property="og:image:alt" content="Microsoft Logo" />
+
+	<meta name="twitter:card" content="summary" />
+
+	<meta name="twitter:site" content="@MicrosoftLearn" />
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="APIName" content="Excel.WorksheetFunction" />
+<meta name="author" content="o365devx" />
+<meta name="breadcrumb_path" content="/office/vba/breadcrumb/toc.json" />
+<meta name="depot_name" content="MSDN.VBA-Docs" />
+<meta name="description" content="Office VBA reference topic" />
+<meta name="document_id" content="42e14bf2-6c17-6fd3-5af1-cd9d157d9cda" />
+<meta name="document_version_independent_id" content="f4b18bd2-9a2c-1bae-63fc-775f49e898e4" />
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/VBA-Docs/blob/27b17db1c05919d40ed92d00d8a5e7be08f67f9e/api/Excel.WorksheetFunction.md" />
+<meta name="keywords" content="vbaxl10.chm136072" />
+<meta name="locale" content="en-us" />
+<meta name="ms.assetid" content="7b1d5639-363d-632c-2cf0-2232562646b6" />
+<meta name="ms.author" content="o365devx" />
+<meta name="ms.date" content="04/03/2019" />
+<meta name="ms.localizationpriority" content="high" />
+<meta name="ms.prod" content="excel" />
+<meta name="ms.suite" content="office" />
+<meta name="ms.technology" content="vba" />
+<meta name="ms.topic" content="reference" />
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/VBA-Docs/blob/live/api/Excel.WorksheetFunction.md" />
+<meta name="page_type" content="conceptual" />
+<meta name="schema" content="Conceptual" />
+<meta name="site_name" content="Docs" />
+<meta name="toc_rel" content="toc.json" />
+<meta name="uhfHeaderId" content="MSDocsHeader-VBA" />
+<meta name="updated_at" content="2022-03-30 04:12 AM" />
+<meta name="word_count" content="653" />
+
+
+	<meta name="persistent_id" content="9ebe8ca1-819c-b268-a434-62056d029f51" />
+	
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/540ac133-a371-4dbb-8f94-28d6cc77a70b" data-source="generated" />
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/560a1cd0-e7e6-41f3-9013-aed9c03f421e" data-source="generated" />
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/60932d05-feee-4685-a73b-595e25dd9318" data-source="generated" />
+
+	
+
+	<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/VBA-Docs/blob/main/api/Excel.WorksheetFunction.md" />
+<link href="https://learn.microsoft.com/en-us/office/vba/api/excel.worksheetfunction" rel="canonical">
+	<title>WorksheetFunction object (Excel) | Microsoft Learn</title>
+
+		<link rel="stylesheet" href="/_themes/docs.theme/master/en-us/_themes/styles/c63c73ef.site-ltr.css ">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			standardFeedback: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			feedbackProductUrl: '',
+			extendBreadcrumb: false,
+			isEditDisplayable: true,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: true,
+			hasBookmark: true,
+			hasShare: true,
+			isPermissioned: false,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "o365devx", url: "https://github.com/o365devx" },
+						{ name: "lindalu-MSFT", url: "https://github.com/lindalu-MSFT" },
+						{ name: "AlexJerabek", url: "https://github.com/AlexJerabek" },
+						{ name: "OfficeGSX", url: "https://github.com/OfficeGSX" },
+						{ name: "kbrandl", url: "https://github.com/kbrandl" },
+						{ name: "italicize", url: "https://github.com/italicize" },
+						{ name: "Saisang", url: "https://github.com/Saisang" },
+						{ name: "Linda-Editor", url: "https://github.com/Linda-Editor" }
+],
+		},
+		functions:{}
+	};
+	</script>
+	<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+	<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-3.min.js"></script>
+
+	<script src="/_themes/docs.theme/master/en-us/_themes/global/67a45209.deprecation.js"></script>
+		<link rel="preconnect" href="//mscom.demdex.net" crossorigin>
+		<link rel="dns-prefetch" href="//target.microsoft.com">
+		<link rel="dns-prefetch" href="//microsoftmscompoc.tt.omtrdc.net">
+		<script src="/_themes/docs.theme/master/en-us/_themes/global/37ce9fe8.at-config.js"></script>
+		<script src="/static/third-party/adobe-target/at-js/2.9.0/at.js" integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu" crossorigin="anonymous"></script>
+		<script src="/_themes/docs.theme/master/en-us/_themes/scripts/d86e3e7a.index-docs.js"></script>
+</head>
+
+<body lang="en-us" dir="ltr">
+	<div class="header-holder has-default-focus">
+		<a href="#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">Skip to main content</a>
+
+		<div hidden id="cookie-consent-holder"></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;"
+			hidden
+		>
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">This browser is no longer supported.</p>
+				<p style="font-size: 16px; margin-top: 16px;">Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.</p>
+				<div style="margin-top: 12px;">
+					<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+						style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+Download Microsoft Edge					</a>
+					<a href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+						style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+More info about Internet Explorer and Microsoft Edge					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+	<div class="nav-bar">
+		<div class="nav-bar-brand">
+			<a itemprop="url" href="https://www.microsoft.com" aria-label="Microsoft" class="nav-bar-button">
+				<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+				<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			</a>
+		</div>
+	</div>
+	<div class="nav-bar border-top is-hidden-mobile"></div>
+</header>		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button>
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+Table of contents						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>Exit focus mode</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" role="navigation" aria-label="Primary"></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" class="" role="main" data-bi-name="content" lang="en-us" dir="ltr">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs">
+										<summary class="button button-clear button-primary button-sm inner-focus" aria-label="All breadcrumbs">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none">
+
+										</div>
+									</details>
+									<bread-crumbs id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs" id="page-breadcrumbs"></bread-crumbs>
+
+									<div id="article-header-page-actions"  class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a
+											id="lang-link-tablet"
+											class="button button-primary button-clear button-sm display-none display-inline-flex-tablet"
+											title="Read in English" data-bi-name="language-toggle"
+											data-read-in-link
+											hidden>
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon>
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text>Read in English</span>
+										</a>
+
+											<button
+												type="button"
+												class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet"
+												data-list-type="collection"
+												data-bi-name="collection"
+												title="Add to collection">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">Save</span>
+											</button>
+										
+
+											<a	data-contenteditbtn
+												class="button button-clear button-sm text-decoration-none button-primary display-none display-inline-flex-tablet"
+												aria-label="Edit"
+												title="Edit This Document"
+												data-bi-name="edit"
+
+														href="https://github.com/MicrosoftDocs/VBA-Docs/blob/main/api/Excel.WorksheetFunction.md"
+														data-original_content_git_url="https://github.com/MicrosoftDocs/VBA-Docs/blob/live/api/Excel.WorksheetFunction.md"
+														data-original_content_git_url_template="{repo}/blob/{branch}/api/Excel.WorksheetFunction.md"
+														data-pr_repo=""
+														data-pr_branch=""
+											>
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-edit-outline"></span>
+												</span>
+											</a>
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="More actions">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button
+														data-page-action-item="overflow-mobile"
+														type="button"
+														class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet"
+														data-bi-name="contents-expand"
+														data-contents-button
+														data-popover-close>
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+															<span class="contents-expand-title">Table of contents</span>
+													</button>
+
+												<a
+													id="lang-link-overflow"
+													class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet"
+													title="Read in English" data-bi-name="language-toggle"
+													data-page-action-item="overflow-mobile"
+													data-check-hidden="true"
+													data-read-in-link
+													hidden
+													>
+													<span class="icon" aria-hidden="true" data-read-in-link-icon>
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text>Read in English</span>
+												</a>
+
+													<button
+														type="button"
+														class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet"
+														data-list-type="collection"
+														data-bi-name="collection"
+														title="Add to collection"
+														data-page-action-item="overflow-mobile"
+														data-check-hidden="true"
+														data-popover-close>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">Save</span>
+													</button>
+
+													<a	data-contenteditbtn
+														class="button button-clear button-block button-sm has-inner-focus justify-content-flex-start text-decoration-none display-none-tablet"
+														aria-label="Edit"
+														title="Edit This Document"
+														data-bi-name="edit"
+
+																href="https://github.com/MicrosoftDocs/VBA-Docs/blob/main/api/Excel.WorksheetFunction.md"
+																data-original_content_git_url="https://github.com/MicrosoftDocs/VBA-Docs/blob/live/api/Excel.WorksheetFunction.md"
+																data-original_content_git_url_template="{repo}/blob/{branch}/api/Excel.WorksheetFunction.md"
+																data-pr_repo=""
+																data-pr_branch=""
+													>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-edit-outline"></span>
+														</span>
+														<span>Edit</span>
+													</a>
+
+													<button
+														class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus"
+														title="Print"
+														type="button"
+														aria-label="Print"
+														data-bi-name="print"
+														data-page-action-item="overflow-all"
+														data-popover-close
+														data-print-page
+														data-check-hidden="true">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print"></span>
+														</span>
+														<span>Print</span>
+													</button>
+
+													<div aria-hidden="true" class="margin-none
+														border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>Email</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div>
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" data-bi-name="contents-expand" data-contents-button hidden>
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+										<span class="contents-expand-title">Table of contents</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="worksheetfunction-object-excel">WorksheetFunction object (Excel)</h1>
+
+
+									<div class="display-flex justify-content-space-between align-items-center flex-wrap-wrap page-metadata-container">
+										<div class="margin-right-xxs">
+											<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+													<li>
+Article													</li>
+
+													<li class="visibility-hidden-visual-diff">
+														<time class="is-invisible" data-article-date aria-label="Article review date" datetime="2022-03-30T00:00:00Z" data-article-date-source="calculated">03/30/2022</time>
+													</li>
+														<li class="contributors-holder display-none-print">
+															<button aria-label="View all contributors" class="contributors-button link-button" data-bi-name="contributors" title="View all contributors">
+																	8 contributors
+															</button>
+														</li>
+											</ul>
+										</div>
+
+<div id="user-feedback" class="margin-block-xxs display-none-print" data-hide-on-archived>
+	<button
+		id="user-feedback-button"
+		data-test-id="conceptual-feedback-button"
+		class="button button-sm button-clear button-primary"
+		type="button"
+		data-bi-name="user-feedback-button"
+		data-user-feedback-button
+	>
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-like"></span>
+		</span>
+		<span>Feedback</span>
+	</button>
+</div>
+									</div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm" data-bi-name="intopic toc" role="navigation" aria-label="In this article">
+											<h2 id="ms--in-this-article" class="title is-6 margin-block-xs">In this article</h2>
+										</nav>
+
+								<!-- <content> -->
+									<p>Used as a container for Microsoft Excel worksheet functions that can be called from Visual Basic.</p>
+<h2 id="example">Example</h2>
+<p>Use the <strong><a href="excel.application.worksheetfunction" data-linktype="relative-path">WorksheetFunction</a></strong> property of the <strong>Application</strong> object to return the <strong>WorksheetFunction</strong> object.</p>
+<p>The following example displays the result of applying the <strong>Min</strong> worksheet function to the range A1:C10.</p>
+<pre><code class="lang-vb">Set myRange = Worksheets(&quot;Sheet1&quot;).Range(&quot;A1:C10&quot;) 
+answer = Application.WorksheetFunction.Min(myRange) 
+MsgBox answer
+</code></pre>
+<p>This example uses the <strong>CountA</strong> worksheet function to determine how many cells in column A contain a value. For this example, the values in column A should be text. This example does a spell check on each value in column A, and if the value is spelled incorrectly, inserts the text &quot;Wrong&quot; into column B; otherwise, it inserts the text &quot;OK&quot; into column B.</p>
+<pre><code class="lang-vb">Sub StartSpelling()
+   'Set up your variables
+   Dim iRow As Integer
+   
+   'And define your error handling routine.
+   On Error GoTo ERRORHANDLER
+   
+   'Go through all the cells in column A, and perform a spellcheck on the value.
+   'If the value is spelled incorrectly, write &quot;Wrong&quot; in column B; otherwise, write &quot;OK&quot;.
+   For iRow = 1 To WorksheetFunction.CountA(Columns(1))
+      If Application.CheckSpelling( _
+         Cells(iRow, 1).Value, , True) = False Then
+         Cells(iRow, 2).Value = &quot;Wrong&quot;
+      Else
+         Cells(iRow, 2).Value = &quot;OK&quot;
+      End If
+   Next iRow
+   Exit Sub
+
+    'Error handling routine.
+ERRORHANDLER:
+    MsgBox &quot;The spell check feature is not installed!&quot;
+    
+End Sub
+</code></pre>
+<h2 id="methods">Methods</h2>
+<ul>
+<li><a href="excel.worksheetfunction.accrint" data-linktype="relative-path">AccrInt</a></li>
+<li><a href="excel.worksheetfunction.accrintm" data-linktype="relative-path">AccrIntM</a></li>
+<li><a href="excel.worksheetfunction.acos" data-linktype="relative-path">Acos</a></li>
+<li><a href="excel.worksheetfunction.acosh" data-linktype="relative-path">Acosh</a></li>
+<li><a href="excel.worksheetfunction.acot" data-linktype="relative-path">Acot</a></li>
+<li><a href="excel.worksheetfunction.acoth" data-linktype="relative-path">Acoth</a></li>
+<li><a href="excel.worksheetfunction.aggregate" data-linktype="relative-path">Aggregate</a></li>
+<li><a href="excel.worksheetfunction.amordegrc" data-linktype="relative-path">AmorDegrc</a></li>
+<li><a href="excel.worksheetfunction.amorlinc" data-linktype="relative-path">AmorLinc</a></li>
+<li><a href="excel.worksheetfunction.and" data-linktype="relative-path">And</a></li>
+<li><a href="excel.worksheetfunction.arabic" data-linktype="relative-path">Arabic</a></li>
+<li><a href="excel.worksheetfunction.asc" data-linktype="relative-path">Asc</a></li>
+<li><a href="excel.worksheetfunction.asin" data-linktype="relative-path">Asin</a></li>
+<li><a href="excel.worksheetfunction.asinh" data-linktype="relative-path">Asinh</a></li>
+<li><a href="excel.worksheetfunction.atan2" data-linktype="relative-path">Atan2</a></li>
+<li><a href="excel.worksheetfunction.atanh" data-linktype="relative-path">Atanh</a></li>
+<li><a href="excel.worksheetfunction.avedev" data-linktype="relative-path">AveDev</a></li>
+<li><a href="excel.worksheetfunction.average" data-linktype="relative-path">Average</a></li>
+<li><a href="excel.worksheetfunction.averageif" data-linktype="relative-path">AverageIf</a></li>
+<li><a href="excel.worksheetfunction.averageifs" data-linktype="relative-path">AverageIfs</a></li>
+<li><a href="excel.worksheetfunction.bahttext" data-linktype="relative-path">BahtText</a></li>
+<li><a href="excel.worksheetfunction.base" data-linktype="relative-path">Base</a></li>
+<li><a href="excel.worksheetfunction.besseli" data-linktype="relative-path">BesselI</a></li>
+<li><a href="excel.worksheetfunction.besselj" data-linktype="relative-path">BesselJ</a></li>
+<li><a href="excel.worksheetfunction.besselk" data-linktype="relative-path">BesselK</a></li>
+<li><a href="excel.worksheetfunction.bessely" data-linktype="relative-path">BesselY</a></li>
+<li><a href="excel.worksheetfunction.beta_dist" data-linktype="relative-path">Beta_Dist</a></li>
+<li><a href="excel.worksheetfunction.beta_inv" data-linktype="relative-path">Beta_Inv</a></li>
+<li><a href="excel.worksheetfunction.betadist" data-linktype="relative-path">BetaDist</a></li>
+<li><a href="excel.worksheetfunction.betainv" data-linktype="relative-path">BetaInv</a></li>
+<li><a href="excel.worksheetfunction.bin2dec" data-linktype="relative-path">Bin2Dec</a></li>
+<li><a href="excel.worksheetfunction.bin2hex" data-linktype="relative-path">Bin2Hex</a></li>
+<li><a href="excel.worksheetfunction.bin2oct" data-linktype="relative-path">Bin2Oct</a></li>
+<li><a href="excel.worksheetfunction.binom_dist" data-linktype="relative-path">Binom_Dist</a></li>
+<li><a href="excel.worksheetfunction.binom_dist_range" data-linktype="relative-path">Binom_Dist_Range</a></li>
+<li><a href="excel.worksheetfunction.binom_inv" data-linktype="relative-path">Binom_Inv</a></li>
+<li><a href="excel.worksheetfunction.binomdist" data-linktype="relative-path">BinomDist</a></li>
+<li><a href="excel.worksheetfunction.bitand" data-linktype="relative-path">Bitand</a></li>
+<li><a href="excel.worksheetfunction.bitlshift" data-linktype="relative-path">Bitlshift</a></li>
+<li><a href="excel.worksheetfunction.bitor" data-linktype="relative-path">Bitor</a></li>
+<li><a href="excel.worksheetfunction.bitrshift" data-linktype="relative-path">Bitrshift</a></li>
+<li><a href="excel.worksheetfunction.bitxor" data-linktype="relative-path">Bitxor</a></li>
+<li><a href="excel.worksheetfunction.ceiling" data-linktype="relative-path">Ceiling</a></li>
+<li><a href="excel.worksheetfunction.ceiling_math" data-linktype="relative-path">Ceiling_Math</a></li>
+<li><a href="excel.worksheetfunction.ceiling_precise" data-linktype="relative-path">Ceiling_Precise</a></li>
+<li><a href="excel.worksheetfunction.chidist" data-linktype="relative-path">ChiDist</a></li>
+<li><a href="excel.worksheetfunction.chiinv" data-linktype="relative-path">ChiInv</a></li>
+<li><a href="excel.worksheetfunction.chisq_dist" data-linktype="relative-path">ChiSq_Dist</a></li>
+<li><a href="excel.worksheetfunction.chisq_dist_rt" data-linktype="relative-path">ChiSq_Dist_RT</a></li>
+<li><a href="excel.worksheetfunction.chisq_inv" data-linktype="relative-path">ChiSq_Inv</a></li>
+<li><a href="excel.worksheetfunction.chisq_inv_rt" data-linktype="relative-path">ChiSq_Inv_RT</a></li>
+<li><a href="excel.worksheetfunction.chisq_test" data-linktype="relative-path">ChiSq_Test</a></li>
+<li><a href="excel.worksheetfunction.chitest" data-linktype="relative-path">ChiTest</a></li>
+<li><a href="excel.worksheetfunction.choose" data-linktype="relative-path">Choose</a></li>
+<li><a href="excel.worksheetfunction.clean" data-linktype="relative-path">Clean</a></li>
+<li><a href="excel.worksheetfunction.combin" data-linktype="relative-path">Combin</a></li>
+<li><a href="excel.worksheetfunction.combina" data-linktype="relative-path">Combina</a></li>
+<li><a href="excel.worksheetfunction.complex" data-linktype="relative-path">Complex</a></li>
+<li><a href="excel.worksheetfunction.confidence" data-linktype="relative-path">Confidence</a></li>
+<li><a href="excel.worksheetfunction.confidence_norm" data-linktype="relative-path">Confidence_Norm</a></li>
+<li><a href="excel.worksheetfunction.confidence_t" data-linktype="relative-path">Confidence_T</a></li>
+<li><a href="excel.worksheetfunction.convert" data-linktype="relative-path">Convert</a></li>
+<li><a href="excel.worksheetfunction.correl" data-linktype="relative-path">Correl</a></li>
+<li><a href="excel.worksheetfunction.cosh" data-linktype="relative-path">Cosh</a></li>
+<li><a href="excel.worksheetfunction.cot" data-linktype="relative-path">Cot</a></li>
+<li><a href="excel.worksheetfunction.coth" data-linktype="relative-path">Coth</a></li>
+<li><a href="excel.worksheetfunction.count" data-linktype="relative-path">Count</a></li>
+<li><a href="excel.worksheetfunction.counta" data-linktype="relative-path">CountA</a></li>
+<li><a href="excel.worksheetfunction.countblank" data-linktype="relative-path">CountBlank</a></li>
+<li><a href="excel.worksheetfunction.countif" data-linktype="relative-path">CountIf</a></li>
+<li><a href="excel.worksheetfunction.countifs" data-linktype="relative-path">CountIfs</a></li>
+<li><a href="excel.worksheetfunction.coupdaybs" data-linktype="relative-path">CoupDayBs</a></li>
+<li><a href="excel.worksheetfunction.coupdays" data-linktype="relative-path">CoupDays</a></li>
+<li><a href="excel.worksheetfunction.coupdaysnc" data-linktype="relative-path">CoupDaysNc</a></li>
+<li><a href="excel.worksheetfunction.coupncd" data-linktype="relative-path">CoupNcd</a></li>
+<li><a href="excel.worksheetfunction.coupnum" data-linktype="relative-path">CoupNum</a></li>
+<li><a href="excel.worksheetfunction.couppcd" data-linktype="relative-path">CoupPcd</a></li>
+<li><a href="excel.worksheetfunction.covar" data-linktype="relative-path">Covar</a></li>
+<li><a href="excel.worksheetfunction.covariance_p" data-linktype="relative-path">Covariance_P</a></li>
+<li><a href="excel.worksheetfunction.covariance_s" data-linktype="relative-path">Covariance_S</a></li>
+<li><a href="excel.worksheetfunction.critbinom" data-linktype="relative-path">CritBinom</a></li>
+<li><a href="excel.worksheetfunction.csc" data-linktype="relative-path">Csc</a></li>
+<li><a href="excel.worksheetfunction.csch" data-linktype="relative-path">Csch</a></li>
+<li><a href="excel.worksheetfunction.cumipmt" data-linktype="relative-path">CumIPmt</a></li>
+<li><a href="excel.worksheetfunction.cumprinc" data-linktype="relative-path">CumPrinc</a></li>
+<li><a href="excel.worksheetfunction.daverage" data-linktype="relative-path">DAverage</a></li>
+<li><a href="excel.worksheetfunction.days" data-linktype="relative-path">Days</a></li>
+<li><a href="excel.worksheetfunction.days360" data-linktype="relative-path">Days360</a></li>
+<li><a href="excel.worksheetfunction.db" data-linktype="relative-path">Db</a></li>
+<li><a href="excel.worksheetfunction.dbcs" data-linktype="relative-path">Dbcs</a></li>
+<li><a href="excel.worksheetfunction.dcount" data-linktype="relative-path">DCount</a></li>
+<li><a href="excel.worksheetfunction.dcounta" data-linktype="relative-path">DCountA</a></li>
+<li><a href="excel.worksheetfunction.ddb" data-linktype="relative-path">Ddb</a></li>
+<li><a href="excel.worksheetfunction.dec2bin" data-linktype="relative-path">Dec2Bin</a></li>
+<li><a href="excel.worksheetfunction.dec2hex" data-linktype="relative-path">Dec2Hex</a></li>
+<li><a href="excel.worksheetfunction.dec2oct" data-linktype="relative-path">Dec2Oct</a></li>
+<li><a href="excel.worksheetfunction.decimal" data-linktype="relative-path">Decimal</a></li>
+<li><a href="excel.worksheetfunction.degrees" data-linktype="relative-path">Degrees</a></li>
+<li><a href="excel.worksheetfunction.delta" data-linktype="relative-path">Delta</a></li>
+<li><a href="excel.worksheetfunction.devsq" data-linktype="relative-path">DevSq</a></li>
+<li><a href="excel.worksheetfunction.dget" data-linktype="relative-path">DGet</a></li>
+<li><a href="excel.worksheetfunction.disc" data-linktype="relative-path">Disc</a></li>
+<li><a href="excel.worksheetfunction.dmax" data-linktype="relative-path">DMax</a></li>
+<li><a href="excel.worksheetfunction.dmin" data-linktype="relative-path">DMin</a></li>
+<li><a href="excel.worksheetfunction.dollar" data-linktype="relative-path">Dollar</a></li>
+<li><a href="excel.worksheetfunction.dollarde" data-linktype="relative-path">DollarDe</a></li>
+<li><a href="excel.worksheetfunction.dollarfr" data-linktype="relative-path">DollarFr</a></li>
+<li><a href="excel.worksheetfunction.dproduct" data-linktype="relative-path">DProduct</a></li>
+<li><a href="excel.worksheetfunction.dstdev" data-linktype="relative-path">DStDev</a></li>
+<li><a href="excel.worksheetfunction.dstdevp" data-linktype="relative-path">DStDevP</a></li>
+<li><a href="excel.worksheetfunction.dsum" data-linktype="relative-path">DSum</a></li>
+<li><a href="excel.worksheetfunction.duration" data-linktype="relative-path">Duration</a></li>
+<li><a href="excel.worksheetfunction.dvar" data-linktype="relative-path">DVar</a></li>
+<li><a href="excel.worksheetfunction.dvarp" data-linktype="relative-path">DVarP</a></li>
+<li><a href="excel.worksheetfunction.edate" data-linktype="relative-path">EDate</a></li>
+<li><a href="excel.worksheetfunction.effect" data-linktype="relative-path">Effect</a></li>
+<li><a href="excel.worksheetfunction.encodeurl" data-linktype="relative-path">EncodeUrl</a></li>
+<li><a href="excel.worksheetfunction.eomonth" data-linktype="relative-path">EoMonth</a></li>
+<li><a href="excel.worksheetfunction.erf" data-linktype="relative-path">Erf</a></li>
+<li><a href="excel.worksheetfunction.erf_precise" data-linktype="relative-path">Erf_Precise</a></li>
+<li><a href="excel.worksheetfunction.erfc" data-linktype="relative-path">ErfC</a></li>
+<li><a href="excel.worksheetfunction.erfc_precise" data-linktype="relative-path">ErfC_Precise</a></li>
+<li><a href="excel.worksheetfunction.even" data-linktype="relative-path">Even</a></li>
+<li><a href="excel.worksheetfunction.expon_dist" data-linktype="relative-path">Expon_Dist</a></li>
+<li><a href="excel.worksheetfunction.expondist" data-linktype="relative-path">ExponDist</a></li>
+<li><a href="excel.worksheetfunction.f_dist" data-linktype="relative-path">F_Dist</a></li>
+<li><a href="excel.worksheetfunction.f_dist_rt" data-linktype="relative-path">F_Dist_RT</a></li>
+<li><a href="excel.worksheetfunction.f_inv" data-linktype="relative-path">F_Inv</a></li>
+<li><a href="excel.worksheetfunction.f_inv_rt" data-linktype="relative-path">F_Inv_RT</a></li>
+<li><a href="excel.worksheetfunction.f_test" data-linktype="relative-path">F_Test</a></li>
+<li><a href="excel.worksheetfunction.fact" data-linktype="relative-path">Fact</a></li>
+<li><a href="excel.worksheetfunction.factdouble" data-linktype="relative-path">FactDouble</a></li>
+<li><a href="excel.worksheetfunction.fdist" data-linktype="relative-path">FDist</a></li>
+<li><a href="excel.worksheetfunction.filterxml" data-linktype="relative-path">FilterXML</a></li>
+<li><a href="excel.worksheetfunction.find" data-linktype="relative-path">Find</a></li>
+<li><a href="excel.worksheetfunction.findb" data-linktype="relative-path">FindB</a></li>
+<li><a href="excel.worksheetfunction.finv" data-linktype="relative-path">FInv</a></li>
+<li><a href="excel.worksheetfunction.fisher" data-linktype="relative-path">Fisher</a></li>
+<li><a href="excel.worksheetfunction.fisherinv" data-linktype="relative-path">FisherInv</a></li>
+<li><a href="excel.worksheetfunction.fixed" data-linktype="relative-path">Fixed</a></li>
+<li><a href="excel.worksheetfunction.floor" data-linktype="relative-path">Floor</a></li>
+<li><a href="excel.worksheetfunction.floor_math" data-linktype="relative-path">Floor_Math</a></li>
+<li><a href="excel.worksheetfunction.floor_precise" data-linktype="relative-path">Floor_Precise</a></li>
+<li><a href="excel.worksheetfunction.forecast" data-linktype="relative-path">Forecast</a></li>
+<li><a href="excel.worksheetfunction.forecast_ets" data-linktype="relative-path">Forecast_ETS</a></li>
+<li><a href="excel.worksheetfunction.forecast_ets_confint" data-linktype="relative-path">Forecast_ETS_ConfInt</a></li>
+<li><a href="excel.worksheetfunction.forecast_ets_seasonality" data-linktype="relative-path">Forecast_ETS_Seasonality</a></li>
+<li><a href="excel.worksheetfunction.forecast_ets_stat" data-linktype="relative-path">Forecast_ETS_STAT</a></li>
+<li><a href="excel.worksheetfunction.forecast_linear" data-linktype="relative-path">Forecast_Linear</a></li>
+<li><a href="excel.worksheetfunction.frequency" data-linktype="relative-path">Frequency</a></li>
+<li><a href="excel.worksheetfunction.ftest" data-linktype="relative-path">FTest</a></li>
+<li><a href="excel.worksheetfunction.fv" data-linktype="relative-path">Fv</a></li>
+<li><a href="excel.worksheetfunction.fvschedule" data-linktype="relative-path">FVSchedule</a></li>
+<li><a href="excel.worksheetfunction.gamma" data-linktype="relative-path">Gamma</a></li>
+<li><a href="excel.worksheetfunction.gamma_dist" data-linktype="relative-path">Gamma_Dist</a></li>
+<li><a href="excel.worksheetfunction.gamma_inv" data-linktype="relative-path">Gamma_Inv</a></li>
+<li><a href="excel.worksheetfunction.gammadist" data-linktype="relative-path">GammaDist</a></li>
+<li><a href="excel.worksheetfunction.gammainv" data-linktype="relative-path">GammaInv</a></li>
+<li><a href="excel.worksheetfunction.gammaln" data-linktype="relative-path">GammaLn</a></li>
+<li><a href="excel.worksheetfunction.gammaln_precise" data-linktype="relative-path">GammaLn_Precise</a></li>
+<li><a href="excel.worksheetfunction.gauss" data-linktype="relative-path">Gauss</a></li>
+<li><a href="excel.worksheetfunction.gcd" data-linktype="relative-path">Gcd</a></li>
+<li><a href="excel.worksheetfunction.geomean" data-linktype="relative-path">GeoMean</a></li>
+<li><a href="excel.worksheetfunction.gestep" data-linktype="relative-path">GeStep</a></li>
+<li><a href="excel.worksheetfunction.growth" data-linktype="relative-path">Growth</a></li>
+<li><a href="excel.worksheetfunction.harmean" data-linktype="relative-path">HarMean</a></li>
+<li><a href="excel.worksheetfunction.hex2bin" data-linktype="relative-path">Hex2Bin</a></li>
+<li><a href="excel.worksheetfunction.hex2dec" data-linktype="relative-path">Hex2Dec</a></li>
+<li><a href="excel.worksheetfunction.hex2oct" data-linktype="relative-path">Hex2Oct</a></li>
+<li><a href="excel.worksheetfunction.hlookup" data-linktype="relative-path">HLookup</a></li>
+<li><a href="excel.worksheetfunction.hypgeom_dist" data-linktype="relative-path">HypGeom_Dist</a></li>
+<li><a href="excel.worksheetfunction.hypgeomdist" data-linktype="relative-path">HypGeomDist</a></li>
+<li><a href="excel.worksheetfunction.iferror" data-linktype="relative-path">IfError</a></li>
+<li><a href="excel.worksheetfunction.ifna" data-linktype="relative-path">IfNa</a></li>
+<li><a href="excel.worksheetfunction.imabs" data-linktype="relative-path">ImAbs</a></li>
+<li><a href="excel.worksheetfunction.imaginary" data-linktype="relative-path">Imaginary</a></li>
+<li><a href="excel.worksheetfunction.imargument" data-linktype="relative-path">ImArgument</a></li>
+<li><a href="excel.worksheetfunction.imconjugate" data-linktype="relative-path">ImConjugate</a></li>
+<li><a href="excel.worksheetfunction.imcos" data-linktype="relative-path">ImCos</a></li>
+<li><a href="excel.worksheetfunction.imcosh" data-linktype="relative-path">ImCosh</a></li>
+<li><a href="excel.worksheetfunction.imcot" data-linktype="relative-path">ImCot</a></li>
+<li><a href="excel.worksheetfunction.imcsc" data-linktype="relative-path">ImCsc</a></li>
+<li><a href="excel.worksheetfunction.imcsch" data-linktype="relative-path">ImCsch</a></li>
+<li><a href="excel.worksheetfunction.imdiv" data-linktype="relative-path">ImDiv</a></li>
+<li><a href="excel.worksheetfunction.imexp" data-linktype="relative-path">ImExp</a></li>
+<li><a href="excel.worksheetfunction.imln" data-linktype="relative-path">ImLn</a></li>
+<li><a href="excel.worksheetfunction.imlog10" data-linktype="relative-path">ImLog10</a></li>
+<li><a href="excel.worksheetfunction.imlog2" data-linktype="relative-path">ImLog2</a></li>
+<li><a href="excel.worksheetfunction.impower" data-linktype="relative-path">ImPower</a></li>
+<li><a href="excel.worksheetfunction.improduct" data-linktype="relative-path">ImProduct</a></li>
+<li><a href="excel.worksheetfunction.imreal" data-linktype="relative-path">ImReal</a></li>
+<li><a href="excel.worksheetfunction.imsec" data-linktype="relative-path">ImSec</a></li>
+<li><a href="excel.worksheetfunction.imsech" data-linktype="relative-path">ImSech</a></li>
+<li><a href="excel.worksheetfunction.imsin" data-linktype="relative-path">ImSin</a></li>
+<li><a href="excel.worksheetfunction.imsinh" data-linktype="relative-path">ImSinh</a></li>
+<li><a href="excel.worksheetfunction.imsqrt" data-linktype="relative-path">ImSqrt</a></li>
+<li><a href="excel.worksheetfunction.imsub" data-linktype="relative-path">ImSub</a></li>
+<li><a href="excel.worksheetfunction.imsum" data-linktype="relative-path">ImSum</a></li>
+<li><a href="excel.worksheetfunction.imtan" data-linktype="relative-path">ImTan</a></li>
+<li><a href="excel.worksheetfunction.index" data-linktype="relative-path">Index</a></li>
+<li><a href="excel.worksheetfunction.intercept" data-linktype="relative-path">Intercept</a></li>
+<li><a href="excel.worksheetfunction.intrate" data-linktype="relative-path">IntRate</a></li>
+<li><a href="excel.worksheetfunction.ipmt" data-linktype="relative-path">Ipmt</a></li>
+<li><a href="excel.worksheetfunction.irr" data-linktype="relative-path">Irr</a></li>
+<li><a href="excel.worksheetfunction.iserr" data-linktype="relative-path">IsErr</a></li>
+<li><a href="excel.worksheetfunction.iserror" data-linktype="relative-path">IsError</a></li>
+<li><a href="excel.worksheetfunction.iseven" data-linktype="relative-path">IsEven</a></li>
+<li><a href="excel.worksheetfunction.isformula" data-linktype="relative-path">IsFormula</a></li>
+<li><a href="excel.worksheetfunction.islogical" data-linktype="relative-path">IsLogical</a></li>
+<li><a href="excel.worksheetfunction.isna" data-linktype="relative-path">IsNA</a></li>
+<li><a href="excel.worksheetfunction.isnontext" data-linktype="relative-path">IsNonText</a></li>
+<li><a href="excel.worksheetfunction.isnumber" data-linktype="relative-path">IsNumber</a></li>
+<li><a href="excel.worksheetfunction.iso_ceiling" data-linktype="relative-path">ISO_Ceiling</a></li>
+<li><a href="excel.worksheetfunction.isodd" data-linktype="relative-path">IsOdd</a></li>
+<li><a href="excel.worksheetfunction.isoweeknum" data-linktype="relative-path">IsoWeekNum</a></li>
+<li><a href="excel.worksheetfunction.ispmt" data-linktype="relative-path">Ispmt</a></li>
+<li><a href="excel.worksheetfunction.istext" data-linktype="relative-path">IsText</a></li>
+<li><a href="excel.worksheetfunction.kurt" data-linktype="relative-path">Kurt</a></li>
+<li><a href="excel.worksheetfunction.large" data-linktype="relative-path">Large</a></li>
+<li><a href="excel.worksheetfunction.lcm" data-linktype="relative-path">Lcm</a></li>
+<li><a href="excel.worksheetfunction.linest" data-linktype="relative-path">LinEst</a></li>
+<li><a href="excel.worksheetfunction.ln" data-linktype="relative-path">Ln</a></li>
+<li><a href="excel.worksheetfunction.log" data-linktype="relative-path">Log</a></li>
+<li><a href="excel.worksheetfunction.log10" data-linktype="relative-path">Log10</a></li>
+<li><a href="excel.worksheetfunction.logest" data-linktype="relative-path">LogEst</a></li>
+<li><a href="excel.worksheetfunction.loginv" data-linktype="relative-path">LogInv</a></li>
+<li><a href="excel.worksheetfunction.lognorm_dist" data-linktype="relative-path">LogNorm_Dist</a></li>
+<li><a href="excel.worksheetfunction.lognorm_inv" data-linktype="relative-path">LogNorm_Inv</a></li>
+<li><a href="excel.worksheetfunction.lognormdist" data-linktype="relative-path">LogNormDist</a></li>
+<li><a href="excel.worksheetfunction.lookup" data-linktype="relative-path">Lookup</a></li>
+<li><a href="excel.worksheetfunction.match" data-linktype="relative-path">Match</a></li>
+<li><a href="excel.worksheetfunction.max" data-linktype="relative-path">Max</a></li>
+<li><a href="excel.worksheetfunction.mdeterm" data-linktype="relative-path">MDeterm</a></li>
+<li><a href="excel.worksheetfunction.mduration" data-linktype="relative-path">MDuration</a></li>
+<li><a href="excel.worksheetfunction.median" data-linktype="relative-path">Median</a></li>
+<li><a href="excel.worksheetfunction.min" data-linktype="relative-path">Min</a></li>
+<li><a href="excel.worksheetfunction.minverse" data-linktype="relative-path">MInverse</a></li>
+<li><a href="excel.worksheetfunction.mirr" data-linktype="relative-path">MIrr</a></li>
+<li><a href="excel.worksheetfunction.mmult" data-linktype="relative-path">MMult</a></li>
+<li><a href="excel.worksheetfunction.mode" data-linktype="relative-path">Mode</a></li>
+<li><a href="excel.worksheetfunction.mode_mult" data-linktype="relative-path">Mode_Mult</a></li>
+<li><a href="excel.worksheetfunction.mode_sngl" data-linktype="relative-path">Mode_Sngl</a></li>
+<li><a href="excel.worksheetfunction.mround" data-linktype="relative-path">MRound</a></li>
+<li><a href="excel.worksheetfunction.multinomial" data-linktype="relative-path">MultiNomial</a></li>
+<li><a href="excel.worksheetfunction.munit" data-linktype="relative-path">Munit</a></li>
+<li><a href="excel.worksheetfunction.negbinom_dist" data-linktype="relative-path">NegBinom_Dist</a></li>
+<li><a href="excel.worksheetfunction.negbinomdist" data-linktype="relative-path">NegBinomDist</a></li>
+<li><a href="excel.worksheetfunction.networkdays" data-linktype="relative-path">NetworkDays</a></li>
+<li><a href="excel.worksheetfunction.networkdays_intl" data-linktype="relative-path">NetworkDays_Intl</a></li>
+<li><a href="excel.worksheetfunction.nominal" data-linktype="relative-path">Nominal</a></li>
+<li><a href="excel.worksheetfunction.norm_dist" data-linktype="relative-path">Norm_Dist</a></li>
+<li><a href="excel.worksheetfunction.norm_inv" data-linktype="relative-path">Norm_Inv</a></li>
+<li><a href="excel.worksheetfunction.norm_s_dist" data-linktype="relative-path">Norm_S_Dist</a></li>
+<li><a href="excel.worksheetfunction.norm_s_inv" data-linktype="relative-path">Norm_S_Inv</a></li>
+<li><a href="excel.worksheetfunction.normdist" data-linktype="relative-path">NormDist</a></li>
+<li><a href="excel.worksheetfunction.norminv" data-linktype="relative-path">NormInv</a></li>
+<li><a href="excel.worksheetfunction.normsdist" data-linktype="relative-path">NormSDist</a></li>
+<li><a href="excel.worksheetfunction.normsinv" data-linktype="relative-path">NormSInv</a></li>
+<li><a href="excel.worksheetfunction.nper" data-linktype="relative-path">NPer</a></li>
+<li><a href="excel.worksheetfunction.npv" data-linktype="relative-path">Npv</a></li>
+<li><a href="excel.worksheetfunction.numbervalue" data-linktype="relative-path">NumberValue</a></li>
+<li><a href="excel.worksheetfunction.oct2bin" data-linktype="relative-path">Oct2Bin</a></li>
+<li><a href="excel.worksheetfunction.oct2dec" data-linktype="relative-path">Oct2Dec</a></li>
+<li><a href="excel.worksheetfunction.oct2hex" data-linktype="relative-path">Oct2Hex</a></li>
+<li><a href="excel.worksheetfunction.odd" data-linktype="relative-path">Odd</a></li>
+<li><a href="excel.worksheetfunction.oddfprice" data-linktype="relative-path">OddFPrice</a></li>
+<li><a href="excel.worksheetfunction.oddfyield" data-linktype="relative-path">OddFYield</a></li>
+<li><a href="excel.worksheetfunction.oddlprice" data-linktype="relative-path">OddLPrice</a></li>
+<li><a href="excel.worksheetfunction.oddlyield" data-linktype="relative-path">OddLYield</a></li>
+<li><a href="excel.worksheetfunction.or" data-linktype="relative-path">Or</a></li>
+<li><a href="excel.worksheetfunction.pduration" data-linktype="relative-path">PDuration</a></li>
+<li><a href="excel.worksheetfunction.pearson" data-linktype="relative-path">Pearson</a></li>
+<li><a href="excel.worksheetfunction.percentile" data-linktype="relative-path">Percentile</a></li>
+<li><a href="excel.worksheetfunction.percentile_exc" data-linktype="relative-path">Percentile_Exc</a></li>
+<li><a href="excel.worksheetfunction.percentile_inc" data-linktype="relative-path">Percentile_Inc</a></li>
+<li><a href="excel.worksheetfunction.percentrank" data-linktype="relative-path">PercentRank</a></li>
+<li><a href="excel.worksheetfunction.percentrank_exc" data-linktype="relative-path">PercentRank_Exc</a></li>
+<li><a href="excel.worksheetfunction.percentrank_inc" data-linktype="relative-path">PercentRank_Inc</a></li>
+<li><a href="excel.worksheetfunction.permut" data-linktype="relative-path">Permut</a></li>
+<li><a href="excel.worksheetfunction.permutationa" data-linktype="relative-path">Permutationa</a></li>
+<li><a href="excel.worksheetfunction.phi" data-linktype="relative-path">Phi</a></li>
+<li><a href="excel.worksheetfunction.phonetic" data-linktype="relative-path">Phonetic</a></li>
+<li><a href="excel.worksheetfunction.pi" data-linktype="relative-path">Pi</a></li>
+<li><a href="excel.worksheetfunction.pmt" data-linktype="relative-path">Pmt</a></li>
+<li><a href="excel.worksheetfunction.poisson" data-linktype="relative-path">Poisson</a></li>
+<li><a href="excel.worksheetfunction.poisson_dist" data-linktype="relative-path">Poisson_Dist</a></li>
+<li><a href="excel.worksheetfunction.power" data-linktype="relative-path">Power</a></li>
+<li><a href="excel.worksheetfunction.ppmt" data-linktype="relative-path">Ppmt</a></li>
+<li><a href="excel.worksheetfunction.price" data-linktype="relative-path">Price</a></li>
+<li><a href="excel.worksheetfunction.pricedisc" data-linktype="relative-path">PriceDisc</a></li>
+<li><a href="excel.worksheetfunction.pricemat" data-linktype="relative-path">PriceMat</a></li>
+<li><a href="excel.worksheetfunction.prob" data-linktype="relative-path">Prob</a></li>
+<li><a href="excel.worksheetfunction.product" data-linktype="relative-path">Product</a></li>
+<li><a href="excel.worksheetfunction.proper" data-linktype="relative-path">Proper</a></li>
+<li><a href="excel.worksheetfunction.pv" data-linktype="relative-path">Pv</a></li>
+<li><a href="excel.worksheetfunction.quartile" data-linktype="relative-path">Quartile</a></li>
+<li><a href="excel.worksheetfunction.quartile_exc" data-linktype="relative-path">Quartile_Exc</a></li>
+<li><a href="excel.worksheetfunction.quartile_inc" data-linktype="relative-path">Quartile_Inc</a></li>
+<li><a href="excel.worksheetfunction.quotient" data-linktype="relative-path">Quotient</a></li>
+<li><a href="excel.worksheetfunction.radians" data-linktype="relative-path">Radians</a></li>
+<li><a href="excel.worksheetfunction.randbetween" data-linktype="relative-path">RandBetween</a></li>
+<li><a href="excel.worksheetfunction.rank" data-linktype="relative-path">Rank</a></li>
+<li><a href="excel.worksheetfunction.rank_avg" data-linktype="relative-path">Rank_Avg</a></li>
+<li><a href="excel.worksheetfunction.rank_eq" data-linktype="relative-path">Rank_Eq</a></li>
+<li><a href="excel.worksheetfunction.rate" data-linktype="relative-path">Rate</a></li>
+<li><a href="excel.worksheetfunction.received" data-linktype="relative-path">Received</a></li>
+<li><a href="excel.worksheetfunction.replace" data-linktype="relative-path">Replace</a></li>
+<li><a href="excel.worksheetfunction.replaceb" data-linktype="relative-path">ReplaceB</a></li>
+<li><a href="excel.worksheetfunction.rept" data-linktype="relative-path">Rept</a></li>
+<li><a href="excel.worksheetfunction.roman" data-linktype="relative-path">Roman</a></li>
+<li><a href="excel.worksheetfunction.round" data-linktype="relative-path">Round</a></li>
+<li><a href="excel.worksheetfunction.rounddown" data-linktype="relative-path">RoundDown</a></li>
+<li><a href="excel.worksheetfunction.roundup" data-linktype="relative-path">RoundUp</a></li>
+<li><a href="excel.worksheetfunction.rri" data-linktype="relative-path">Rri</a></li>
+<li><a href="excel.worksheetfunction.rsq" data-linktype="relative-path">RSq</a></li>
+<li><a href="excel.worksheetfunction.rtd" data-linktype="relative-path">RTD</a></li>
+<li><a href="excel.worksheetfunction.search" data-linktype="relative-path">Search</a></li>
+<li><a href="excel.worksheetfunction.searchb" data-linktype="relative-path">SearchB</a></li>
+<li><a href="excel.worksheetfunction.sec" data-linktype="relative-path">Sec</a></li>
+<li><a href="excel.worksheetfunction.sech" data-linktype="relative-path">Sech</a></li>
+<li><a href="excel.worksheetfunction.seriessum" data-linktype="relative-path">SeriesSum</a></li>
+<li><a href="excel.worksheetfunction.sinh" data-linktype="relative-path">Sinh</a></li>
+<li><a href="excel.worksheetfunction.skew" data-linktype="relative-path">Skew</a></li>
+<li><a href="excel.worksheetfunction.skew_p" data-linktype="relative-path">Skew_p</a></li>
+<li><a href="excel.worksheetfunction.sln" data-linktype="relative-path">Sln</a></li>
+<li><a href="excel.worksheetfunction.slope" data-linktype="relative-path">Slope</a></li>
+<li><a href="excel.worksheetfunction.small" data-linktype="relative-path">Small</a></li>
+<li><a href="excel.worksheetfunction.sqrtpi" data-linktype="relative-path">SqrtPi</a></li>
+<li><a href="excel.worksheetfunction.standardize" data-linktype="relative-path">Standardize</a></li>
+<li><a href="excel.worksheetfunction.stdev" data-linktype="relative-path">StDev</a></li>
+<li><a href="excel.worksheetfunction.stdev_p" data-linktype="relative-path">StDev_P</a></li>
+<li><a href="excel.worksheetfunction.stdev_s" data-linktype="relative-path">StDev_S</a></li>
+<li><a href="excel.worksheetfunction.stdevp" data-linktype="relative-path">StDevP</a></li>
+<li><a href="excel.worksheetfunction.steyx" data-linktype="relative-path">StEyx</a></li>
+<li><a href="excel.worksheetfunction.substitute" data-linktype="relative-path">Substitute</a></li>
+<li><a href="excel.worksheetfunction.subtotal" data-linktype="relative-path">Subtotal</a></li>
+<li><a href="excel.worksheetfunction.sum" data-linktype="relative-path">Sum</a></li>
+<li><a href="excel.worksheetfunction.sumif" data-linktype="relative-path">SumIf</a></li>
+<li><a href="excel.worksheetfunction.sumifs" data-linktype="relative-path">SumIfs</a></li>
+<li><a href="excel.worksheetfunction.sumproduct" data-linktype="relative-path">SumProduct</a></li>
+<li><a href="excel.worksheetfunction.sumsq" data-linktype="relative-path">SumSq</a></li>
+<li><a href="excel.worksheetfunction.sumx2my2" data-linktype="relative-path">SumX2MY2</a></li>
+<li><a href="excel.worksheetfunction.sumx2py2" data-linktype="relative-path">SumX2PY2</a></li>
+<li><a href="excel.worksheetfunction.sumxmy2" data-linktype="relative-path">SumXMY2</a></li>
+<li><a href="excel.worksheetfunction.syd" data-linktype="relative-path">Syd</a></li>
+<li><a href="excel.worksheetfunction.t_dist" data-linktype="relative-path">T_Dist</a></li>
+<li><a href="excel.worksheetfunction.t_dist_2t" data-linktype="relative-path">T_Dist_2T</a></li>
+<li><a href="excel.worksheetfunction.t_dist_rt" data-linktype="relative-path">T_Dist_RT</a></li>
+<li><a href="excel.worksheetfunction.t_inv" data-linktype="relative-path">T_Inv</a></li>
+<li><a href="excel.worksheetfunction.t_inv_2t" data-linktype="relative-path">T_Inv_2T</a></li>
+<li><a href="excel.worksheetfunction.t_test" data-linktype="relative-path">T_Test</a></li>
+<li><a href="excel.worksheetfunction.tanh" data-linktype="relative-path">Tanh</a></li>
+<li><a href="excel.worksheetfunction.tbilleq" data-linktype="relative-path">TBillEq</a></li>
+<li><a href="excel.worksheetfunction.tbillprice" data-linktype="relative-path">TBillPrice</a></li>
+<li><a href="excel.worksheetfunction.tbillyield" data-linktype="relative-path">TBillYield</a></li>
+<li><a href="excel.worksheetfunction.tdist" data-linktype="relative-path">TDist</a></li>
+<li><a href="excel.worksheetfunction.text" data-linktype="relative-path">Text</a></li>
+<li><a href="excel.worksheetfunction.tinv" data-linktype="relative-path">TInv</a></li>
+<li><a href="excel.worksheetfunction.transpose" data-linktype="relative-path">Transpose</a></li>
+<li><a href="excel.worksheetfunction.trend" data-linktype="relative-path">Trend</a></li>
+<li><a href="excel.worksheetfunction.trim" data-linktype="relative-path">Trim</a></li>
+<li><a href="excel.worksheetfunction.trimmean" data-linktype="relative-path">TrimMean</a></li>
+<li><a href="excel.worksheetfunction.ttest" data-linktype="relative-path">TTest</a></li>
+<li><a href="excel.worksheetfunction.unichar" data-linktype="relative-path">Unichar</a></li>
+<li><a href="excel.worksheetfunction.unicode" data-linktype="relative-path">Unicode</a></li>
+<li><a href="excel.worksheetfunction.usdollar" data-linktype="relative-path">USDollar</a></li>
+<li><a href="excel.worksheetfunction.var" data-linktype="relative-path">Var</a></li>
+<li><a href="excel.worksheetfunction.var_p" data-linktype="relative-path">Var_P</a></li>
+<li><a href="excel.worksheetfunction.var_s" data-linktype="relative-path">Var_S</a></li>
+<li><a href="excel.worksheetfunction.varp" data-linktype="relative-path">VarP</a></li>
+<li><a href="excel.worksheetfunction.vdb" data-linktype="relative-path">Vdb</a></li>
+<li><a href="excel.worksheetfunction.vlookup" data-linktype="relative-path">VLookup</a></li>
+<li><a href="excel.worksheetfunction.webservice" data-linktype="relative-path">WebService</a></li>
+<li><a href="excel.worksheetfunction.weekday" data-linktype="relative-path">Weekday</a></li>
+<li><a href="excel.worksheetfunction.weeknum" data-linktype="relative-path">WeekNum</a></li>
+<li><a href="excel.worksheetfunction.weibull" data-linktype="relative-path">Weibull</a></li>
+<li><a href="excel.worksheetfunction.weibull_dist" data-linktype="relative-path">Weibull_Dist</a></li>
+<li><a href="excel.worksheetfunction.workday" data-linktype="relative-path">WorkDay</a></li>
+<li><a href="excel.worksheetfunction.workday_intl" data-linktype="relative-path">WorkDay_Intl</a></li>
+<li><a href="excel.worksheetfunction.xirr" data-linktype="relative-path">Xirr</a></li>
+<li><a href="excel.worksheetfunction.xnpv" data-linktype="relative-path">Xnpv</a></li>
+<li><a href="excel.worksheetfunction.xor" data-linktype="relative-path">Xor</a></li>
+<li><a href="excel.worksheetfunction.yearfrac" data-linktype="relative-path">YearFrac</a></li>
+<li><a href="excel.worksheetfunction.yielddisc" data-linktype="relative-path">YieldDisc</a></li>
+<li><a href="excel.worksheetfunction.yieldmat" data-linktype="relative-path">YieldMat</a></li>
+<li><a href="excel.worksheetfunction.z_test" data-linktype="relative-path">Z_Test</a></li>
+<li><a href="excel.worksheetfunction.ztest" data-linktype="relative-path">ZTest</a></li>
+</ul>
+<h2 id="properties">Properties</h2>
+<ul>
+<li><a href="excel.worksheetfunction.application" data-linktype="relative-path">Application</a></li>
+<li><a href="excel.worksheetfunction.creator" data-linktype="relative-path">Creator</a></li>
+<li><a href="excel.worksheetfunction.parent" data-linktype="relative-path">Parent</a></li>
+</ul>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="https://support.microsoft.com/help/291309/using-a-worksheet-function-in-a-visual-basic-macro-in-excel" data-linktype="external">Using a worksheet function in a Visual Basic macro in Excel</a></li>
+<li><a href="overview/excel/object-model" data-linktype="relative-path">Excel Object Model Reference</a></li>
+</ul>
+<h3 id="support-and-feedback">Support and feedback</h3>
+<p>Have questions or feedback about Office VBA or this documentation? Please see <a href="../articles/feedback-support" data-linktype="relative-path">Office VBA support and feedback</a> for guidance about the ways you can receive support and provide feedback.</p>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations" class="display-none-print"></section>
+						<!-- end recommendations section -->
+
+						<!-- feedback section -->
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<div
+								id="ms--additional-resources-mobile"
+								role="complementary"
+								aria-label="Additional resources"
+								class="display-none-desktop display-none-print"
+							>
+								<hr class="hr" hidden />
+								<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden>Additional resources</h2>
+									<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" hidden></section>
+								<section id="right-rail-training-mobile" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-events-mobile" data-bi-name="events-card" hidden></section>
+								<section id="right-rail-qna-mobile" data-bi-name="qna-link-card" hidden></section>
+							</div>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-sm button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu-interactive" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>&copy; Microsoft 2023</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div
+							id="ms--additional-resources"
+							class="right-container column is-4-desktop display-none display-block-desktop"
+							data-bi-name="pageactions"
+							role="complementary"
+							aria-label="Additional resources"
+						>
+							<div id="affixed-right-container" class="margin-top-sm-tablet" data-bi-name="right-column">
+								<h2 id="ms--additional-resources-heading" class="title is-6 margin-top-md" hidden>Additional resources</h2>
+								<section id="right-rail-events" data-bi-name="events-card" hidden></section>
+								<section id="right-rail-training" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" hidden></section>
+								<nav id="side-doc-outline" class="doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="In this article">
+									<h3>In this article</h3>
+								</nav>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-sm button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>&copy; Microsoft 2023</li>
+	</ul>
+</footer>
+	</section>
+
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+</body>
+</html>

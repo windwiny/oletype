@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light" lang="en-us" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="false" data-target="docs" x-ms-format-detection="none">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="Range object (Excel)" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://learn.microsoft.com/en-us/office/vba/api/excel.range(object)" />
+			<meta property="og:description" content="Office VBA reference topic" />
+
+	<meta property="og:image" content="https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png" />
+
+	<meta property="og:image:alt" content="Microsoft Logo" />
+
+	<meta name="twitter:card" content="summary" />
+
+	<meta name="twitter:site" content="@MicrosoftLearn" />
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="APIName" content="Excel.Range" />
+<meta name="author" content="o365devx" />
+<meta name="breadcrumb_path" content="/office/vba/breadcrumb/toc.json" />
+<meta name="depot_name" content="MSDN.VBA-Docs" />
+<meta name="description" content="Office VBA reference topic" />
+<meta name="document_id" content="458b36e8-23f2-1b45-eb3d-721c5a449a48" />
+<meta name="document_version_independent_id" content="80f84021-025c-e52c-94aa-674631e97fb6" />
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/VBA-Docs/blob/71d8a585cf5d48667f8c3e270c3b507bd12c9d2b/api/Excel.Range(object).md" />
+<meta name="keywords" content="vbaxl10.chm143072" />
+<meta name="locale" content="en-us" />
+<meta name="ms.assetid" content="b8207778-0dcc-4570-1234-f130532cc8cd" />
+<meta name="ms.author" content="o365devx" />
+<meta name="ms.date" content="08/14/2019" />
+<meta name="ms.localizationpriority" content="high" />
+<meta name="ms.prod" content="excel" />
+<meta name="ms.suite" content="office" />
+<meta name="ms.technology" content="vba" />
+<meta name="ms.topic" content="reference" />
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/VBA-Docs/blob/live/api/Excel.Range(object).md" />
+<meta name="page_type" content="conceptual" />
+<meta name="schema" content="Conceptual" />
+<meta name="site_name" content="Docs" />
+<meta name="toc_rel" content="toc.json" />
+<meta name="uhfHeaderId" content="MSDocsHeader-VBA" />
+<meta name="updated_at" content="2022-06-01 01:39 PM" />
+<meta name="word_count" content="1948" />
+
+
+	<meta name="persistent_id" content="2e4ae10e-ae85-660a-bcb0-e0e71ff9f2da" />
+	
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/8b896464-3b7d-4e1f-84b0-9bb45aeb5f64" data-source="generated" />
+
+	<meta name="cmProducts" content="https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/19e6356c-ba1e-4d22-9557-6222c183f04d" data-source="generated" />
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/560a1cd0-e7e6-41f3-9013-aed9c03f421e" data-source="generated" />
+
+	
+
+	<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/VBA-Docs/blob/main/api/Excel.Range(object).md" />
+<link href="https://learn.microsoft.com/en-us/office/vba/api/excel.range(object)" rel="canonical">
+	<title>Range object (Excel) | Microsoft Learn</title>
+
+		<link rel="stylesheet" href="/_themes/docs.theme/master/en-us/_themes/styles/c63c73ef.site-ltr.css ">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			standardFeedback: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			feedbackProductUrl: '',
+			extendBreadcrumb: false,
+			isEditDisplayable: true,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: true,
+			hasBookmark: true,
+			hasShare: true,
+			isPermissioned: false,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "o365devx", url: "https://github.com/o365devx" },
+						{ name: "Mani-Segara-Varma", url: "https://github.com/Mani-Segara-Varma" },
+						{ name: "lindalu-MSFT", url: "https://github.com/lindalu-MSFT" },
+						{ name: "AlexJerabek", url: "https://github.com/AlexJerabek" },
+						{ name: "MDoerner", url: "https://github.com/MDoerner" },
+						{ name: "Linda-Editor", url: "https://github.com/Linda-Editor" },
+						{ name: "OfficeGSX", url: "https://github.com/OfficeGSX" },
+						{ name: "kbrandl", url: "https://github.com/kbrandl" },
+						{ name: "italicize", url: "https://github.com/italicize" }
+],
+		},
+		functions:{}
+	};
+	</script>
+	<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+	<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-3.min.js"></script>
+
+	<script src="/_themes/docs.theme/master/en-us/_themes/global/67a45209.deprecation.js"></script>
+		<link rel="preconnect" href="//mscom.demdex.net" crossorigin>
+		<link rel="dns-prefetch" href="//target.microsoft.com">
+		<link rel="dns-prefetch" href="//microsoftmscompoc.tt.omtrdc.net">
+		<script src="/_themes/docs.theme/master/en-us/_themes/global/37ce9fe8.at-config.js"></script>
+		<script src="/static/third-party/adobe-target/at-js/2.9.0/at.js" integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu" crossorigin="anonymous"></script>
+		<script src="/_themes/docs.theme/master/en-us/_themes/scripts/d86e3e7a.index-docs.js"></script>
+</head>
+
+<body lang="en-us" dir="ltr">
+	<div class="header-holder has-default-focus">
+		<a href="#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">Skip to main content</a>
+
+		<div hidden id="cookie-consent-holder"></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;"
+			hidden
+		>
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">This browser is no longer supported.</p>
+				<p style="font-size: 16px; margin-top: 16px;">Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.</p>
+				<div style="margin-top: 12px;">
+					<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+						style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+Download Microsoft Edge					</a>
+					<a href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+						style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+More info about Internet Explorer and Microsoft Edge					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+	<div class="nav-bar">
+		<div class="nav-bar-brand">
+			<a itemprop="url" href="https://www.microsoft.com" aria-label="Microsoft" class="nav-bar-button">
+				<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+				<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			</a>
+		</div>
+	</div>
+	<div class="nav-bar border-top is-hidden-mobile"></div>
+</header>		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button>
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+Table of contents						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>Exit focus mode</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" role="navigation" aria-label="Primary"></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" class="" role="main" data-bi-name="content" lang="en-us" dir="ltr">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs">
+										<summary class="button button-clear button-primary button-sm inner-focus" aria-label="All breadcrumbs">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none">
+
+										</div>
+									</details>
+									<bread-crumbs id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs" id="page-breadcrumbs"></bread-crumbs>
+
+									<div id="article-header-page-actions"  class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a
+											id="lang-link-tablet"
+											class="button button-primary button-clear button-sm display-none display-inline-flex-tablet"
+											title="Read in English" data-bi-name="language-toggle"
+											data-read-in-link
+											hidden>
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon>
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text>Read in English</span>
+										</a>
+
+											<button
+												type="button"
+												class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet"
+												data-list-type="collection"
+												data-bi-name="collection"
+												title="Add to collection">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">Save</span>
+											</button>
+										
+
+											<a	data-contenteditbtn
+												class="button button-clear button-sm text-decoration-none button-primary display-none display-inline-flex-tablet"
+												aria-label="Edit"
+												title="Edit This Document"
+												data-bi-name="edit"
+
+														href="https://github.com/MicrosoftDocs/VBA-Docs/blob/main/api/Excel.Range(object).md"
+														data-original_content_git_url="https://github.com/MicrosoftDocs/VBA-Docs/blob/live/api/Excel.Range(object).md"
+														data-original_content_git_url_template="{repo}/blob/{branch}/api/Excel.Range(object).md"
+														data-pr_repo=""
+														data-pr_branch=""
+											>
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-edit-outline"></span>
+												</span>
+											</a>
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="More actions">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button
+														data-page-action-item="overflow-mobile"
+														type="button"
+														class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet"
+														data-bi-name="contents-expand"
+														data-contents-button
+														data-popover-close>
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+															<span class="contents-expand-title">Table of contents</span>
+													</button>
+
+												<a
+													id="lang-link-overflow"
+													class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet"
+													title="Read in English" data-bi-name="language-toggle"
+													data-page-action-item="overflow-mobile"
+													data-check-hidden="true"
+													data-read-in-link
+													hidden
+													>
+													<span class="icon" aria-hidden="true" data-read-in-link-icon>
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text>Read in English</span>
+												</a>
+
+													<button
+														type="button"
+														class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet"
+														data-list-type="collection"
+														data-bi-name="collection"
+														title="Add to collection"
+														data-page-action-item="overflow-mobile"
+														data-check-hidden="true"
+														data-popover-close>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">Save</span>
+													</button>
+
+													<a	data-contenteditbtn
+														class="button button-clear button-block button-sm has-inner-focus justify-content-flex-start text-decoration-none display-none-tablet"
+														aria-label="Edit"
+														title="Edit This Document"
+														data-bi-name="edit"
+
+																href="https://github.com/MicrosoftDocs/VBA-Docs/blob/main/api/Excel.Range(object).md"
+																data-original_content_git_url="https://github.com/MicrosoftDocs/VBA-Docs/blob/live/api/Excel.Range(object).md"
+																data-original_content_git_url_template="{repo}/blob/{branch}/api/Excel.Range(object).md"
+																data-pr_repo=""
+																data-pr_branch=""
+													>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-edit-outline"></span>
+														</span>
+														<span>Edit</span>
+													</a>
+
+													<button
+														class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus"
+														title="Print"
+														type="button"
+														aria-label="Print"
+														data-bi-name="print"
+														data-page-action-item="overflow-all"
+														data-popover-close
+														data-print-page
+														data-check-hidden="true">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print"></span>
+														</span>
+														<span>Print</span>
+													</button>
+
+													<div aria-hidden="true" class="margin-none
+														border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>Email</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div>
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" data-bi-name="contents-expand" data-contents-button hidden>
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+										<span class="contents-expand-title">Table of contents</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="range-object-excel">Range object (Excel)</h1>
+
+
+									<div class="display-flex justify-content-space-between align-items-center flex-wrap-wrap page-metadata-container">
+										<div class="margin-right-xxs">
+											<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+													<li>
+Article													</li>
+
+													<li class="visibility-hidden-visual-diff">
+														<time class="is-invisible" data-article-date aria-label="Article review date" datetime="2022-06-01T00:00:00Z" data-article-date-source="calculated">06/01/2022</time>
+													</li>
+														<li class="contributors-holder display-none-print">
+															<button aria-label="View all contributors" class="contributors-button link-button" data-bi-name="contributors" title="View all contributors">
+																	9 contributors
+															</button>
+														</li>
+											</ul>
+										</div>
+
+<div id="user-feedback" class="margin-block-xxs display-none-print" data-hide-on-archived>
+	<button
+		id="user-feedback-button"
+		data-test-id="conceptual-feedback-button"
+		class="button button-sm button-clear button-primary"
+		type="button"
+		data-bi-name="user-feedback-button"
+		data-user-feedback-button
+	>
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-like"></span>
+		</span>
+		<span>Feedback</span>
+	</button>
+</div>
+									</div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm" data-bi-name="intopic toc" role="navigation" aria-label="In this article">
+											<h2 id="ms--in-this-article" class="title is-6 margin-block-xs">In this article</h2>
+										</nav>
+
+								<!-- <content> -->
+									<p>Represents a cell, a row, a column, a selection of cells containing one or more contiguous blocks of cells, or a 3D range.</p>
+<div class="NOTE">
+<p>Note</p>
+<p>Interested in developing solutions that extend the Office experience across <a href="/en-us/office/dev/add-ins/overview/office-add-in-availability" data-linktype="absolute-path">multiple platforms</a>? Check out the new <a href="/en-us/office/dev/add-ins/overview/office-add-ins" data-linktype="absolute-path">Office Add-ins model</a>. Office Add-ins have a small footprint compared to VSTO Add-ins and solutions, and you can build them by using almost any web programming technology, such as HTML5, JavaScript, CSS3, and XML.</p>
+</div>
+<h2 id="remarks">Remarks</h2>
+<p>The default member of <strong>Range</strong> forwards calls without parameters to the <strong><a href="excel.range.value" data-linktype="relative-path">Value</a></strong> property and calls with parameters to the <strong><a href="excel.range.item" data-linktype="relative-path">Item</a></strong> member. Accordingly, <code>someRange = someOtherRange</code> is equivalent to <code>someRange.Value = someOtherRange.Value</code>, <code>someRange(1)</code> to <code>someRange.Item(1)</code> and <code>someRange(1,1)</code> to <code>someRange.Item(1,1)</code>.</p>
+<p>The following properties and methods for returning a <strong>Range</strong> object are described in the <strong>Example</strong> section:</p>
+<ul>
+<li><strong><a href="excel.worksheet.range" data-linktype="relative-path">Range</a></strong> and <strong><a href="excel.worksheet.cells" data-linktype="relative-path">Cells</a></strong> properties of the <strong>Worksheet</strong> object</li>
+<li><strong><a href="excel.range.range" data-linktype="relative-path">Range</a></strong> and <strong><a href="excel.range.cells" data-linktype="relative-path">Cells</a></strong> properties of the <strong>Range</strong> object</li>
+<li><strong><a href="excel.worksheet.rows" data-linktype="relative-path">Rows</a></strong> and <strong><a href="excel.worksheet.columns" data-linktype="relative-path">Columns</a></strong> properties of the <strong>Worksheet</strong> object</li>
+<li><strong><a href="excel.range.rows" data-linktype="relative-path">Rows</a></strong> and <strong><a href="excel.range.columns" data-linktype="relative-path">Columns</a></strong> properties of the <strong>Range</strong> object</li>
+<li><strong><a href="excel.range.offset" data-linktype="relative-path">Offset</a></strong> property of the <strong>Range</strong> object</li>
+<li><strong><a href="excel.application.union" data-linktype="relative-path">Union</a></strong> method of the <strong>Application</strong> object</li>
+</ul>
+<h2 id="example">Example</h2>
+<p>Use <strong>Range</strong> (<em>arg</em>), where <em>arg</em> names the range, to return a <strong>Range</strong> object that represents a single cell or a range of cells. The following example places the value of cell A1 in cell A5.</p>
+<pre><code class="lang-vb">Worksheets(&quot;Sheet1&quot;).Range(&quot;A5&quot;).Value = _ 
+    Worksheets(&quot;Sheet1&quot;).Range(&quot;A1&quot;).Value
+</code></pre>
+<p>The following example fills the range A1:H8 with random numbers by setting the formula for each cell in the range. When it's used without an object qualifier (an object to the left of the period), the <strong>Range</strong> property returns a range on the active sheet. If the active sheet isn't a worksheet, the method fails.</p>
+<p>Use the <strong><a href="excel.worksheet.activate(method)" data-linktype="relative-path">Activate</a></strong> method of the <strong>Worksheet</strong> object to activate a worksheet before you use the <strong>Range</strong> property without an explicit object qualifier.</p>
+<pre><code class="lang-vb">Worksheets(&quot;Sheet1&quot;).Activate 
+Range(&quot;A1:H8&quot;).Formula = &quot;=Rand()&quot;    'Range is on the active sheet
+</code></pre>
+<p>The following example clears the contents of the range named <em>Criteria</em>.</p>
+<div class="NOTE">
+<p>Note</p>
+<p>If you use a text argument for the range address, you must specify the address in A1-style notation (you cannot use R1C1-style notation).</p>
+</div>
+<pre><code class="lang-vb">Worksheets(1).Range(&quot;Criteria&quot;).ClearContents
+</code></pre>
+<p>Use <strong>Cells</strong> on a worksheet to obtain a range consisting all single cells on the worksheet. You can access single cells via <strong>Item</strong>(<em>row</em>, <em>column</em>), where <em>row</em> is the row index and <em>column</em> is the column index.
+<strong>Item</strong> can be omitted since the call is forwarded to it by the default member of <strong>Range</strong>.
+The following example sets the value of cell A1 to 24 and of cell B1 to 42 on the first sheet of the active workbook.</p>
+<pre><code class="lang-vb">Worksheets(1).Cells(1, 1).Value = 24
+Worksheets(1).Cells.Item(1, 2).Value = 42
+</code></pre>
+<p>The following example sets the formula for cell A2.</p>
+<pre><code class="lang-vb">ActiveSheet.Cells(2, 1).Formula = &quot;=Sum(B1:B5)&quot;
+</code></pre>
+<p>Although you can also use <code>Range(&quot;A1&quot;)</code> to return cell A1, there may be times when the <strong>Cells</strong> property is more convenient because you can use a variable for the row or column. The following example creates column and row headings on Sheet1. Be aware that after the worksheet has been activated, the <strong>Cells</strong> property can be used without an explicit sheet declaration (it returns a cell on the active sheet).</p>
+<div class="NOTE">
+<p>Note</p>
+<p>Although you could use Visual Basic string functions to alter A1-style references, it is easier (and better programming practice) to use the <code>Cells(1, 1)</code> notation.</p>
+</div>
+<pre><code class="lang-vb">Sub SetUpTable() 
+Worksheets(&quot;Sheet1&quot;).Activate 
+For TheYear = 1 To 5 
+    Cells(1, TheYear + 1).Value = 1990 + TheYear 
+Next TheYear 
+For TheQuarter = 1 To 4 
+    Cells(TheQuarter + 1, 1).Value = &quot;Q&quot; &amp; TheQuarter 
+Next TheQuarter 
+End Sub
+</code></pre>
+<p>Use_expression_.<strong>Cells</strong>, where <em>expression</em> is an expression that returns a <strong>Range</strong> object, to obtain a range with the same address consisting of single cells.
+On such a range, you access single cells via <strong>Item</strong>(<em>row</em>, <em>column</em>), where are relative to the upper-left corner of the first area of the range.
+<strong>Item</strong> can be omitted since the call is forwarded to it by the default member of <strong>Range</strong>.
+The following example sets the formula for cell C5 and D5 of the first sheet of the active workbook.</p>
+<pre><code class="lang-vb">Worksheets(1).Range(&quot;C5:C10&quot;).Cells(1, 1).Formula = &quot;=Rand()&quot;
+Worksheets(1).Range(&quot;C5:C10&quot;).Cells.Item(1, 2).Formula = &quot;=Rand()&quot;
+</code></pre>
+<p>Use <strong>Range</strong> (<em>cell1, cell2</em>), where <em>cell1</em> and <em>cell2</em> are <strong>Range</strong> objects that specify the start and end cells, to return a <strong>Range</strong> object. The following example sets the border line style for cells A1:J10.</p>
+<div class="NOTE">
+<p>Note</p>
+<p>Be aware that the period in front of each occurrence of the <strong>Cells</strong> property is required if the result of the preceding <strong>With</strong> statement is to be applied to the <strong>Cells</strong> property. In this case, it indicates that the cells are on worksheet one (without the period, the <strong>Cells</strong> property would return cells on the active sheet).</p>
+</div>
+<pre><code class="lang-vb">With Worksheets(1) 
+    .Range(.Cells(1, 1), _ 
+        .Cells(10, 10)).Borders.LineStyle = xlThick 
+End With
+</code></pre>
+<p>Use <strong>Rows</strong> on a worksheet to obtain a range consisting all rows on the worksheet. You can access single rows via <strong>Item</strong>(<em>row</em>), where <em>row</em> is the row index.
+<strong>Item</strong> can be omitted since the call is forwarded to it by the default member of <strong>Range</strong>.</p>
+<div class="NOTE">
+<p>Note</p>
+<p>It's not legal to provide the second parameter of <strong>Item</strong> for ranges consisting of rows. You first have to convert it to single cells via <strong>Cells</strong>.</p>
+</div>
+<p>The following example deletes row 5 and 10 of the first sheet of the active workbook.</p>
+<pre><code class="lang-vb">Worksheets(1).Rows(10).Delete
+Worksheets(1).Rows.Item(5).Delete
+</code></pre>
+<p>Use <strong>Columns</strong> on a worksheet to obtain a range consisting all columns on the worksheet. You can access single columns via <strong>Item</strong>(<em>row</em>) [sic], where <em>row</em> is the column index given as a number or as an A1-style column address.
+<strong>Item</strong> can be omitted since the call is forwarded to it by the default member of <strong>Range</strong>.</p>
+<div class="NOTE">
+<p>Note</p>
+<p>It's not legal to provide the second parameter of <strong>Item</strong> for ranges consisting of columns. You first have to convert it to single cells via <strong>Cells</strong>.</p>
+</div>
+<p>The following example deletes column &quot;B&quot;, &quot;C&quot;, &quot;E&quot;, and &quot;J&quot; of the first sheet of the active workbook.</p>
+<pre><code class="lang-vb">Worksheets(1).Columns(10).Delete
+Worksheets(1).Columns.Item(5).Delete
+Worksheets(1).Columns(&quot;C&quot;).Delete
+Worksheets(1).Columns.Item(&quot;B&quot;).Delete
+</code></pre>
+<p>Use_expression_.<strong>Rows</strong>, where <em>expression</em> is an expression that returns a <strong>Range</strong> object, to obtain a range consisting of the rows in the first area of the range.
+You can access single rows via <strong>Item</strong>(<em>row</em>), where <em>row</em> is the relative row index from the top of the first area of the range.
+<strong>Item</strong> can be omitted since the call is forwarded to it by the default member of <strong>Range</strong>.</p>
+<div class="NOTE">
+<p>Note</p>
+<p>It's not legal to provide the second parameter of <strong>Item</strong> for ranges consisting of rows. You first have to convert it to single cells via <strong>Cells</strong>.</p>
+</div>
+<p>The following example deletes the ranges C8:D8 and C6:D6 of the first sheet of the active workbook.</p>
+<pre><code class="lang-vb">Worksheets(1).Range(&quot;C5:D10&quot;).Rows(4).Delete
+Worksheets(1).Range(&quot;C5:D10&quot;).Rows.Item(2).Delete
+</code></pre>
+<p>Use_expression_.<strong>Columns</strong>, where <em>expression</em> is an expression that returns a <strong>Range</strong> object, to obtain a range consisting of the columns in the first area of the range.
+You can access single columns via <strong>Item</strong>(<em>row</em>) [sic], where <em>row</em> is the relative column index from the left of the first area of the range given as a number or as an A1-style column address.
+<strong>Item</strong> can be omitted since the call is forwarded to it by the default member of <strong>Range</strong>.</p>
+<div class="NOTE">
+<p>Note</p>
+<p>It's not legal to provide the second parameter of <strong>Item</strong> for ranges consisting of columns. You first have to convert it to single cells via <strong>Cells</strong>.</p>
+</div>
+<p>The following example deletes the ranges L2:L10, G2:G10, F2:F10 and D2:D10 of the first sheet of the active workbook.</p>
+<pre><code class="lang-vb">Worksheets(1).Range(&quot;C5:Z10&quot;).Columns(10).Delete
+Worksheets(1).Range(&quot;C5:Z10&quot;).Columns.Item(5).Delete
+Worksheets(1).Range(&quot;C5:Z10&quot;).Columns(&quot;D&quot;).Delete
+Worksheets(1).Range(&quot;C5:Z10&quot;).Columns.Item(&quot;B&quot;).Delete
+</code></pre>
+<p>Use <strong>Offset</strong> (<em>row, column</em>), where <em>row</em> and <em>column</em> are the row and column offsets, to return a range at a specified offset to another range. The following example selects the cell three rows down from and one column to the right of the cell in the upper-left corner of the current selection. You cannot select a cell that is not on the active sheet, so you must first activate the worksheet.</p>
+<pre><code class="lang-vb">Worksheets(&quot;Sheet1&quot;).Activate 
+  'Can't select unless the sheet is active 
+Selection.Offset(3, 1).Range(&quot;A1&quot;).Select
+</code></pre>
+<p>Use <strong>Union</strong> (<em>range1, range2</em>, ...) to return multiple-area ranges—that is, ranges composed of two or more contiguous blocks of cells. The following example creates an object defined as the union of ranges A1:B2 and C3:D4, and then selects the defined range.</p>
+<pre><code class="lang-vb">Dim r1 As Range, r2 As Range, myMultiAreaRange As Range 
+Worksheets(&quot;sheet1&quot;).Activate 
+Set r1 = Range(&quot;A1:B2&quot;) 
+Set r2 = Range(&quot;C3:D4&quot;) 
+Set myMultiAreaRange = Union(r1, r2) 
+myMultiAreaRange.Select
+</code></pre>
+<p>If you work with selections that contain more than one area, the <strong><a href="excel.range.areas" data-linktype="relative-path">Areas</a></strong> property is useful. It divides a multiple-area selection into individual <strong>Range</strong> objects and then returns the objects as a collection. Use the <strong><a href="excel.range.count" data-linktype="relative-path">Count</a></strong> property on the returned collection to verify a selection that contains more than one area, as shown in the following example.</p>
+<pre><code class="lang-vb">Sub NoMultiAreaSelection() 
+    NumberOfSelectedAreas = Selection.Areas.Count 
+    If NumberOfSelectedAreas &gt; 1 Then 
+        MsgBox &quot;You cannot carry out this command &quot; &amp; _ 
+            &quot;on multi-area selections&quot; 
+    End If 
+End Sub
+</code></pre>
+<p>This example uses the <strong>AdvancedFilter</strong> method of the <strong>Range</strong> object to create a list of the unique values, and the number of times those unique values occur, in the range of column A.</p>
+<pre><code class="lang-vb">Sub Create_Unique_List_Count()
+    'Excel workbook, the source and target worksheets, and the source and target ranges.
+    Dim wbBook As Workbook
+    Dim wsSource As Worksheet
+    Dim wsTarget As Worksheet
+    Dim rnSource As Range
+    Dim rnTarget As Range
+    Dim rnUnique As Range
+    'Variant to hold the unique data
+    Dim vaUnique As Variant
+    'Number of unique values in the data
+    Dim lnCount As Long
+    
+    'Initialize the Excel objects
+    Set wbBook = ThisWorkbook
+    With wbBook
+        Set wsSource = .Worksheets(&quot;Sheet1&quot;)
+        Set wsTarget = .Worksheets(&quot;Sheet2&quot;)
+    End With
+    
+    'On the source worksheet, set the range to the data stored in column A
+    With wsSource
+        Set rnSource = .Range(.Range(&quot;A1&quot;), .Range(&quot;A100&quot;).End(xlDown))
+    End With
+    
+    'On the target worksheet, set the range as column A.
+    Set rnTarget = wsTarget.Range(&quot;A1&quot;)
+    
+    'Use AdvancedFilter to copy the data from the source to the target,
+    'while filtering for duplicate values.
+    rnSource.AdvancedFilter Action:=xlFilterCopy, _
+                            CopyToRange:=rnTarget, _
+                            Unique:=True
+                            
+    'On the target worksheet, set the unique range on Column A, excluding the first cell
+    '(which will contain the &quot;List&quot; header for the column).
+    With wsTarget
+        Set rnUnique = .Range(.Range(&quot;A2&quot;), .Range(&quot;A100&quot;).End(xlUp))
+    End With
+    
+    'Assign all the values of the Unique range into the Unique variant.
+    vaUnique = rnUnique.Value
+    
+    'Count the number of occurrences of every unique value in the source data,
+    'and list it next to its relevant value.
+    For lnCount = 1 To UBound(vaUnique)
+        rnUnique(lnCount, 1).Offset(0, 1).Value = _
+            Application.Evaluate(&quot;COUNTIF(&quot; &amp; _
+            rnSource.Address(External:=True) &amp; _
+            &quot;,&quot;&quot;&quot; &amp; rnUnique(lnCount, 1).Text &amp; &quot;&quot;&quot;)&quot;)
+    Next lnCount
+    
+    'Label the column of occurrences with &quot;Occurrences&quot;
+    With rnTarget.Offset(0, 1)
+        .Value = &quot;Occurrences&quot;
+        .Font.Bold = True
+    End With
+
+End Sub
+</code></pre>
+<h2 id="methods">Methods</h2>
+<ul>
+<li><a href="excel.range.activate" data-linktype="relative-path">Activate</a></li>
+<li><a href="excel.range.addcomment" data-linktype="relative-path">AddComment</a></li>
+<li><a href="excel.range.addcommentthreaded" data-linktype="relative-path">AddCommentThreaded</a></li>
+<li><a href="excel.range.advancedfilter" data-linktype="relative-path">AdvancedFilter</a></li>
+<li><a href="excel.range.allocatechanges" data-linktype="relative-path">AllocateChanges</a></li>
+<li><a href="excel.range.applynames" data-linktype="relative-path">ApplyNames</a></li>
+<li><a href="excel.range.applyoutlinestyles" data-linktype="relative-path">ApplyOutlineStyles</a></li>
+<li><a href="excel.range.autocomplete" data-linktype="relative-path">AutoComplete</a></li>
+<li><a href="excel.range.autofill" data-linktype="relative-path">AutoFill</a></li>
+<li><a href="excel.range.autofilter" data-linktype="relative-path">AutoFilter</a></li>
+<li><a href="excel.range.autofit" data-linktype="relative-path">AutoFit</a></li>
+<li><a href="excel.range.autooutline" data-linktype="relative-path">AutoOutline</a></li>
+<li><a href="excel.range.borderaround" data-linktype="relative-path">BorderAround</a></li>
+<li><a href="excel.range.calculate" data-linktype="relative-path">Calculate</a></li>
+<li><a href="excel.range.calculaterowmajororder" data-linktype="relative-path">CalculateRowMajorOrder</a></li>
+<li><a href="excel.range.checkspelling" data-linktype="relative-path">CheckSpelling</a></li>
+<li><a href="excel.range.clear" data-linktype="relative-path">Clear</a></li>
+<li><a href="excel.range.clearcomments" data-linktype="relative-path">ClearComments</a></li>
+<li><a href="excel.range.clearcontents" data-linktype="relative-path">ClearContents</a></li>
+<li><a href="excel.range.clearformats" data-linktype="relative-path">ClearFormats</a></li>
+<li><a href="excel.range.clearhyperlinks" data-linktype="relative-path">ClearHyperlinks</a></li>
+<li><a href="excel.range.clearnotes" data-linktype="relative-path">ClearNotes</a></li>
+<li><a href="excel.range.clearoutline" data-linktype="relative-path">ClearOutline</a></li>
+<li><a href="excel.range.columndifferences" data-linktype="relative-path">ColumnDifferences</a></li>
+<li><a href="excel.range.consolidate" data-linktype="relative-path">Consolidate</a></li>
+<li><a href="excel.range.converttolinkeddatatype" data-linktype="relative-path">ConvertToLinkedDataType</a></li>
+<li><a href="excel.range.copy" data-linktype="relative-path">Copy</a></li>
+<li><a href="excel.range.copyfromrecordset" data-linktype="relative-path">CopyFromRecordset</a></li>
+<li><a href="excel.range.copypicture" data-linktype="relative-path">CopyPicture</a></li>
+<li><a href="excel.range.createnames" data-linktype="relative-path">CreateNames</a></li>
+<li><a href="excel.range.cut" data-linktype="relative-path">Cut</a></li>
+<li><a href="excel.range.datatypetotext" data-linktype="relative-path">DataTypeToText</a></li>
+<li><a href="excel.range.dataseries" data-linktype="relative-path">DataSeries</a></li>
+<li><a href="excel.range.delete" data-linktype="relative-path">Delete</a></li>
+<li><a href="excel.range.dialogbox" data-linktype="relative-path">DialogBox</a></li>
+<li><a href="excel.range.dirty" data-linktype="relative-path">Dirty</a></li>
+<li><a href="excel.range.discardchanges" data-linktype="relative-path">DiscardChanges</a></li>
+<li><a href="excel.range.editionoptions" data-linktype="relative-path">EditionOptions</a></li>
+<li><a href="excel.range.exportasfixedformat" data-linktype="relative-path">ExportAsFixedFormat</a></li>
+<li><a href="excel.range.filldown" data-linktype="relative-path">FillDown</a></li>
+<li><a href="excel.range.fillleft" data-linktype="relative-path">FillLeft</a></li>
+<li><a href="excel.range.fillright" data-linktype="relative-path">FillRight</a></li>
+<li><a href="excel.range.fillup" data-linktype="relative-path">FillUp</a></li>
+<li><a href="excel.range.find" data-linktype="relative-path">Find</a></li>
+<li><a href="excel.range.findnext" data-linktype="relative-path">FindNext</a></li>
+<li><a href="excel.range.findprevious" data-linktype="relative-path">FindPrevious</a></li>
+<li><a href="excel.range.flashfill" data-linktype="relative-path">FlashFill</a></li>
+<li><a href="excel.range.functionwizard" data-linktype="relative-path">FunctionWizard</a></li>
+<li><a href="excel.range.group" data-linktype="relative-path">Group</a></li>
+<li><a href="excel.range.insert" data-linktype="relative-path">Insert</a></li>
+<li><a href="excel.range.insertindent" data-linktype="relative-path">InsertIndent</a></li>
+<li><a href="excel.range.justify" data-linktype="relative-path">Justify</a></li>
+<li><a href="excel.range.listnames" data-linktype="relative-path">ListNames</a></li>
+<li><a href="excel.range.merge" data-linktype="relative-path">Merge</a></li>
+<li><a href="excel.range.navigatearrow" data-linktype="relative-path">NavigateArrow</a></li>
+<li><a href="excel.range.notetext" data-linktype="relative-path">NoteText</a></li>
+<li><a href="excel.range.parse" data-linktype="relative-path">Parse</a></li>
+<li><a href="excel.range.pastespecial" data-linktype="relative-path">PasteSpecial</a></li>
+<li><a href="excel.range.printout" data-linktype="relative-path">PrintOut</a></li>
+<li><a href="excel.range.printpreview" data-linktype="relative-path">PrintPreview</a></li>
+<li><a href="excel.range.removeduplicates" data-linktype="relative-path">RemoveDuplicates</a></li>
+<li><a href="excel.range.removesubtotal" data-linktype="relative-path">RemoveSubtotal</a></li>
+<li><a href="excel.range.replace" data-linktype="relative-path">Replace</a></li>
+<li><a href="excel.range.rowdifferences" data-linktype="relative-path">RowDifferences</a></li>
+<li><a href="excel.range.run" data-linktype="relative-path">Run</a></li>
+<li><a href="excel.range.select" data-linktype="relative-path">Select</a></li>
+<li><a href="excel.range.setcelldatatypefromcell" data-linktype="relative-path">SetCellDataTypeFromCell</a></li>
+<li><a href="excel.range.setphonetic" data-linktype="relative-path">SetPhonetic</a></li>
+<li><a href="excel.range.show" data-linktype="relative-path">Show</a></li>
+<li><a href="excel.range.showcard" data-linktype="relative-path">ShowCard</a></li>
+<li><a href="excel.range.showdependents" data-linktype="relative-path">ShowDependents</a></li>
+<li><a href="excel.range.showerrors" data-linktype="relative-path">ShowErrors</a></li>
+<li><a href="excel.range.showprecedents" data-linktype="relative-path">ShowPrecedents</a></li>
+<li><a href="excel.range.sort" data-linktype="relative-path">Sort</a></li>
+<li><a href="excel.range.sortspecial" data-linktype="relative-path">SortSpecial</a></li>
+<li><a href="excel.range.speak" data-linktype="relative-path">Speak</a></li>
+<li><a href="excel.range.specialcells" data-linktype="relative-path">SpecialCells</a></li>
+<li><a href="excel.range.subscribeto" data-linktype="relative-path">SubscribeTo</a></li>
+<li><a href="excel.range.subtotal" data-linktype="relative-path">Subtotal</a></li>
+<li><a href="excel.range.table" data-linktype="relative-path">Table</a></li>
+<li><a href="excel.range.texttocolumns" data-linktype="relative-path">TextToColumns</a></li>
+<li><a href="excel.range.ungroup" data-linktype="relative-path">Ungroup</a></li>
+<li><a href="excel.range.unmerge" data-linktype="relative-path">UnMerge</a></li>
+</ul>
+<h2 id="properties">Properties</h2>
+<ul>
+<li><a href="excel.range.addindent" data-linktype="relative-path">AddIndent</a></li>
+<li><a href="excel.range.address" data-linktype="relative-path">Address</a></li>
+<li><a href="excel.range.addresslocal" data-linktype="relative-path">AddressLocal</a></li>
+<li><a href="excel.range.allowedit" data-linktype="relative-path">AllowEdit</a></li>
+<li><a href="excel.range.application" data-linktype="relative-path">Application</a></li>
+<li><a href="excel.range.areas" data-linktype="relative-path">Areas</a></li>
+<li><a href="excel.range.borders" data-linktype="relative-path">Borders</a></li>
+<li><a href="excel.range.cells" data-linktype="relative-path">Cells</a></li>
+<li><a href="excel.range.characters" data-linktype="relative-path">Characters</a></li>
+<li><a href="excel.range.column" data-linktype="relative-path">Column</a></li>
+<li><a href="excel.range.columns" data-linktype="relative-path">Columns</a></li>
+<li><a href="excel.range.columnwidth" data-linktype="relative-path">ColumnWidth</a></li>
+<li><a href="excel.range.comment" data-linktype="relative-path">Comment</a></li>
+<li><a href="excel.range.commentthreaded" data-linktype="relative-path">CommentThreaded</a></li>
+<li><a href="excel.range.count" data-linktype="relative-path">Count</a></li>
+<li><a href="excel.range.countlarge" data-linktype="relative-path">CountLarge</a></li>
+<li><a href="excel.range.creator" data-linktype="relative-path">Creator</a></li>
+<li><a href="excel.range.currentarray" data-linktype="relative-path">CurrentArray</a></li>
+<li><a href="excel.range.currentregion" data-linktype="relative-path">CurrentRegion</a></li>
+<li><a href="excel.range.dependents" data-linktype="relative-path">Dependents</a></li>
+<li><a href="excel.range.directdependents" data-linktype="relative-path">DirectDependents</a></li>
+<li><a href="excel.range.directprecedents" data-linktype="relative-path">DirectPrecedents</a></li>
+<li><a href="excel.range.displayformat" data-linktype="relative-path">DisplayFormat</a></li>
+<li><a href="excel.range.end" data-linktype="relative-path">End</a></li>
+<li><a href="excel.range.entirecolumn" data-linktype="relative-path">EntireColumn</a></li>
+<li><a href="excel.range.entirerow" data-linktype="relative-path">EntireRow</a></li>
+<li><a href="excel.range.errors" data-linktype="relative-path">Errors</a></li>
+<li><a href="excel.range.font" data-linktype="relative-path">Font</a></li>
+<li><a href="excel.range.formatconditions" data-linktype="relative-path">FormatConditions</a></li>
+<li><a href="excel.range.formula" data-linktype="relative-path">Formula</a></li>
+<li><a href="excel.range.formulaarray" data-linktype="relative-path">FormulaArray</a></li>
+<li><a href="excel.range.formulahidden" data-linktype="relative-path">FormulaHidden</a></li>
+<li><a href="excel.range.formulalocal" data-linktype="relative-path">FormulaLocal</a></li>
+<li><a href="excel.range.formular1c1" data-linktype="relative-path">FormulaR1C1</a></li>
+<li><a href="excel.range.formular1c1local" data-linktype="relative-path">FormulaR1C1Local</a></li>
+<li><a href="excel.range.hasarray" data-linktype="relative-path">HasArray</a></li>
+<li><a href="excel.range.hasformula" data-linktype="relative-path">HasFormula</a></li>
+<li><a href="excel.range.hasrichdatatype" data-linktype="relative-path">HasRichDataType</a></li>
+<li><a href="excel.range.height" data-linktype="relative-path">Height</a></li>
+<li><a href="excel.range.hidden" data-linktype="relative-path">Hidden</a></li>
+<li><a href="excel.range.horizontalalignment" data-linktype="relative-path">HorizontalAlignment</a></li>
+<li><a href="excel.range.hyperlinks" data-linktype="relative-path">Hyperlinks</a></li>
+<li><a href="excel.range.id" data-linktype="relative-path">ID</a></li>
+<li><a href="excel.range.indentlevel" data-linktype="relative-path">IndentLevel</a></li>
+<li><a href="excel.range.interior" data-linktype="relative-path">Interior</a></li>
+<li><a href="excel.range.item" data-linktype="relative-path">Item</a></li>
+<li><a href="excel.range.left" data-linktype="relative-path">Left</a></li>
+<li><a href="excel.range.linkeddatatypestate" data-linktype="relative-path">LinkedDataTypeState</a></li>
+<li><a href="excel.range.listheaderrows" data-linktype="relative-path">ListHeaderRows</a></li>
+<li><a href="excel.range.listobject" data-linktype="relative-path">ListObject</a></li>
+<li><a href="excel.range.locationintable" data-linktype="relative-path">LocationInTable</a></li>
+<li><a href="excel.range.locked" data-linktype="relative-path">Locked</a></li>
+<li><a href="excel.range.mdx" data-linktype="relative-path">MDX</a></li>
+<li><a href="excel.range.mergearea" data-linktype="relative-path">MergeArea</a></li>
+<li><a href="excel.range.mergecells" data-linktype="relative-path">MergeCells</a></li>
+<li><a href="excel.range.name" data-linktype="relative-path">Name</a></li>
+<li><a href="excel.range.next" data-linktype="relative-path">Next</a></li>
+<li><a href="excel.range.numberformat" data-linktype="relative-path">NumberFormat</a></li>
+<li><a href="excel.range.numberformatlocal" data-linktype="relative-path">NumberFormatLocal</a></li>
+<li><a href="excel.range.offset" data-linktype="relative-path">Offset</a></li>
+<li><a href="excel.range.orientation" data-linktype="relative-path">Orientation</a></li>
+<li><a href="excel.range.outlinelevel" data-linktype="relative-path">OutlineLevel</a></li>
+<li><a href="excel.range.pagebreak" data-linktype="relative-path">PageBreak</a></li>
+<li><a href="excel.range.parent" data-linktype="relative-path">Parent</a></li>
+<li><a href="excel.range.phonetic" data-linktype="relative-path">Phonetic</a></li>
+<li><a href="excel.range.phonetics" data-linktype="relative-path">Phonetics</a></li>
+<li><a href="excel.range.pivotcell" data-linktype="relative-path">PivotCell</a></li>
+<li><a href="excel.range.pivotfield" data-linktype="relative-path">PivotField</a></li>
+<li><a href="excel.range.pivotitem" data-linktype="relative-path">PivotItem</a></li>
+<li><a href="excel.range.pivottable" data-linktype="relative-path">PivotTable</a></li>
+<li><a href="excel.range.precedents" data-linktype="relative-path">Precedents</a></li>
+<li><a href="excel.range.prefixcharacter" data-linktype="relative-path">PrefixCharacter</a></li>
+<li><a href="excel.range.previous" data-linktype="relative-path">Previous</a></li>
+<li><a href="excel.range.querytable" data-linktype="relative-path">QueryTable</a></li>
+<li><a href="excel.range.range" data-linktype="relative-path">Range</a></li>
+<li><a href="excel.range.readingorder" data-linktype="relative-path">ReadingOrder</a></li>
+<li><a href="excel.range.resize" data-linktype="relative-path">Resize</a></li>
+<li><a href="excel.range.row" data-linktype="relative-path">Row</a></li>
+<li><a href="excel.range.rowheight" data-linktype="relative-path">RowHeight</a></li>
+<li><a href="excel.range.rows" data-linktype="relative-path">Rows</a></li>
+<li><a href="excel.range.serveractions" data-linktype="relative-path">ServerActions</a></li>
+<li><a href="excel.range.showdetail" data-linktype="relative-path">ShowDetail</a></li>
+<li><a href="excel.range.shrinktofit" data-linktype="relative-path">ShrinkToFit</a></li>
+<li><a href="excel.range.soundnote" data-linktype="relative-path">SoundNote</a></li>
+<li><a href="excel.range.sparklinegroups" data-linktype="relative-path">SparklineGroups</a></li>
+<li><a href="excel.range.style" data-linktype="relative-path">Style</a></li>
+<li><a href="excel.range.summary" data-linktype="relative-path">Summary</a></li>
+<li><a href="excel.range.text" data-linktype="relative-path">Text</a></li>
+<li><a href="excel.range.top" data-linktype="relative-path">Top</a></li>
+<li><a href="excel.range.usestandardheight" data-linktype="relative-path">UseStandardHeight</a></li>
+<li><a href="excel.range.usestandardwidth" data-linktype="relative-path">UseStandardWidth</a></li>
+<li><a href="excel.range.validation" data-linktype="relative-path">Validation</a></li>
+<li><a href="excel.range.value" data-linktype="relative-path">Value</a></li>
+<li><a href="excel.range.value2" data-linktype="relative-path">Value2</a></li>
+<li><a href="excel.range.verticalalignment" data-linktype="relative-path">VerticalAlignment</a></li>
+<li><a href="excel.range.width" data-linktype="relative-path">Width</a></li>
+<li><a href="excel.range.worksheet" data-linktype="relative-path">Worksheet</a></li>
+<li><a href="excel.range.wraptext" data-linktype="relative-path">WrapText</a></li>
+<li><a href="excel.range.xpath" data-linktype="relative-path">XPath</a></li>
+</ul>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="overview/excel/object-model" data-linktype="relative-path">Excel Object Model Reference</a></li>
+</ul>
+<h3 id="support-and-feedback">Support and feedback</h3>
+<p>Have questions or feedback about Office VBA or this documentation? Please see <a href="../articles/feedback-support" data-linktype="relative-path">Office VBA support and feedback</a> for guidance about the ways you can receive support and provide feedback.</p>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations" class="display-none-print"></section>
+						<!-- end recommendations section -->
+
+						<!-- feedback section -->
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<div
+								id="ms--additional-resources-mobile"
+								role="complementary"
+								aria-label="Additional resources"
+								class="display-none-desktop display-none-print"
+							>
+								<hr class="hr" hidden />
+								<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden>Additional resources</h2>
+									<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" hidden></section>
+								<section id="right-rail-training-mobile" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-events-mobile" data-bi-name="events-card" hidden></section>
+								<section id="right-rail-qna-mobile" data-bi-name="qna-link-card" hidden></section>
+							</div>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-sm button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu-interactive" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>&copy; Microsoft 2023</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div
+							id="ms--additional-resources"
+							class="right-container column is-4-desktop display-none display-block-desktop"
+							data-bi-name="pageactions"
+							role="complementary"
+							aria-label="Additional resources"
+						>
+							<div id="affixed-right-container" class="margin-top-sm-tablet" data-bi-name="right-column">
+								<h2 id="ms--additional-resources-heading" class="title is-6 margin-top-md" hidden>Additional resources</h2>
+								<section id="right-rail-events" data-bi-name="events-card" hidden></section>
+								<section id="right-rail-training" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" hidden></section>
+								<nav id="side-doc-outline" class="doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="In this article">
+									<h3>In this article</h3>
+								</nav>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-sm button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>&copy; Microsoft 2023</li>
+	</ul>
+</footer>
+	</section>
+
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+</body>
+</html>

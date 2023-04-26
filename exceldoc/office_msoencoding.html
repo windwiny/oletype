@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light" lang="en-us" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="false" data-target="docs" x-ms-format-detection="none">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="MsoEncoding enumeration (Office)" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://learn.microsoft.com/en-us/office/vba/api/office.msoencoding" />
+			<meta property="og:description" content="Office VBA reference topic" />
+
+	<meta property="og:image" content="https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png" />
+
+	<meta property="og:image:alt" content="Microsoft Logo" />
+
+	<meta name="twitter:card" content="summary" />
+
+	<meta name="twitter:site" content="@MicrosoftLearn" />
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="APIName" content="Office.MsoEncoding" />
+<meta name="author" content="o365devx" />
+<meta name="breadcrumb_path" content="/office/vba/breadcrumb/toc.json" />
+<meta name="depot_name" content="MSDN.VBA-Docs" />
+<meta name="description" content="Office VBA reference topic" />
+<meta name="document_id" content="fe9b5914-35ab-9029-04d0-51a0c51e8330" />
+<meta name="document_version_independent_id" content="11619aef-a623-7c24-fc5d-e7bd335fa335" />
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/VBA-Docs/blob/27b17db1c05919d40ed92d00d8a5e7be08f67f9e/api/Office.MsoEncoding.md" />
+<meta name="locale" content="en-us" />
+<meta name="ms.assetid" content="286bed6e-6028-a252-5e4f-b505234d9d34" />
+<meta name="ms.author" content="o365devx" />
+<meta name="ms.date" content="01/31/2019" />
+<meta name="ms.localizationpriority" content="medium" />
+<meta name="ms.prod" content="office" />
+<meta name="ms.suite" content="office" />
+<meta name="ms.technology" content="vba" />
+<meta name="ms.topic" content="reference" />
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/VBA-Docs/blob/live/api/Office.MsoEncoding.md" />
+<meta name="page_type" content="conceptual" />
+<meta name="schema" content="Conceptual" />
+<meta name="site_name" content="Docs" />
+<meta name="toc_rel" content="toc.json" />
+<meta name="uhfHeaderId" content="MSDocsHeader-VBA" />
+<meta name="updated_at" content="2022-03-30 04:12 AM" />
+<meta name="word_count" content="970" />
+
+
+	<meta name="persistent_id" content="117372b8-5fb2-362d-1fc2-ad54240f7b75" />
+	
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/0dfa2068-ff91-4845-bb0c-4f30410eb6a1" data-source="generated" />
+
+	
+
+	<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/VBA-Docs/blob/main/api/Office.MsoEncoding.md" />
+<link href="https://learn.microsoft.com/en-us/office/vba/api/office.msoencoding" rel="canonical">
+	<title>MsoEncoding enumeration (Office) | Microsoft Learn</title>
+
+		<link rel="stylesheet" href="/_themes/docs.theme/master/en-us/_themes/styles/c63c73ef.site-ltr.css ">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			standardFeedback: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			feedbackProductUrl: '',
+			extendBreadcrumb: false,
+			isEditDisplayable: true,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: true,
+			hasBookmark: true,
+			hasShare: true,
+			isPermissioned: false,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "o365devx", url: "https://github.com/o365devx" },
+						{ name: "lindalu-MSFT", url: "https://github.com/lindalu-MSFT" },
+						{ name: "AlexJerabek", url: "https://github.com/AlexJerabek" },
+						{ name: "kbrandl", url: "https://github.com/kbrandl" },
+						{ name: "OfficeGSX", url: "https://github.com/OfficeGSX" }
+],
+		},
+		functions:{}
+	};
+	</script>
+	<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+	<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-3.min.js"></script>
+
+	<script src="/_themes/docs.theme/master/en-us/_themes/global/67a45209.deprecation.js"></script>
+		<link rel="preconnect" href="//mscom.demdex.net" crossorigin>
+		<link rel="dns-prefetch" href="//target.microsoft.com">
+		<link rel="dns-prefetch" href="//microsoftmscompoc.tt.omtrdc.net">
+		<script src="/_themes/docs.theme/master/en-us/_themes/global/37ce9fe8.at-config.js"></script>
+		<script src="/static/third-party/adobe-target/at-js/2.9.0/at.js" integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu" crossorigin="anonymous"></script>
+		<script src="/_themes/docs.theme/master/en-us/_themes/scripts/d86e3e7a.index-docs.js"></script>
+</head>
+
+<body lang="en-us" dir="ltr">
+	<div class="header-holder has-default-focus">
+		<a href="#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">Skip to main content</a>
+
+		<div hidden id="cookie-consent-holder"></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;"
+			hidden
+		>
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">This browser is no longer supported.</p>
+				<p style="font-size: 16px; margin-top: 16px;">Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.</p>
+				<div style="margin-top: 12px;">
+					<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+						style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+Download Microsoft Edge					</a>
+					<a href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+						style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+More info about Internet Explorer and Microsoft Edge					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+	<div class="nav-bar">
+		<div class="nav-bar-brand">
+			<a itemprop="url" href="https://www.microsoft.com" aria-label="Microsoft" class="nav-bar-button">
+				<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+				<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			</a>
+		</div>
+	</div>
+	<div class="nav-bar border-top is-hidden-mobile"></div>
+</header>		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button>
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+Table of contents						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>Exit focus mode</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" role="navigation" aria-label="Primary"></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" class="" role="main" data-bi-name="content" lang="en-us" dir="ltr">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs">
+										<summary class="button button-clear button-primary button-sm inner-focus" aria-label="All breadcrumbs">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none">
+
+										</div>
+									</details>
+									<bread-crumbs id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs" id="page-breadcrumbs"></bread-crumbs>
+
+									<div id="article-header-page-actions"  class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a
+											id="lang-link-tablet"
+											class="button button-primary button-clear button-sm display-none display-inline-flex-tablet"
+											title="Read in English" data-bi-name="language-toggle"
+											data-read-in-link
+											hidden>
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon>
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text>Read in English</span>
+										</a>
+
+											<button
+												type="button"
+												class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet"
+												data-list-type="collection"
+												data-bi-name="collection"
+												title="Add to collection">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">Save</span>
+											</button>
+										
+
+											<a	data-contenteditbtn
+												class="button button-clear button-sm text-decoration-none button-primary display-none display-inline-flex-tablet"
+												aria-label="Edit"
+												title="Edit This Document"
+												data-bi-name="edit"
+
+														href="https://github.com/MicrosoftDocs/VBA-Docs/blob/main/api/Office.MsoEncoding.md"
+														data-original_content_git_url="https://github.com/MicrosoftDocs/VBA-Docs/blob/live/api/Office.MsoEncoding.md"
+														data-original_content_git_url_template="{repo}/blob/{branch}/api/Office.MsoEncoding.md"
+														data-pr_repo=""
+														data-pr_branch=""
+											>
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-edit-outline"></span>
+												</span>
+											</a>
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="More actions">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button
+														data-page-action-item="overflow-mobile"
+														type="button"
+														class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet"
+														data-bi-name="contents-expand"
+														data-contents-button
+														data-popover-close>
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+															<span class="contents-expand-title">Table of contents</span>
+													</button>
+
+												<a
+													id="lang-link-overflow"
+													class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet"
+													title="Read in English" data-bi-name="language-toggle"
+													data-page-action-item="overflow-mobile"
+													data-check-hidden="true"
+													data-read-in-link
+													hidden
+													>
+													<span class="icon" aria-hidden="true" data-read-in-link-icon>
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text>Read in English</span>
+												</a>
+
+													<button
+														type="button"
+														class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet"
+														data-list-type="collection"
+														data-bi-name="collection"
+														title="Add to collection"
+														data-page-action-item="overflow-mobile"
+														data-check-hidden="true"
+														data-popover-close>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">Save</span>
+													</button>
+
+													<a	data-contenteditbtn
+														class="button button-clear button-block button-sm has-inner-focus justify-content-flex-start text-decoration-none display-none-tablet"
+														aria-label="Edit"
+														title="Edit This Document"
+														data-bi-name="edit"
+
+																href="https://github.com/MicrosoftDocs/VBA-Docs/blob/main/api/Office.MsoEncoding.md"
+																data-original_content_git_url="https://github.com/MicrosoftDocs/VBA-Docs/blob/live/api/Office.MsoEncoding.md"
+																data-original_content_git_url_template="{repo}/blob/{branch}/api/Office.MsoEncoding.md"
+																data-pr_repo=""
+																data-pr_branch=""
+													>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-edit-outline"></span>
+														</span>
+														<span>Edit</span>
+													</a>
+
+													<button
+														class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus"
+														title="Print"
+														type="button"
+														aria-label="Print"
+														data-bi-name="print"
+														data-page-action-item="overflow-all"
+														data-popover-close
+														data-print-page
+														data-check-hidden="true">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print"></span>
+														</span>
+														<span>Print</span>
+													</button>
+
+													<div aria-hidden="true" class="margin-none
+														border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>Email</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div>
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" data-bi-name="contents-expand" data-contents-button hidden>
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+										<span class="contents-expand-title">Table of contents</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="msoencoding-enumeration-office">MsoEncoding enumeration (Office)</h1>
+
+
+									<div class="display-flex justify-content-space-between align-items-center flex-wrap-wrap page-metadata-container">
+										<div class="margin-right-xxs">
+											<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+													<li>
+Article													</li>
+
+													<li class="visibility-hidden-visual-diff">
+														<time class="is-invisible" data-article-date aria-label="Article review date" datetime="2022-03-30T00:00:00Z" data-article-date-source="calculated">03/30/2022</time>
+													</li>
+														<li class="contributors-holder display-none-print">
+															<button aria-label="View all contributors" class="contributors-button link-button" data-bi-name="contributors" title="View all contributors">
+																	5 contributors
+															</button>
+														</li>
+											</ul>
+										</div>
+
+<div id="user-feedback" class="margin-block-xxs display-none-print" data-hide-on-archived>
+	<button
+		id="user-feedback-button"
+		data-test-id="conceptual-feedback-button"
+		class="button button-sm button-clear button-primary"
+		type="button"
+		data-bi-name="user-feedback-button"
+		data-user-feedback-button
+	>
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-like"></span>
+		</span>
+		<span>Feedback</span>
+	</button>
+</div>
+									</div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm" data-bi-name="intopic toc" role="navigation" aria-label="In this article">
+											<h2 id="ms--in-this-article" class="title is-6 margin-block-xs">In this article</h2>
+										</nav>
+
+								<!-- <content> -->
+									<p>Specifies the document encoding (code page or character set) for the web browser to use when a user views a saved document.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingArabic</strong></td>
+<td style="text-align: left;">1256</td>
+<td style="text-align: left;">Arabic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingArabicASMO</strong></td>
+<td style="text-align: left;">708</td>
+<td style="text-align: left;">Arabic ASMO</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingArabicAutoDetect</strong></td>
+<td style="text-align: left;">51256</td>
+<td style="text-align: left;">Web browser auto-detects type of Arabic encoding to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingArabicTransparentASMO</strong></td>
+<td style="text-align: left;">720</td>
+<td style="text-align: left;">Transparent Arabic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingAutoDetect</strong></td>
+<td style="text-align: left;">50001</td>
+<td style="text-align: left;">Web browser auto-detects type of encoding to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingBaltic</strong></td>
+<td style="text-align: left;">1257</td>
+<td style="text-align: left;">Baltic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingCentralEuropean</strong></td>
+<td style="text-align: left;">1250</td>
+<td style="text-align: left;">Central European</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingCyrillic</strong></td>
+<td style="text-align: left;">1251</td>
+<td style="text-align: left;">Cyrillic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingCyrillicAutoDetect</strong></td>
+<td style="text-align: left;">51251</td>
+<td style="text-align: left;">Web browser auto-detects type of Cyrillic encoding to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICArabic</strong></td>
+<td style="text-align: left;">20420</td>
+<td style="text-align: left;">Extended Binary Coded Decimal Interchange Code (EBCDIC) Arabic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICDenmarkNorway</strong></td>
+<td style="text-align: left;">20277</td>
+<td style="text-align: left;">EBCDIC as used in Denmark and Norway</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICFinlandSweden</strong></td>
+<td style="text-align: left;">20278</td>
+<td style="text-align: left;">EBCDIC as used in Finland and Sweden</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICFrance</strong></td>
+<td style="text-align: left;">20297</td>
+<td style="text-align: left;">EBCDIC as used in France</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICGermany</strong></td>
+<td style="text-align: left;">20273</td>
+<td style="text-align: left;">EBCDIC as used in Germany</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICGreek</strong></td>
+<td style="text-align: left;">20423</td>
+<td style="text-align: left;">EBCDIC as used in the Greek language</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICGreekModern</strong></td>
+<td style="text-align: left;">875</td>
+<td style="text-align: left;">EBCDIC as used in the Modern Greek language</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICHebrew</strong></td>
+<td style="text-align: left;">20424</td>
+<td style="text-align: left;">EBCDIC as used in the Hebrew language</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICIcelandic</strong></td>
+<td style="text-align: left;">20871</td>
+<td style="text-align: left;">EBCDIC as used in Iceland</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICInternational</strong></td>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">International EBCDIC</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICItaly</strong></td>
+<td style="text-align: left;">20280</td>
+<td style="text-align: left;">EBCDIC as used in Italy</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICJapaneseKatakanaExtended</strong></td>
+<td style="text-align: left;">20290</td>
+<td style="text-align: left;">EBCDIC as used with Japanese Katakana (extended)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICJapaneseKatakanaExtendedAndJapanese</strong></td>
+<td style="text-align: left;">50930</td>
+<td style="text-align: left;">EBCDIC as used with Japanese Katakana (extended) and Japanese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICJapaneseLatinExtendedAndJapanese</strong></td>
+<td style="text-align: left;">50939</td>
+<td style="text-align: left;">EBCDIC as used with Japanese Latin (extended) and Japanese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICKoreanExtended</strong></td>
+<td style="text-align: left;">20833</td>
+<td style="text-align: left;">EBCDIC as used with Korean (extended)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICKoreanExtendedAndKorean</strong></td>
+<td style="text-align: left;">50933</td>
+<td style="text-align: left;">EBCDIC as used with Korean (extended) and Korean</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICLatinAmericaSpain</strong></td>
+<td style="text-align: left;">20284</td>
+<td style="text-align: left;">EBCDIC as used in Latin America and Spain</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICMultilingualROECELatin2</strong></td>
+<td style="text-align: left;">870</td>
+<td style="text-align: left;">EBCDIC Multilingual ROECE (Latin 2)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICRussian</strong></td>
+<td style="text-align: left;">20880</td>
+<td style="text-align: left;">EBCDIC as used with Russian</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICSerbianBulgarian</strong></td>
+<td style="text-align: left;">21025</td>
+<td style="text-align: left;">EBCDIC as used with Serbian and Bulgarian</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICSimplifiedChineseExtendedAndSimplifiedChinese</strong></td>
+<td style="text-align: left;">50935</td>
+<td style="text-align: left;">EBCDIC as used with Simplified Chinese (extended) and Simplified Chinese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICThai</strong></td>
+<td style="text-align: left;">20838</td>
+<td style="text-align: left;">EBCDIC as used with Thai</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICTurkish</strong></td>
+<td style="text-align: left;">20905</td>
+<td style="text-align: left;">EBCDIC as used with Turkish</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICTurkishLatin5</strong></td>
+<td style="text-align: left;">1026</td>
+<td style="text-align: left;">EBCDIC as used with Turkish (Latin 5)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICUnitedKingdom</strong></td>
+<td style="text-align: left;">20285</td>
+<td style="text-align: left;">EBCDIC as used in the United Kingdom</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICUSCanada</strong></td>
+<td style="text-align: left;">37</td>
+<td style="text-align: left;">EBCDIC as used in the United States and Canada</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICUSCanadaAndJapanese</strong></td>
+<td style="text-align: left;">50931</td>
+<td style="text-align: left;">EBCDIC as used in the United States and Canada, and with Japanese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEBCDICUSCanadaAndTraditionalChinese</strong></td>
+<td style="text-align: left;">50937</td>
+<td style="text-align: left;">EBCDIC as used in the United States and Canada, and with Traditional Chinese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEUCChineseSimplifiedChinese</strong></td>
+<td style="text-align: left;">51936</td>
+<td style="text-align: left;">Extended Unix Code (EUC) as used with Chinese and Simplified Chinese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEUCJapanese</strong></td>
+<td style="text-align: left;">51932</td>
+<td style="text-align: left;">EUC as used with Japanese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEUCKorean</strong></td>
+<td style="text-align: left;">51949</td>
+<td style="text-align: left;">EUC as used with Korean</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEUCTaiwaneseTraditionalChinese</strong></td>
+<td style="text-align: left;">51950</td>
+<td style="text-align: left;">EUC as used with Taiwanese and Traditional Chinese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingEuropa3</strong></td>
+<td style="text-align: left;">29001</td>
+<td style="text-align: left;">Europa</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingExtAlphaLowercase</strong></td>
+<td style="text-align: left;">21027</td>
+<td style="text-align: left;">Extended Alpha lowercase</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingGreek</strong></td>
+<td style="text-align: left;">1253</td>
+<td style="text-align: left;">Greek</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingGreekAutoDetect</strong></td>
+<td style="text-align: left;">51253</td>
+<td style="text-align: left;">Web browser auto-detects type of Greek encoding to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingHebrew</strong></td>
+<td style="text-align: left;">1255</td>
+<td style="text-align: left;">Hebrew</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingHZGBSimplifiedChinese</strong></td>
+<td style="text-align: left;">52936</td>
+<td style="text-align: left;">Simplified Chinese (HZGB)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingIA5German</strong></td>
+<td style="text-align: left;">20106</td>
+<td style="text-align: left;">German (International Alphabet No. 5, or IA5)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingIA5IRV</strong></td>
+<td style="text-align: left;">20105</td>
+<td style="text-align: left;">IA5, International Reference Version (IRV)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingIA5Norwegian</strong></td>
+<td style="text-align: left;">20108</td>
+<td style="text-align: left;">IA5 as used with Norwegian</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingIA5Swedish</strong></td>
+<td style="text-align: left;">20107</td>
+<td style="text-align: left;">IA5 as used with Swedish</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISCIIAssamese</strong></td>
+<td style="text-align: left;">57006</td>
+<td style="text-align: left;">Indian Script Code for Information Interchange (ISCII) as used with Assamese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISCIIBengali</strong></td>
+<td style="text-align: left;">57003</td>
+<td style="text-align: left;">ISCII as used with Bengali</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISCIIDevanagari</strong></td>
+<td style="text-align: left;">57002</td>
+<td style="text-align: left;">ISCII as used with Devanagari</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISCIIGujarati</strong></td>
+<td style="text-align: left;">57010</td>
+<td style="text-align: left;">ISCII as used with Gujarati</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISCIIKannada</strong></td>
+<td style="text-align: left;">57008</td>
+<td style="text-align: left;">ISCII as used with Kannada</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISCIIMalayalam</strong></td>
+<td style="text-align: left;">57009</td>
+<td style="text-align: left;">ISCII as used with Malayalam</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISCIIOriya</strong></td>
+<td style="text-align: left;">57007</td>
+<td style="text-align: left;">ISCII as used with Oriya</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISCIIPunjabi</strong></td>
+<td style="text-align: left;">57011</td>
+<td style="text-align: left;">ISCII as used with Punjabi</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISCIITamil</strong></td>
+<td style="text-align: left;">57004</td>
+<td style="text-align: left;">ISCII as used with Tamil</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISCIITelugu</strong></td>
+<td style="text-align: left;">57005</td>
+<td style="text-align: left;">ISCII as used with Telugu</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO2022CNSimplifiedChinese</strong></td>
+<td style="text-align: left;">50229</td>
+<td style="text-align: left;">ISO 2022-CN encoding as used with Simplified Chinese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO2022CNTraditionalChinese</strong></td>
+<td style="text-align: left;">50227</td>
+<td style="text-align: left;">ISO 2022-CN encoding as used with Traditional Chinese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO2022JPJISX02011989</strong></td>
+<td style="text-align: left;">50222</td>
+<td style="text-align: left;">ISO 2022-JP</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO2022JPJISX02021984</strong></td>
+<td style="text-align: left;">50221</td>
+<td style="text-align: left;">ISO 2022-JP</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO2022JPNoHalfwidthKatakana</strong></td>
+<td style="text-align: left;">50220</td>
+<td style="text-align: left;">ISO 2022-JP with no half-width Katakana</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO2022KR</strong></td>
+<td style="text-align: left;">50225</td>
+<td style="text-align: left;">ISO 2022-KR</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO6937NonSpacingAccent</strong></td>
+<td style="text-align: left;">20269</td>
+<td style="text-align: left;">ISO 6937 Non-Spacing Accent</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO885915Latin9</strong></td>
+<td style="text-align: left;">28605</td>
+<td style="text-align: left;">ISO 8859-15 with Latin 9</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO88591Latin1</strong></td>
+<td style="text-align: left;">28591</td>
+<td style="text-align: left;">ISO 8859-1 Latin 1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO88592CentralEurope</strong></td>
+<td style="text-align: left;">28592</td>
+<td style="text-align: left;">ISO 8859-2 Central Europe</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO88593Latin3</strong></td>
+<td style="text-align: left;">28593</td>
+<td style="text-align: left;">ISO 8859-3 Latin 3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO88594Baltic</strong></td>
+<td style="text-align: left;">28594</td>
+<td style="text-align: left;">ISO 8859-4 Baltic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO88595Cyrillic</strong></td>
+<td style="text-align: left;">28595</td>
+<td style="text-align: left;">ISO 8859-5 Cyrillic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO88596Arabic</strong></td>
+<td style="text-align: left;">28596</td>
+<td style="text-align: left;">ISA 8859-6 Arabic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO88597Greek</strong></td>
+<td style="text-align: left;">28597</td>
+<td style="text-align: left;">ISO 8859-7 Greek</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO88598Hebrew</strong></td>
+<td style="text-align: left;">28598</td>
+<td style="text-align: left;">ISO 8859-8 Hebrew</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO88598HebrewLogical</strong></td>
+<td style="text-align: left;">38598</td>
+<td style="text-align: left;">ISO 8859-8 Hebrew (Logical)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingISO88599Turkish</strong></td>
+<td style="text-align: left;">28599</td>
+<td style="text-align: left;">ISO 8859-9 Turkish</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingJapaneseAutoDetect</strong></td>
+<td style="text-align: left;">50932</td>
+<td style="text-align: left;">Web browser auto-detects type of Japanese encoding to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingJapaneseShiftJIS</strong></td>
+<td style="text-align: left;">932</td>
+<td style="text-align: left;">Japanese (Shift-JIS)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingKOI8R</strong></td>
+<td style="text-align: left;">20866</td>
+<td style="text-align: left;">KOI8-R</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingKOI8U</strong></td>
+<td style="text-align: left;">21866</td>
+<td style="text-align: left;">K0I8-U</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingKorean</strong></td>
+<td style="text-align: left;">949</td>
+<td style="text-align: left;">Korean</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingKoreanAutoDetect</strong></td>
+<td style="text-align: left;">50949</td>
+<td style="text-align: left;">Web browser auto-detects type of Korean encoding to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingKoreanJohab</strong></td>
+<td style="text-align: left;">1361</td>
+<td style="text-align: left;">Korean (Johab)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacArabic</strong></td>
+<td style="text-align: left;">10004</td>
+<td style="text-align: left;">Macintosh Arabic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacCroatia</strong></td>
+<td style="text-align: left;">10082</td>
+<td style="text-align: left;">Macintosh Croatian</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacCyrillic</strong></td>
+<td style="text-align: left;">10007</td>
+<td style="text-align: left;">Macintosh Cyrillic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacGreek1</strong></td>
+<td style="text-align: left;">10006</td>
+<td style="text-align: left;">Macintosh Greek</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacHebrew</strong></td>
+<td style="text-align: left;">10005</td>
+<td style="text-align: left;">Macintosh Hebrew</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacIcelandic</strong></td>
+<td style="text-align: left;">10079</td>
+<td style="text-align: left;">Macintosh Icelandic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacJapanese</strong></td>
+<td style="text-align: left;">10001</td>
+<td style="text-align: left;">Macintosh Japanese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacKorean</strong></td>
+<td style="text-align: left;">10003</td>
+<td style="text-align: left;">Macintosh Korean</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacLatin2</strong></td>
+<td style="text-align: left;">10029</td>
+<td style="text-align: left;">Macintosh Latin 2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacRoman</strong></td>
+<td style="text-align: left;">10000</td>
+<td style="text-align: left;">Macintosh Roman</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacRomania</strong></td>
+<td style="text-align: left;">10010</td>
+<td style="text-align: left;">Macintosh Romanian</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacSimplifiedChineseGB2312</strong></td>
+<td style="text-align: left;">10008</td>
+<td style="text-align: left;">Macintosh Simplified Chinese (GB 2312)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacTraditionalChineseBig5</strong></td>
+<td style="text-align: left;">10002</td>
+<td style="text-align: left;">Macintosh Traditional Chinese (Big 5)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacTurkish</strong></td>
+<td style="text-align: left;">10081</td>
+<td style="text-align: left;">Macintosh Turkish</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingMacUkraine</strong></td>
+<td style="text-align: left;">10017</td>
+<td style="text-align: left;">Macintosh Ukrainian</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMArabic</strong></td>
+<td style="text-align: left;">864</td>
+<td style="text-align: left;">OEM as used with Arabic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMBaltic</strong></td>
+<td style="text-align: left;">775</td>
+<td style="text-align: left;">OEM as used with Baltic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMCanadianFrench</strong></td>
+<td style="text-align: left;">863</td>
+<td style="text-align: left;">OEM as used with Canadian French</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMCyrillic</strong></td>
+<td style="text-align: left;">855</td>
+<td style="text-align: left;">OEM as used with Cyrillic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMCyrillicII</strong></td>
+<td style="text-align: left;">866</td>
+<td style="text-align: left;">OEM as used with Cyrillic II</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMGreek437G</strong></td>
+<td style="text-align: left;">737</td>
+<td style="text-align: left;">OEM as used with Greek 437G</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMHebrew</strong></td>
+<td style="text-align: left;">862</td>
+<td style="text-align: left;">OEM as used with Hebrew</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMIcelandic</strong></td>
+<td style="text-align: left;">861</td>
+<td style="text-align: left;">OEM as used with Icelandic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMModernGreek</strong></td>
+<td style="text-align: left;">869</td>
+<td style="text-align: left;">OEM as used with Modern Greek</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMMultilingualLatinI</strong></td>
+<td style="text-align: left;">850</td>
+<td style="text-align: left;">OEM as used with multi-lingual Latin I</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMMultilingualLatinII</strong></td>
+<td style="text-align: left;">852</td>
+<td style="text-align: left;">OEM as used with multi-lingual Latin II</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMNordic</strong></td>
+<td style="text-align: left;">865</td>
+<td style="text-align: left;">OEM as used with Nordic languages</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMPortuguese</strong></td>
+<td style="text-align: left;">860</td>
+<td style="text-align: left;">OEM as used with Portuguese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMTurkish</strong></td>
+<td style="text-align: left;">857</td>
+<td style="text-align: left;">OEM as used with Turkish</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingOEMUnitedStates</strong></td>
+<td style="text-align: left;">437</td>
+<td style="text-align: left;">OEM as used in the United States</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingSimplifiedChineseAutoDetect</strong></td>
+<td style="text-align: left;">50936</td>
+<td style="text-align: left;">Web browser auto-detects type of Simplified Chinese encoding to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingSimplifiedChineseGB18030</strong></td>
+<td style="text-align: left;">54936</td>
+<td style="text-align: left;">Simplified Chinese GB 18030</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingSimplifiedChineseGBK</strong></td>
+<td style="text-align: left;">936</td>
+<td style="text-align: left;">Simplified Chinese GBK</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingT61</strong></td>
+<td style="text-align: left;">20261</td>
+<td style="text-align: left;">T61</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingTaiwanCNS</strong></td>
+<td style="text-align: left;">20000</td>
+<td style="text-align: left;">Taiwan CNS</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingTaiwanEten</strong></td>
+<td style="text-align: left;">20002</td>
+<td style="text-align: left;">Taiwan Eten</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingTaiwanIBM5550</strong></td>
+<td style="text-align: left;">20003</td>
+<td style="text-align: left;">Taiwan IBM 5550</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingTaiwanTCA</strong></td>
+<td style="text-align: left;">20001</td>
+<td style="text-align: left;">Taiwan TCA</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingTaiwanTeleText</strong></td>
+<td style="text-align: left;">20004</td>
+<td style="text-align: left;">Taiwan Teletext</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingTaiwanWang</strong></td>
+<td style="text-align: left;">20005</td>
+<td style="text-align: left;">Taiwan Wang</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingThai</strong></td>
+<td style="text-align: left;">874</td>
+<td style="text-align: left;">Thai</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingTraditionalChineseAutoDetect</strong></td>
+<td style="text-align: left;">50950</td>
+<td style="text-align: left;">Web browser auto-detects type of Traditional Chinese encoding to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingTraditionalChineseBig5</strong></td>
+<td style="text-align: left;">950</td>
+<td style="text-align: left;">Traditional Chinese Big 5</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingTurkish</strong></td>
+<td style="text-align: left;">1254</td>
+<td style="text-align: left;">Turkish</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingUnicodeBigEndian</strong></td>
+<td style="text-align: left;">1201</td>
+<td style="text-align: left;">Unicode big endian</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingUnicodeLittleEndian</strong></td>
+<td style="text-align: left;">1200</td>
+<td style="text-align: left;">Unicode little endian</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingUSASCII</strong></td>
+<td style="text-align: left;">20127</td>
+<td style="text-align: left;">United States ASCII</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingUTF7</strong></td>
+<td style="text-align: left;">65000</td>
+<td style="text-align: left;">UTF-7 encoding</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingUTF8</strong></td>
+<td style="text-align: left;">65001</td>
+<td style="text-align: left;">UTF-8 encoding</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingVietnamese</strong></td>
+<td style="text-align: left;">1258</td>
+<td style="text-align: left;">Vietnamese</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>msoEncodingWestern</strong></td>
+<td style="text-align: left;">1252</td>
+<td style="text-align: left;">Western</td>
+</tr>
+</tbody>
+</table>
+<h3 id="support-and-feedback">Support and feedback</h3>
+<p>Have questions or feedback about Office VBA or this documentation? Please see <a href="../articles/feedback-support" data-linktype="relative-path">Office VBA support and feedback</a> for guidance about the ways you can receive support and provide feedback.</p>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations" class="display-none-print"></section>
+						<!-- end recommendations section -->
+
+						<!-- feedback section -->
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<div
+								id="ms--additional-resources-mobile"
+								role="complementary"
+								aria-label="Additional resources"
+								class="display-none-desktop display-none-print"
+							>
+								<hr class="hr" hidden />
+								<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden>Additional resources</h2>
+									<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" hidden></section>
+								<section id="right-rail-training-mobile" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-events-mobile" data-bi-name="events-card" hidden></section>
+								<section id="right-rail-qna-mobile" data-bi-name="qna-link-card" hidden></section>
+							</div>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-sm button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu-interactive" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>&copy; Microsoft 2023</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div
+							id="ms--additional-resources"
+							class="right-container column is-4-desktop display-none display-block-desktop"
+							data-bi-name="pageactions"
+							role="complementary"
+							aria-label="Additional resources"
+						>
+							<div id="affixed-right-container" class="margin-top-sm-tablet" data-bi-name="right-column">
+								<h2 id="ms--additional-resources-heading" class="title is-6 margin-top-md" hidden>Additional resources</h2>
+								<section id="right-rail-events" data-bi-name="events-card" hidden></section>
+								<section id="right-rail-training" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" hidden></section>
+								<nav id="side-doc-outline" class="doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="In this article">
+									<h3>In this article</h3>
+								</nav>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-sm button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>&copy; Microsoft 2023</li>
+	</ul>
+</footer>
+	</section>
+
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+</body>
+</html>
