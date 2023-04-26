@@ -7,10 +7,14 @@ exapp: excel.Application = None
 exapp = win32com.client.Dispatch('excel.application')
 exapp.Visible = True
 
-exapp.Workbooks.Add()
+vv:excel.Workbook = exapp.Workbooks.Add()
+print('vv', vv)
+vv.HasMailer
+
 wb: excel._Workbook = exapp.ActiveWorkbook
 ws = wb.ActiveSheet
 
+print('ws',excel.Workbooks)
 
 print(type(wb))
 

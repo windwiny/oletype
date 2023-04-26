@@ -14,7 +14,6 @@ setup(
     url="https://github.com/windwiny/oletype",
     author="windwiny",
     packages=find_packages(),
-    package_data={'data': ['oletype/*.pyi']},
     include_package_data=True,
     install_requires=[],
     long_description=long_description,
@@ -25,6 +24,9 @@ setup(
     keywords=[
         'win32com',
         'excel.application'
+    ],
+    data_files=[
+        ('a', ['oletype/excel.pyi']),
     ],
 
 )

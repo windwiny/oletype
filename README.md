@@ -26,7 +26,11 @@ python demo.py
 ### install package
 
 ```shell
-pip install .
+
+pip wheel ./
+dir *.whl
+pip install oletype-0.3.0-py3-none-any.whl
+
 ```
 
 # How to use
