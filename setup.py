@@ -8,7 +8,7 @@ except IOError:
 
 setup(
     name="oletype",
-    version="0.3.0",
+    version="0.4.0",
     description="generate win32com excel object classes pyi file",
     license="MIT",
     url="https://github.com/windwiny/oletype",
