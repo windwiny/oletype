@@ -1,23 +1,46 @@
 from io import StringIO
+import json
 import os.path
 from pprint import pprint
 import sys
 import inspect
-import win32com.client
+from win32com.client import CDispatch, Dispatch
 
-obj2methods = {}
-obj2parameters = {}
-obj2unknow = {}
-
-all_see_type = {}
-hasfindtype = {}
-unparsedtype = {}
-
+# TODO
 api_fn = 'excel.api.txt'
-if os.path.exists(api_fn):
+api_comment_fn = 'excel.apicomment.json'
+out_pyfile_fn = 'oletype/excel.py'
+
+mypkgname = 'excel.'
+mypkgname = ''
+autoclsn: str = "<class 'win32com.gen_py.00020813-0000-0000-C000-000000000046x0x1x9."
+autoclsn2: str = "win32com.gen_py.00020813-0000-0000-C000-000000000046x0x1x9."
+
+
+if not os.path.exists(api_fn):
+    print(f'not exists api file {api_fn}')
+    sys.exit(1)
+if not os.path.exists(api_comment_fn):
+    print(f'not exists method comment file {api_comment_fn}')
+    sys.exit(2)
+
+
+class Cfg():
+    def __init__(self) -> None:
+        self.num = 0
+
+
+def load_comments(fn, clsn_member_comment_kvs):
+    with open(fn) as ff:
+        dd = ff.read()
+        clsn_member_comment_kvs = json.loads(dd)
+    print(f'''from {fn} read {len(dd)} bytes, load {len(clsn_member_comment_kvs)} methods comments.''', file=sys.stderr)
+
+
+def load_apis(fn, obj2methods, obj2parameters, obj2unknow):
     state = None
     row = 0
-    with open(api_fn) as ff:
+    with open(fn) as ff:
         while True:
             ll = ff.readline()
             if len(ll) == 0:
@@ -48,15 +71,23 @@ if os.path.exists(api_fn):
                         obj2unknow[cln] = {}
                     obj2unknow[cln][member] = objt
 
-pprint({'obj2methods': obj2methods}, width=200, stream=sys.stderr)
-print(file=sys.stderr)
-pprint({'obj2parameters': obj2parameters}, width=200, stream=sys.stderr)
-print(file=sys.stderr)
-pprint({'obj2unknow': obj2unknow}, width=200, stream=sys.stderr)
-print(file=sys.stderr)
+    pprint({'obj2methods': len(obj2methods)}, width=200, stream=sys.stderr)
+    print(file=sys.stderr)
+    pprint({'obj2parameters': len(obj2parameters)},
+           width=200, stream=sys.stderr)
+    print(file=sys.stderr)
+    pprint({'obj2unknow': len(obj2unknow)}, width=200, stream=sys.stderr)
+    print(file=sys.stderr)
+    print('------------------------------------------', file=sys.stderr)
 
 
-def get_cln_method_return(cln, member):
+def get_cln_method_comment(cln, member, clsn_member_comment_kvs) -> str:
+    k = f'{cln}_{member}'
+    comment = clsn_member_comment_kvs.get(k)
+    return comment
+
+
+def get_cln_method_return(cln: str, member: str, all_see_type, unparsed_type, obj2methods) -> str | None:
     if cln in obj2methods:
         cl = obj2methods[cln]
         if member in cl:
@@ -72,48 +103,35 @@ def get_cln_method_return(cln, member):
                     un = True
                     objtype = objtype.replace(cc, '_')
             if un:
-                unparsedtype[objtype] = 1
+                unparsed_type[objtype] = 1
                 return objtype
             else:
-                if objtype not in ['float','bool','list','int','str']:
+                if objtype not in ['float', 'bool', 'list', 'int', 'str']:
                     all_see_type[objtype] = 1
                 return objtype
 
     return None
 
 
-exapp = win32com.client.Dispatch('excel.application')
-exapp.Visible = True
-
-wb = exapp.Workbooks.Add()
-ws = exapp.ActiveSheet
-ws.Range("A1:B3").Value = [[2, 4], [5, 6], [4, 6]]
-ws.Shapes.AddChart()
-
-# ------------------------------------------------------------------------
-
-all_cls: dict[str, any] = dict()
-already_pr: set[str] = set()
-autoclsn: str = "<class 'win32com.gen_py.00020813-0000-0000-C000-000000000046x0x1x9."
-autoclsn2: str = "win32com.gen_py.00020813-0000-0000-C000-000000000046x0x1x9."
-mypkgname = 'excel.'
-mypkgname = ''
-
-num = 0
-def conv2cls(ex,
+def conv2cls(ex: CDispatch,
              cls_name: str,
              o_attrs: list[tuple],
              o_methods: list[tuple],
              o_unknows: list[tuple],
              e_noattr: list[tuple],
-             e_ee: list[tuple]
-             ):
-    global num
-    num += 1
+             e_ee: list[tuple],
+             cfg: Cfg,
+             all_see_type,
+             unparsed_type,
+             obj2methods,
+             clsn_member_comment_kvs,
+             ) -> str:
+    '''from dict find cls attrs, methods, unknown properties, and errors'''
+    cfg.num += 1
 
     ff = StringIO()
     print(file=ff)
-    print(f'# num={num}', file=ff)
+    print(f'# cfg.num={cfg.num}', file=ff)
     print(f'class {cls_name}:', file=ff)
 
     print('  def __init__(self):', file=ff)
@@ -136,14 +154,18 @@ def conv2cls(ex,
         ret = str(ret)
         ret = ret.replace("<class '", '').replace("'>", '')
         if ret == 'inspect._empty':
-            ret = get_cln_method_return(cls_name, na)
+            ret = get_cln_method_return(
+                cls_name, na, all_see_type, unparsed_type, obj2methods)
         else:
             pass
         if ret is not None:
             rets = ' -> ' + str(ret)
         else:
             rets = ''
-        print( f"  def {na}(self{(', ' + ars) if ars else ''}){rets}:  pass", file=ff)
+        comment = get_cln_method_comment(cls_name, na, clsn_member_comment_kvs)
+        comment = f"\n    '''{comment}'''" if comment else ''
+        print(
+            f"  def {na}(self{(', ' + ars) if ars else ''}){rets}:{comment}\n    pass", file=ff)
     print(file=ff)
 
     print(f'  #unknow:', file=ff)
@@ -167,7 +189,8 @@ def conv2cls(ex,
     return ff.getvalue()
 
 
-def showinfo(cls_name: str, ex):
+def showinfo(cls_name: str, ex: CDispatch, all_cls: dict, already_pr: set, all_see_type, unparsed_type, obj2methods, clsn_member_comment_kvs, cfg) -> str:
+    ''' dir ex, show info'''
     if cls_name in already_pr:
         # print(f'### SKIP pred {cls_name}\n', file=sys.stderr)
         return
@@ -205,31 +228,12 @@ def showinfo(cls_name: str, ex):
             e_ee.append((i, e))
 
     cls_def_str = conv2cls(ex, cls_name, o_attrs,
-                           o_methods, o_unknows, e_noattr, e_ee)
+                           o_methods, o_unknows, e_noattr, e_ee, cfg, all_see_type, unparsed_type, obj2methods, clsn_member_comment_kvs)
     return cls_def_str
 
 
-cls_name = 'Application'
-all_cls[cls_name] = exapp
-
-
-all_cls_def_strs = []
-
-for _ in range(10000):
-    if all_cls.keys() == already_pr:
-        print("## ALL DONE", file=sys.stderr)
-        break
-    for clsn in list(all_cls):
-        exx = all_cls[clsn]
-        cls_def_str = showinfo(clsn, exx)
-        if cls_def_str:
-            hasfindtype[clsn] = 1
-            all_cls_def_strs.append(cls_def_str)
-
-
-def output_all_cls_pyi():
-    global unparsedtype, all_cls_def_strs
-    global hasfindtype, unparsedtype
+def output_all_cls_pyi(all_cls: dict[str, any], unparsed_type: dict, finded_type: dict, all_cls_def_strs: list, all_see_type):
+    ''' all_cls.each -->   output  to pyi file'''
     ff = StringIO()
 
     # head
@@ -241,20 +245,20 @@ def output_all_cls_pyi():
 
     # output all unparsed
     print('# TODO FIXME unparsed', file=ff)
-    for i in sorted(unparsedtype):
+    for i in sorted(unparsed_type):
         print(f'class {i}: pass', file=ff)
     print(file=ff)
 
     # output all nofind define
     print('# TODO FIXME nofind define', file=ff)
     for i in sorted(all_see_type):
-        if i not in hasfindtype:
+        if i not in finded_type:
             print(f'class {i}: pass', file=ff)
     print(file=ff)
 
     # print each class define
     for i in range(len(all_cls_def_strs)):
-        data = all_cls_def_strs[i] # order or reverse
+        data = all_cls_def_strs[i]  # order or reverse
         print(data, file=ff)
 
     print(f'## PRINT  {len(all_cls)}\n', file=sys.stderr)
@@ -276,14 +280,72 @@ def output_all_cls_pyi():
     print('base cls', len(hasbaseclss), sorted(hasbaseclss), file=sys.stderr)
 
 
-def output_all_cls_pyfake():
-    with open('oletype/excel.py', 'w') as ff:
+def output_all_cls_pyfake(fn: str, all_cls: dict[str, CDispatch]):
+    ''' all_cls.each -> "class XX: pass"'''
+    with open(fn, 'w') as ff:
         for cl in all_cls:
             print(f'class {cl}: pass', file=ff)
-    print(f'output py class file: ', file=sys.stderr)
+    print(f'output to py class info file: {fn}', file=sys.stderr)
 
-output_all_cls_pyi()
-output_all_cls_pyfake()
 
-ws.Name = 'test'
-wb.Saved = True
+def inspect_clss(all_cls: dict[str, CDispatch], already_pr: set[str], finded_type: dict, unparsed_type: dict, all_cls_def_strs: list[str], all_see_type,  obj2methods, clsn_member_comment_kvs, cfg: Cfg):
+    '''open excel.application ,
+       add chart, inspect all ole class, showinfo'''
+    exapp = Dispatch('excel.application')
+    exapp.Visible = True
+
+    wb = exapp.Workbooks.Add()
+    ws = exapp.ActiveSheet
+    ws.Range("A1:B3").Value = [[2, 4], [5, 6], [4, 6]]
+    ws.Shapes.AddChart()
+
+    cls_name = 'Application'
+    all_cls[cls_name] = exapp
+
+    for _ in range(10000):
+        if all_cls.keys() == already_pr:
+            print("## ALL DONE", file=sys.stderr)
+            break
+        for clsn in list(all_cls):
+            exx = all_cls[clsn]
+            cls_def_str = showinfo(
+                clsn, exx, all_cls, already_pr, all_see_type, unparsed_type, obj2methods, clsn_member_comment_kvs, cfg)
+            if cls_def_str:
+                finded_type[clsn] = 1
+                all_cls_def_strs.append(cls_def_str)
+
+    output_all_cls_pyi(all_cls, unparsed_type, finded_type,
+                       all_cls_def_strs, all_see_type)
+    output_all_cls_pyfake(out_pyfile_fn, all_cls)
+
+    ws.Name = 'test'
+    wb.Saved = True
+
+# ------------------------------------------------------------------------
+
+
+def runit():
+    obj2methods: dict[str, dict[str, str]] = {}
+    obj2parameters: dict[str, dict[str, str]] = {}
+    obj2unknow: dict[str, dict[str, str]] = {}
+
+    all_see_type: dict[str, int] = {}
+    finded_type: dict[str, int] = {}
+    unparsed_type: dict[str, int] = {}
+    clsn_member_comment_kvs: dict[str, str] = {}
+
+    all_cls: dict[str, CDispatch] = {}
+    already_pr: set[str] = set()
+
+    cfg = Cfg()
+    all_cls_def_strs: list[str] = []
+
+    load_apis(api_fn, obj2methods, obj2parameters, obj2unknow)
+    load_comments(api_comment_fn, clsn_member_comment_kvs)
+
+    inspect_clss(all_cls, already_pr, finded_type,
+                 unparsed_type, all_cls_def_strs, all_see_type,  obj2methods, clsn_member_comment_kvs, cfg)
+
+
+if __name__ == '__main__':
+    runit()

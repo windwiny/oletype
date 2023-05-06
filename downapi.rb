@@ -1,3 +1,4 @@
+require'json'
 require'set'
 require'stringio'
 require'net/http'
@@ -13,6 +14,8 @@ class HtmlType
   PARAMETER = 'PARAMETER'
 end
 
+api_comment_fn = 'excel.apicomment.json'
+$api_comment_kvs = {}
 
 # TODO FIXME      vba's type to python type
 VBAtype2pytype = {
@@ -225,6 +228,7 @@ protected
           returnobj = VBAtype2pytype[returnobj]
         end
       end
+      $api_comment_kvs[%{#{clsn}_#{member}}] = returns[0].text
     else
       returnobj = ''
     end
@@ -302,3 +306,5 @@ dd = DownAPI.new(begin_url)
 dd.download_all()
 
 dd.finish()
+
+File.write(api_comment_fn,  $api_comment_kvs.to_json() )
