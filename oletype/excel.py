@@ -6,6 +6,7 @@ class Window: pass
 class Workbook: pass
 class AddIns: pass
 class AddIns2: pass
+class CDispatch: pass
 class AutoCorrect: pass
 class AutoRecover: pass
 class Sheets: pass
@@ -73,6 +74,7 @@ class Pane: pass
 class WorksheetView: pass
 class Panes: pass
 class SheetViews: pass
+class LazyDispatchItem: pass
 class Graphic: pass
 class Page: pass
 class Pages: pass

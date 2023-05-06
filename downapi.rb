@@ -241,6 +241,11 @@ protected
     assert(cls_member.size == 1, 'not get Cls.Method title')
     clsn, member = cls_member[0].text.split()[0].split('.')
 
+    returns = h.css 'nav[id="center-doc-outline"] + p'
+    if returns.size > 0
+      $api_comment_kvs[%{#{clsn}_#{member}}] = returns[0].text
+    end
+
     returns = h.css 'div > h2[id="return-value"] + p'
     if returns.size > 0
 
@@ -307,4 +312,4 @@ dd.download_all()
 
 dd.finish()
 
-File.write(api_comment_fn,  $api_comment_kvs.to_json() )
+File.write(api_comment_fn,  JSON.pretty_generate($api_comment_kvs) )
