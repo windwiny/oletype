@@ -804,9 +804,9 @@ class Range:
     '''True if the column width of the Range object equals the standard width of the sheet. Returns null if the range contains more than one column and the columns aren't all the same width. Read/write Variant.'''
     self.Validation: Validation
     '''Returns the Validation object that represents data validation for the specified range. Read-only.'''
-    self.Value: float
+    self.Value: VBA_Variant
     '''Returns or sets a Variant value that represents the value of the specified range.'''
-    self.Value2: float
+    self.Value2: VBA_Variant
     '''Returns or sets the cell value. Read/write Variant.'''
     self.VerticalAlignment: int
     '''Returns or sets a Variant value that represents the vertical alignment of the specified object. Read/write.'''

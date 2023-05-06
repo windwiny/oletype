@@ -191,7 +191,7 @@ def conv2cls(ex: CDispatch,
     return ff.getvalue()
 
 
-def showinfo(cls_name: str, ex: CDispatch, all_cls: dict, already_pr: set, all_see_type, unparsed_type, obj2methods, clsn_member_comment_kvs, cfg) -> str:
+def showinfo(cls_name: str, ex: CDispatch, all_cls: dict, already_pr: set, all_see_type, unparsed_type, obj2methods, obj2parameters, clsn_member_comment_kvs, cfg) -> str:
     ''' dir ex, show info'''
     if cls_name in already_pr:
         # print(f'### SKIP pred {cls_name}\n', file=sys.stderr)
@@ -214,13 +214,18 @@ def showinfo(cls_name: str, ex: CDispatch, all_cls: dict, already_pr: set, all_s
             # ex.__getattr__(i)
             vv = getattr(ex, i)
             typevv = type(vv)
-            if typevv in [bool, str, int, float, dict, tuple]:
-                o_attrs.append((i, typevv))
-            elif str(typevv) == "<class 'method'>":
+
+            if str(typevv) == "<class 'method'>":
                 o_methods.append((i, vv))
             elif str(typevv).startswith(cfg.win32comclsn):
                 clsn = str(typevv).replace("<class '", '').replace("'>", '').split('.')[-1]
                 all_cls[clsn] = vv
+                o_attrs.append((i, typevv))
+            elif f'{cls_name}.{i}' in obj2parameters:
+                o_attrs.append((i, obj2parameters[f'{cls_name}.{i}']))
+            elif typevv in [bool, str, int, float, dict, tuple]:
+                if i in ['Value', 'Value2'] and cls_name in ['Range']:  # TODO FIXME, same parameter return type any                    # print(f'xxx2 {cls_name}.{i} {str(vv)}  {typevv} ', file=sys.stderr)
+                    typevv = 'VBA_Variant'
                 o_attrs.append((i, typevv))
             else:
                 o_unknowns.append((i, typevv))
@@ -329,7 +334,7 @@ def runit(cfg: Cfg):
         for clsn in list(all_cls):
             exx = all_cls[clsn]
             cls_def_str = showinfo(clsn, exx, all_cls, already_pr, all_see_type,
-                                   unparsed_type, obj2methods, clsn_member_comment_kvs, cfg)
+                                   unparsed_type, obj2methods, obj2parameters, clsn_member_comment_kvs, cfg)
             # print(f'for {i}   {clsn}  {len(cls_def_str)}', file=sys.stderr)
             if cls_def_str:
                 finded_type[clsn] = 1
