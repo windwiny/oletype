@@ -5,34 +5,26 @@ import sys
 import datetime
 
 # TODO FIXME unparsed
-class A_CalculatedMember_object_that_represents_the_new_calculated_field_or_calculated_item_: pass
-class A_Double_value_that_represents_the_subtotal_: pass
-class A_Name_object_contained_by_the_collection_: pass
-class A_PublishObject_object_that_represents_the_new_item_: pass
-class A_Range_object_that_represents_the_first_cell_where_that_information_is_found_: pass
-class A_String_value_that_represents_the_new_string__after_replacement_: pass
-class AboveAverage_object: pass
-class An_AddIn_object_that_represents_the_new_add_in_: pass
-class An_AllowEditRange_object_that_represents_the_range_: pass
 class An_Object_value_that_represents_an_object_contained_by_the_collection_: pass
 class An_Object_value_that_represents_the_new_worksheet__chart__or_macro_sheet_: pass
-class ColorScale_object: pass
-class Databar_object: pass
-class IconSetCondition_object: pass
-class Top10_object: pass
-class UniqueValues_object: pass
 
 # TODO FIXME nofind define
+class AboveAverage: pass
 class AddIn: pass
+class AllowEditRange: pass
 class CALCULATEDMEMBER: pass
+class CalculatedMember: pass
+class ColorScale: pass
 class Comment: pass
 class CommentThreaded: pass
 class CustomProperty: pass
 class CustomView: pass
+class Databar: pass
 class FormatCondition: pass
 class FreeformBuilder: pass
 class HPageBreak: pass
 class Hyperlink: pass
+class IconSetCondition: pass
 class MODELRELATIONSHIP: pass
 class MODELTABLE: pass
 class ModelMeasure: pass
@@ -41,18 +33,23 @@ class Name: pass
 class ODBCError: pass
 class OLEDBError: pass
 class ProtectedViewWindow: pass
+class PublishObject: pass
 class QueryTable: pass
 class RecentFile: pass
 class Shape: pass
 class SlicerCache: pass
 class SortField: pass
 class SparklineGroup: pass
+class Top10: pass
+class UniqueValues: pass
+class VBA_OBJECT: pass
+class VBA_Object: pass
+class VBA_Variant: pass
 class VPageBreak: pass
 class WORKBOOKCONNECTION: pass
 class Watch: pass
 class WorkbookQuery: pass
 class XmlMap: pass
-class object: pass
 
 
 # num=1
@@ -497,7 +494,7 @@ class Application(_Application):
     '''Stops recalculation in a Microsoft Excel application.'''
   def CheckSpelling(self, Word, CustomDictionary, IgnoreUppercase) -> bool:
     '''Checks the spelling of a single word.'''
-  def ConvertFormula(self, Formula, FromReferenceStyle, ToReferenceStyle, ToAbsolute, RelativeTo) -> list:
+  def ConvertFormula(self, Formula, FromReferenceStyle, ToReferenceStyle, ToAbsolute, RelativeTo) -> VBA_Variant:
     '''Converts cell references in a formula between the A1 and R1C1 reference styles, between relative and absolute references, or both. Variant.'''
   def DDEExecute(self, Channel, String):
     '''Runs a command or performs some other action or actions in another application by way of the specified DDE channel.'''
@@ -505,7 +502,7 @@ class Application(_Application):
     '''Opens a DDE channel to an application.'''
   def DDEPoke(self, Channel, Item, Data):
     '''Sends data to an application.'''
-  def DDERequest(self, Channel, Item) -> list:
+  def DDERequest(self, Channel, Item) -> VBA_Variant:
     '''Requests information from the specified application. This method always returns an array.'''
   def DDETerminate(self, Channel):
     '''Closes a channel to another application.'''
@@ -531,9 +528,9 @@ class Application(_Application):
   def Dummy7(self):  pass
   def Dummy8(self, Arg1):  pass
   def Dummy9(self):  pass
-  def Evaluate(self, Name) -> list:
+  def Evaluate(self, Name) -> VBA_Variant:
     '''Converts a Microsoft Excel name to an object or a value.'''
-  def ExecuteExcel4Macro(self, String) -> list:
+  def ExecuteExcel4Macro(self, String) -> VBA_Variant:
     '''Runs a Microsoft Excel 4.0 macro function and then returns the result of the function. The return type depends on the function.'''
   def FileDialog(self, fileDialogType):
     '''Returns a FileDialog object representing an instance of the file dialog.'''
@@ -541,19 +538,19 @@ class Application(_Application):
     '''Displays the Open dialog box.'''
   def GetCaller(self, Index):  pass
   def GetClipboardFormats(self, Index):  pass
-  def GetCustomListContents(self, ListNum) -> list:
+  def GetCustomListContents(self, ListNum) -> VBA_Variant:
     '''Returns a custom list (an array of strings).'''
   def GetCustomListNum(self, ListArray) -> int:
     '''Returns the custom list number for an array of strings. Use this method to match both built-in lists and custom-defined lists.'''
   def GetFileConverters(self, Index1, Index2):  pass
   def GetInternational(self, Index):  pass
-  def GetOpenFilename(self, FileFilter, FilterIndex, Title, ButtonText, MultiSelect) -> list:
+  def GetOpenFilename(self, FileFilter, FilterIndex, Title, ButtonText, MultiSelect) -> VBA_Variant:
     '''Displays the standard Open dialog box and gets a file name from the user without actually opening any files.'''
   def GetPhonetic(self, Text) -> str:
     '''Returns the Japanese phonetic text of the specified text string. This method is available to you only if you have selected or installed Japanese language support for Microsoft Office.'''
   def GetPreviousSelections(self, Index):  pass
   def GetRegisteredFunctions(self, Index1, Index2):  pass
-  def GetSaveAsFilename(self, InitialFilename, FileFilter, FilterIndex, Title, ButtonText) -> list:
+  def GetSaveAsFilename(self, InitialFilename, FileFilter, FilterIndex, Title, ButtonText) -> VBA_Variant:
     '''Displays the standard Save As dialog box and gets a file name from the user without actually saving any files.'''
   def Goto(self, Reference, Scroll):
     '''Selects any range or Visual Basic procedure in any workbook, and activates that workbook if it's not already active.'''
@@ -561,7 +558,7 @@ class Application(_Application):
     '''Displays a Help topic.'''
   def InchesToPoints(self, Inches) -> float:
     '''Converts a measurement from inches to points.'''
-  def InputBox(self, Prompt, Title, Default, Left, Top, HelpFile, HelpContextID, Type) -> list:
+  def InputBox(self, Prompt, Title, Default, Left, Top, HelpFile, HelpContextID, Type) -> VBA_Variant:
     '''Displays a dialog box for user input. Returns the information entered in the dialog box.'''
   def Intersect(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> Range:
     '''Returns a Range object that represents the rectangular intersection of two or more ranges. If one or more ranges from a different worksheet are specified, an error is returned.'''
@@ -592,7 +589,7 @@ class Application(_Application):
   def Repeat(self):
     '''Repeats the last user-interface action.'''
   def ResetTipWizard(self):  pass
-  def Run(self, Macro, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> list:
+  def Run(self, Macro, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> VBA_Variant:
     '''Runs a macro or calls a function. This can be used to run a macro written in Visual Basic or the Microsoft Excel macro language, or to run a function in a DLL or XLL.'''
   def Save(self, Filename):  pass
   def SaveWorkspace(self, Filename):  pass
@@ -827,97 +824,97 @@ class Range:
     self._prop_map_get_: dict
     self._prop_map_put_: dict
 
-  def Activate(self) -> list:
+  def Activate(self) -> VBA_Variant:
     '''Activates a single cell, which must be inside the current selection. To select a range of cells, use the Select method.'''
   def AddComment(self, Text) -> Comment:
     '''Adds a comment to the range.'''
   def AddCommentThreaded(self, Text) -> CommentThreaded:
     '''Adds a new modern threaded comment to the range if no comment already exists.'''
-  def AdvancedFilter(self, Action, CriteriaRange, CopyToRange, Unique) -> list:
+  def AdvancedFilter(self, Action, CriteriaRange, CopyToRange, Unique) -> VBA_Variant:
     '''Filters or copies data from a list based on a criteria range. If the initial selection is a single cell, that cell's current region is used.'''
   def AllocateChanges(self):
     '''Performs a writeback operation for all edited cells in a range based on an OLAP data source.'''
-  def ApplyNames(self, Names, IgnoreRelativeAbsolute, UseRowColumnNames, OmitColumn, OmitRow, Order, AppendLast) -> list:
+  def ApplyNames(self, Names, IgnoreRelativeAbsolute, UseRowColumnNames, OmitColumn, OmitRow, Order, AppendLast) -> VBA_Variant:
     '''Applies names to the cells in the specified range.'''
-  def ApplyOutlineStyles(self) -> list:
+  def ApplyOutlineStyles(self) -> VBA_Variant:
     '''Applies outlining styles to the specified range.'''
   def AutoComplete(self, String) -> str:
     '''Returns an AutoComplete match from the list. If there's no AutoComplete match or if more than one entry in the list matches the string to complete, this method returns an empty string.'''
-  def AutoFill(self, Destination, Type) -> list:
+  def AutoFill(self, Destination, Type) -> VBA_Variant:
     '''Performs an autofill on the cells in the specified range.'''
-  def AutoFilter(self, Field, Criteria1, Operator, Criteria2, VisibleDropDown, SubField) -> list:
+  def AutoFilter(self, Field, Criteria1, Operator, Criteria2, VisibleDropDown, SubField) -> VBA_Variant:
     '''Filters a list by using the AutoFilter.'''
-  def AutoFit(self) -> list:
+  def AutoFit(self) -> VBA_Variant:
     '''Changes the width of the columns in the range or the height of the rows in the range to achieve the best fit.'''
   def AutoFormat(self, Format, Number, Font, Alignment, Border, Pattern, Width):  pass
-  def AutoOutline(self) -> list:
+  def AutoOutline(self) -> VBA_Variant:
     '''Automatically creates an outline for the specified range. If the range is a single cell, Microsoft Excel creates an outline for the entire sheet. The new outline replaces any existing outline.'''
-  def BorderAround(self, LineStyle, Weight, ColorIndex, Color, ThemeColor) -> list:
+  def BorderAround(self, LineStyle, Weight, ColorIndex, Color, ThemeColor) -> VBA_Variant:
     '''Adds a border to a range and sets the Color, LineStyle, and Weight properties of the Border object for the new border. Variant.'''
-  def Calculate(self) -> list:
+  def Calculate(self) -> VBA_Variant:
     '''Calculates all open workbooks, a specific worksheet in a workbook, or a specified range of cells on a worksheet, as shown in the table in the Remarks section.'''
-  def CalculateRowMajorOrder(self) -> list:
+  def CalculateRowMajorOrder(self) -> VBA_Variant:
     '''Calculates a specified range of cells.'''
-  def CheckSpelling(self, CustomDictionary, IgnoreUppercase, AlwaysSuggest, SpellLang) -> list:
+  def CheckSpelling(self, CustomDictionary, IgnoreUppercase, AlwaysSuggest, SpellLang) -> VBA_Variant:
     '''Checks the spelling of an object.'''
-  def Clear(self) -> list:
+  def Clear(self) -> VBA_Variant:
     '''Clears the entire object.'''
   def ClearComments(self):
     '''Clears all cell comments from the specified range.'''
-  def ClearContents(self) -> list:
+  def ClearContents(self) -> VBA_Variant:
     '''Clears formulas and values from the range.'''
-  def ClearFormats(self) -> list:
+  def ClearFormats(self) -> VBA_Variant:
     '''Clears the formatting of the object.'''
   def ClearHyperlinks(self) -> None:
     '''Removes all hyperlinks from the specified range.'''
-  def ClearNotes(self) -> list:
+  def ClearNotes(self) -> VBA_Variant:
     '''Clears notes and sound notes from all the cells in the specified range.'''
-  def ClearOutline(self) -> list:
+  def ClearOutline(self) -> VBA_Variant:
     '''Clears the outline for the specified range.'''
   def ColumnDifferences(self, Comparison) -> Range:
     '''Returns a Range object that represents all the cells whose contents are different from the comparison cell in each column.'''
-  def Consolidate(self, Sources, Function, TopRow, LeftColumn, CreateLinks) -> list:
+  def Consolidate(self, Sources, Function, TopRow, LeftColumn, CreateLinks) -> VBA_Variant:
     '''Consolidates data from multiple ranges on multiple worksheets into a single range on a single worksheet. Variant.'''
   def ConvertToLinkedDataType(self, ServiceID, LanguageCulture):
     '''Attempts to convert all the cells in the range to a Linked data type such as Stocks or Geography.'''
-  def Copy(self, Destination) -> list:
+  def Copy(self, Destination) -> VBA_Variant:
     '''Copies the range to the specified range or to the Clipboard.'''
   def CopyFromRecordset(self, Data, MaxRows, MaxColumns) -> int:
     '''Copies the contents of an ADO or DAO Recordset object onto a worksheet, beginning at the upper-left corner of the specified range. If the Recordset object contains fields with OLE objects in them, this method fails.'''
-  def CopyPicture(self, Appearance, Format) -> list:
+  def CopyPicture(self, Appearance, Format) -> VBA_Variant:
     '''Copies the selected object to the Clipboard as a picture. Variant.'''
-  def CreateNames(self, Top, Left, Bottom, Right) -> list:
+  def CreateNames(self, Top, Left, Bottom, Right) -> VBA_Variant:
     '''Creates names in the specified range, based on text labels in the sheet.'''
   def CreatePublisher(self, Edition, Appearance, ContainsPICT, ContainsBIFF, ContainsRTF, ContainsVALU):  pass
-  def Cut(self, Destination) -> list:
+  def Cut(self, Destination) -> VBA_Variant:
     '''Cuts the object to the Clipboard or pastes it into a specified destination.'''
-  def DataSeries(self, Rowcol, Type, Date, Step, Stop, Trend) -> list:
+  def DataSeries(self, Rowcol, Type, Date, Step, Stop, Trend) -> VBA_Variant:
     '''Creates a data series in the specified range. Variant.'''
   def DataTypeToText(self):
     '''If any of the cells in the range are a Linked data type, such as Stocks or Geography, this call will convert their values to text.'''
-  def Delete(self, Shift) -> list:
+  def Delete(self, Shift) -> VBA_Variant:
     '''Deletes the object.'''
-  def DialogBox(self) -> list:
+  def DialogBox(self) -> VBA_Variant:
     '''Displays a dialog box defined by a dialog box definition table on a Microsoft Excel 4.0 macro sheet. Returns the number of the chosen control, or returns False if the user chooses the Cancel button.'''
   def Dirty(self):
     '''Designates a range to be recalculated when the next recalculation occurs.'''
   def DiscardChanges(self):
     '''Discards all changes in the edited cells of the range.'''
-  def EditionOptions(self, Type, Option, Name, Reference, Appearance, ChartSize, Format) -> list:
+  def EditionOptions(self, Type, Option, Name, Reference, Appearance, ChartSize, Format) -> VBA_Variant:
     '''You have requested Help for a Visual Basic keyword used only on the Macintosh. For information about this keyword, consult the language reference Help included with Microsoft Office Macintosh Edition.'''
   def End(self, Direction):
     '''Returns a Range object that represents the cell at the end of the region that contains the source range. Equivalent to pressing END+UP ARROW, END+DOWN ARROW, END+LEFT ARROW, or END+RIGHT ARROW. Read-only Range object.'''
   def ExportAsFixedFormat(self, Type, Filename, Quality, IncludeDocProperties, IgnorePrintAreas, From, To, OpenAfterPublish, FixedFormatExtClassPtr, WorkIdentity):
     '''Exports to a file of the specified format.'''
-  def FillDown(self) -> list:
+  def FillDown(self) -> VBA_Variant:
     '''Fills down from the top cell or cells in the specified range to the bottom of the range. The contents and formatting of the cell or cells in the top row of a range are copied into the rest of the rows in the range.'''
-  def FillLeft(self) -> list:
+  def FillLeft(self) -> VBA_Variant:
     '''Fills left from the rightmost cell or cells in the specified range. The contents and formatting of the cell or cells in the rightmost column of a range are copied into the rest of the columns in the range.'''
-  def FillRight(self) -> list:
+  def FillRight(self) -> VBA_Variant:
     '''Fills right from the leftmost cell or cells in the specified range. The contents and formatting of the cell or cells in the leftmost column of a range are copied into the rest of the columns in the range.'''
-  def FillUp(self) -> list:
+  def FillUp(self) -> VBA_Variant:
     '''Fills up from the bottom cell or cells in the specified range to the top of the range. The contents and formatting of the cell or cells in the bottom row of a range are copied into the rest of the rows in the range.'''
-  def Find(self, What, After, LookIn, LookAt, SearchOrder, SearchDirection, MatchCase, MatchByte, SearchFormat) -> A_Range_object_that_represents_the_first_cell_where_that_information_is_found_:
+  def Find(self, What, After, LookIn, LookAt, SearchOrder, SearchDirection, MatchCase, MatchByte, SearchFormat) -> Range:
     '''Finds specific information in a range.'''
   def FindNext(self, After) -> Range:
     '''Continues a search that was begun with the Find method. Finds the next cell that matches those same conditions and returns a Range object that represents that cell. This does not affect the selection or the active cell.'''
@@ -925,7 +922,7 @@ class Range:
     '''Continues a search that was begun with the Find method. Finds the previous cell that matches those same conditions and returns a Range object that represents that cell. Doesn't affect the selection or the active cell.'''
   def FlashFill(self) -> None:
     '''True indicates that the Excel Flash Fill feature has been enabled and is active.'''
-  def FunctionWizard(self) -> list:
+  def FunctionWizard(self) -> VBA_Variant:
     '''Starts the Function Wizard for the upper-left cell of the range.'''
   def GetAddress(self, RowAbsolute, ColumnAbsolute, ReferenceStyle, External, RelativeTo):  pass
   def GetAddressLocal(self, RowAbsolute, ColumnAbsolute, ReferenceStyle, External, RelativeTo):  pass
@@ -935,45 +932,45 @@ class Range:
   def GetValue(self, RangeValueDataType):  pass
   def Get_Default(self, RowIndex, ColumnIndex):  pass
   def GoalSeek(self, Goal, ChangingCell):  pass
-  def Group(self, Start, End, By, Periods) -> list:
+  def Group(self, Start, End, By, Periods) -> VBA_Variant:
     '''When the Range object represents a single cell in a PivotTable field's data range, the Group method performs numeric or date-based grouping in that field.'''
-  def Insert(self, Shift, CopyOrigin) -> list:
+  def Insert(self, Shift, CopyOrigin) -> VBA_Variant:
     '''Inserts a cell or a range of cells into the worksheet or macro sheet and shifts other cells away to make space.'''
   def InsertIndent(self, InsertAmount):
     '''Adds an indent to the specified range.'''
   def Item(self, RowIndex, ColumnIndex):
     '''Returns a Range object that represents a range at an offset to the specified range.'''
-  def Justify(self) -> list:
+  def Justify(self) -> VBA_Variant:
     '''Rearranges the text in a range so that it fills the range evenly.'''
-  def ListNames(self) -> list:
+  def ListNames(self) -> VBA_Variant:
     '''Pastes a list of all nonhidden names onto the worksheet, beginning with the first cell in the range.'''
   def Merge(self, Across):
     '''Creates a merged cell from the specified Range object.'''
-  def NavigateArrow(self, TowardPrecedent, ArrowNumber, LinkNumber) -> list:
+  def NavigateArrow(self, TowardPrecedent, ArrowNumber, LinkNumber) -> VBA_Variant:
     '''Navigates a tracer arrow for the specified range to the precedent, dependent, or error-causing cell or cells. Selects the precedent, dependent, or error cells and returns a Range object that represents the new selection. This method causes an error if it's applied to a cell without visible tracer arrows.'''
   def NoteText(self, Text, Start, Length) -> str:
     '''Returns or sets the cell note associated with the cell in the upper-left corner of the range. Read/write String. Cell notes have been replaced by range comments. For more information, see the Comment object.'''
-  def Parse(self, ParseLine, Destination) -> list:
+  def Parse(self, ParseLine, Destination) -> VBA_Variant:
     '''Parses a range of data and breaks it into multiple cells. Distributes the contents of the range to fill several adjacent columns; the range can be no more than one column wide.'''
-  def PasteSpecial(self, Paste, Operation, SkipBlanks, Transpose) -> list:
+  def PasteSpecial(self, Paste, Operation, SkipBlanks, Transpose) -> VBA_Variant:
     '''Pastes a Range object that has been copied into the specified range.'''
-  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName) -> list:
+  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName) -> VBA_Variant:
     '''Prints the object.'''
-  def PrintPreview(self, EnableChanges) -> list:
+  def PrintPreview(self, EnableChanges) -> VBA_Variant:
     '''Shows a preview of the object as it would look when printed.'''
   def Range(self, Cell1, Cell2):
     '''Returns a Range object that represents a cell or a range of cells.'''
   def RefreshLinkedDataType(self, DomainID):  pass
   def RemoveDuplicates(self, Columns, Header):
     '''Removes duplicate values from a range of values.'''
-  def RemoveSubtotal(self) -> list:
+  def RemoveSubtotal(self) -> VBA_Variant:
     '''Removes subtotals from a list.'''
   def Replace(self, What, Replacement, LookAt, SearchOrder, MatchCase, MatchByte, SearchFormat, ReplaceFormat, FormulaVersion):  pass
   def RowDifferences(self, Comparison) -> Range:
     '''Returns a Range object that represents all the cells whose contents are different from those of the comparison cell in each row.'''
-  def Run(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> list:
+  def Run(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> VBA_Variant:
     '''Runs the Microsoft Excel macro at this location. The range must be on a macro sheet.'''
-  def Select(self) -> list:
+  def Select(self) -> VBA_Variant:
     '''Selects the object.'''
   def SetCellDataTypeFromCell(self, SourceCell):
     '''Creates another instance of a Linked data type, such as Stocks or Geography, that exists in another cell. The new instance will be linked to the data source in the same way as the original, so it will refresh from the service if you call the Workbook.RefreshAll method.'''
@@ -982,35 +979,35 @@ class Range:
     '''Creates Phonetic objects for all the cells in the specified range.'''
   def SetValue(self, RangeValueDataType, arg1):  pass
   def Set_Default(self, RowIndex, ColumnIndex, arg2):  pass
-  def Show(self) -> list:
+  def Show(self) -> VBA_Variant:
     '''Scrolls through the contents of the active window to move the range into view. The range must consist of a single cell in the active document.'''
   def ShowCard(self):
     '''For a cell containing a Linked data type, such as Stocks or Geography, this method causes a card to appear that shows details about the cell (that is, the same card that the user can view by choosing the cell icon).'''
-  def ShowDependents(self, Remove) -> list:
+  def ShowDependents(self, Remove) -> VBA_Variant:
     '''Draws tracer arrows to the direct dependents of the range.'''
-  def ShowErrors(self) -> list:
+  def ShowErrors(self) -> VBA_Variant:
     '''Draws tracer arrows through the precedents tree to the cell that's the source of the error, and returns the range that contains that cell.'''
-  def ShowPrecedents(self, Remove) -> list:
+  def ShowPrecedents(self, Remove) -> VBA_Variant:
     '''Draws tracer arrows to the direct precedents of the range.'''
-  def Sort(self, Key1, Order1, Key2, Type, Order2, Key3, Order3, Header, OrderCustom, MatchCase, Orientation, SortMethod, DataOption1, DataOption2, DataOption3, SubField1) -> list:
+  def Sort(self, Key1, Order1, Key2, Type, Order2, Key3, Order3, Header, OrderCustom, MatchCase, Orientation, SortMethod, DataOption1, DataOption2, DataOption3, SubField1) -> VBA_Variant:
     '''Sorts a range of values.'''
-  def SortSpecial(self, SortMethod, Key1, Order1, Type, Key2, Order2, Key3, Order3, Header, OrderCustom, MatchCase, Orientation, DataOption1, DataOption2, DataOption3) -> list:
+  def SortSpecial(self, SortMethod, Key1, Order1, Type, Key2, Order2, Key3, Order3, Header, OrderCustom, MatchCase, Orientation, DataOption1, DataOption2, DataOption3) -> VBA_Variant:
     '''Uses East Asian sorting methods to sort the range, a PivotTable report, or uses the method for the active region if the range contains only one cell. For example, Japanese sorts in the order of the Kana syllabary.'''
   def Speak(self, SpeakDirection, SpeakFormulas):
     '''Causes the cells of the range to be spoken in row order or column order.'''
   def SpecialCells(self, Type, Value) -> Range:
     '''Returns a Range object that represents all the cells that match the specified type and value.'''
-  def SubscribeTo(self, Edition, Format) -> list:
+  def SubscribeTo(self, Edition, Format) -> VBA_Variant:
     '''You have requested Help for a Visual Basic keyword used only on the Macintosh. For information about this keyword, consult the language reference Help included with Microsoft Office Macintosh Edition.'''
-  def Subtotal(self, GroupBy, Function, TotalList, Replace, PageBreaks, SummaryBelowData) -> list:
+  def Subtotal(self, GroupBy, Function, TotalList, Replace, PageBreaks, SummaryBelowData) -> VBA_Variant:
     '''Creates subtotals for the range (or the current region, if the range is a single cell).'''
-  def Table(self, RowInput, ColumnInput) -> list:
+  def Table(self, RowInput, ColumnInput) -> VBA_Variant:
     '''Creates a data table based on input values and formulas that you define on a worksheet.'''
-  def TextToColumns(self, Destination, DataType, TextQualifier, ConsecutiveDelimiter, Tab, Semicolon, Comma, Space, Other, OtherChar, FieldInfo, DecimalSeparator, ThousandsSeparator, TrailingMinusNumbers) -> list:
+  def TextToColumns(self, Destination, DataType, TextQualifier, ConsecutiveDelimiter, Tab, Semicolon, Comma, Space, Other, OtherChar, FieldInfo, DecimalSeparator, ThousandsSeparator, TrailingMinusNumbers) -> VBA_Variant:
     '''Parses a column of cells that contain text into several columns.'''
   def UnMerge(self):
     '''Separates a merged area into individual cells.'''
-  def Ungroup(self) -> list:
+  def Ungroup(self) -> VBA_Variant:
     '''Promotes a range in an outline (that is, decreases its outline level). The specified range must be a row or column, or a range of rows or columns. If the range is in a PivotTable report, this method ungroups the items contained in the range.'''
   def _ApplyTypes_(self, dispid, wFlags, retType, argTypes, user, resultCLSID, args):  pass
   def _AutoFilter(self, Field, Criteria1, Operator, Criteria2, VisibleDropDown):  pass
@@ -1372,15 +1369,15 @@ class Window:
     self._prop_map_get_: dict
     self._prop_map_put_: dict
 
-  def Activate(self) -> list:
+  def Activate(self) -> VBA_Variant:
     '''Brings the window to the front of the z-order.'''
-  def ActivateNext(self) -> list:
+  def ActivateNext(self) -> VBA_Variant:
     '''Activates the specified window and then sends it to the back of the window z-order.'''
-  def ActivatePrevious(self) -> list:
+  def ActivatePrevious(self) -> VBA_Variant:
     '''Activates the specified window and then activates the window at the back of the window z-order.'''
   def Close(self, SaveChanges, Filename, RouteWorkbook) -> bool:
     '''Closes the object.'''
-  def LargeScroll(self, Down, Up, ToRight, ToLeft) -> list:
+  def LargeScroll(self, Down, Up, ToRight, ToLeft) -> VBA_Variant:
     '''Scrolls the contents of the window by pages.'''
   def NewWindow(self) -> Window:
     '''Creates a new window or a copy of the specified window.'''
@@ -1388,17 +1385,17 @@ class Window:
     '''Converts a horizontal measurement from points (document coordinates) to screen pixels (screen coordinates). Returns the converted measurement as a Long value.'''
   def PointsToScreenPixelsY(self, Points) -> int:
     '''Converts a vertical measurement from points (document coordinates) to screen pixels (screen coordinates). Returns the converted measurement as a Long value.'''
-  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName) -> list:
+  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName) -> VBA_Variant:
     '''Prints the object.'''
-  def PrintPreview(self, EnableChanges) -> list:
+  def PrintPreview(self, EnableChanges) -> VBA_Variant:
     '''Shows a preview of the object as it would look when printed.'''
-  def RangeFromPoint(self, x, y) -> object:
+  def RangeFromPoint(self, x, y) -> VBA_Object:
     '''Returns the Shape or Range object that is positioned at the specified pair of screen coordinates. If there isn't a shape located at the specified coordinates, this method returns Nothing.'''
   def ScrollIntoView(self, Left, Top, Width, Height, Start):
     '''Scrolls the document window so that the contents of a specified rectangular area are displayed in either the upper-left or lower-right corner of the document window or pane (depending on the value of the Start argument).'''
-  def ScrollWorkbookTabs(self, Sheets, Position) -> list:
+  def ScrollWorkbookTabs(self, Sheets, Position) -> VBA_Variant:
     '''Scrolls through the workbook tabs at the bottom of the window. Doesn't affect the active sheet in the workbook.'''
-  def SmallScroll(self, Down, Up, ToRight, ToLeft) -> list:
+  def SmallScroll(self, Down, Up, ToRight, ToLeft) -> VBA_Variant:
     '''Scrolls the contents of the window by rows or columns.'''
   def _ApplyTypes_(self, dispid, wFlags, retType, argTypes, user, resultCLSID, args):  pass
   def _PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName):  pass
@@ -1469,7 +1466,7 @@ class AddIns:
     self._prop_map_get_: dict
     self._prop_map_put_: dict
 
-  def Add(self, Filename, CopyFile) -> An_AddIn_object_that_represents_the_new_add_in_:
+  def Add(self, Filename, CopyFile) -> AddIn:
     '''Adds a new add-in file to the list of add-ins. Returns an AddIn object.'''
   def Item(self, Index):
     '''Returns a single object from a collection.'''
@@ -1637,9 +1634,9 @@ class AutoCorrect:
     self._prop_map_get_: dict
     self._prop_map_put_: dict
 
-  def AddReplacement(self, What, Replacement) -> list:
+  def AddReplacement(self, What, Replacement) -> VBA_Variant:
     '''Adds an entry to the array of AutoCorrect replacements.'''
-  def DeleteReplacement(self, What) -> list:
+  def DeleteReplacement(self, What) -> VBA_Variant:
     '''Deletes an entry from the array of AutoCorrect replacements.'''
   def GetReplacementList(self, Index):  pass
   def SetReplacementList(self, Index, arg1):  pass
@@ -1726,7 +1723,7 @@ class Sheets:
 
   def Add(self, Before, After, Count, Type) -> An_Object_value_that_represents_the_new_worksheet__chart__or_macro_sheet_:
     '''Creates a new worksheet, chart, or macro sheet. The new worksheet becomes the active sheet.'''
-  def Add2(self, Before, After, Count, NewLayout) -> object:
+  def Add2(self, Before, After, Count, NewLayout) -> VBA_OBJECT:
     '''This method is only implemented for the Charts collection object and will produce a run-time error if used on the Sheets and Worksheets objects.'''
   def Copy(self, Before, After):
     '''Copies the sheet to another location in the workbook.'''
@@ -1738,7 +1735,7 @@ class Sheets:
     '''Returns a single object from a collection.'''
   def Move(self, Before, After):
     '''Moves the sheet to another location in the workbook.'''
-  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName, IgnorePrintAreas) -> list:
+  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName, IgnorePrintAreas) -> VBA_Variant:
     '''Prints the object.'''
   def PrintPreview(self, EnableChanges):
     '''Shows a preview of the object as it would look when printed.'''
@@ -2251,7 +2248,7 @@ class Names:
 
   def Add(self, Name, RefersTo, Visible, MacroType, ShortcutKey, Category, NameLocal, RefersToLocal, CategoryLocal, RefersToR1C1, RefersToR1C1Local) -> Name:
     '''Defines a new name for a range of cells.'''
-  def Item(self, Index, IndexLocal, RefersTo) -> A_Name_object_contained_by_the_collection_:
+  def Item(self, Index, IndexLocal, RefersTo) -> Name:
     '''Returns a single Name object from a Names collection.'''
   def _ApplyTypes_(self, dispid, wFlags, retType, argTypes, user, resultCLSID, args):  pass
   def _Default(self, Index, IndexLocal, RefersTo):  pass
@@ -2810,7 +2807,7 @@ class Windows:
     self._prop_map_get_: dict
     self._prop_map_put_: dict
 
-  def Arrange(self, ArrangeStyle, ActiveWorkbook, SyncHorizontal, SyncVertical) -> list:
+  def Arrange(self, ArrangeStyle, ActiveWorkbook, SyncHorizontal, SyncVertical) -> VBA_Variant:
     '''Arranges the windows on the screen.'''
   def BreakSideBySide(self) -> bool:
     '''Ends side-by-side mode if two windows are in side-by-side mode. Returns a Boolean value that represents whether the method was successful.'''
@@ -3029,7 +3026,7 @@ class WorksheetFunction:
     '''Returns the test for independence.'''
   def ChiTest(self, Arg1, Arg2) -> float:
     '''Returns the test for independence.'''
-  def Choose(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> list:
+  def Choose(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> VBA_Variant:
     '''Uses Arg1 as the index to return a value from the list of value arguments.'''
   def Clean(self, Arg1) -> str:
     '''Removes all nonprintable characters from text.'''
@@ -3099,7 +3096,7 @@ class WorksheetFunction:
     '''Counts the cells that contain numbers in a column of a list or database that match conditions that you specify.'''
   def DCountA(self, Arg1, Arg2, Arg3) -> float:
     '''Counts the nonblank cells in a column of a list or database that match conditions that you specify.'''
-  def DGet(self, Arg1, Arg2, Arg3) -> list:
+  def DGet(self, Arg1, Arg2, Arg3) -> VBA_Variant:
     '''Extracts a single value from a column of a list or database that matches conditions that you specify.'''
   def DMax(self, Arg1, Arg2, Arg3) -> float:
     '''Returns the largest number in a column of a list or database that matches conditions that you specify.'''
@@ -3198,7 +3195,7 @@ class WorksheetFunction:
     '''Returns the double factorial of a number.'''
   def FieldValue(self, Arg1, Arg2):  pass
   def Filter(self, Arg1, Arg2, Arg3):  pass
-  def FilterXML(self, Arg1, Arg2) -> list:
+  def FilterXML(self, Arg1, Arg2) -> VBA_Variant:
     '''Gets specific data from the returned XML, typically from a WebService function call.'''
   def Find(self, Arg1, Arg2, Arg3) -> float:
     '''Finds specific information on a worksheet.'''
@@ -3228,7 +3225,7 @@ class WorksheetFunction:
     '''Returns the length of the repetitive pattern that Excel detects for the specified time series.'''
   def Forecast_Linear(self, Arg1, Arg2, Arg3) -> float:
     '''Calculates, or predicts, a future value by using existing values. The predicted value is a y-value for a given x-value. The known values are existing x-values and y-values, and the new value is predicted by using linear regression. Use this function to predict future sales, inventory requirements, or consumer trends.'''
-  def Frequency(self, Arg1, Arg2) -> list:
+  def Frequency(self, Arg1, Arg2) -> VBA_Variant:
     '''Calculates how often values occur within a range of values, and then returns a vertical array of numbers. For example, use Frequency to count the number of test scores that fall within ranges of scores. Because Frequency returns an array, it must be entered as an array formula.'''
   def Fv(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> float:
     '''Returns the future value of an investment based on periodic, constant payments and a constant interest rate.'''
@@ -3254,9 +3251,9 @@ class WorksheetFunction:
     '''Returns 1 if number ≥ step; otherwise, returns 0 (zero). Use this function to filter a set of values. For example, by summing several GeStep functions, you calculate the count of values that exceed a threshold.'''
   def GeoMean(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> float:
     '''Returns the geometric mean of an array or range of positive data. For example, you can use GeoMean to calculate average growth rate given compound interest with variable rates.'''
-  def Growth(self, Arg1, Arg2, Arg3, Arg4) -> list:
+  def Growth(self, Arg1, Arg2, Arg3, Arg4) -> VBA_Variant:
     '''Calculates predicted exponential growth by using existing data. Growth returns the y-values for a series of new x-values that you specify by using existing x-values and y-values. You can also use the Growth worksheet function to fit an exponential curve to existing x-values and y-values.'''
-  def HLookup(self, Arg1, Arg2, Arg3, Arg4) -> list:
+  def HLookup(self, Arg1, Arg2, Arg3, Arg4) -> VBA_Variant:
     '''Searches for a value in the top row of a table or an array of values, and then returns a value in the same column from a row that you specify in the table or array. Use HLookup when your comparison values are located in a row across the top of a table of data, and you want to look down a specified number of rows. Use VLookup when your comparison values are located in a column to the left of the data that you want to find.'''
   def HarMean(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> float:
     '''Returns the harmonic mean of a data set. The harmonic mean is the reciprocal of the arithmetic mean of reciprocals.'''
@@ -3272,9 +3269,9 @@ class WorksheetFunction:
     '''Returns the hypergeometric distribution. HypGeom_Dist returns the probability of a given number of sample successes, given the sample size, population successes, and population size. Use HypGeom_Dist for problems with a finite population, where each observation is either a success or a failure, and where each subset of a given size is chosen with equal likelihood.'''
   def ISO_Ceiling(self, Arg1, Arg2) -> float:
     '''Returns a number that is rounded up to the nearest integer or to the nearest multiple of significance.'''
-  def IfError(self, Arg1, Arg2) -> list:
+  def IfError(self, Arg1, Arg2) -> VBA_Variant:
     '''Returns a value that you specify if a formula evaluates to an error; otherwise, returns the result of the formula. Use the IfError function to trap and handle errors in a formula.'''
-  def IfNa(self, Arg1, Arg2) -> list:
+  def IfNa(self, Arg1, Arg2) -> VBA_Variant:
     '''Returns the value that you specify if the expression resolves to #N/A; otherwise, returns the result of the expression.'''
   def ImAbs(self, Arg1) -> str:
     '''Returns the absolute value (modulus) of a complex number in x + yi or x + yj text format.'''
@@ -3326,7 +3323,7 @@ class WorksheetFunction:
     '''Returns the tangent of a complex number.'''
   def Imaginary(self, Arg1) -> float:
     '''Returns the imaginary coefficient of a complex number in x + yi or x + yj text format.'''
-  def Index(self, Arg1, Arg2, Arg3, Arg4) -> list:
+  def Index(self, Arg1, Arg2, Arg3, Arg4) -> VBA_Variant:
     '''Returns a value or the reference to a value from within a table or range. There are two forms of the Index function: the array form and the reference form.'''
   def IntRate(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> float:
     '''Returns the interest rate for a fully invested security.'''
@@ -3367,7 +3364,7 @@ class WorksheetFunction:
     '''Returns the k-th largest value in a data set. Use this function to select a value based on its relative standing. For example, you can use Large to return the highest, runner-up, or third-place score.'''
   def Lcm(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> float:
     '''Returns the least common multiple of integers. The least common multiple is the smallest positive integer that is a multiple of all integer arguments number1, number2, and so on. Use Lcm to add fractions with different denominators.'''
-  def LinEst(self, Arg1, Arg2, Arg3, Arg4) -> list:
+  def LinEst(self, Arg1, Arg2, Arg3, Arg4) -> VBA_Variant:
     '''Calculates the statistics for a line by using the least squares method to calculate a straight line that best fits your data, and returns an array that describes the line. Because this function returns an array of values, it must be entered as an array formula.'''
   def Ln(self, Arg1) -> float:
     '''Returns the natural logarithm of a number. Natural logarithms are based on the constant e (2.71828182845904).'''
@@ -3375,7 +3372,7 @@ class WorksheetFunction:
     '''Returns the logarithm of a number to the base that you specify.'''
   def Log10(self, Arg1) -> float:
     '''Returns the base-10 logarithm of a number.'''
-  def LogEst(self, Arg1, Arg2, Arg3, Arg4) -> list:
+  def LogEst(self, Arg1, Arg2, Arg3, Arg4) -> VBA_Variant:
     '''In regression analysis, calculates an exponential curve that fits your data, and returns an array of values that describes the curve. Because this function returns an array of values, it must be entered as an array formula.'''
   def LogInv(self, Arg1, Arg2, Arg3) -> float:
     '''Use the lognormal distribution to analyze logarithmically transformed data.'''
@@ -3385,17 +3382,17 @@ class WorksheetFunction:
     '''Returns the lognormal distribution of x, where ln(x) is normally distributed with parameters mean and standard_dev. Use this function to analyze data that has been logarithmically transformed.'''
   def LogNorm_Inv(self, Arg1, Arg2, Arg3) -> float:
     '''Returns the inverse of the lognormal cumulative distribution function. Use the lognormal distribution to analyze logarithmically transformed data.'''
-  def Lookup(self, Arg1, Arg2, Arg3) -> list:
+  def Lookup(self, Arg1, Arg2, Arg3) -> VBA_Variant:
     '''Returns a value either from a one-row or one-column range or from an array. The Lookup function has two syntax forms: the vector form and the array form.'''
   def MDeterm(self, Arg1) -> float:
     '''Returns the matrix determinant of an array.'''
   def MDuration(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> float:
     '''Returns the modified Macauley duration for a security with an assumed par value of $100.'''
-  def MInverse(self, Arg1) -> list:
+  def MInverse(self, Arg1) -> VBA_Variant:
     '''Returns the inverse matrix for the matrix stored in an array.'''
   def MIrr(self, Arg1, Arg2, Arg3) -> float:
     '''Returns the modified internal rate of return for a series of periodic cash flows. MIrr considers both the cost of the investment and the interest received on reinvestment of cash.'''
-  def MMult(self, Arg1, Arg2) -> list:
+  def MMult(self, Arg1, Arg2) -> VBA_Variant:
     '''Returns the matrix product of two arrays. The result is an array with the same number of rows as array1 and the same number of columns as array2.'''
   def MRound(self, Arg1, Arg2) -> float:
     '''Returns a number rounded to the desired multiple.'''
@@ -3411,13 +3408,13 @@ class WorksheetFunction:
   def MinIfs(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29):  pass
   def Mode(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> float:
     '''Returns the most frequently occurring, or repetitive, value in an array or range of data.'''
-  def Mode_Mult(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> list:
+  def Mode_Mult(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> VBA_Variant:
     '''Returns a vertical array of the most frequently occurring, or repetitive, values in an array or range of data.'''
   def Mode_Sngl(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> float:
     '''Returns the most frequently occurring, or repetitive, value in an array or range of data.'''
   def MultiNomial(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> float:
     '''Returns the ratio of the factorial of a sum of values to the product of factorials.'''
-  def Munit(self, Arg1) -> list:
+  def Munit(self, Arg1) -> VBA_Variant:
     '''Returns the unit matrix for the specified dimension.'''
   def NPer(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> float:
     '''Returns the number of periods for an investment based on periodic, constant payments and a constant interest rate.'''
@@ -3529,7 +3526,7 @@ class WorksheetFunction:
     '''Returns the integer portion of a division. Use this function when you want to discard the remainder of a division.'''
   def RSq(self, Arg1, Arg2) -> float:
     '''Returns the square of the Pearson product moment correlation coefficient through data points in known_y's and known_x's. For more information, see Pearson. The r-squared value can be interpreted as the proportion of the variance in y attributable to the variance in x.'''
-  def RTD(self, progID, server, topic1, topic2, topic3, topic4, topic5, topic6, topic7, topic8, topic9, topic10, topic11, topic12, topic13, topic14, topic15, topic16, topic17, topic18, topic19, topic20, topic21, topic22, topic23, topic24, topic25, topic26, topic27, topic28) -> list:
+  def RTD(self, progID, server, topic1, topic2, topic3, topic4, topic5, topic6, topic7, topic8, topic9, topic10, topic11, topic12, topic13, topic14, topic15, topic16, topic17, topic18, topic19, topic20, topic21, topic22, topic23, topic24, topic25, topic26, topic27, topic28) -> VBA_Variant:
     '''This method connects to a source to receive real-time data (RTD).'''
   def Radians(self, Arg1) -> float:
     '''Converts degrees to radians.'''
@@ -3546,7 +3543,7 @@ class WorksheetFunction:
     '''Returns the interest rate per period of an annuity. Rate is calculated by iteration and can have zero or more solutions. If the successive results of Rate don't converge to within 0.0000001 after 20 iterations, Rate returns the #NUM! error value.'''
   def Received(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> float:
     '''Returns the amount received at maturity for a fully invested security.'''
-  def Replace(self, Arg1, Arg2, Arg3, Arg4) -> A_String_value_that_represents_the_new_string__after_replacement_:
+  def Replace(self, Arg1, Arg2, Arg3, Arg4) -> str:
     '''Replaces part of a text string, based on the number of characters that you specify, with a different text string.'''
   def ReplaceB(self, Arg1, Arg2, Arg3, Arg4) -> str:
     '''Replaces part of a text string, based on the number of bytes that you specify, with a different text string.'''
@@ -3607,7 +3604,7 @@ class WorksheetFunction:
   def StockHistory(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29):  pass
   def Substitute(self, Arg1, Arg2, Arg3, Arg4) -> str:
     '''Substitutes new_text for old_text in a text string. Use Substitute when you want to replace specific text in a text string; use Replace when you want to replace any text that occurs in a specific location in a text string.'''
-  def Subtotal(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> A_Double_value_that_represents_the_subtotal_:
+  def Subtotal(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> float:
     '''Creates subtotals.'''
   def Sum(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> float:
     '''Adds all the numbers in a range of cells.'''
@@ -3663,9 +3660,9 @@ class WorksheetFunction:
   def ThaiNumString(self, Arg1):  pass
   def ThaiStringLength(self, Arg1):  pass
   def ThaiYear(self, Arg1):  pass
-  def Transpose(self, Arg1) -> list:
+  def Transpose(self, Arg1) -> VBA_Variant:
     '''Returns a vertical range of cells as a horizontal range, or vice versa. Transpose must be entered as an array formula in a range that has the same number of rows and columns, respectively, as an array has columns and rows. Use Transpose to shift the vertical and horizontal orientation of an array on a worksheet.'''
-  def Trend(self, Arg1, Arg2, Arg3, Arg4) -> list:
+  def Trend(self, Arg1, Arg2, Arg3, Arg4) -> VBA_Variant:
     '''Returns values along a linear trend. Fits a straight line (using the method of least squares) to the arrays known_y's and known_x's. Returns the y-values along that line for the array of new_x's that you specify.'''
   def Trim(self, Arg1) -> str:
     '''Removes all spaces from text except for single spaces between words. Use Trim on text that you have received from another application that may have irregular spacing.'''
@@ -3678,7 +3675,7 @@ class WorksheetFunction:
   def Unicode(self, Arg1) -> float:
     '''Returns the number (code point) corresponding to the first character of the text.'''
   def Unique(self, Arg1, Arg2, Arg3):  pass
-  def VLookup(self, Arg1, Arg2, Arg3, Arg4) -> list:
+  def VLookup(self, Arg1, Arg2, Arg3, Arg4) -> VBA_Variant:
     '''Searches for a value in the first column of a table array and returns a value in the same row from another column in the table array.'''
   def ValueToText(self, Arg1, Arg2):  pass
   def Var(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Arg21, Arg22, Arg23, Arg24, Arg25, Arg26, Arg27, Arg28, Arg29, Arg30) -> float:
@@ -3691,7 +3688,7 @@ class WorksheetFunction:
     '''Estimates variance based on a sample.'''
   def Vdb(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> float:
     '''Returns the depreciation of an asset for any period that you specify, including partial periods, by using the double-declining balance method or some other method that you specify. Vdb stands for variable declining balance.'''
-  def WebService(self, Arg1) -> list:
+  def WebService(self, Arg1) -> VBA_Variant:
     '''Underlying function that calls the web service asynchronously, using an HTTP GET request, and returns the response.'''
   def WeekNum(self, Arg1, Arg2) -> float:
     '''Returns a number that indicates where the week falls numerically within a year.'''
@@ -3856,9 +3853,9 @@ class Characters:
     self._prop_map_get_: dict
     self._prop_map_put_: dict
 
-  def Delete(self) -> list:
+  def Delete(self) -> VBA_Variant:
     '''Deletes the object.'''
-  def Insert(self, String) -> list:
+  def Insert(self, String) -> VBA_Variant:
     '''Inserts a string preceding the selected characters.'''
   def _ApplyTypes_(self, dispid, wFlags, retType, argTypes, user, resultCLSID, args):  pass
   def __getattr__(self, attr):  pass
@@ -4072,17 +4069,17 @@ class FormatConditions:
 
   def Add(self, Type, Operator, Formula1, Formula2, String, TextOperator, DateOperator, ScopeType) -> FormatCondition:
     '''Adds a new conditional format.'''
-  def AddAboveAverage(self) -> AboveAverage_object:
+  def AddAboveAverage(self) -> AboveAverage:
     '''Returns a new AboveAverage object representing a conditional formatting rule for the specified range.'''
-  def AddColorScale(self, ColorScaleType) -> ColorScale_object:
+  def AddColorScale(self, ColorScaleType) -> ColorScale:
     '''Returns a new ColorScale object representing a conditional formatting rule that uses gradations in cell colors to indicate relative differences in the values of cells included in a selected range.'''
-  def AddDatabar(self) -> Databar_object:
+  def AddDatabar(self) -> Databar:
     '''Returns a Databar object representing a data bar conditional formatting rule for the specified range.'''
-  def AddIconSetCondition(self) -> IconSetCondition_object:
+  def AddIconSetCondition(self) -> IconSetCondition:
     '''Returns a new IconSetCondition object that represents an icon set conditional formatting rule for the specified range.'''
-  def AddTop10(self) -> Top10_object:
+  def AddTop10(self) -> Top10:
     '''Returns a Top10 object representing a conditional formatting rule for the specified range.'''
-  def AddUniqueValues(self) -> UniqueValues_object:
+  def AddUniqueValues(self) -> UniqueValues:
     '''Returns a new UniqueValues object representing a conditional formatting rule for the specified range.'''
   def Delete(self):
     '''Deletes the object.'''
@@ -4502,7 +4499,7 @@ class Style:
     self._prop_map_get_: dict
     self._prop_map_put_: dict
 
-  def Delete(self) -> list:
+  def Delete(self) -> VBA_Variant:
     '''Deletes the object.'''
   def _ApplyTypes_(self, dispid, wFlags, retType, argTypes, user, resultCLSID, args):  pass
   def __call__(self):  pass
@@ -5340,7 +5337,7 @@ class Outline:
     self._prop_map_get_: dict
     self._prop_map_put_: dict
 
-  def ShowLevels(self, RowLevels, ColumnLevels) -> list:
+  def ShowLevels(self, RowLevels, ColumnLevels) -> VBA_Variant:
     '''Displays the specified number of row and/or column levels of an outline.'''
   def _ApplyTypes_(self, dispid, wFlags, retType, argTypes, user, resultCLSID, args):  pass
   def __getattr__(self, attr):  pass
@@ -6074,7 +6071,7 @@ class Pane:
 
   def Activate(self) -> bool:
     '''Activates the pane.'''
-  def LargeScroll(self, Down, Up, ToRight, ToLeft) -> list:
+  def LargeScroll(self, Down, Up, ToRight, ToLeft) -> VBA_Variant:
     '''Scrolls the contents of the window by pages.'''
   def PointsToScreenPixelsX(self, Points) -> int:
     '''Returns or sets a pixel point on the screen.'''
@@ -6082,7 +6079,7 @@ class Pane:
     '''Returns or sets the location of the pixel on the screen.'''
   def ScrollIntoView(self, Left, Top, Width, Height, Start):
     '''Scrolls the document window so that the contents of a specified rectangular area are displayed in either the upper-left or lower-right corner of the document window or pane (depending on the value of the Start argument).'''
-  def SmallScroll(self, Down, Up, ToRight, ToLeft) -> list:
+  def SmallScroll(self, Down, Up, ToRight, ToLeft) -> VBA_Variant:
     '''Scrolls the contents of the window by rows or columns.'''
   def _ApplyTypes_(self, dispid, wFlags, retType, argTypes, user, resultCLSID, args):  pass
   def __getattr__(self, attr):  pass
@@ -6691,7 +6688,7 @@ class PublishObjects:
     self._prop_map_get_: dict
     self._prop_map_put_: dict
 
-  def Add(self, SourceType, Filename, Sheet, Source, HtmlType, DivID, Title) -> A_PublishObject_object_that_represents_the_new_item_:
+  def Add(self, SourceType, Filename, Sheet, Source, HtmlType, DivID, Title) -> PublishObject:
     '''Creates an object that represents an item in a document saved to a webpage. Such objects facilitate subsequent updates to the webpage while automated changes are being made to the document in Microsoft Excel. Returns a PublishObject object.'''
   def Delete(self):
     '''Deletes the object.'''
@@ -6910,7 +6907,7 @@ class Styles:
     '''Creates a new style and adds it to the list of styles that are available for the current workbook.'''
   def Item(self, Index):
     '''Returns a single object from a collection.'''
-  def Merge(self, Workbook) -> list:
+  def Merge(self, Workbook) -> VBA_Variant:
     '''Merges the styles from another workbook into the Styles collection.'''
   def _ApplyTypes_(self, dispid, wFlags, retType, argTypes, user, resultCLSID, args):  pass
   def _Default(self, Index):  pass
@@ -7143,7 +7140,7 @@ class AllowEditRanges:
     self._prop_map_get_: dict
     self._prop_map_put_: dict
 
-  def Add(self, Title, Range, Password) -> An_AllowEditRange_object_that_represents_the_range_:
+  def Add(self, Title, Range, Password) -> AllowEditRange:
     '''Adds a range that can be edited on a protected worksheet. Returns an AllowEditRange object.'''
   def Item(self, Index):
     '''Returns a single object from a collection.'''
@@ -7853,7 +7850,7 @@ class CalculatedMembers:
     self._prop_map_get_: dict
     self._prop_map_put_: dict
 
-  def Add(self, Name, Formula, SolveOrder, Type, Dynamic, DisplayFolder, HierarchizeDistinct) -> A_CalculatedMember_object_that_represents_the_new_calculated_field_or_calculated_item_:
+  def Add(self, Name, Formula, SolveOrder, Type, Dynamic, DisplayFolder, HierarchizeDistinct) -> CalculatedMember:
     '''Adds a calculated field or calculated item to a PivotTable. Returns a CalculatedMember object.'''
   def AddCalculatedMember(self, Name, Formula, SolveOrder, Type, DisplayFolder, MeasureGroup, ParentHierarchy, ParentMember, NumberFormat) -> CALCULATEDMEMBER:
     '''Adds a calculated field or calculated item to a PivotTable.'''

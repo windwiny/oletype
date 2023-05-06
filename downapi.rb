@@ -20,26 +20,35 @@ $api_comment_kvs = {}
 # TODO FIXME      vba's type to python type
 VBAtype2pytype = {
   'Boolean'=>'bool',
-  'Byte'=>'str',
-  'Currency'=>'float',
+  'Byte'=>'VBA_Byte',
+  'Currency'=>'VBA_Currency',
   'Date'=>'datetime.datetime',
-  'Decimal'=>'float',
+  'Decimal'=>'VBA_Decimal',
   'Double'=>'float',
   'Integer'=>'int',
   'Long'=>'int',
   'LongLong'=>'int',
   'LongPtr'=>'int',
-  'Object'=>'object',
+  'Object'=>'VBA_Object',
   'Single'=>'float',
   'String'=>'str',
-  'Variant'=>'list',
+  'Variant'=>'VBA_Variant',
 
   'Nothing'=>'None',
   'VOID'=>'None',
   'Void'=>'None',
-  'OBJECT'=>'object',
-  'object'=>'object',
+  'OBJECT'=>'VBA_OBJECT',
+  'object'=>'VBA_object',
+  'True'=>'bool',
+  'False'=>'bool',
 }
+
+def manual_find_type_from_string(ss)
+  ## TODO FIXME
+  ## see output api.txt/json files, some parameter/method type not found
+
+  ss
+end
 
 class DownAPI
 
@@ -202,6 +211,39 @@ protected
     raise 'No implement yet'  # TODO FIXME
   end
 
+  def find_type_name(returns, url)
+    aas = returns[0].css('a')
+    if aas.size > 0   # return object, find sit
+      assert(aas.size > 0, "#{url_fn(url)} return what?")
+
+      a = aas[0]
+      returnobj = a.text
+      aurl = a['href']
+      @links_all[baseurl_to_fullurl(url_base(url), aurl)] = HtmlType::OBJECT
+    else
+      r2 = returns[0].css('strong')
+      if r2.size > 0
+        returnobj = r2[0].text
+      else
+        r3 = returns[0].css('b')
+        if r3.size > 0
+          returnobj = r3[0].text
+        else
+          returnobj = returns[0].text
+        end
+      end
+      # Manual check
+      if returnobj =~ /True.*False/
+        returnobj = 'bool'
+      elsif VBAtype2pytype.has_key?(returnobj)
+        returnobj = VBAtype2pytype[returnobj]
+      else
+        returnobj = manual_find_type_from_string(returnobj)
+      end
+    end
+    returnobj
+  end
+
   def parse_parameter_html(url, txt)
     h = Nokogiri::HTML txt
     cls_member = h.css 'div > h1'
@@ -211,23 +253,7 @@ protected
     returns = h.css 'nav[id="center-doc-outline"] + p'
     assert(returns.size <= 1, "get parameter type ,size!=1 #{returns.size}")
     if returns.size > 0
-      aas = returns[0].css('a')
-      if aas.size > 0   # return object, find sit
-        assert(aas.size > 0, "#{url_fn(url)} return what?")
-
-        a = aas[0]
-        returnobj = a.text
-        aurl = a['href']
-        @links_all[baseurl_to_fullurl(url_base(url), aurl)] = HtmlType::OBJECT
-      else
-        returnobj = returns[0].text
-        # Manual check
-        if returnobj =~ /True.*False/
-          returnobj = 'bool'
-        elsif VBAtype2pytype.has_key?(returnobj)
-          returnobj = VBAtype2pytype[returnobj]
-        end
-      end
+      returnobj = find_type_name(returns, url)
       $api_comment_kvs[%{#{clsn}_#{member}}] = returns[0].text
     else
       returnobj = ''
@@ -248,24 +274,7 @@ protected
 
     returns = h.css 'div > h2[id="return-value"] + p'
     if returns.size > 0
-
-      aas = returns[0].css('a')
-      if aas.size > 0   # return object, find sit
-        assert(aas.size > 0, "#{url_fn(url)} return what?")
-
-        a = aas[0]
-        returnobj = a.text
-        aurl = a['href']
-        @links_all[baseurl_to_fullurl(url_base(url), aurl)] = HtmlType::OBJECT
-      else
-        returnobj = returns[0].text
-        # Manual check
-        if returnobj =~ /True.*False/
-          returnobj = 'bool'
-        elsif VBAtype2pytype.has_key?(returnobj)
-          returnobj = VBAtype2pytype[returnobj]
-        end
-      end
+      returnobj = find_type_name(returns, url)
     else
       returnobj = ''
     end

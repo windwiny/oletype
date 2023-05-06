@@ -46,7 +46,7 @@ python demo.py
 
 pip wheel ./
 dir *.whl
-pip install oletype-0.4.0-py3-none-any.whl
+pip install oletype-0.4.0-py3-none-any.whl --force-reinstall
 
 ```
 
