@@ -4,18 +4,14 @@ require'stringio'
 require'net/http'
 require'nokogiri'
 
-CACHEDIR=File.join(__dir__, 'exceldoc')
+
+# TODO
+HTMLLINKS_FN = 'htmlpagelink2fn.txt'
+API_FN = 'excel.info.json'
+DOCDIR = 'exceldoc'
+
+CACHEDIR = File.join(__dir__, DOCDIR)
 Dir.mkdir(CACHEDIR) unless File.exist?(CACHEDIR)
-
-class HtmlType
-  OBJECT = 'OBJECT'
-  EVENT = 'EVENT'
-  METHOD = 'METHOD'
-  PARAMETER = 'PARAMETER'
-end
-
-api_comment_fn = 'excel.apicomment.json'
-$api_comment_kvs = {}
 
 # TODO FIXME      vba's type to python type
 VBAtype2pytype = {
@@ -45,9 +41,25 @@ VBAtype2pytype = {
 
 def manual_find_type_from_string(ss)
   ## TODO FIXME
-  ## see output api.txt/json files, some parameter/method type not found
+  ## see output xxx.info.json files, some property/method type not found
 
   ss
+end
+
+class MyHash < Hash
+  def []=(x, y)
+    if self.has_key? x
+      raise "ERRR"
+    end
+    super
+  end
+end
+
+class HtmlType
+  OBJECT = 'OBJECT'
+  EVENT = 'EVENT'
+  METHOD = 'METHOD'
+  PROPERTY = 'PROPERTY'
 end
 
 class DownAPI
@@ -58,12 +70,14 @@ class DownAPI
 
     @undown = []
     @downloaded = Set.new()
-    @parameter_type = StringIO.new
-    @method_return = StringIO.new
+
+    @classes = MyHash.new
+    @properties = MyHash.new
+    @methods = MyHash.new
   end
 
   def download_all()
-    @undown =  @links_all.to_a
+    @undown = @links_all.to_a
     while true
       @undown.each do |url, objtype|
         if @downloaded.include?(url)
@@ -93,14 +107,40 @@ class DownAPI
   end
 
   def finish()
-    puts
-    puts "ALL Class.Method => Return:"
-    puts @method_return.string
-    puts @method_return.string.lines.size
-    puts
-    puts "ALL Class.Parameter => Type:"
-    puts @parameter_type.string
-    puts @parameter_type.string.lines.size
+    STDERR.puts(%{OUTPUT files})
+    all_data = {
+      summary: {
+        classes: @classes.size,
+        methods: @methods.size,
+        properties: @properties.size,
+      },
+      classes: @classes,
+      methods: @methods,
+      properties: @properties,
+    }
+
+    File.write(API_FN,  JSON.pretty_generate(all_data) )
+
+    type_kvs = @links_all.group_by{|k,v| v}
+    ss = [%{## SUMM: #{@links_all.size},   #{type_kvs.map {|k,v| %{#{k}:#{v.size}}}.join(', ')}} ]
+    type_kvs.each do |k,v|
+      ss << %{# #{k} #{v.size}}
+      ss << v.map do |x|
+        url = x[0]
+        fn = url_fn(url)
+        fn = %{#{DOCDIR}/#{File.basename(fn)}}
+        fninfo = if File.exist?(fn)
+          fn
+        else
+          %{NOT EXIST #{fn}}
+        end
+        %{#{url} -> #{fninfo}}
+      end.sort
+    end
+    sss = ss.flatten.join("\n")
+    if !(File.exist?(HTMLLINKS_FN) && File.read(HTMLLINKS_FN) == sss)
+      File.write(HTMLLINKS_FN, sss)
+    end
   end
 
 
@@ -111,15 +151,15 @@ protected
     case objtype
     when HtmlType::EVENT
       parse_event_html(url, txt)
-    when HtmlType::PARAMETER
-      parse_parameter_html(url, txt)
+    when HtmlType::PROPERTY
+      parse_property_html(url, txt)
     when HtmlType::METHOD
       parse_method_html(url, txt)
     else # HtmlType::OBJECT
       es, ms, ps= parse_object_html(url, txt)
       # TODO not need
       # es.map { |t,href| @links_all[href] = HtmlType::EVENT }
-      ps.map { |t,href| @links_all[href] = HtmlType::PARAMETER }
+      ps.map { |t,href| @links_all[href] = HtmlType::PROPERTY }
       ms.map { |t,href| @links_all[href] = HtmlType::METHOD }
     end
   end
@@ -143,7 +183,7 @@ protected
       base = ''
       fn = url
     end
-    fn = fn.gsub(/\W/, '_')
+    fn = fn.gsub(/[\\\/\:\*\?\"\<\>\|]/, '_') # illegal filename character on win \/:*?"<>|
     fn = "#{CACHEDIR}/#{fn}.html"
     [base, fn]
   end
@@ -241,55 +281,80 @@ protected
         returnobj = manual_find_type_from_string(returnobj)
       end
     end
-    returnobj
+    returnobj.strip
   end
 
-  def parse_parameter_html(url, txt)
+  def parse_property_html(url, txt)
     h = Nokogiri::HTML txt
     cls_member = h.css 'div > h1'
-    assert(cls_member.size == 1, 'not get Cls.Method title')
+    assert(cls_member.size == 1, %{not get Cls.Property title  #{url}})
     clsn, member = cls_member[0].text.split()[0].split('.')
 
+    iffo = {}
     returns = h.css 'nav[id="center-doc-outline"] + p'
-    assert(returns.size <= 1, "get parameter type ,size!=1 #{returns.size}")
     if returns.size > 0
-      returnobj = find_type_name(returns, url)
-      $api_comment_kvs[%{#{clsn}_#{member}}] = returns[0].text
+      iffo['type'] = find_type_name(returns, url)
+      iffo['info'] = returns[0].text.strip
     else
-      returnobj = ''
+      returns = h.css 'nav[id="center-doc-outline"] + div'
+      if returns.size > 0
+        iffo['type'] = find_type_name(returns, url)
+        iffo['info'] = returns[0].text.strip
+      else
+        iffo['type'] = nil
+        iffo['info'] = nil
+        iffo['ERROR'] = %{not found info on '#{File.basename url_fn url}' }
+      end
     end
-    @parameter_type.puts %{  #{clsn}.#{member} -> #{returnobj}}
+    @properties[%{#{clsn}.#{member}}] = iffo
   end
 
   def parse_method_html(url, txt)
     h = Nokogiri::HTML txt
     cls_member = h.css 'div > h1'
-    assert(cls_member.size == 1, 'not get Cls.Method title')
+    assert(cls_member.size == 1, %{not get Cls.Method title  #{url}})
     clsn, member = cls_member[0].text.split()[0].split('.')
 
+    iffo = {}
     returns = h.css 'nav[id="center-doc-outline"] + p'
     if returns.size > 0
-      $api_comment_kvs[%{#{clsn}_#{member}}] = returns[0].text
+      iffo['method'] = returns[0].text.strip
+    else
+      iffo['method'] = %{not found comment on '#{File.basename url_fn url}' }
     end
 
     returns = h.css 'div > h2[id="return-value"] + p'
     if returns.size > 0
-      returnobj = find_type_name(returns, url)
+      iffo['return'] = find_type_name(returns, url)
     else
-      returnobj = ''
+      iffo['return'] = nil
     end
-    @method_return.puts %{  #{clsn}.#{member} -> #{returnobj}}
+    @methods[%{#{clsn}.#{member}}] = iffo
   end
 
   def parse_object_html(url, txt)
     h = Nokogiri::HTML txt
 
+    cls_member = h.css 'div > h1'
+    if cls_member.size < 1
+      STDERR.puts %{not title , skip #{url}}
+      return [[],[],[]]
+    end
+    clsn = cls_member[0].text.split()[0].split('.')[-1]
+
+    iffo = {}
+    returns = h.css 'nav[id="center-doc-outline"] + p'
+    if returns.size > 0
+      iffo['class'] = returns[0].text.strip
+    end
+    @classes[clsn] = iffo
+
     events = h.css 'div > h2[id="events"] + ul'
-    assert events.size <= 1, "events ul > 1, #{events.size}"
+    assert(events.size <= 1, %{events ul > 1, #{events.size}  #{url}})
     methods = h.css 'div > h2[id="methods"] + ul'
-    assert methods.size <= 1, "methods ul > 1, #{methods.size}"
+    assert(methods.size <= 1, %{methods ul > 1, #{methods.size}  #{url}})
     properties = h.css 'div > h2[id="properties"] + ul'
-    assert properties.size <= 1, "properties ul > 1, #{properties.size}"
+    assert(properties.size <= 1, %{properties ul > 1, #{properties.size}  #{url}})
 
     baseurl = url_base(url)
     events = if events.size > 0
@@ -321,4 +386,3 @@ dd.download_all()
 
 dd.finish()
 
-File.write(api_comment_fn,  JSON.pretty_generate($api_comment_kvs) )

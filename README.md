@@ -14,7 +14,9 @@ git clone https://github.com/windwiny/oletype
 cd oletype
 
 # download web page, generate api txt, and method comment json
-ruby downapi.rb > excel.api.txt
+ruby downapi.rb
+
+    will output excel.info.json
 
 
 # python inspect objecty, list win32com objects methods, and parameters
