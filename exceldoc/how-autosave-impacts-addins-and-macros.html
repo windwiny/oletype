@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light" lang="en-us" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="false" data-target="docs" x-ms-format-detection="none">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="How AutoSave impacts add-ins and macros" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/how-autosave-impacts-addins-and-macros" />
+			<meta property="og:description" content="Office VBA reference topic" />
+
+	<meta property="og:image" content="https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png" />
+
+	<meta property="og:image:alt" content="Microsoft Logo" />
+
+	<meta name="twitter:card" content="summary" />
+
+	<meta name="twitter:site" content="@MicrosoftLearn" />
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="author" content="o365devx" />
+<meta name="breadcrumb_path" content="/office/vba/breadcrumb/toc.json" />
+<meta name="depot_name" content="MSDN.VBA-Docs" />
+<meta name="description" content="Office VBA reference topic" />
+<meta name="document_id" content="01d84c40-db6e-4ccc-f835-39b852832c92" />
+<meta name="document_version_independent_id" content="b448bb0e-1036-7503-0e2c-96285629b7db" />
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/VBA-Docs/blob/27b17db1c05919d40ed92d00d8a5e7be08f67f9e/Library-Reference/Concepts/how-autosave-impacts-addins-and-macros.md" />
+<meta name="locale" content="en-us" />
+<meta name="ms.author" content="o365devx" />
+<meta name="ms.date" content="01/02/2019" />
+<meta name="ms.localizationpriority" content="medium" />
+<meta name="ms.prod" content="office" />
+<meta name="ms.suite" content="office" />
+<meta name="ms.technology" content="vba" />
+<meta name="ms.topic" content="conceptual" />
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/VBA-Docs/blob/live/Library-Reference/Concepts/how-autosave-impacts-addins-and-macros.md" />
+<meta name="page_type" content="conceptual" />
+<meta name="schema" content="Conceptual" />
+<meta name="site_name" content="Docs" />
+<meta name="toc_rel" content="../../api/toc.json" />
+<meta name="uhfHeaderId" content="MSDocsHeader-VBA" />
+<meta name="updated_at" content="2022-03-30 04:12 AM" />
+<meta name="word_count" content="1486" />
+
+
+	<meta name="persistent_id" content="2495856b-bd9f-cd2e-08e8-9dc311006be9" />
+	
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/60932d05-feee-4685-a73b-595e25dd9318" data-source="generated" />
+
+	
+
+	<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/VBA-Docs/blob/main/Library-Reference/Concepts/how-autosave-impacts-addins-and-macros.md" />
+<link href="https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/how-autosave-impacts-addins-and-macros" rel="canonical">
+	<title>How AutoSave impacts add-ins and macros | Microsoft Learn</title>
+
+		<link rel="stylesheet" href="/_themes/docs.theme/master/en-us/_themes/styles/5eda3295.site-ltr.css ">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			standardFeedback: true,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'Standard',
+			feedbackGitHubRepo: '',
+			feedbackProductUrl: '',
+			extendBreadcrumb: false,
+			isEditDisplayable: true,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: true,
+			hasBookmark: true,
+			hasShare: true,
+			isPermissioned: false,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "o365devx", url: "https://github.com/o365devx" },
+						{ name: "lindalu-MSFT", url: "https://github.com/lindalu-MSFT" },
+						{ name: "AlexJerabek", url: "https://github.com/AlexJerabek" },
+						{ name: "OfficeGSX", url: "https://github.com/OfficeGSX" },
+						{ name: "kbrandl", url: "https://github.com/kbrandl" },
+						{ name: "Linda-Editor", url: "https://github.com/Linda-Editor" },
+						{ name: "Saisang", url: "https://github.com/Saisang" }
+],
+		},
+		functions:{}
+	};
+	</script>
+	<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+	<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-3.min.js"></script>
+
+	<script src="/_themes/docs.theme/master/en-us/_themes/global/67a45209.deprecation.js"></script>
+		<link rel="preconnect" href="//mscom.demdex.net" crossorigin>
+		<link rel="dns-prefetch" href="//target.microsoft.com">
+		<link rel="dns-prefetch" href="//microsoftmscompoc.tt.omtrdc.net">
+		<link
+			rel="preload"
+			as="script"
+			href="/static/third-party/adobe-target/at-js/2.9.0/at.js"
+			integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu"
+			crossorigin="anonymous"
+			id="adobe-target-script"
+			type="application/javascript"
+		/>
+		<script src="/_themes/docs.theme/master/en-us/_themes/global/1d03f382.at-config.js"></script>
+		<script src="/_themes/docs.theme/master/en-us/_themes/scripts/16938fbe.index-docs.js"></script>
+</head>
+
+<body lang="en-us" dir="ltr">
+	<div class="header-holder has-default-focus">
+		<a href="#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">Skip to main content</a>
+
+		<div hidden id="cookie-consent-holder"></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;"
+			hidden
+		>
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">This browser is no longer supported.</p>
+				<p style="font-size: 16px; margin-top: 16px;">Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.</p>
+				<div style="margin-top: 12px;">
+					<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+						style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+Download Microsoft Edge					</a>
+					<a href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+						style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+More info about Internet Explorer and Microsoft Edge					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+	<div class="nav-bar">
+		<div class="nav-bar-brand">
+			<a itemprop="url" href="https://www.microsoft.com" aria-label="Microsoft" class="nav-bar-button">
+				<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+				<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			</a>
+		</div>
+	</div>
+	<div class="nav-bar border-top is-hidden-mobile"></div>
+</header>		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button>
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+Table of contents						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>Exit focus mode</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column" role="navigation" aria-label="Primary"></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" class="" role="main" data-bi-name="content" lang="en-us" dir="ltr">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs">
+										<summary class="button button-clear button-primary button-sm inner-focus" aria-label="All breadcrumbs">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none">
+
+										</div>
+									</details>
+									<bread-crumbs id="article-header-breadcrumbs" data-test-id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs" id="page-breadcrumbs"></bread-crumbs>
+
+									<div id="article-header-page-actions"  class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a
+											id="lang-link-tablet"
+											class="button button-primary button-clear button-sm display-none display-inline-flex-tablet"
+											title="Read in English" data-bi-name="language-toggle"
+											data-read-in-link
+											hidden>
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon>
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text>Read in English</span>
+										</a>
+
+											<button
+												type="button"
+												class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet"
+												data-list-type="collection"
+												data-bi-name="collection"
+												title="Add to collection">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">Save</span>
+											</button>
+										
+
+											<a	data-contenteditbtn
+												class="button button-clear button-sm text-decoration-none button-primary display-none display-inline-flex-tablet"
+												aria-label="Edit"
+												title="Edit This Document"
+												data-bi-name="edit"
+
+														href="https://github.com/MicrosoftDocs/VBA-Docs/blob/main/Library-Reference/Concepts/how-autosave-impacts-addins-and-macros.md"
+														data-original_content_git_url="https://github.com/MicrosoftDocs/VBA-Docs/blob/live/Library-Reference/Concepts/how-autosave-impacts-addins-and-macros.md"
+														data-original_content_git_url_template="{repo}/blob/{branch}/Library-Reference/Concepts/how-autosave-impacts-addins-and-macros.md"
+														data-pr_repo=""
+														data-pr_branch=""
+											>
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-edit-outline"></span>
+												</span>
+											</a>
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="More actions">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button
+														data-page-action-item="overflow-mobile"
+														type="button"
+														class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet"
+														data-bi-name="contents-expand"
+														data-contents-button
+														data-popover-close>
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+															<span class="contents-expand-title">Table of contents</span>
+													</button>
+
+												<a
+													id="lang-link-overflow"
+													class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet"
+													title="Read in English" data-bi-name="language-toggle"
+													data-page-action-item="overflow-mobile"
+													data-check-hidden="true"
+													data-read-in-link
+													hidden
+													>
+													<span class="icon" aria-hidden="true" data-read-in-link-icon>
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text>Read in English</span>
+												</a>
+
+													<button
+														type="button"
+														class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet"
+														data-list-type="collection"
+														data-bi-name="collection"
+														title="Add to collection"
+														data-page-action-item="overflow-mobile"
+														data-check-hidden="true"
+														data-popover-close>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">Save</span>
+													</button>
+
+													<a	data-contenteditbtn
+														class="button button-clear button-block button-sm has-inner-focus justify-content-flex-start text-decoration-none display-none-tablet"
+														aria-label="Edit"
+														title="Edit This Document"
+														data-bi-name="edit"
+
+																href="https://github.com/MicrosoftDocs/VBA-Docs/blob/main/Library-Reference/Concepts/how-autosave-impacts-addins-and-macros.md"
+																data-original_content_git_url="https://github.com/MicrosoftDocs/VBA-Docs/blob/live/Library-Reference/Concepts/how-autosave-impacts-addins-and-macros.md"
+																data-original_content_git_url_template="{repo}/blob/{branch}/Library-Reference/Concepts/how-autosave-impacts-addins-and-macros.md"
+																data-pr_repo=""
+																data-pr_branch=""
+													>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-edit-outline"></span>
+														</span>
+														<span>Edit</span>
+													</a>
+
+													<button
+														class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus"
+														title="Print"
+														type="button"
+														aria-label="Print"
+														data-bi-name="print"
+														data-page-action-item="overflow-all"
+														data-popover-close
+														data-print-page
+														data-check-hidden="true">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print"></span>
+														</span>
+														<span>Print</span>
+													</button>
+
+													<div aria-hidden="true" class="margin-none
+														border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>Email</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div>
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" data-bi-name="contents-expand" data-contents-button hidden>
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+										<span class="contents-expand-title">Table of contents</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="how-autosave-impacts-add-ins-and-macros">How AutoSave impacts add-ins and macros</h1>
+
+
+									<div class="display-flex justify-content-space-between align-items-center flex-wrap-wrap page-metadata-container">
+										<div class="margin-right-xxs">
+											<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+													<li>
+Article													</li>
+
+													<li class="visibility-hidden-visual-diff">
+														<time class="is-invisible" data-article-date aria-label="Article review date" datetime="2022-03-30T00:00:00Z" data-article-date-source="calculated">03/30/2022</time>
+													</li>
+														<li class="contributors-holder display-none-print">
+															<button aria-label="View all contributors" class="contributors-button link-button" data-bi-name="contributors" title="View all contributors">
+																	7 contributors
+															</button>
+														</li>
+											</ul>
+										</div>
+
+<div id="user-feedback" class="margin-block-xxs display-none-print" data-hide-on-archived>
+	<button
+		id="user-feedback-button"
+		data-test-id="conceptual-feedback-button"
+		class="button button-sm button-clear button-primary"
+		type="button"
+		data-bi-name="user-feedback-button"
+		data-user-feedback-button
+	>
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-like"></span>
+		</span>
+		<span>Feedback</span>
+	</button>
+</div>
+									</div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm" data-bi-name="intopic toc" role="navigation" aria-label="In this article">
+											<h2 id="ms--in-this-article" class="title is-6 margin-block-xs">In this article</h2>
+										</nav>
+
+								<!-- <content> -->
+									<p>Learn about how AutoSave works in Excel, PowerPoint, and Word, and how it can impact add-ins or macros.</p>
+<h2 id="overview-of-autosave">Overview of AutoSave</h2>
+<p>When a file is hosted in the cloud (that is, OneDrive, OneDrive for Business, or SharePoint Online), AutoSave enables the user's edits to be saved automatically and continuously. When the file is shared with others, their changes are merged into this user's version of the file. If AutoSave is turned off, save must be triggered manually for the user's changes to be persisted in the cloud and for this user to receive others' changes.</p>
+<p>Currently, Excel, Word, and PowerPoint provide a <strong>BeforeSave</strong> event that allows a developer to execute code after the user triggers a save but before the save occurs. Excel also provides an <strong>AfterSave</strong> event that can execute macro or add-in code after the save completes.</p>
+<p>When AutoSave is enabled, these events fire automatically on a periodic basis without user interaction. Because of this, add-ins and macros that leverage these events may experience problems when AutoSave is on.</p>
+<p>In general, these issues can be avoided if the user chooses to disable AutoSave. You can do this on the user’s behalf by using the <strong>AutoSaveOn</strong> property in <a href="../../api/word.document.autosaveon" data-linktype="relative-path">Word</a>, <a href="../../api/excel.workbook.autosaveon" data-linktype="relative-path">Excel</a>, and <a href="../../api/powerpoint.presentation.autosaveon" data-linktype="relative-path">PowerPoint</a> if it's available (see the following example). You can also take steps as a developer to mitigate these problems so that your add-ins and macros work smoothly, even if AutoSave is enabled.</p>
+<p><a name="example"></a></p>
+<h3 id="example">Example</h3>
+<p>This example turns off AutoSave and notifies the user that the workbook is not being automatically saved.</p>
+<pre><code class="lang-vb">Sub UseAutoSaveOn()
+    ActiveWorkbook.AutoSaveOn = False
+    MsgBox &quot;This workbook is being saved automatically: &quot; &amp; ActiveWorkbook.AutoSaveOn
+End Sub
+</code></pre>
+<p><a name="IssuesWithSaveEventsAndAutoSave"></a></p>
+<h2 id="potential-issues-with-save-events-and-autosave">Potential issues with save events and AutoSave</h2>
+<p>You may need to handle one or more of the following issues regarding the interaction between save events and AutoSave:</p>
+<ol>
+<li><a href="#Issue1" data-linktype="self-bookmark">Code in <strong>BeforeSave</strong> or <strong>AfterSave</strong> events runs too long</a></li>
+<li><a href="#Issue2" data-linktype="self-bookmark">Code in save events surfaces a modal dialog</a></li>
+<li><a href="#Issue3" data-linktype="self-bookmark">Code in save events clears the undo stack (Excel only)</a></li>
+<li><a href="#Issue4" data-linktype="self-bookmark">Code in <strong>AfterSave</strong> dirties the workbook (Excel only)</a></li>
+<li><a href="#Issue5" data-linktype="self-bookmark">Code in <strong>BeforeSave</strong> cancels the file save (by setting Cancel argument to True)</a></li>
+</ol>
+<p><a name="Issue1"></a></p>
+<h3 id="issue-1-code-in-beforesave-or-aftersave-events-runs-too-long">Issue 1: Code in BeforeSave or AfterSave events runs too long</h3>
+<p>In general, Word, Excel and PowerPoint are not responsive to user interaction while add-in or macro code is being run. Therefore, if your code in a <strong>BeforeSave</strong> or <strong>AfterSave</strong> event handler takes too long to run, it may significantly degrade the user experience.</p>
+<p>When AutoSave is disabled, this code is only run when the user explicitly chooses to save, so a delay is not as noticeable and can be avoided by the user until he or she is ready to save.</p>
+<p>When AutoSave is enabled, this code runs automatically on a periodic basis, which has the potential to interrupt the user, especially if the code takes a long time.</p>
+<h4 id="example-scenario">Example scenario</h4>
+<p>Imagine an add-in that allows the user to create custom maps based on data in an Excel workbook. Such an add-in might have <strong>BeforeSave</strong> code that serializes any maps that the user has created and stores them in the workbook in a CustomXML part. This process might take a second to complete, and Excel could be unresponsive while this is happening.</p>
+<p>When AutoSave is off, the user gets to choose when he or she wants to save, and therefore, even though the add-in slows down the save process slightly, the user does not notice.</p>
+<p>When AutoSave is enabled, this <strong>BeforeSave</strong> code runs automatically on a periodic basis even if the user is in the middle of something else (such as typing data into a cell), which could be extremely annoying.</p>
+<h4 id="workaround">Workaround</h4>
+<p>Add-ins should try to avoid long-running operations inside of a save event. In this example, the developer could choose to persist the custom maps to the file as they are created or modified by the user, rather than waiting for the save event.</p>
+<p><a name="Issue2"></a></p>
+<h3 id="issue-2-code-in-save-events-surfaces-a-modal-dialog">Issue 2: Code in save events surfaces a modal dialog</h3>
+<p>Any code that runs in a save event that displays UI such as a modal dialog has the potential to seriously degrade the user experience when AutoSave is on. Because the <strong>BeforeSave</strong> and <strong>AfterSave</strong> events run automatically on a periodic basis, these dialog boxes may interrupt the user's normal workflow.</p>
+<h4 id="example-scenario-1">Example scenario</h4>
+<p>An add-in that validates a Word document before save to ensure that company branding is applied might fire a dialog box that alerts the user about any problems that were found and offers a way to correct them. Because the <strong>BeforeSave</strong> event now fires automatically and continuously, this validation dialog might appear suddenly while the user is doing something else.</p>
+<h4 id="workarounds">Workarounds</h4>
+<p>Consider removing any code that needs to display UI to other areas of the application. For example, the user could select a &quot;validate&quot; button to trigger the validation process, or you could fire the validation code only if the user attempts to change the existing data.</p>
+<p>If you want validation code to trigger only on the first save from a new document but not on subsequent auto-saves, consider inspecting a property such as Excel's <strong>Workbook.Path</strong> before displaying any UI during <strong>BeforeSave</strong> or <strong>AfterSave</strong>. In Excel, the <strong>Workbook.Path</strong> property should be blank if the workbook does not yet have a save location.</p>
+<p><a name="Issue3"></a></p>
+<h3 id="issue-3-code-in-save-events-clears-the-undo-stack-excel-only">Issue 3: Code in save events clears the undo stack (Excel only)</h3>
+<p>In general, if you run certain VBA statements in Excel, the undo stack will be cleared. For example, if you change the value of a cell by running <code>ActiveCell.Value = &quot;myValue&quot;</code>, the undo stack is cleared. If such code is present in the <strong>BeforeSave</strong> or <strong>AfterSave</strong> event for a macro or add-in, and AutoSave is on, a user of that macro or add-in will frequently not be able to undo normal user actions as expected.</p>
+<h4 id="example-scenario-2">Example scenario</h4>
+<p>An add-in might have code that runs in response to the <strong>BeforeSave</strong> event that inspects the document and writes values to a &quot;log&quot; table in the workbook. When AutoSave is on, this would clear the undo stack periodically, which can potentially annoy users.</p>
+<h4 id="workaround-1">Workaround</h4>
+<p>Consider removing code that writes to the workbook in <strong>BeforeSave</strong> or <strong>AfterSave</strong> events. For example, the add-in described in the example scenario might be modified to store the change log in a separate file or database.</p>
+<p><a name="Issue4"></a></p>
+<h3 id="issue-4-code-in-aftersave-dirties-the-workbook-excel-only">Issue 4: Code in <strong>AfterSave</strong> dirties the workbook (Excel only)</h3>
+<p>When AutoSave is on, the <strong>BeforeSave</strong> and <strong>AfterSave</strong> events will only trigger if there has been a change in the workbook since the last time they were triggered. If code in the <strong>AfterSave</strong> event dirties the workbook (that is, makes additional changes), that could potentially trigger events to fire again for the same change, and then queue up the events to fire again indefinitely. This could waste system resources and affect battery life.</p>
+<h4 id="workaround-2">Workaround</h4>
+<p>Code that dirties the workbook in <strong>AfterSave</strong> should be moved to <strong>BeforeSave</strong> or to another location entirely (see <a href="#Issue3" data-linktype="self-bookmark">Issue 3</a>). This isn't a good practice today, even without AutoSave, because it leaves the workbook in a perpetual &quot;dirty&quot; state, which causes a prompt to appear on close that asks the user to save their changes even if they made no additional changes. </p>
+<p><a name="Issue5"></a></p>
+<h3 id="issue-5-code-in-beforesave-cancels-the-file-save-by-setting-cancel-argument-to-true">Issue 5: Code in <strong>BeforeSave</strong> cancels the file save (by setting Cancel argument to True)</h3>
+<p>Today, it is possible to cancel the save in the <strong>BeforeSave</strong> event by setting <code>Cancel</code> to True:</p>
+<pre><code class="lang-vb">Private Sub Workbook_BeforeSave(ByVal SaveAsUI As Boolean, Cancel As Boolean) 
+    Cancel = True
+End Sub
+</code></pre>
+<p>When AutoSave is enabled, the application (that is, Excel, Word, or PowerPoint) triggers saves automatically on a continuous basis until the file has no more unsaved changes. After the user makes a single change to the file, the application attempts to save it.</p>
+<p>If the developer chooses to cancel the save in the manner described earlier, the application continually determines that there are unsaved changes, which causes the save to (eventually) be attempted again. Because the same event code that cancelled the first save will also cancel this second save attempt, the process will continue for as long as the file is open, potentially degrading performance and battery life.</p>
+<h4 id="example-scenario-3">Example scenario</h4>
+<p>An add-in might completely override the default Word save code so that the file is saved to a corporate database instead of to a disk or SharePoint location. Such an add-in would first cancel the attempted save before trying to save in another place.</p>
+<h4 id="workaround-3">Workaround</h4>
+<p>Such add-ins should ensure that AutoSave is turned off by setting AutoSaveOn to False. Because a file must already be saved in a OneDrive or SharePoint location for AutoSave to be on, AutoSave should already be off or disabled in most versions of this scenario.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../../excel/concepts/about-coauthoring-in-excel" data-linktype="relative-path">Coauthoring in Excel</a></li>
+<li><a href="../../api/word.document" data-linktype="relative-path">Document object</a></li>
+<li><a href="../../api/powerpoint.presentation" data-linktype="relative-path">Presentation object</a></li>
+<li><a href="../../api/excel.workbook" data-linktype="relative-path">Workbook object</a></li>
+<li><a href="../../api/excel.application.workbookaftersave" data-linktype="relative-path"><strong>AfterSave</strong> event in Excel</a></li>
+<li><a href="../../api/excel.application.workbookbeforesave" data-linktype="relative-path"><strong>BeforeSave</strong> event in Excel</a></li>
+<li><a href="../../api/powerpoint.application.presentationbeforesave" data-linktype="relative-path"><strong>BeforeSave</strong> event in PowerPoint</a></li>
+<li><a href="../../api/word.application.documentbeforesave" data-linktype="relative-path"><strong>BeforeSave</strong> event in Word</a></li>
+</ul>
+<h3 id="support-and-feedback">Support and feedback</h3>
+<p>Have questions or feedback about Office VBA or this documentation? Please see <a href="../../articles/feedback-support" data-linktype="relative-path">Office VBA support and feedback</a> for guidance about the ways you can receive support and provide feedback.</p>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations" class="display-none-print"></section>
+						<!-- end recommendations section -->
+
+						<!-- feedback section -->
+<section id="site-user-feedback-footer" class="font-size-sm margin-top-md" data-bi-name="site-feedback-section">
+	<hr class="hr" />
+	<h2 id="feedback" class="title is-3">Feedback</h2>
+	<div class="display-flex flex-wrap-wrap align-items-center">
+		<p class="font-weight-semibold margin-xxs margin-left-none">Was this page helpful?</p>
+		<div class="buttons">
+			<button
+				class="thumb-rating-button like button button-primary button-sm"
+				data-binary-rating-response="rating-yes"
+				data-binary-rating
+				type="button"
+				title="This article is helpful"
+				data-bi-name="rating-yes"
+				data-bi-sat="1"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-like"></span>
+				</span>
+				<span>Yes</span>
+			</button>
+			<button
+				class="thumb-rating-button dislike button button-primary button-sm"
+				data-binary-rating-response="rating-no"
+				data-binary-rating
+				type="button"
+				title="This article is not helpful"
+				data-bi-name="rating-no"
+				data-bi-sat="0"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-dislike"></span>
+				</span>
+				<span>No</span>
+			</button>
+		</div>
+	</div>
+	<div class="display-flex flex-wrap-wrap margin-top-xxs">
+		<a href="/answers/products/" data-bi-name="get-help-at-qna">
+			<span>Get help at Microsoft Q&A</span>
+		</a>
+	</div>
+</section>
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<div
+								id="ms--additional-resources-mobile"
+								role="complementary"
+								aria-label="Additional resources"
+								class="display-none-desktop display-none-print"
+							>
+								<hr class="hr" hidden />
+								<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden>Additional resources</h2>
+									<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" hidden></section>
+								<section id="right-rail-training-mobile" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-events-mobile" data-bi-name="events-card" hidden></section>
+								<section id="right-rail-qna-mobile" data-bi-name="qna-link-card" hidden></section>
+							</div>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-sm button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu-interactive" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>&copy; Microsoft 2023</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div
+							id="ms--additional-resources"
+							class="right-container column is-4-desktop display-none display-block-desktop"
+							data-bi-name="pageactions"
+							role="complementary"
+							aria-label="Additional resources"
+						>
+							<div id="affixed-right-container" class="margin-top-sm-tablet" data-bi-name="right-column">
+								<h2 id="ms--additional-resources-heading" class="title is-6 margin-top-md" hidden>Additional resources</h2>
+								<section id="right-rail-events" data-bi-name="events-card" hidden></section>
+								<section id="right-rail-training" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" hidden></section>
+								<nav id="side-doc-outline" class="doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="In this article">
+									<h3>In this article</h3>
+								</nav>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-sm button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon css-variable-support border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon css-variable-support display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li>
+				<li><a data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>&copy; Microsoft 2023</li>
+	</ul>
+</footer>
+	</section>
+
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+</body>
+</html>

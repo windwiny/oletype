@@ -115,7 +115,7 @@
 <link href="https://learn.microsoft.com/en-us/office/vba/language/glossary/vbe-glossary" rel="canonical">
 	<title>VBE Glossary | Microsoft Learn</title>
 
-		<link rel="stylesheet" href="/_themes/docs.theme/master/en-us/_themes/styles/c63c73ef.site-ltr.css ">
+		<link rel="stylesheet" href="/_themes/docs.theme/master/en-us/_themes/styles/5eda3295.site-ltr.css ">
 
 	
 
@@ -133,10 +133,10 @@
 			},
 			hasBinaryRating: true,
 			hasGithubIssues: false,
-			standardFeedback: false,
+			standardFeedback: true,
 			showFeedbackReport: false,
 			enableTutorialFeedback: false,
-			feedbackSystem: 'None',
+			feedbackSystem: 'Standard',
 			feedbackGitHubRepo: '',
 			feedbackProductUrl: '',
 			extendBreadcrumb: false,
@@ -170,9 +170,17 @@
 		<link rel="preconnect" href="//mscom.demdex.net" crossorigin>
 		<link rel="dns-prefetch" href="//target.microsoft.com">
 		<link rel="dns-prefetch" href="//microsoftmscompoc.tt.omtrdc.net">
-		<script src="/_themes/docs.theme/master/en-us/_themes/global/37ce9fe8.at-config.js"></script>
-		<script src="/static/third-party/adobe-target/at-js/2.9.0/at.js" integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu" crossorigin="anonymous"></script>
-		<script src="/_themes/docs.theme/master/en-us/_themes/scripts/d86e3e7a.index-docs.js"></script>
+		<link
+			rel="preload"
+			as="script"
+			href="/static/third-party/adobe-target/at-js/2.9.0/at.js"
+			integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu"
+			crossorigin="anonymous"
+			id="adobe-target-script"
+			type="application/javascript"
+		/>
+		<script src="/_themes/docs.theme/master/en-us/_themes/global/1d03f382.at-config.js"></script>
+		<script src="/_themes/docs.theme/master/en-us/_themes/scripts/16938fbe.index-docs.js"></script>
 </head>
 
 <body lang="en-us" dir="ltr">
@@ -255,7 +263,7 @@ Table of contents						</span>
 		<div class="columns has-large-gaps is-gapless-mobile ">
 
 			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
-				<nav id="affixed-left-container" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" role="navigation" aria-label="Primary"></nav>
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column" role="navigation" aria-label="Primary"></nav>
 			</div>
 
 			<!-- .primary-holder -->
@@ -280,7 +288,7 @@ Table of contents						</span>
 
 										</div>
 									</details>
-									<bread-crumbs id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs" id="page-breadcrumbs"></bread-crumbs>
+									<bread-crumbs id="article-header-breadcrumbs" data-test-id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs" id="page-breadcrumbs"></bread-crumbs>
 
 									<div id="article-header-page-actions"  class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
 
@@ -873,6 +881,48 @@ Article													</li>
 						<!-- end recommendations section -->
 
 						<!-- feedback section -->
+<section id="site-user-feedback-footer" class="font-size-sm margin-top-md" data-bi-name="site-feedback-section">
+	<hr class="hr" />
+	<h2 id="feedback" class="title is-3">Feedback</h2>
+	<div class="display-flex flex-wrap-wrap align-items-center">
+		<p class="font-weight-semibold margin-xxs margin-left-none">Was this page helpful?</p>
+		<div class="buttons">
+			<button
+				class="thumb-rating-button like button button-primary button-sm"
+				data-binary-rating-response="rating-yes"
+				data-binary-rating
+				type="button"
+				title="This article is helpful"
+				data-bi-name="rating-yes"
+				data-bi-sat="1"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-like"></span>
+				</span>
+				<span>Yes</span>
+			</button>
+			<button
+				class="thumb-rating-button dislike button button-primary button-sm"
+				data-binary-rating-response="rating-no"
+				data-binary-rating
+				type="button"
+				title="This article is not helpful"
+				data-bi-name="rating-no"
+				data-bi-sat="0"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-dislike"></span>
+				</span>
+				<span>No</span>
+			</button>
+		</div>
+	</div>
+	<div class="display-flex flex-wrap-wrap margin-top-xxs">
+		<a href="/answers/products/" data-bi-name="get-help-at-qna">
+			<span>Get help at Microsoft Q&A</span>
+		</a>
+	</div>
+</section>
 						<!-- end feedback section -->
 
 						<!-- feedback report section -->

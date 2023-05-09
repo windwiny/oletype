@@ -22,22 +22,8 @@ ruby downapi.rb
 # python inspect objecty, list win32com objects methods, and parameters
 #  method return type may not show, find from download api
 python gen_win32com.py > oletype\excel.pyi
-    read 3652 lines
-    {'obj2methods': 132}
-
-    {'obj2parameters': 195}
-
-    {'obj2unknow': 0}
-
-    from excel.apicomment.json read 386844 bytes, load 3302 methods comments.
-    ------------------------------------------
-    ## ALL DONE at 7
-    ------------------------------------------
-    ## PRINT  115
-
-    all cls 115 [ ]
-    base cls 3 ['_Application', '_Workbook', '_Worksheet']
-    output to py class info file: oletype/excel.py
+    read excel.info.json file,
+    output to  oletype/excel.py  oletype/excel.pyi
 
 python demo.py
 ```
