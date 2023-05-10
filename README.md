@@ -13,19 +13,19 @@ git clone https://github.com/windwiny/oletype
 
 cd oletype
 
-# download web page, generate api txt, and method comment json
+# download web page, generate enumeration, and class method, property comment json
+#    will output excel.info.json
 ruby downapi.rb
-
-    will output excel.info.json
 
 
 # python inspect objecty, list win32com objects methods, and parameters
 #  method return type may not show, find from download api
-python gen_win32com.py > oletype\excel.pyi
-    read excel.info.json file,
-    output to  oletype/excel.py  oletype/excel.pyi
+#    read excel.info.json file,
+#    output to  oletype/excel.py  oletype/excel.pyi
+python gen_win32com.py
 
-python demo.py
+
+python demo\demo1.py
 ```
 
 ### install package

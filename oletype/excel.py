@@ -9,6 +9,3673 @@
 #   exapp.   #  get ide auto type hit
 
 
+
+from enum import IntFlag, IntEnum, unique
+
+# list collection  1
+class VBA_Collection:
+  '''The Item property of a collection returns a single object from that collection. The following example sets the firstBook variable to a Workbook object that represents the first workbook in the Workbooks collection.
+
+Set FirstBook = Workbooks.Item(1)
+
+The Item property is the default property for most collections, so you can write the same statement more concisely by omitting the Item keyword.
+
+Set FirstBook = Workbooks(1)
+
+For more information about a specific collection, see the Help topic for that collection or the Item property for the collection.
+
+Although you can usually specify an integer value with the Item property, it may be more convenient to return an object by name. Before you can use a name with the Item property, you must name the object. Most often, this is done by setting the object's Name property. The following example creates a named worksheet in the active workbook and then refers to the worksheet by name.
+
+ActiveWorkbook.Worksheets.Add.Name = "A New Sheet" 
+With Worksheets("A New Sheet") 
+ .Range("A5:A10").Formula = "=RAND()" 
+End With
+
+Some collections have predefined index values you can use to return single objects. Each predefined index value is represented by a constant. For example, you specify an xlBordersIndex constant with the Item property of the Borders collection to return a single border.
+
+The following example sets the bottom border of cells A1:G1 on Sheet1 to a double line.
+
+Worksheets("Sheet1").Range("A1:A1"). _ 
+ Borders.Item(xlEdgeBottom).LineStyle = xlDouble
+
+Have questions or feedback about Office VBA or this documentation? Please see Office VBA support and feedback for guidance about the ways you can receive support and provide feedback.
+  '''
+
+
+# list enumeration  157
+@unique
+class XlCalculation(IntFlag):
+  '''Specifies the calculation mode.'''
+
+  xlCalculationAutomatic = -4105
+  '''Excel controls recalculation.'''
+  xlCalculationManual = -4135
+  '''Calculation is done when the user requests it.'''
+  xlCalculationSemiautomatic = 2
+  '''Excel controls recalculation but ignores changes in tables.'''
+
+@unique
+class XlCalculationInterruptKey(IntFlag):
+  '''Specifies which key interrupts recalculation.'''
+
+  xlAnyKey = 2
+  '''Pressing any key interrupts recalculation.'''
+  xlEscKey = 1
+  '''Pressing the ESC key interrupts recalculation.'''
+  xlNoKey = 0
+  '''No key press can interrupt recalculation.'''
+
+@unique
+class XlCalculationState(IntFlag):
+  '''Specifies the calculation state of the application.'''
+
+  xlCalculating = 1
+  '''Calculations in process.'''
+  xlDone = 0
+  '''Calculations complete.'''
+  xlPending = 2
+  '''Changes that trigger calculation have been made, but a recalculation has not yet been performed.'''
+
+@unique
+class XlClipboardFormat(IntFlag):
+  '''Specifies the format of an item on the Microsoft Windows clipboard.'''
+
+  xlClipboardFormatBIFF = 8
+  '''Binary Interchange file format for Excel version 2.x'''
+  xlClipboardFormatBIFF12 = 63
+  '''Binary Interchange file format 12'''
+  xlClipboardFormatBIFF2 = 18
+  '''Binary Interchange file format 2'''
+  xlClipboardFormatBIFF3 = 20
+  '''Binary Interchange file format 3'''
+  xlClipboardFormatBIFF4 = 30
+  '''Binary Interchange file format 4'''
+  xlClipboardFormatBinary = 15
+  '''Binary format'''
+  xlClipboardFormatBitmap = 9
+  '''Bitmap format'''
+  xlClipboardFormatCGM = 13
+  '''CGM format'''
+  xlClipboardFormatCSV = 5
+  '''CSV format'''
+  xlClipboardFormatDIF = 4
+  '''DIF format'''
+  xlClipboardFormatDspText = 12
+  '''Dsp Text format'''
+  xlClipboardFormatEmbeddedObject = 21
+  '''Embedded Object'''
+  xlClipboardFormatEmbedSource = 22
+  '''Embedded Source'''
+  xlClipboardFormatLink = 11
+  '''Link'''
+  xlClipboardFormatLinkSource = 23
+  '''Link to the source file'''
+  xlClipboardFormatLinkSourceDesc = 32
+  '''Link to the source description'''
+  xlClipboardFormatMovie = 24
+  '''Movie'''
+  xlClipboardFormatNative = 14
+  '''Native'''
+  xlClipboardFormatObjectDesc = 31
+  '''Object description'''
+  xlClipboardFormatObjectLink = 19
+  '''Object link'''
+  xlClipboardFormatOwnerLink = 17
+  '''Link to the owner'''
+  xlClipboardFormatPICT = 2
+  '''Picture'''
+  xlClipboardFormatPrintPICT = 3
+  '''Print picture'''
+  xlClipboardFormatRTF = 7
+  '''RTF format'''
+  xlClipboardFormatScreenPICT = 29
+  '''Screen Picture'''
+  xlClipboardFormatStandardFont = 28
+  '''Standard Font'''
+  xlClipboardFormatStandardScale = 27
+  '''Standard Scale'''
+  xlClipboardFormatSYLK = 6
+  '''SYLK'''
+  xlClipboardFormatTable = 16
+  '''Table'''
+  xlClipboardFormatText = 0
+  '''Text'''
+  xlClipboardFormatToolFace = 25
+  '''Tool Face'''
+  xlClipboardFormatToolFacePICT = 26
+  '''Tool Face Picture'''
+  xlClipboardFormatVALU = 1
+  '''Value'''
+  xlClipboardFormatWK1 = 10
+  '''Workbook'''
+
+@unique
+class XlCommandUnderlines(IntFlag):
+  '''Specifies the state of the command underlines in Microsoft Excel for the Macintosh.'''
+
+  xlCommandUnderlinesAutomatic = -4105
+  '''Excel controls the display of command underlines.'''
+  xlCommandUnderlinesOff = -4146
+  '''Command underlines are not displayed.'''
+  xlCommandUnderlinesOn = 1
+  '''Command underlines are displayed.'''
+
+@unique
+class XlMousePointer(IntFlag):
+  '''Specifies the appearance of the mouse pointer in Excel.'''
+
+  xlDefault = -4143
+  '''The default pointer.'''
+  xlIBeam = 3
+  '''The I-beam pointer.'''
+  xlNorthwestArrow = 1
+  '''The northwest-arrow pointer.'''
+  xlWait = 2
+  '''The hourglass pointer.'''
+
+@unique
+class XlCutCopyMode(IntFlag):
+  '''Specifies whether status is Copy mode or Cut mode.'''
+
+  xlCopy = 1
+  '''In Copy mode'''
+  xlCut = 2
+  '''In Cut mode'''
+
+@unique
+class XlCommentDisplayMode(IntFlag):
+  '''Specifies the way that cells display comments and comment indicators.'''
+
+  xlCommentAndIndicator = 1
+  '''Display comment and indicator at all times.'''
+  xlCommentIndicatorOnly = -1
+  '''Display comment indicator only. Display comment when mouse pointer is moved over cell.'''
+  xlNoIndicator = 0
+  '''Display neither the comment nor the comment indicator at any time.'''
+
+@unique
+class XlEnableCancelKey(IntFlag):
+  '''Specifies how Microsoft Office Excel 2007 handles CTRL+BREAK (or ESC or COMMAND+PERIOD) user interruptions to the running procedure.'''
+
+  xlDisabled = 0
+  '''Cancel key trapping is completely disabled.'''
+  xlErrorHandler = 2
+  '''The interrupt is sent to the running procedure as an error, trappable by an error handler set up with an On Error GoTo statement. The trappable error code is 18.'''
+  xlInterrupt = 1
+  '''The current procedure is interrupted, and the user can debug or end the procedure.'''
+
+@unique
+class XlFileValidationPivotMode(IntFlag):
+  '''Specifies how to validate the data caches for PivotTable reports.
+
+#REMARKS:
+
+This enumeration is used to specify the setting of the FileValidationPivot property of the Application object.
+
+The effect of the xlFileValidationPivotDefault setting is controlled by the PivotOptions registry value, which is set in the following registry subkey: HKEY_CURRENT_USER\Software\Microsoft\Office\14.0\Excel\Security\FileValidation. The PivotOptions value is a DWORD value that can be set as listed in the following table.
+
+Have questions or feedback about Office VBA or this documentation? Please see Office VBA support and feedback for guidance about the ways you can receive support and provide feedback.
+  '''
+
+  xlFileValidationPivotDefault = 0
+  '''Validate the contents of data caches as specified by the PivotOptions registry setting (default).'''
+  xlFileValidationPivotRun = 1
+  '''Validate the contents of all data caches regardless of the registry setting.'''
+  xlFileValidationPivotSkip = 2
+  '''Do not validate the contents of data caches.'''
+
+@unique
+class XlMailSystem(IntFlag):
+  '''Specifies the mail system that is installed on the host computer.'''
+
+  xlMAPI = 1
+  '''MAPI-complaint system'''
+  xlNoMailSystem = 0
+  '''No mail system'''
+  xlPowerTalk = 2
+  '''PowerTalk mail system'''
+
+@unique
+class XlMeasurementUnits(IntFlag):
+  '''Specifies the measurement units.'''
+
+  xlCentimeters = 1
+  '''Centimeters'''
+  xlInches = 0
+  '''Inches'''
+  xlMillimeters = 2
+  '''Millimeters'''
+
+@unique
+class XlDirection(IntFlag):
+  '''Specifies the direction in which to move.'''
+
+  xlDown = -4121
+  '''Down.'''
+  xlToLeft = -4159
+  '''To left.'''
+  xlToRight = -4161
+  '''To right.'''
+  xlUp = -4162
+  '''Up.'''
+
+@unique
+class XlReferenceStyle(IntFlag):
+  '''Specifies the reference style.'''
+
+  xlA1 = 1
+  '''Default. Use xlA1 to return an A1-style reference.'''
+  xlR1C1 = -4150
+  '''Use xlR1C1 to return an R1C1-style reference.'''
+
+class Constants(IntFlag):
+  '''This enumeration groups together constants used with various Excel methods.'''
+
+  xl3DBar = -4099
+  '''3D Bar'''
+  xl3DEffects1 = 13
+  '''3D Effects1'''
+  xl3DEffects2 = 14
+  '''3D Effects2'''
+  xl3DSurface = -4103
+  '''3D Surface'''
+  xlAbove = 0
+  '''Above'''
+  xlAccounting1 = 4
+  '''Accounting1'''
+  xlAccounting2 = 5
+  '''Accounting2'''
+  xlAccounting4 = 17
+  '''Accounting4'''
+  xlAdd = 2
+  '''Add'''
+  xlAll = -4104
+  '''All'''
+  xlAccounting3 = 6
+  '''Accounting3'''
+  xlAllExceptBorders = 7
+  '''All Except Borders'''
+  xlAutomatic = -4105
+  '''Automatic'''
+  xlBar = 2
+  '''Automatic'''
+  xlBelow = 1
+  '''Below'''
+  xlBidi = -5000
+  '''Bidi'''
+  xlBidiCalendar = 3
+  '''BidiCalendar'''
+  xlBoth = 1
+  '''Both'''
+  xlBottom = -4107
+  '''Bottom'''
+  xlCascade = 7
+  '''Cascade'''
+  xlCenter = -4108
+  '''Center'''
+  xlCenterAcrossSelection = 7
+  '''Center Across Selection'''
+  xlChart4 = 2
+  '''Chart 4'''
+  xlChartSeries = 17
+  '''Chart Series'''
+  xlChartShort = 6
+  '''Chart Short'''
+  xlChartTitles = 18
+  '''Chart Titles'''
+  xlChecker = 9
+  '''Checker'''
+  xlCircle = 8
+  '''Circle'''
+  xlClassic1 = 1
+  '''Classic1'''
+  xlClassic2 = 2
+  '''Classic2'''
+  xlClassic3 = 3
+  '''Classic3'''
+  xlClosed = 3
+  '''Closed'''
+  xlColor1 = 7
+  '''Color1'''
+  xlColor2 = 8
+  '''Color2'''
+  xlColor3 = 9
+  '''Color3'''
+  xlColumn = 3
+  '''Column'''
+  xlCombination = -4111
+  '''Combination'''
+  xlComplete = 4
+  '''Complete'''
+  xlConstants = 2
+  '''Constants'''
+  xlContents = 2
+  '''Contents'''
+  xlContext = -5002
+  '''Context'''
+  xlCorner = 2
+  '''Corner'''
+  xlCrissCross = 16
+  '''CrissCross'''
+  xlCross = 4
+  '''Cross'''
+  xlCustom = -4114
+  '''Custom'''
+  xlDebugCodePane = 13
+  '''Debug Code Pane'''
+  xlDefaultAutoFormat = -1
+  '''Default Auto Format'''
+  xlDesktop = 9
+  '''Desktop'''
+  xlDiamond = 2
+  '''Diamond'''
+  xlDirect = 1
+  '''Direct'''
+  xlDistributed = -4117
+  '''Distributed'''
+  xlDivide = 5
+  '''Divide'''
+  xlDoubleAccounting = 5
+  '''Double Accounting'''
+  xlDoubleClosed = 5
+  '''Double Closed'''
+  xlDoubleOpen = 4
+  '''Double Open'''
+  xlDoubleQuote = 1
+  '''Double Quote'''
+  xlDrawingObject = 14
+  '''Drawing Object'''
+  xlEntireChart = 20
+  '''Entire Chart'''
+  xlExcelMenus = 1
+  '''Excel Menus'''
+  xlExtended = 3
+  '''Extended'''
+  xlFill = 5
+  '''Fill'''
+  xlFirst = 0
+  '''First'''
+  xlFixedValue = 1
+  '''Fixed Value'''
+  xlFloating = 5
+  '''Floating'''
+  xlFormats = -4122
+  '''Formats'''
+  xlFormula = 5
+  '''Formula'''
+  xlFullScript = 1
+  '''Full Script'''
+  xlGeneral = 1
+  '''General'''
+  xlGray16 = 17
+  '''Gray16'''
+  xlGray25 = -4124
+  '''Gray25'''
+  xlGray50 = -4125
+  '''Gray50'''
+  xlGray75 = -4126
+  '''Gray75'''
+  xlGray8 = 18
+  '''Gray8'''
+  xlGregorian = 2
+  '''Gregorian'''
+  xlGrid = 15
+  '''Grid'''
+  xlGridline = 22
+  '''Gridline'''
+  xlHigh = -4127
+  '''High'''
+  xlHindiNumerals = 3
+  '''Hindi Numerals'''
+  xlIcons = 1
+  '''Icons'''
+  xlImmediatePane = 12
+  '''Immediate Pane'''
+  xlInside = 2
+  '''Inside'''
+  xlInteger = 2
+  '''Integer'''
+  xlJustify = -4130
+  '''Justify'''
+  xlLast = 1
+  '''Last'''
+  xlLastCell = 11
+  '''Last Cell'''
+  xlLatin = -5001
+  '''Latin'''
+  xlLeft = -4131
+  '''Left'''
+  xlLeftToRight = 2
+  '''Left To Right'''
+  xlLightDown = 13
+  '''Light Down'''
+  xlLightHorizontal = 11
+  '''Light Horizontal'''
+  xlLightUp = 14
+  '''Light Up'''
+  xlLightVertical = 12
+  '''Light Vertical'''
+  xlList1 = 10
+  '''List1'''
+  xlList2 = 11
+  '''List2'''
+  xlList3 = 12
+  '''List3'''
+  xlLocalFormat1 = 15
+  '''Local Format1'''
+  xlLocalFormat2 = 16
+  '''Local Format2'''
+  xlLogicalCursor = 1
+  '''Logical Cursor'''
+  xlLong = 3
+  '''Long'''
+  xlLotusHelp = 2
+  '''Lotus Help'''
+  xlLow = -4134
+  '''Low'''
+  xlLTR = -5003
+  '''LTR'''
+  xlMacrosheetCell = 7
+  '''MacrosheetCell'''
+  xlManual = -4135
+  '''Manual'''
+  xlMaximum = 2
+  '''Maximum'''
+  xlMinimum = 4
+  '''Minimum'''
+  xlMinusValues = 3
+  '''Minus Values'''
+  xlMixed = 2
+  '''Mixed'''
+  xlMixedAuthorizedScript = 4
+  '''Mixed Authorized Script'''
+  xlMixedScript = 3
+  '''Mixed Script'''
+  xlModule = -4141
+  '''Module'''
+  xlMultiply = 4
+  '''Multiply'''
+  xlNarrow = 1
+  '''Narrow'''
+  xlNextToAxis = 4
+  '''Next To Axis'''
+  xlNoDocuments = 3
+  '''No Documents'''
+  xlNone = -4142
+  '''None'''
+  xlNotes = -4144
+  '''Notes'''
+  xlOff = -4146
+  '''Off'''
+  xlOn = 1
+  '''On'''
+  xlOpaque = 3
+  '''Opaque'''
+  xlOpen = 2
+  '''Open'''
+  xlOutside = 3
+  '''Outside'''
+  xlPartial = 3
+  '''Partial'''
+  xlPartialScript = 2
+  '''Partial Script'''
+  xlPercent = 2
+  '''Percent'''
+  xlPlus = 9
+  '''Plus'''
+  xlPlusValues = 2
+  '''Plus Values'''
+  xlReference = 4
+  '''Reference'''
+  xlRight = -4152
+  '''Right'''
+  xlRTL = -5004
+  '''RTL'''
+  xlScale = 3
+  '''Scale'''
+  xlSemiautomatic = 2
+  '''Semiautomatic'''
+  xlSemiGray75 = 10
+  '''SemiGray75'''
+  xlShort = 1
+  '''Short'''
+  xlShowLabel = 4
+  '''Show Label'''
+  xlShowLabelAndPercent = 5
+  '''Show Label and Percent'''
+  xlShowPercent = 3
+  '''Show Percent'''
+  xlShowValue = 2
+  '''Show Value'''
+  xlSimple = -4154
+  '''Simple'''
+  xlSingle = 2
+  '''Single'''
+  xlSingleAccounting = 4
+  '''Single Accounting'''
+  xlSingleQuote = 2
+  '''Single Quote'''
+  xlSolid = 1
+  '''Solid'''
+  xlSquare = 1
+  '''Square'''
+  xlStar = 5
+  '''Star'''
+  xlStError = 4
+  '''St Error'''
+  xlStrict = 2
+  '''Strict'''
+  xlSubtract = 3
+  '''Subtract'''
+  xlSystem = 1
+  '''System'''
+  xlTextBox = 16
+  '''Text Box'''
+  xlTiled = 1
+  '''Tiled'''
+  xlTitleBar = 8
+  '''Title Bar'''
+  xlToolbar = 1
+  '''Toolbar'''
+  xlToolbarButton = 2
+  '''Toolbar Button'''
+  xlTop = -4160
+  '''Top'''
+  xlTopToBottom = 1
+  '''Top To Bottom'''
+  xlTransparent = 2
+  '''Transparent'''
+  xlTriangle = 3
+  '''Triangle'''
+  xlVeryHidden = 2
+  '''Very Hidden'''
+  xlVisible = 12
+  '''Visible'''
+  xlVisualCursor = 2
+  '''Visual Cursor'''
+  xlWatchPane = 11
+  '''Watch Pane'''
+  xlWide = 3
+  '''Wide'''
+  xlWorkbookTab = 6
+  '''Workbook Tab'''
+  xlWorksheet4 = 1
+  '''Worksheet4'''
+  xlWorksheetCell = 3
+  '''Worksheet Cell'''
+  xlWorksheetShort = 5
+  '''Worksheet Short'''
+
+@unique
+class XlWindowState(IntFlag):
+  '''Specifies the state of the window.'''
+
+  xlMaximized = -4137
+  '''Maximized'''
+  xlMinimized = -4140
+  '''Minimized'''
+  xlNormal = -4143
+  '''Normal'''
+
+class XlFileFormat(IntFlag):
+  '''Specifies the file format when saving the worksheet.'''
+
+  xlAddIn = 18
+  '''Microsoft Excel 97-2003 Add-In  *.xla'''
+  xlAddIn8 = 18
+  '''Microsoft Excel 97-2003 Add-In  *.xla'''
+  xlCSV = 6
+  '''CSV  *.csv'''
+  xlCSVMac = 22
+  '''Macintosh CSV  *.csv'''
+  xlCSVMSDOS = 24
+  '''MSDOS CSV  *.csv'''
+  xlCSVUTF8 = 62
+  '''UTF8 CSV  *.csv'''
+  xlCSVWindows = 23
+  '''Windows CSV  *.csv'''
+  xlCurrentPlatformText = -4158
+  '''Current Platform Text  *.txt'''
+  xlDBF2 = 7
+  '''Dbase 2 format  *.dbf'''
+  xlDBF3 = 8
+  '''Dbase 3 format  *.dbf'''
+  xlDBF4 = 11
+  '''Dbase 4 format  *.dbf'''
+  xlDIF = 9
+  '''Data Interchange format  *.dif'''
+  xlExcel12 = 50
+  '''Excel Binary Workbook  *.xlsb'''
+  xlExcel2 = 16
+  '''Excel version 2.0 (1987)  *.xls'''
+  xlExcel2FarEast = 27
+  '''Excel version 2.0 far east (1987)  *.xls'''
+  xlExcel3 = 29
+  '''Excel version 3.0 (1990)  *.xls'''
+  xlExcel4 = 33
+  '''Excel version 4.0 (1992)  *.xls'''
+  xlExcel4Workbook = 35
+  '''Excel version 4.0. Workbook format (1992)  *.xlw'''
+  xlExcel5 = 39
+  '''Excel version 5.0 (1994)  *.xls'''
+  xlExcel7 = 39
+  '''Excel 95 (version 7.0)  *.xls'''
+  xlExcel8 = 56
+  '''Excel 97-2003 Workbook  *.xls'''
+  xlExcel9795 = 43
+  '''Excel version 95 and 97  *.xls'''
+  xlHtml = 44
+  '''HTML format  *.htm; *.html'''
+  xlIntlAddIn = 26
+  '''International Add-In  No file extension'''
+  xlIntlMacro = 25
+  '''International Macro  No file extension'''
+  xlOpenDocumentSpreadsheet = 60
+  '''OpenDocument Spreadsheet  *.ods'''
+  xlOpenXMLAddIn = 55
+  '''Open XML Add-In  *.xlam'''
+  xlOpenXMLStrictWorkbook = 61 #TODO FIXME(&H3D)
+  '''Strict Open XML file  *.xlsx'''
+  xlOpenXMLTemplate = 54
+  '''Open XML Template  *.xltx'''
+  xlOpenXMLTemplateMacroEnabled = 53
+  '''Open XML Template Macro Enabled  *.xltm'''
+  xlOpenXMLWorkbook = 51
+  '''Open XML Workbook  *.xlsx'''
+  xlOpenXMLWorkbookMacroEnabled = 52
+  '''Open XML Workbook Macro Enabled  *.xlsm'''
+  xlSYLK = 2
+  '''Symbolic Link format  *.slk'''
+  xlTemplate = 17
+  '''Excel Template format  *.xlt'''
+  xlTemplate8 = 17
+  '''Template 8  *.xlt'''
+  xlTextMac = 19
+  '''Macintosh Text  *.txt'''
+  xlTextMSDOS = 21
+  '''MSDOS Text  *.txt'''
+  xlTextPrinter = 36
+  '''Printer Text  *.prn'''
+  xlTextWindows = 20
+  '''Windows Text  *.txt'''
+  xlUnicodeText = 42
+  '''Unicode Text  No file extension; *.txt'''
+  xlWebArchive = 45
+  '''Web Archive  *.mht; *.mhtml'''
+  xlWJ2WD1 = 14
+  '''Japanese 1-2-3  *.wj2'''
+  xlWJ3 = 40
+  '''Japanese 1-2-3  *.wj3'''
+  xlWJ3FJ3 = 41
+  '''Japanese 1-2-3 format  *.wj3'''
+  xlWK1 = 5
+  '''Lotus 1-2-3 format  *.wk1'''
+  xlWK1ALL = 31
+  '''Lotus 1-2-3 format  *.wk1'''
+  xlWK1FMT = 30
+  '''Lotus 1-2-3 format  *.wk1'''
+  xlWK3 = 15
+  '''Lotus 1-2-3 format  *.wk3'''
+  xlWK3FM3 = 32
+  '''Lotus 1-2-3 format  *.wk3'''
+  xlWK4 = 38
+  '''Lotus 1-2-3 format  *.wk4'''
+  xlWKS = 4
+  '''Lotus 1-2-3 format  *.wks'''
+  xlWorkbookDefault = 51
+  '''Workbook default  *.xlsx'''
+  xlWorkbookNormal = -4143
+  '''Workbook normal  *.xls'''
+  xlWorks2FarEast = 28
+  '''Microsoft Works 2.0 far east format  *.wks'''
+  xlWQ1 = 34
+  '''Quattro Pro format  *.wq1'''
+  xlXMLSpreadsheet = 46
+  '''XML Spreadsheet  *.xml'''
+
+class XlBuiltInDialog(IntFlag):
+  '''Specifies which dialog box to display.'''
+
+  xlDialogActivate = 103
+  '''Activate dialog box'''
+  xlDialogActiveCellFont = 476
+  '''Active Cell Font dialog box'''
+  xlDialogAddChartAutoformat = 390
+  '''Add Chart Autoformat dialog box'''
+  xlDialogAddinManager = 321
+  '''Addin Manager dialog box'''
+  xlDialogAlignment = 43
+  '''Alignment dialog box'''
+  xlDialogApplyNames = 133
+  '''Apply Names dialog box'''
+  xlDialogApplyStyle = 212
+  '''Apply Style dialog box'''
+  xlDialogAppMove = 170
+  '''AppMove dialog box'''
+  xlDialogAppSize = 171
+  '''AppSize dialog box'''
+  xlDialogArrangeAll = 12
+  '''Arrange All dialog box'''
+  xlDialogAssignToObject = 213
+  '''Assign To Object dialog box'''
+  xlDialogAssignToTool = 293
+  '''Assign To Tool dialog box'''
+  xlDialogAttachText = 80
+  '''Attach Text dialog box'''
+  xlDialogAttachToolbars = 323
+  '''Attach Toolbars dialog box'''
+  xlDialogAutoCorrect = 485
+  '''Auto Correct dialog box'''
+  xlDialogAxes = 78
+  '''Axes dialog box'''
+  xlDialogBorder = 45
+  '''Border dialog box'''
+  xlDialogCalculation = 32
+  '''Calculation dialog box'''
+  xlDialogCellProtection = 46
+  '''Cell Protection dialog box'''
+  xlDialogChangeLink = 166
+  '''Change Link dialog box'''
+  xlDialogChartAddData = 392
+  '''Chart Add Data dialog box'''
+  xlDialogChartLocation = 527
+  '''Chart Location dialog box'''
+  xlDialogChartOptionsDataLabelMultiple = 724
+  '''Chart Options DataLabel Multiple dialog box'''
+  xlDialogChartOptionsDataLabels = 505
+  '''Chart Options DataLabels dialog box'''
+  xlDialogChartOptionsDataTable = 506
+  '''Chart Options DataTable dialog box'''
+  xlDialogChartSourceData = 540
+  '''Chart SourceData dialog box'''
+  xlDialogChartTrend = 350
+  '''Chart Trend dialog box'''
+  xlDialogChartType = 526
+  '''Chart Type dialog box'''
+  xlDialogChartWizard = 288
+  '''ChartWizard dialog box'''
+  xlDialogCheckboxProperties = 435
+  '''Checkbox Properties dialog box'''
+  xlDialogClear = 52
+  '''Clear dialog box'''
+  xlDialogColorPalette = 161
+  '''Color Palette dialog box'''
+  xlDialogColumnWidth = 47
+  '''Column Width dialog box'''
+  xlDialogCombination = 73
+  '''Combination dialog box'''
+  xlDialogConditionalFormatting = 583
+  '''Conditional Formatting dialog box'''
+  xlDialogConsolidate = 191
+  '''Consolidate dialog box'''
+  xlDialogCopyChart = 147
+  '''Copy Chart dialog box'''
+  xlDialogCopyPicture = 108
+  '''Copy Picture dialog box'''
+  xlDialogCreateList = 796
+  '''Create List dialog box'''
+  xlDialogCreateNames = 62
+  '''Create Names dialog box'''
+  xlDialogCreatePublisher = 217
+  '''Create Publisher dialog box'''
+  xlDialogCreateRelationship = 1272
+  '''Create Relationship dialog box'''
+  xlDialogCustomizeToolbar = 276
+  '''Customize Toolbar dialog box'''
+  xlDialogCustomViews = 493
+  '''Custom Views dialog box'''
+  xlDialogDataDelete = 36
+  '''Data Delete dialog box'''
+  xlDialogDataLabel = 379
+  '''Data Label dialog box'''
+  xlDialogDataLabelMultiple = 723
+  '''Data Label Multiple dialog box'''
+  xlDialogDataSeries = 40
+  '''Data Series dialog box'''
+  xlDialogDataValidation = 525
+  '''Data Validation dialog box'''
+  xlDialogDefineName = 61
+  '''Define Name dialog box'''
+  xlDialogDefineStyle = 229
+  '''Define Style dialog box'''
+  xlDialogDeleteFormat = 111
+  '''Delete Format dialog box'''
+  xlDialogDeleteName = 110
+  '''Delete Name dialog box'''
+  xlDialogDemote = 203
+  '''Demote dialog box'''
+  xlDialogDisplay = 27
+  '''Display dialog box'''
+  xlDialogDocumentInspector = 862
+  '''Document Inspector dialog box'''
+  xlDialogEditboxProperties = 438
+  '''Editbox Properties dialog box'''
+  xlDialogEditColor = 223
+  '''Edit Color dialog box'''
+  xlDialogEditDelete = 54
+  '''Edit Delete dialog box'''
+  xlDialogEditionOptions = 251
+  '''Edition Options dialog box'''
+  xlDialogEditSeries = 228
+  '''Edit Series dialog box'''
+  xlDialogErrorbarX = 463
+  '''Errorbar X dialog box'''
+  xlDialogErrorbarY = 464
+  '''Errorbar Y dialog box'''
+  xlDialogErrorChecking = 732
+  '''Error Checking dialog box'''
+  xlDialogEvaluateFormula = 709
+  '''Evaluate Formula dialog box'''
+  xlDialogExternalDataProperties = 530
+  '''External Data Properties dialog box'''
+  xlDialogExtract = 35
+  '''Extract dialog box'''
+  xlDialogFileDelete = 6
+  '''File Delete dialog box'''
+  xlDialogFileSharing = 481
+  '''File Sharing dialog box'''
+  xlDialogFillGroup = 200
+  '''Fill Group dialog box'''
+  xlDialogFillWorkgroup = 301
+  '''Fill Workgroup dialog box'''
+  xlDialogFilter = 447
+  '''Dialog Filter dialog box'''
+  xlDialogFilterAdvanced = 370
+  '''Filter Advanced dialog box'''
+  xlDialogFindFile = 475
+  '''Find File dialog box'''
+  xlDialogFont = 26
+  '''Font dialog box'''
+  xlDialogFontProperties = 381
+  '''Font Properties dialog box'''
+  xlDialogFormatAuto = 269
+  '''Format Auto dialog box'''
+  xlDialogFormatChart = 465
+  '''Format Chart dialog box'''
+  xlDialogFormatCharttype = 423
+  '''Format Charttype dialog box'''
+  xlDialogFormatFont = 150
+  '''Format Font dialog box'''
+  xlDialogFormatLegend = 88
+  '''Format Legend dialog box'''
+  xlDialogFormatMain = 225
+  '''Format Main dialog box'''
+  xlDialogFormatMove = 128
+  '''Format Move dialog box'''
+  xlDialogFormatNumber = 42
+  '''Format Number dialog box'''
+  xlDialogFormatOverlay = 226
+  '''Format Overlay dialog box'''
+  xlDialogFormatSize = 129
+  '''Format Size dialog box'''
+  xlDialogFormatText = 89
+  '''Format Text dialog box'''
+  xlDialogFormulaFind = 64
+  '''Formula Find dialog box'''
+  xlDialogFormulaGoto = 63
+  '''Formula Goto dialog box'''
+  xlDialogFormulaReplace = 130
+  '''Formula Replace dialog box'''
+  xlDialogFunctionWizard = 450
+  '''Function Wizard dialog box'''
+  xlDialogGallery3dArea = 193
+  '''Gallery 3D Area dialog box'''
+  xlDialogGallery3dBar = 272
+  '''Gallery 3D Bar dialog box'''
+  xlDialogGallery3dColumn = 194
+  '''Gallery 3D Column dialog box'''
+  xlDialogGallery3dLine = 195
+  '''Gallery 3D Line dialog box'''
+  xlDialogGallery3dPie = 196
+  '''Gallery 3D Pie dialog box'''
+  xlDialogGallery3dSurface = 273
+  '''Gallery 3D Surface dialog box'''
+  xlDialogGalleryArea = 67
+  '''Gallery Area dialog box'''
+  xlDialogGalleryBar = 68
+  '''Gallery Bar dialog box'''
+  xlDialogGalleryColumn = 69
+  '''Gallery Column dialog box'''
+  xlDialogGalleryCustom = 388
+  '''Gallery Custom dialog box'''
+  xlDialogGalleryDoughnut = 344
+  '''Gallery Doughnut dialog box'''
+  xlDialogGalleryLine = 70
+  '''Gallery Line dialog box'''
+  xlDialogGalleryPie = 71
+  '''Gallery Pie dialog box'''
+  xlDialogGalleryRadar = 249
+  '''Gallery Radar dialog box'''
+  xlDialogGalleryScatter = 72
+  '''Gallery Scatter dialog box'''
+  xlDialogGoalSeek = 198
+  '''Goal Seek dialog box'''
+  xlDialogGridlines = 76
+  '''Gridlines dialog box'''
+  xlDialogImportTextFile = 666
+  '''Import Text File dialog box'''
+  xlDialogInsert = 55
+  '''Insert dialog box'''
+  xlDialogInsertHyperlink = 596
+  '''Insert Hyperlink dialog box'''
+  xlDialogInsertObject = 259
+  '''Insert Object dialog box'''
+  xlDialogInsertPicture = 342
+  '''Insert Picture dialog box'''
+  xlDialogInsertTitle = 380
+  '''Insert Title dialog box'''
+  xlDialogLabelProperties = 436
+  '''Label Properties dialog box'''
+  xlDialogListboxProperties = 437
+  '''Listbox Properties dialog box'''
+  xlDialogMacroOptions = 382
+  '''Macro Options dialog box'''
+  xlDialogMailEditMailer = 470
+  '''Mail Edit Mailer dialog box'''
+  xlDialogMailLogon = 339
+  '''Mail Logon dialog box'''
+  xlDialogMailNextLetter = 378
+  '''Mail Next Letter dialog box'''
+  xlDialogMainChart = 85
+  '''Main Chart dialog box'''
+  xlDialogMainChartType = 185
+  '''Main Chart Type dialog box'''
+  xlDialogManageRelationships = 1271
+  '''Manage Relationships dialog box'''
+  xlDialogMenuEditor = 322
+  '''Menu Editor dialog box'''
+  xlDialogMove = 262
+  '''Move dialog box'''
+  xlDialogMyPermission = 834
+  '''My Permission dialog box'''
+  xlDialogNameManager = 977
+  '''NameManager dialog box'''
+  xlDialogNew = 119
+  '''New dialog box'''
+  xlDialogNewName = 978
+  '''NewName dialog box'''
+  xlDialogNewWebQuery = 667
+  '''New Web Query dialog box'''
+  xlDialogNote = 154
+  '''Note dialog box'''
+  xlDialogObjectProperties = 207
+  '''Object Properties dialog box'''
+  xlDialogObjectProtection = 214
+  '''Object Protection dialog box'''
+  xlDialogOpen = 1
+  '''Open dialog box'''
+  xlDialogOpenLinks = 2
+  '''Open Links dialog box'''
+  xlDialogOpenMail = 188
+  '''Open Mail dialog box'''
+  xlDialogOpenText = 441
+  '''Open Text dialog box'''
+  xlDialogOptionsCalculation = 318
+  '''Options Calculation dialog box'''
+  xlDialogOptionsChart = 325
+  '''Options Chart dialog box'''
+  xlDialogOptionsEdit = 319
+  '''Options Edit dialog box'''
+  xlDialogOptionsGeneral = 356
+  '''Options General dialog box'''
+  xlDialogOptionsListsAdd = 458
+  '''Options Lists Add dialog box'''
+  xlDialogOptionsME = 647
+  '''OptionsME dialog box'''
+  xlDialogOptionsTransition = 355
+  '''Options Transition dialog box'''
+  xlDialogOptionsView = 320
+  '''Options View dialog box'''
+  xlDialogOutline = 142
+  '''Outline dialog box'''
+  xlDialogOverlay = 86
+  '''Overlay dialog box'''
+  xlDialogOverlayChartType = 186
+  '''Overlay ChartType dialog box'''
+  xlDialogPageSetup = 7
+  '''Page Setup dialog box'''
+  xlDialogParse = 91
+  '''Parse dialog box'''
+  xlDialogPasteNames = 58
+  '''Paste Names dialog box'''
+  xlDialogPasteSpecial = 53
+  '''Paste Special dialog box'''
+  xlDialogPatterns = 84
+  '''Patterns dialog box'''
+  xlDialogPermission = 832
+  '''Permission dialog box'''
+  xlDialogPhonetic = 656
+  '''Phonetic dialog box'''
+  xlDialogPivotCalculatedField = 570
+  '''Pivot Calculated Field dialog box'''
+  xlDialogPivotCalculatedItem = 572
+  '''Pivot Calculated Item dialog box'''
+  xlDialogPivotClientServerSet = 689
+  '''Pivot Client Server Set dialog box'''
+  xlDialogPivotFieldGroup = 433
+  '''Pivot Field Group dialog box'''
+  xlDialogPivotFieldProperties = 313
+  '''Pivot Field Properties dialog box'''
+  xlDialogPivotFieldUngroup = 434
+  '''Pivot Field Ungroup dialog box'''
+  xlDialogPivotShowPages = 421
+  '''Pivot Show Pages dialog box'''
+  xlDialogPivotSolveOrder = 568
+  '''Pivot Solve Order dialog box'''
+  xlDialogPivotTableOptions = 567
+  '''PivotTable Options dialog box'''
+  xlDialogPivotTableSlicerConnections = 1183
+  '''PivotTable Slicer Connections dialog box'''
+  xlDialogPivotTableWhatIfAnalysisSettings = 1153
+  '''PivotTable What If Analysis Settings dialog box'''
+  xlDialogPivotTableWizard = 312
+  '''PivotTable Wizard dialog box'''
+  xlDialogPlacement = 300
+  '''Placement dialog box'''
+  xlDialogPrint = 8
+  '''Print dialog box'''
+  xlDialogPrinterSetup = 9
+  '''Printer Setup dialog box'''
+  xlDialogPrintPreview = 222
+  '''Print Preview dialog box'''
+  xlDialogPromote = 202
+  '''Promote dialog box'''
+  xlDialogProperties = 474
+  '''Properties dialog box'''
+  xlDialogPropertyFields = 754
+  '''Property Fields dialog box'''
+  xlDialogProtectDocument = 28
+  '''Protect Document dialog box'''
+  xlDialogProtectSharing = 620
+  '''Protect Sharing dialog box'''
+  xlDialogPublishAsWebPage = 653
+  '''Publish As WebPage dialog box'''
+  xlDialogPushbuttonProperties = 445
+  '''Pushbutton Properties dialog box'''
+  xlDialogRecommendedPivotTables = 1258
+  '''Recommended PivotTables dialog box'''
+  xlDialogReplaceFont = 134
+  '''Replace Font dialog box'''
+  xlDialogRoutingSlip = 336
+  '''This object or member has been deprecated, but it remains part of the object model for backward compatibility. You should not use it in new applications.'''
+  xlDialogRowHeight = 127
+  '''Row Height dialog box'''
+  xlDialogRun = 17
+  '''Run dialog box'''
+  xlDialogSaveAs = 5
+  '''SaveAs dialog box'''
+  xlDialogSaveCopyAs = 456
+  '''SaveCopyAs dialog box'''
+  xlDialogSaveNewObject = 208
+  '''Save New Object dialog box'''
+  xlDialogSaveWorkbook = 145
+  '''Save Workbook dialog box'''
+  xlDialogSaveWorkspace = 285
+  '''Save Workspace dialog box'''
+  xlDialogScale = 87
+  '''Scale dialog box'''
+  xlDialogScenarioAdd = 307
+  '''Scenario Add dialog box'''
+  xlDialogScenarioCells = 305
+  '''Scenario Cells dialog box'''
+  xlDialogScenarioEdit = 308
+  '''Scenario Edit dialog box'''
+  xlDialogScenarioMerge = 473
+  '''Scenario Merge dialog box'''
+  xlDialogScenarioSummary = 311
+  '''Scenario Summary dialog box'''
+  xlDialogScrollbarProperties = 420
+  '''Scrollbar Properties dialog box'''
+  xlDialogSearch = 731
+  '''Search dialog box'''
+  xlDialogSelectSpecial = 132
+  '''Select Special dialog box'''
+  xlDialogSendMail = 189
+  '''Send Mail dialog box'''
+  xlDialogSeriesAxes = 460
+  '''Series Axes dialog box'''
+  xlDialogSeriesOptions = 557
+  '''Series Options dialog box'''
+  xlDialogSeriesOrder = 466
+  '''Series Order dialog box'''
+  xlDialogSeriesShape = 504
+  '''Series Shape dialog box'''
+  xlDialogSeriesX = 461
+  '''Series X dialog box'''
+  xlDialogSeriesY = 462
+  '''Series Y dialog box'''
+  xlDialogSetBackgroundPicture = 509
+  '''Set Background Picture dialog box'''
+  xlDialogSetManager = 1109
+  '''Set Manager dialog box'''
+  xlDialogSetMDXEditor = 1208
+  '''Set MDX Editor dialog box'''
+  xlDialogSetPrintTitles = 23
+  '''Set Print Titles dialog box'''
+  xlDialogSetTupleEditorOnColumns = 1108
+  '''Set Tuple Editor On Columns dialog box'''
+  xlDialogSetTupleEditorOnRows = 1107
+  '''Set Tuple Editor On Rows dialog box'''
+  xlDialogSetUpdateStatus = 159
+  '''Set Update Status dialog box'''
+  xlDialogShowDetail = 204
+  '''Show Detail dialog box'''
+  xlDialogShowToolbar = 220
+  '''Show Toolbar dialog box'''
+  xlDialogSize = 261
+  '''Size dialog box'''
+  xlDialogSlicerCreation = 1182
+  '''Slicer Creation dialog box'''
+  xlDialogSlicerPivotTableConnections = 1184
+  '''Slicer PivotTable Connections dialog box'''
+  xlDialogSlicerSettings = 1179
+  '''Slicer Settings dialog box'''
+  xlDialogSort = 39
+  '''Sort dialog box'''
+  xlDialogSortSpecial = 192
+  '''Sort Special dialog box'''
+  xlDialogSparklineInsertColumn = 1134
+  '''Sparkline Insert Column dialog box'''
+  xlDialogSparklineInsertLine = 1133
+  '''Sparkline Insert Line dialog box'''
+  xlDialogSparklineInsertWinLoss = 1135
+  '''Sparkline Insert Win Loss dialog box'''
+  xlDialogSplit = 137
+  '''Split dialog box'''
+  xlDialogStandardFont = 190
+  '''Standard Font dialog box'''
+  xlDialogStandardWidth = 472
+  '''Standard Width dialog box'''
+  xlDialogStyle = 44
+  '''Style dialog box'''
+  xlDialogSubscribeTo = 218
+  '''Subscribe To dialog box'''
+  xlDialogSubtotalCreate = 398
+  '''Subtotal Create dialog box'''
+  xlDialogSummaryInfo = 474
+  '''Summary Info dialog box'''
+  xlDialogTable = 41
+  '''Table dialog box'''
+  xlDialogTabOrder = 394
+  '''Tab Order dialog box'''
+  xlDialogTextToColumns = 422
+  '''Text To Columns dialog box'''
+  xlDialogUnhide = 94
+  '''Unhide dialog box'''
+  xlDialogUpdateLink = 201
+  '''Update Link dialog box'''
+  xlDialogVbaInsertFile = 328
+  '''VBA Insert File dialog box'''
+  xlDialogVbaMakeAddin = 478
+  '''VBA Make Addin dialog box'''
+  xlDialogVbaProcedureDefinition = 330
+  '''VBA Procedure Definition dialog box'''
+  xlDialogView3d = 197
+  '''View 3D dialog box'''
+  xlDialogWebOptionsBrowsers = 773
+  '''Web Options Browsers dialog box'''
+  xlDialogWebOptionsEncoding = 686
+  '''Web Options Encoding dialog box'''
+  xlDialogWebOptionsFiles = 684
+  '''Web Options Files dialog box'''
+  xlDialogWebOptionsFonts = 687
+  '''Web Options Fonts dialog box'''
+  xlDialogWebOptionsGeneral = 683
+  '''Web Options General dialog box'''
+  xlDialogWebOptionsPictures = 685
+  '''Web Options Pictures dialog box'''
+  xlDialogWindowMove = 14
+  '''Window Move dialog box'''
+  xlDialogWindowSize = 13
+  '''Window Size dialog box'''
+  xlDialogWorkbookAdd = 281
+  '''Workbook Add dialog box'''
+  xlDialogWorkbookCopy = 283
+  '''Workbook Copy dialog box'''
+  xlDialogWorkbookInsert = 354
+  '''Workbook Insert dialog box'''
+  xlDialogWorkbookMove = 282
+  '''Workbook Move dialog box'''
+  xlDialogWorkbookName = 386
+  '''Workbook Name dialog box'''
+  xlDialogWorkbookNew = 302
+  '''Workbook New dialog box'''
+  xlDialogWorkbookOptions = 284
+  '''Workbook Options dialog box'''
+  xlDialogWorkbookProtect = 417
+  '''Workbook Protect dialog box'''
+  xlDialogWorkbookTabSplit = 415
+  '''Workbook Tab Split dialog box'''
+  xlDialogWorkbookUnhide = 384
+  '''Workbook Unhide dialog box'''
+  xlDialogWorkgroup = 199
+  '''Workgroup dialog box'''
+  xlDialogWorkspace = 95
+  '''Workspace dialog box'''
+  xlDialogZoom = 256
+  '''Zoom dialog box'''
+
+@unique
+class XlRangeAutoFormat(IntFlag):
+  '''Specifies the predefined format when a range is automatically formatted.'''
+
+  xlRangeAutoFormat3DEffects1 = 13
+  '''3D effects 1.'''
+  xlRangeAutoFormat3DEffects2 = 14
+  '''3D effects 2.'''
+  xlRangeAutoFormatAccounting1 = 4
+  '''Accounting 1.'''
+  xlRangeAutoFormatAccounting2 = 5
+  '''Accounting 2.'''
+  xlRangeAutoFormatAccounting3 = 6
+  '''Accounting 3.'''
+  xlRangeAutoFormatAccounting4 = 17
+  '''Accounting 4.'''
+  xlRangeAutoFormatClassic1 = 1
+  '''Classic 1.'''
+  xlRangeAutoFormatClassic2 = 2
+  '''Classic 2.'''
+  xlRangeAutoFormatClassic3 = 3
+  '''Classic 3.'''
+  xlRangeAutoFormatClassicPivotTable = 31
+  '''Classic PivotTable.'''
+  xlRangeAutoFormatColor1 = 7
+  '''Color 1.'''
+  xlRangeAutoFormatColor2 = 8
+  '''Color 2.'''
+  xlRangeAutoFormatColor3 = 9
+  '''Color 3.'''
+  xlRangeAutoFormatList1 = 10
+  '''List 1.'''
+  xlRangeAutoFormatList2 = 11
+  '''List 2.'''
+  xlRangeAutoFormatList3 = 12
+  '''List 3.'''
+  xlRangeAutoFormatLocalFormat1 = 15
+  '''Local Format 1.'''
+  xlRangeAutoFormatLocalFormat2 = 16
+  '''Local Format 2.'''
+  xlRangeAutoFormatLocalFormat3 = 19
+  '''Local Format 3.'''
+  xlRangeAutoFormatLocalFormat4 = 20
+  '''Local Format 4.'''
+  xlRangeAutoFormatNone = -4142
+  '''No specified format.'''
+  xlRangeAutoFormatPTNone = 42
+  '''No specified PivotTable format.'''
+  xlRangeAutoFormatReport1 = 21
+  '''Report 1.'''
+  xlRangeAutoFormatReport10 = 30
+  '''Report 10.'''
+  xlRangeAutoFormatReport2 = 22
+  '''Report 2.'''
+  xlRangeAutoFormatReport3 = 23
+  '''Report 3.'''
+  xlRangeAutoFormatReport4 = 24
+  '''Report 4.'''
+  xlRangeAutoFormatReport5 = 25
+  '''Report 5.'''
+  xlRangeAutoFormatReport6 = 26
+  '''Report 6.'''
+  xlRangeAutoFormatReport7 = 27
+  '''Report 7.'''
+  xlRangeAutoFormatReport8 = 28
+  '''Report 8.'''
+  xlRangeAutoFormatReport9 = 29
+  '''Report 9.'''
+  xlRangeAutoFormatSimple = -4154
+  '''Simple.'''
+  xlRangeAutoFormatTable1 = 32
+  '''Table 1.'''
+  xlRangeAutoFormatTable10 = 41
+  '''Table 10.'''
+  xlRangeAutoFormatTable2 = 33
+  '''Table 2.'''
+  xlRangeAutoFormatTable3 = 34
+  '''Table 3.'''
+  xlRangeAutoFormatTable4 = 35
+  '''Table 4.'''
+  xlRangeAutoFormatTable5 = 36
+  '''Table 5.'''
+  xlRangeAutoFormatTable6 = 37
+  '''Table 6.'''
+  xlRangeAutoFormatTable7 = 38
+  '''Table 7.'''
+  xlRangeAutoFormatTable8 = 39
+  '''Table 8.'''
+  xlRangeAutoFormatTable9 = 40
+  '''Table 9.'''
+
+@unique
+class XlLinkedDataTypeState(IntFlag):
+  '''Indicates the state of cells that may contain Linked data types such as Stocks or Geography. These are the possible values of the Range.LinkedDataTypeState property.'''
+
+  xlLinkedDataTypeStateNone = 0
+  '''The cell does not contain any Linked data types.'''
+  xlLinkedDataTypeStateValidLinkedData = 1
+  '''The cell contains a Linked data type.'''
+  xlLinkedDataTypeStateDisambiguationNeeded = 2
+  '''The cell needs to be disambiguated by the user before a Linked data type can be inserted. For example, if the user types "New York" into a cell and attempts to convert it to a "Geography" data type, they may need to select whether they meant New York State or New York City. Until they do so, the cell will be in this state.'''
+  xlLinkedDataTypeStateBrokenLinkedData = 3
+  '''There is a valid Linked data type in the cell, but entity no longer exists on the service.'''
+  xlLinkedDataTypeStateFetchingData = 4
+  '''The Linked data type in the cell is in the middle of refreshing new data from the service.'''
+
+@unique
+class XlHAlign(IntFlag):
+  '''Specifies the horizontal alignment for the object.'''
+
+  xlHAlignCenter = -4108
+  '''Center.'''
+  xlHAlignCenterAcrossSelection = 7
+  '''Center across selection.'''
+  xlHAlignDistributed = -4117
+  '''Distribute.'''
+  xlHAlignFill = 5
+  '''Fill.'''
+  xlHAlignGeneral = 1
+  '''Align according to data type.'''
+  xlHAlignJustify = -4130
+  '''Justify.'''
+  xlHAlignLeft = -4131
+  '''Left.'''
+  xlHAlignRight = -4152
+  '''Right.'''
+
+@unique
+class XlLocationInTable(IntFlag):
+  '''Specifies the part of the PivotTable report that contains the upper-left corner of a range.'''
+
+  xlColumnHeader = -4110
+  '''Column header'''
+  xlColumnItem = 5
+  '''Column item'''
+  xlDataHeader = 3
+  '''Data header'''
+  xlDataItem = 7
+  '''Data item'''
+  xlPageHeader = 2
+  '''Page header'''
+  xlPageItem = 6
+  '''Page item'''
+  xlRowHeader = -4153
+  '''Row header'''
+  xlRowItem = 4
+  '''Row item'''
+  xlTableBody = 8
+  '''Table body'''
+
+@unique
+class XlOrientation(IntFlag):
+  '''Specifies the text orientation.'''
+
+  xlDownward = -4170
+  '''Text runs downward.'''
+  xlHorizontal = -4128
+  '''Text runs horizontally.'''
+  xlUpward = -4171
+  '''Text runs upward.'''
+  xlVertical = -4166
+  '''Text runs downward and is centered in the cell.'''
+
+@unique
+class XlPageBreak(IntFlag):
+  '''Specifies page break location on the worksheet.'''
+
+  xlPageBreakAutomatic = -4105
+  '''Excel will automatically add page breaks.'''
+  xlPageBreakManual = -4135
+  '''Page breaks are manually inserted.'''
+  xlPageBreakNone = -4142
+  '''Page breaks are not inserted on the worksheet.'''
+
+@unique
+class XlVAlign(IntFlag):
+  '''Specifies the vertical alignment for the object.'''
+
+  xlVAlignBottom = -4107
+  '''Bottom'''
+  xlVAlignCenter = -4108
+  '''Center'''
+  xlVAlignDistributed = -4117
+  '''Distributed'''
+  xlVAlignJustify = -4130
+  '''Justify'''
+  xlVAlignTop = -4160
+  '''Top'''
+
+@unique
+class XlBarShape(IntFlag):
+  '''Specifies the shape used with the 3D bar or column chart.'''
+
+  xlBox = 0
+  '''Box.'''
+  xlConeToMax = 5
+  '''Cone, truncated at value.'''
+  xlConeToPoint = 4
+  '''Cone, coming to point at value.'''
+  xlCylinder = 3
+  '''Cylinder.'''
+  xlPyramidToMax = 2
+  '''Pyramid, truncated at value.'''
+  xlPyramidToPoint = 1
+  '''Pyramid, coming to point at value.'''
+
+class XlCategoryLabelLevel(IntFlag):
+  '''Specifies the category labels for the category label levels.'''
+
+
+@unique
+class XlChartType(IntFlag):
+  '''Specifies the chart type.'''
+
+  xl3DArea = -4098
+  '''3D Area.'''
+  xl3DAreaStacked = 78
+  '''3D Stacked Area.'''
+  xl3DAreaStacked100 = 79
+  '''100% Stacked Area.'''
+  xl3DBarClustered = 60
+  '''3D Clustered Bar.'''
+  xl3DBarStacked = 61
+  '''3D Stacked Bar.'''
+  xl3DBarStacked100 = 62
+  '''3D 100% Stacked Bar.'''
+  xl3DColumn = -4100
+  '''3D Column.'''
+  xl3DColumnClustered = 54
+  '''3D Clustered Column.'''
+  xl3DColumnStacked = 55
+  '''3D Stacked Column.'''
+  xl3DColumnStacked100 = 56
+  '''3D 100% Stacked Column.'''
+  xl3DLine = -4101
+  '''3D Line.'''
+  xl3DPie = -4102
+  '''3D Pie.'''
+  xl3DPieExploded = 70
+  '''Exploded 3D Pie.'''
+  xlArea = 1
+  '''Area'''
+  xlAreaStacked = 76
+  '''Stacked Area.'''
+  xlAreaStacked100 = 77
+  '''100% Stacked Area.'''
+  xlBarClustered = 57
+  '''Clustered Bar.'''
+  xlBarOfPie = 71
+  '''Bar of Pie.'''
+  xlBarStacked = 58
+  '''Stacked Bar.'''
+  xlBarStacked100 = 59
+  '''100% Stacked Bar.'''
+  xlBubble = 15
+  '''Bubble.'''
+  xlBubble3DEffect = 87
+  '''Bubble with 3D effects.'''
+  xlColumnClustered = 51
+  '''Clustered Column.'''
+  xlColumnStacked = 52
+  '''Stacked Column.'''
+  xlColumnStacked100 = 53
+  '''100% Stacked Column.'''
+  xlConeBarClustered = 102
+  '''Clustered Cone Bar.'''
+  xlConeBarStacked = 103
+  '''Stacked Cone Bar.'''
+  xlConeBarStacked100 = 104
+  '''100% Stacked Cone Bar.'''
+  xlConeCol = 105
+  '''3D Cone Column.'''
+  xlConeColClustered = 99
+  '''Clustered Cone Column.'''
+  xlConeColStacked = 100
+  '''Stacked Cone Column.'''
+  xlConeColStacked100 = 101
+  '''100% Stacked Cone Column.'''
+  xlCylinderBarClustered = 95
+  '''Clustered Cylinder Bar.'''
+  xlCylinderBarStacked = 96
+  '''Stacked Cylinder Bar.'''
+  xlCylinderBarStacked100 = 97
+  '''100% Stacked Cylinder Bar.'''
+  xlCylinderCol = 98
+  '''3D Cylinder Column.'''
+  xlCylinderColClustered = 92
+  '''Clustered Cone Column.'''
+  xlCylinderColStacked = 93
+  '''Stacked Cone Column.'''
+  xlCylinderColStacked100 = 94
+  '''100% Stacked Cylinder Column.'''
+  xlDoughnut = -4120
+  '''Doughnut.'''
+  xlDoughnutExploded = 80
+  '''Exploded Doughnut.'''
+  xlLine = 4
+  '''Line.'''
+  xlLineMarkers = 65
+  '''Line with Markers.'''
+  xlLineMarkersStacked = 66
+  '''Stacked Line with Markers.'''
+  xlLineMarkersStacked100 = 67
+  '''100% Stacked Line with Markers.'''
+  xlLineStacked = 63
+  '''Stacked Line.'''
+  xlLineStacked100 = 64
+  '''100% Stacked Line.'''
+  xlPie = 5
+  '''Pie.'''
+  xlPieExploded = 69
+  '''Exploded Pie.'''
+  xlPieOfPie = 68
+  '''Pie of Pie.'''
+  xlPyramidBarClustered = 109
+  '''Clustered Pyramid Bar.'''
+  xlPyramidBarStacked = 110
+  '''Stacked Pyramid Bar.'''
+  xlPyramidBarStacked100 = 111
+  '''100% Stacked Pyramid Bar.'''
+  xlPyramidCol = 112
+  '''3D Pyramid Column.'''
+  xlPyramidColClustered = 106
+  '''Clustered Pyramid Column.'''
+  xlPyramidColStacked = 107
+  '''Stacked Pyramid Column.'''
+  xlPyramidColStacked100 = 108
+  '''100% Stacked Pyramid Column.'''
+  xlRadar = -4151
+  '''Radar.'''
+  xlRadarFilled = 82
+  '''Filled Radar.'''
+  xlRadarMarkers = 81
+  '''Radar with Data Markers.'''
+  xlRegionMap = 140
+  '''Map chart.'''
+  xlStockHLC = 88
+  '''High-Low-Close.'''
+  xlStockOHLC = 89
+  '''Open-High-Low-Close.'''
+  xlStockVHLC = 90
+  '''Volume-High-Low-Close.'''
+  xlStockVOHLC = 91
+  '''Volume-Open-High-Low-Close.'''
+  xlSurface = 83
+  '''3D Surface.'''
+  xlSurfaceTopView = 85
+  '''Surface (Top View).'''
+  xlSurfaceTopViewWireframe = 86
+  '''Surface (Top View wireframe).'''
+  xlSurfaceWireframe = 84
+  '''3D Surface (wireframe).'''
+  xlXYScatter = -4169
+  '''Scatter.'''
+  xlXYScatterLines = 74
+  '''Scatter with Lines.'''
+  xlXYScatterLinesNoMarkers = 75
+  '''Scatter with Lines and No Data Markers.'''
+  xlXYScatterSmooth = 72
+  '''Scatter with Smoothed Lines.'''
+  xlXYScatterSmoothNoMarkers = 73
+  '''Scatter with Smoothed Lines and No Data Markers.'''
+
+@unique
+class XlDisplayBlanksAs(IntFlag):
+  '''Specifies how blank cells are plotted on a chart.'''
+
+  xlInterpolated = 3
+  '''Values are interpolated into the chart.'''
+  xlNotPlotted = 1
+  '''Blank cells are not plotted.'''
+  xlZero = 2
+  '''Blanks are plotted as zero.'''
+
+@unique
+class XlRowCol(IntFlag):
+  '''Specifies whether the values corresponding to a particular data series are in rows or columns.'''
+
+  xlColumns = 2
+  '''Data series is in a row.'''
+  xlRows = 1
+  '''Data series is in a column.'''
+
+class XlSeriesNameLevel(IntFlag):
+  '''Specifies the series labels for the series label levels.'''
+
+
+@unique
+class XlSheetVisibility(IntFlag):
+  '''Specifies whether the object is visible.'''
+
+  xlSheetHidden = 0
+  '''Hides the worksheet which the user can unhide via menu.'''
+  xlSheetVeryHidden = 2
+  '''Hides the object so that the only way for you to make it visible again is by setting this property to True (the user cannot make the object visible).'''
+  xlSheetVisible = -1
+  '''Displays the sheet.'''
+
+@unique
+class XlProtectedViewWindowState(IntFlag):
+  '''Specifies the state of the Protected View window.'''
+
+  xlProtectedViewWindowMaximized = 2
+  '''Maximized'''
+  xlProtectedViewWindowMinimized = 1
+  '''Minimized'''
+  xlProtectedViewWindowNormal = 0
+  '''Normal'''
+
+@unique
+class XlColorIndex(IntFlag):
+  '''Specifies the color of a selected feature, such as a border, font, or fill.'''
+
+  xlColorIndexAutomatic = -4105
+  '''Automatic color.'''
+  xlColorIndexNone = -4142
+  '''No color.'''
+
+@unique
+class XlWindowType(IntFlag):
+  '''Specifies how the chart is displayed.'''
+
+  xlChartAsWindow = 5
+  '''The chart will open in a new window.'''
+  xlChartInPlace = 4
+  '''The chart will be displayed on the current worksheet.'''
+  xlClipboard = 3
+  '''The chart is copied to the clipboard.'''
+  xlInfo = -4129
+  '''This constant has been deprecated.'''
+  xlWorkbook = 1
+  '''This constant applies to Macintosh only.'''
+
+@unique
+class XlWindowView(IntFlag):
+  '''Specifies the view showing in the window.'''
+
+  xlNormalView = 1
+  '''Normal.'''
+  xlPageBreakPreview = 2
+  '''Page break preview.'''
+  xlPageLayoutView = 3
+  '''Page layout view.'''
+
+@unique
+class XlSaveConflictResolution(IntFlag):
+  '''Specifies the way that conflicts are to be resolved whenever a shared workbook is updated.'''
+
+  xlLocalSessionChanges = 2
+  '''The local user's changes are always accepted.'''
+  xlOtherSessionChanges = 3
+  '''The local user's changes are always rejected.'''
+  xlUserResolution = 1
+  '''A dialog box asks the user to resolve the conflict.'''
+
+@unique
+class XlDisplayDrawingObjects(IntFlag):
+  '''Specifies how shapes are displayed.'''
+
+  xlDisplayShapes = -4104
+  '''Show all shapes.'''
+  xlHide = 3
+  '''Hide all shapes.'''
+  xlPlaceholders = 2
+  '''Show only placeholders.'''
+
+@unique
+class XlUpdateLinks(IntFlag):
+  '''Specifies a workbook's setting for updating embedded OLE links.'''
+
+  xlUpdateLinksAlways = 3
+  '''Embedded OLE links are always updated for the specified workbook.'''
+  xlUpdateLinksNever = 2
+  '''Embedded OLE links are never updated for the specified workbook.'''
+  xlUpdateLinksUserSetting = 1
+  '''Embedded OLE links are updated according to the user's settings for the specified workbook.'''
+
+@unique
+class XlThreadMode(IntFlag):
+  '''Specifies the control over the multi-threaded calculation mode.'''
+
+  xlThreadModeAutomatic = 0
+  '''Multi-threaded calculation mode is automatic.'''
+  xlThreadModeManual = 1
+  '''Multi-threaded calculation mode is manual.'''
+
+@unique
+class XlOrder(IntFlag):
+  '''Specifies the order in which cells are processed.'''
+
+  xlDownThenOver = 1
+  '''Process down the rows before processing across pages or page fields to the right.'''
+  xlOverThenDown = 2
+  '''Process across pages or page fields to the right before moving down the rows.'''
+
+@unique
+class XlPageOrientation(IntFlag):
+  '''Specifies the page orientation when the worksheet is printed.'''
+
+  xlLandscape = 2
+  '''Landscape mode.'''
+  xlPortrait = 1
+  '''Portrait mode.'''
+
+@unique
+class XlPaperSize(IntFlag):
+  '''Specifies the size of the paper.'''
+
+  xlPaper10x14 = 16
+  '''10 in. x 14 in.'''
+  xlPaper11x17 = 17
+  '''11 in. x 17 in.'''
+  xlPaperA3 = 8
+  '''A3 (297 mm x 420 mm)'''
+  xlPaperA4 = 9
+  '''A4 (210 mm x 297 mm)'''
+  xlPaperA4Small = 10
+  '''A4 Small (210 mm x 297 mm)'''
+  xlPaperA5 = 11
+  '''A5 (148 mm x 210 mm)'''
+  xlPaperB4 = 12
+  '''B4 (250 mm x 354 mm)'''
+  xlPaperB5 = 13
+  '''A5 (148 mm x 210 mm)'''
+  xlPaperCsheet = 24
+  '''C size sheet'''
+  xlPaperDsheet = 25
+  '''D size sheet'''
+  xlPaperEnvelope10 = 20
+  '''Envelope #10 (4-1/8 in. x 9-1/2 in.)'''
+  xlPaperEnvelope11 = 21
+  '''Envelope #11 (4-1/2 in. x 10-3/8 in.)'''
+  xlPaperEnvelope12 = 22
+  '''Envelope #12 (4-1/2 in. x 11 in.)'''
+  xlPaperEnvelope14 = 23
+  '''Envelope #14 (5 in. x 11-1/2 in.)'''
+  xlPaperEnvelope9 = 19
+  '''Envelope #9 (3-7/8 in. x 8-7/8 in.)'''
+  xlPaperEnvelopeB4 = 33
+  '''Envelope B4 (250 mm x 353 mm)'''
+  xlPaperEnvelopeB5 = 34
+  '''Envelope B5 (176 mm x 250 mm)'''
+  xlPaperEnvelopeB6 = 35
+  '''Envelope B6 (176 mm x 125 mm)'''
+  xlPaperEnvelopeC3 = 29
+  '''Envelope C3 (324 mm x 458 mm)'''
+  xlPaperEnvelopeC4 = 30
+  '''Envelope C4 (229 mm x 324 mm)'''
+  xlPaperEnvelopeC5 = 28
+  '''Envelope C5 (162 mm x 229 mm)'''
+  xlPaperEnvelopeC6 = 31
+  '''Envelope C6 (114 mm x 162 mm)'''
+  xlPaperEnvelopeC65 = 32
+  '''Envelope C65 (114 mm x 229 mm)'''
+  xlPaperEnvelopeDL = 27
+  '''Envelope DL (110 mm x 220 mm)'''
+  xlPaperEnvelopeItaly = 36
+  '''Envelope (110 mm x 230 mm)'''
+  xlPaperEnvelopeMonarch = 37
+  '''Envelope Monarch (3-7/8 in. x 7-1/2 in.)'''
+  xlPaperEnvelopePersonal = 38
+  '''Envelope (3-5/8 in. x 6-1/2 in.)'''
+  xlPaperEsheet = 26
+  '''E size sheet'''
+  xlPaperExecutive = 7
+  '''Executive (7-1/2 in. x 10-1/2 in.)'''
+  xlPaperFanfoldLegalGerman = 41
+  '''German Legal Fanfold (8-1/2 in. x 13 in.)'''
+  xlPaperFanfoldStdGerman = 40
+  '''German Legal Fanfold (8-1/2 in. x 13 in.)'''
+  xlPaperFanfoldUS = 39
+  '''U.S. Standard Fanfold (14-7/8 in. x 11 in.)'''
+  xlPaperFolio = 14
+  '''Folio (8-1/2 in. x 13 in.)'''
+  xlPaperLedger = 4
+  '''Ledger (17 in. x 11 in.)'''
+  xlPaperLegal = 5
+  '''Legal (8-1/2 in. x 14 in.)'''
+  xlPaperLetter = 1
+  '''Letter (8-1/2 in. x 11 in.)'''
+  xlPaperLetterSmall = 2
+  '''Letter Small (8-1/2 in. x 11 in.)'''
+  xlPaperNote = 18
+  '''Note (8-1/2 in. x 11 in.)'''
+  xlPaperQuarto = 15
+  '''Quarto (215 mm x 275 mm)'''
+  xlPaperStatement = 6
+  '''Statement (5-1/2 in. x 8-1/2 in.)'''
+  xlPaperTabloid = 3
+  '''Tabloid (11 in. x 17 in.)'''
+  xlPaperUser = 256
+  '''User-defined'''
+
+@unique
+class XlPrintLocation(IntFlag):
+  '''Specifies the way that comments are printed with the sheet.'''
+
+  xlPrintInPlace = 16
+  '''Comments will be printed where they were inserted on the worksheet.'''
+  xlPrintNoComments = -4142
+  '''Comments will not be printed.'''
+  xlPrintSheetEnd = 1
+  '''Comments will be printed as end notes at the end of the worksheet.'''
+
+@unique
+class XlPrintErrors(IntFlag):
+  '''Specifies the type of print error displayed.'''
+
+  xlPrintErrorsBlank = 1
+  '''Print errors are blank.'''
+  xlPrintErrorsDash = 2
+  '''Print errors are displayed as dashes.'''
+  xlPrintErrorsDisplayed = 0
+  '''All print errors are displayed.'''
+  xlPrintErrorsNA = 3
+  '''Print errors are displayed as not available.'''
+
+@unique
+class XlSpeakDirection(IntFlag):
+  '''Specifies the order in which the cells are spoken.'''
+
+  xlSpeakByColumns = 1
+  '''Reads down a column, then moves to the next column.'''
+  xlSpeakByRows = 0
+  '''Reads across a row, then moves to the next row.'''
+
+@unique
+class XlArabicModes(IntFlag):
+  '''Specifies spelling rules for the Arabic spelling checker.'''
+
+  xlArabicBothStrict = 3
+  '''The spelling checker uses spelling rules regarding both Arabic words ending with the letter yaa and Arabic words beginning with an alef hamza.'''
+  xlArabicNone = 0
+  '''The spelling checker ignores spelling rules regarding either Arabic words ending with the letter yaa or Arabic words beginning with an alef hamza.'''
+  xlArabicStrictAlefHamza = 1
+  '''The spelling checker uses spelling rules regarding Arabic words beginning with an alef hamza.'''
+  xlArabicStrictFinalYaa = 2
+  '''The spelling checker uses spelling rules regarding Arabic words ending with the letter yaa.'''
+
+@unique
+class XlPortugueseReform(IntFlag):
+  '''Specifies the mode for checking the spelling of Portuguese.'''
+
+  xlPortugueseBoth = 3
+  '''The spelling checker recognizes both pre-reform and post-reform spellings.'''
+  xlPortuguesePostReform = 2
+  '''The spelling checker recognizes only post-reform spellings.'''
+  xlPortuguesePreReform = 1
+  '''The spelling checker recognizes only pre-reform spellings.'''
+
+@unique
+class XlHebrewModes(IntFlag):
+  '''Specifies the mode for the Hebrew spelling checker.'''
+
+  xlHebrewFullScript = 0
+  '''The conventional script type as required by the Hebrew Language Academy when writing text without diacritics.'''
+  xlHebrewMixedAuthorizedScript = 3
+  '''The Hebrew traditional script.'''
+  xlHebrewMixedScript = 2
+  '''In this mode the speller accepts any word recognized as Hebrew, whether in Full Script, Partial Script, or any unconventional spelling variation that is known to the speller.'''
+  xlHebrewPartialScript = 1
+  '''In this mode the speller accepts words both in Full Script and Partial Script. Some words will be flagged since this spelling is not authorized in either Full script or Partial script.'''
+
+@unique
+class XlSpanishModes(IntFlag):
+  '''Specifies the mode for checking the spelling of Spanish.'''
+
+  xlSpanishTuteoAndVoseo = 1
+  '''Tuteo and Voseo verb forms.'''
+  xlSpanishTuteoOnly = 0
+  '''Tuteo verb forms only.'''
+  xlSpanishVoseoOnly = 2
+  '''Voseo verb forms only.'''
+
+@unique
+class XlBordersIndex(IntFlag):
+  '''Specifies the border to be retrieved.'''
+
+  xlDiagonalDown = 5
+  '''Border running from the upper-left corner to the lower-right of each cell in the range.'''
+  xlDiagonalUp = 6
+  '''Border running from the lower-left corner to the upper-right of each cell in the range.'''
+  xlEdgeBottom = 9
+  '''Border at the bottom of the range.'''
+  xlEdgeLeft = 7
+  '''Border at the left edge of the range.'''
+  xlEdgeRight = 10
+  '''Border at the right edge of the range.'''
+  xlEdgeTop = 8
+  '''Border at the top of the range.'''
+  xlInsideHorizontal = 12
+  '''Horizontal borders for all cells in the range except borders on the outside of the range.'''
+  xlInsideVertical = 11
+  '''Vertical borders for all the cells in the range except borders on the outside of the range.'''
+
+@unique
+class XlPlacement(IntFlag):
+  '''Specifies the way that an object is attached to its underlying cells.'''
+
+  xlFreeFloating = 3
+  '''Object is free floating.'''
+  xlMove = 2
+  '''Object is moved with the cells.'''
+  xlMoveAndSize = 1
+  '''Object is moved and sized with the cells.'''
+
+@unique
+class XlAxisGroup(IntFlag):
+  '''Specifies the type of axis group.'''
+
+  xlPrimary = 1
+  '''Primary axis group'''
+  xlSecondary = 2
+  '''Secondary axis group'''
+
+@unique
+class XlIconSet(IntFlag):
+  '''Specifies the type of icon set.'''
+
+  xl3Arrows = 1
+  '''3 Arrows'''
+  xl3ArrowsGray = 2
+  '''3 Arrows Gray'''
+  xl3Flags = 3
+  '''3 Flags'''
+  xl3Signs = 6
+  '''3 Signs'''
+  xl3Symbols = 7
+  '''3 Symbols'''
+  xl3TrafficLights1 = 4
+  '''3 Traffic Lights 1'''
+  xl3TrafficLights2 = 5
+  '''3 Traffic Lights 2'''
+  xl4Arrows = 8
+  '''4 Arrows'''
+  xl4ArrowsGray = 9
+  '''4 Arrows Gray'''
+  xl4CRV = 11
+  '''4 CRV'''
+  xl4RedToBlack = 10
+  '''4 Red To Black'''
+  xl4TrafficLights = 12
+  '''4 Traffic Lights'''
+  xl5Arrows = 13
+  '''5 Arrows'''
+  xl5ArrowsGray = 14
+  '''5 Arrows Gray'''
+  xl5CRV = 15
+  '''5 CRV'''
+  xl5Quarters = 16
+  '''5 Quarters'''
+
+@unique
+class XlConsolidationFunction(IntFlag):
+  '''Specifies the subtotal function.'''
+
+  xlAverage = -4106
+  '''Average.'''
+  xlCount = -4112
+  '''Count.'''
+  xlCountNums = -4113
+  '''Count numerical values only.'''
+  xlDistinctCount = 11
+  '''Count using Distinct Count analysis.'''
+  xlMax = -4136
+  '''Maximum.'''
+  xlMin = -4139
+  '''Minimum.'''
+  xlProduct = -4149
+  '''Multiply.'''
+  xlStDev = -4155
+  '''Standard deviation, based on a sample.'''
+  xlStDevP = -4156
+  '''Standard deviation, based on the whole population.'''
+  xlSum = -4157
+  '''Sum.'''
+  xlUnknown = 1000
+  '''No subtotal function specified.'''
+  xlVar = -4164
+  '''Variation, based on a sample.'''
+  xlVarP = -4165
+  '''Variation, based on the whole population.'''
+
+@unique
+class XlEnableSelection(IntFlag):
+  '''Specifies what can be selected on the sheet.'''
+
+  xlNoRestrictions = 0
+  '''Anything can be selected.'''
+  xlNoSelection = -4142
+  '''Nothing can be selected.'''
+  xlUnlockedCells = 1
+  '''Only unlocked cells can be selected.'''
+
+@unique
+class XlSheetType(IntFlag):
+  '''Specifies the worksheet type.'''
+
+  xlChart = -4109
+  '''Chart'''
+  xlDialogSheet = -4116
+  '''Dialog sheet'''
+  xlExcel4IntlMacroSheet = 4
+  '''Excel version 4 international macro sheet'''
+  xlExcel4MacroSheet = 3
+  '''Excel version 4 macro sheet'''
+  xlWorksheet = -4167
+  '''Worksheet'''
+
+@unique
+class XlXLMMacroType(IntFlag):
+  '''Specifies, in a Microsoft Excel version 4 macro worksheet, what type of macro a name refers to or whether the name refers to a macro.'''
+
+  xlCommand = 2
+  '''Custom command.'''
+  xlFunction = 1
+  '''Custom function.'''
+  xlNotXLM = 3
+  '''Not a macro.'''
+
+@unique
+class XlLineStyle(IntFlag):
+  '''Specifies the line style for the border.'''
+
+  xlContinuous = 1
+  '''Continuous line.'''
+  xlDash = -4115
+  '''Dashed line.'''
+  xlDashDot = 4
+  '''Alternating dashes and dots.'''
+  xlDashDotDot = 5
+  '''Dash followed by two dots.'''
+  xlDot = -4142
+  '''Dotted line.'''
+  xlDouble = -4119
+  '''Double line.'''
+  xlLineStyleNone = -4118
+  '''No line.'''
+  xlSlantDashDot = 13
+  '''Slanted dashes.'''
+
+@unique
+class XlBorderWeight(IntFlag):
+  '''Specifies the weight of the border around a range.'''
+
+  xlHairline = 1
+  '''Hairline (thinnest border).'''
+  xlMedium = -4138
+  '''Medium.'''
+  xlThick = 4
+  '''Thick (widest border).'''
+  xlThin = 2
+  '''Thin.'''
+
+@unique
+class XlBackground(IntFlag):
+  '''Specifies the background type for text in charts.'''
+
+  xlBackgroundAutomatic = -4105
+  '''Excel controls the background.'''
+  xlBackgroundOpaque = 3
+  '''Opaque background.'''
+  xlBackgroundTransparent = 2
+  '''Transparent background.'''
+
+@unique
+class XlThemeFont(IntFlag):
+  '''Specifies the theme font to use.'''
+
+  xlThemeFontMajor = 2
+  '''Major.'''
+  xlThemeFontMinor = 1
+  '''Minor.'''
+  xlThemeFontNone = 0
+  '''Do not use any theme font.'''
+
+@unique
+class XlUnderlineStyle(IntFlag):
+  '''Specifies the type of underline applied to a font.'''
+
+  xlUnderlineStyleDouble = -4119
+  '''Double thick underline.'''
+  xlUnderlineStyleDoubleAccounting = 5
+  '''Two thin underlines placed close together.'''
+  xlUnderlineStyleNone = -4142
+  '''No underlining.'''
+  xlUnderlineStyleSingle = 2
+  '''Single underlining.'''
+  xlUnderlineStyleSingleAccounting = 4
+  '''Not supported.'''
+
+@unique
+class XlPattern(IntFlag):
+  '''Specifies the interior pattern of a chart or interior object.'''
+
+  xlPatternAutomatic = -4105
+  '''Excel controls the pattern.'''
+  xlPatternChecker = 9
+  '''Checkerboard.'''
+  xlPatternCrissCross = 16
+  '''Criss-cross lines.'''
+  xlPatternDown = -4121
+  '''Dark diagonal lines running from the upper-left to the lower-right.'''
+  xlPatternGray16 = 17
+  '''16% gray.'''
+  xlPatternGray25 = -4124
+  '''25% gray.'''
+  xlPatternGray50 = -4125
+  '''50% gray.'''
+  xlPatternGray75 = -4126
+  '''75% gray.'''
+  xlPatternGray8 = 18
+  '''8% gray.'''
+  xlPatternGrid = 15
+  '''Grid.'''
+  xlPatternHorizontal = -4128
+  '''Dark horizontal lines.'''
+  xlPatternLightDown = 13
+  '''Light diagonal lines running from the upper-left to the lower-right.'''
+  xlPatternLightHorizontal = 11
+  '''Light horizontal lines.'''
+  xlPatternLightUp = 14
+  '''Light diagonal lines running from the lower-left to the upper-right.'''
+  xlPatternLightVertical = 12
+  '''Light vertical bars.'''
+  xlPatternNone = -4142
+  '''No pattern.'''
+  xlPatternSemiGray75 = 10
+  '''75% dark gray.'''
+  xlPatternSolid = 1
+  '''Solid color.'''
+  xlPatternUp = -4162
+  '''Dark diagonal lines running from the lower-left to the upper-right.'''
+  xlPatternVertical = -4166
+  '''Dark vertical bars.'''
+
+@unique
+class XlThemeColor(IntFlag):
+  '''Specifies the theme color to be used.'''
+
+  xlThemeColorAccent1 = 5
+  '''Accent1'''
+  xlThemeColorAccent2 = 6
+  '''Accent2'''
+  xlThemeColorAccent3 = 7
+  '''Accent3'''
+  xlThemeColorAccent4 = 8
+  '''Accent4'''
+  xlThemeColorAccent5 = 9
+  '''Accent5'''
+  xlThemeColorAccent6 = 10
+  '''Accent6'''
+  xlThemeColorDark1 = 1
+  '''Dark1'''
+  xlThemeColorDark2 = 3
+  '''Dark2'''
+  xlThemeColorFollowedHyperlink = 12
+  '''Followed hyperlink'''
+  xlThemeColorHyperlink = 11
+  '''Hyperlink'''
+  xlThemeColorLight1 = 2
+  '''Light1'''
+  xlThemeColorLight2 = 4
+  '''Light2'''
+
+@unique
+class XlListObjectSourceType(IntFlag):
+  '''Specifies the current source of the list.'''
+
+  xlSrcExternal = 0
+  '''External data source (Microsoft SharePoint Foundation site).'''
+  xlSrcModel = 4
+  '''PowerPivot Model'''
+  xlSrcQuery = 3
+  '''Query'''
+  xlSrcRange = 1
+  '''Range'''
+  xlSrcXml = 2
+  '''XML'''
+
+@unique
+class XlAllocation(IntFlag):
+  '''Specifies when to calculate changes when performing what-if analysis on a PivotTable based on an OLAP data source.'''
+
+  xlAutomaticAllocation = 2
+  '''Calculate changes automatically after each value is changed.'''
+  xlManualAllocation = 1
+  '''Calculate changes manually.'''
+
+@unique
+class XlAllocationMethod(IntFlag):
+  '''Specifies the method to use to allocate values when performing what-if analysis on a PivotTable report based on an OLAP data source.
+
+#REMARKS:
+
+If the AllocationMethod property is set to xlWeightedAllocation, you can optionally specify the weight expression to use by setting the AllocationWeightExpression property.
+
+Have questions or feedback about Office VBA or this documentation? Please see Office VBA support and feedback for guidance about the ways you can receive support and provide feedback.
+  '''
+
+  xlEqualAllocation = 1
+  '''Use equal allocation.'''
+  xlWeightedAllocation = 2
+  '''Use weighted allocation.'''
+
+@unique
+class XlAllocationValue(IntFlag):
+  '''Specifies what value to allocate when performing what-if analysis on a PivotTable report based on an OLAP data source.'''
+
+  xlAllocateIncrement = 2
+  '''Increment based on the old value.'''
+  xlAllocateValue = 1
+  '''The value entered divided by the number of allocations.'''
+
+@unique
+class XlLayoutRowType(IntFlag):
+  '''Specifies the type of layout row.'''
+
+  xlCompactRow = 0
+  '''Compact Row'''
+  xlOutlineRow = 2
+  '''Outline Row'''
+  xlTabularRow = 1
+  '''Tabular Row'''
+
+@unique
+class XlPTSelectionMode(IntFlag):
+  '''Specifies what can be selected in a PivotTable during a structured selection. These constants can be combined to select multiple types.'''
+
+  xlBlanks = 4
+  '''Blanks'''
+  xlButton = 15
+  '''Buttons'''
+  xlDataAndLabel = 0
+  '''Data and labels'''
+  xlDataOnly = 2
+  '''Data'''
+  xlFirstRow = 256
+  '''First row'''
+  xlLabelOnly = 1
+  '''Label'''
+  xlOrigin = 3
+  '''Origin'''
+
+@unique
+class XlPivotTableVersionList(IntFlag):
+  '''Specifies the version of a PivotTable or a PivotCache. Creating PivotTables with a specific version ensures that tables created in Excel behave in the same manner as they did in the corresponding version of Excel.'''
+
+  xlPivotTableVersion2000 = 0
+  '''Excel 2000'''
+  xlPivotTableVersion10 = 1
+  '''Excel 2002'''
+  xlPivotTableVersion11 = 2
+  '''Excel 2003'''
+  xlPivotTableVersion12 = 3
+  '''Excel 2007'''
+  xlPivotTableVersion14 = 4
+  '''Excel 2010'''
+  xlPivotTableVersion15 = 5
+  '''Excel 2013'''
+  xlPivotTableVersionCurrent = -1
+  '''Provided only for backward compatibility'''
+
+@unique
+class XlPhoneticCharacterType(IntFlag):
+  '''Specifies the type of phonetic text in a cell.'''
+
+  xlHiragana = 2
+  '''Hiragana'''
+  xlKatakana = 1
+  '''Katakana'''
+  xlKatakanaHalf = 0
+  '''Half-size Katakana'''
+  xlNoConversion = 3
+  '''No conversion'''
+
+@unique
+class XlCellChangedState(IntFlag):
+  '''Specifies whether a PivotTable value cell has been edited or recalculated since the PivotTable report was created or the last commit operation was performed.
+
+#REMARKS:
+
+Applying and saving changes applies only to PivotTable reports with OLAP data sources. For more information about the meaning of the xlCellChangedState enumeration constant values, see the CellChanged property of the PivotCell object.
+
+Have questions or feedback about Office VBA or this documentation? Please see Office VBA support and feedback for guidance about the ways you can receive support and provide feedback.
+  '''
+
+  xlCellChangeApplied = 3
+  '''The value in the cell has been edited or recalculated, and that change has been applied to the data source. (Applies only PivotTable reports with OLAP data sources)'''
+  xlCellChanged = 2
+  '''The value in the cell has been edited or recalculated.'''
+  xlCellNotChanged = 1
+  '''The value in the cell has not been edited or recalculated.'''
+
+@unique
+class XlPivotCellType(IntFlag):
+  '''Specifies the PivotTable entity to which the cell corresponds.'''
+
+  xlPivotCellBlankCell = 9
+  '''A structural blank cell in the PivotTable.'''
+  xlPivotCellCustomSubtotal = 7
+  '''A cell in the row or column area that is a custom subtotal.'''
+  xlPivotCellDataField = 4
+  '''A data field label (not the Data button).'''
+  xlPivotCellDataPivotField = 8
+  '''The Data button.'''
+  xlPivotCellGrandTotal = 3
+  '''A cell in a row or column area that is a grand total.'''
+  xlPivotCellPageFieldItem = 6
+  '''The cell that shows the selected item of a Page field.'''
+  xlPivotCellPivotField = 5
+  '''The button for a field (not the Data button).'''
+  xlPivotCellPivotItem = 1
+  '''A cell in the row or column area that is not a subtotal, grand total, custom subtotal, or blank line.'''
+  xlPivotCellSubtotal = 2
+  '''A cell in the row or column area that is a subtotal.'''
+  xlPivotCellValue = 0
+  '''Any cell in the data area (except a blank row).'''
+
+@unique
+class XlSortOrder(IntFlag):
+  '''Specifies the sort order for the specified field or range.'''
+
+  xlAscending = 1
+  '''Sorts the specified field in ascending order. This is the default value.'''
+  xlDescending = 2
+  '''Sorts the specified field in descending order.'''
+  xlManual = -4135
+  '''Manual sort (you can drag items to rearrange them).'''
+
+@unique
+class XlPivotFieldCalculation(IntFlag):
+  '''Specifies the type of calculation performed by a data PivotField when a custom calculation is used.'''
+
+  xlDifferenceFrom = 2
+  '''The difference from the value of the Base item in the Base field.'''
+  xlIndex = 9
+  '''Data calculated as ((value in cell) x (Grand Total of Grand Totals)) / ((Grand Row Total) x (Grand Column Total)).'''
+  xlNoAdditionalCalculation = -4143
+  '''No calculation.'''
+  xlPercentDifferenceFrom = 4
+  '''Percentage difference from the value of the Base item in the Base field.'''
+  xlPercentOf = 3
+  '''Percentage of the value of the Base item in the Base field.'''
+  xlPercentOfColumn = 7
+  '''Percentage of the total for the column or series.'''
+  xlPercentOfParent = 12
+  '''Percentage of the total of the specified parent Base field.'''
+  xlPercentOfParentColumn = 11
+  '''Percentage of the total of the parent column.'''
+  xlPercentOfParentRow = 10
+  '''Percentage of the total of the parent row.'''
+  xlPercentOfRow = 6
+  '''Percentage of the total for the row or category.'''
+  xlPercentOfTotal = 8
+  '''Percentage of the grand total of all the data or data points in the report.'''
+  xlPercentRunningTotal = 13
+  '''Percentage of the running total of the specified Base field.'''
+  xlRankAscending = 14
+  '''Rank smallest to largest.'''
+  xlRankDecending = 15
+  '''Rank largest to smallest.'''
+  xlRunningTotal = 5
+  '''Data for successive items in the Base field as a running total.'''
+
+@unique
+class XlPivotFieldDataType(IntFlag):
+  '''Specifies the type of data in the PivotTable field.
+
+#REMARKS:
+
+This enumeration is used with the DataType property of the PivotField object.
+
+Have questions or feedback about Office VBA or this documentation? Please see Office VBA support and feedback for guidance about the ways you can receive support and provide feedback.
+  '''
+
+  xlDate = 2
+  '''Contains a date.'''
+  xlNumber = -4145
+  '''Contains a number.'''
+  xlText = -4158
+  '''Contains text.'''
+
+@unique
+class XlLayoutFormType(IntFlag):
+  '''Specifies the way the specified PivotTable items appear—in table format or in outline format.'''
+
+  xlOutline = 1
+  '''The LayoutSubtotalLocation property specifies where the subtotal appears in the PivotTable report.'''
+  xlTabular = 0
+  '''Default.'''
+
+@unique
+class XlSubtotalLocationType(IntFlag):
+  '''Specifies where the subtotal will be displayed on the worksheet.'''
+
+  xlAtBottom = 2
+  '''Subtotal will be at the bottom.'''
+  xlAtTop = 1
+  '''Subtotal will be at the top.'''
+
+@unique
+class XlPivotFieldOrientation(IntFlag):
+  '''Specifies the location of the field in a PivotTable report.'''
+
+  xlColumnField = 2
+  '''Column'''
+  xlDataField = 4
+  '''Data'''
+  xlHidden = 0
+  '''Hidden'''
+  xlPageField = 3
+  '''Page'''
+  xlRowField = 1
+  '''Row'''
+
+@unique
+class XlCmdType(IntFlag):
+  '''Specifies the value of the CommandText property.'''
+
+  xlCmdCube = 1
+  '''Contains a cube name for an OLAP data source.'''
+  xlCmdDAX = 8
+  '''Contains a Data Analysis Expressions (DAX) formula.'''
+  xlCmdDefault = 4
+  '''Contains command text that the OLE DB provider understands.'''
+  xlCmdExcel = 7
+  '''Contains an Excel formula.'''
+  xlCmdList = 5
+  '''Contains a pointer to list data.'''
+  xlCmdSql = 2
+  '''Contains an SQL statement.'''
+  xlCmdTable = 3
+  '''Contains a table name for accessing OLE DB data sources.'''
+  xlCmdTableCollection = 6
+  '''Contains the name of a table collection.'''
+
+@unique
+class XlQueryType(IntFlag):
+  '''Specifies the type of query used by Microsoft Excel to populate the query table or PivotTable cache.'''
+
+  xlADORecordset = 7
+  '''Based on an ADO recordset query'''
+  xlDAORecordset = 2
+  '''Based on a DAO recordset query, for query tables only'''
+  xlODBCQuery = 1
+  '''Based on an ODBC data source'''
+  xlOLEDBQuery = 5
+  '''Based on an OLE DB query, including OLAP data sources'''
+  xlTextImport = 6
+  '''Based on a text file, for query tables only'''
+  xlWebQuery = 4
+  '''Based on a webpage, for query tables only'''
+
+@unique
+class XlCellInsertionMode(IntFlag):
+  '''Specifies the way that rows on the specified worksheet are added or deleted to accommodate the number of rows in a recordset returned by a query.'''
+
+  xlInsertDeleteCells = 1
+  '''Partial rows are inserted or deleted to match the exact number of rows required for the new recordset.'''
+  xlInsertEntireRows = 2
+  '''Entire rows are inserted, if necessary, to accommodate any overflow. No cells or rows are deleted from the worksheet.'''
+  xlOverwriteCells = 0
+  '''No new cells or rows are added to the worksheet. Data in surrounding cells is overwritten to accommodate any overflow.'''
+
+@unique
+class XlRobustConnect(IntFlag):
+  '''Specifies how the PivotTable cache or a query table connects to its data source.'''
+
+  xlAlways = 1
+  '''The PivotTable cache or query table always uses external source information (as defined by the SourceConnectionFile or SourceDataFile property) to reconnect.'''
+  xlAsRequired = 0
+  '''The PivotTable cache or query table uses external source information to reconnect by using the Connection property.'''
+  xlNever = 2
+  '''The PivotTable cache or query table never uses source information to reconnect.'''
+
+@unique
+class XlColumnDataType(IntFlag):
+  '''Specifies how a column is to be parsed.'''
+
+  xlDMYFormat = 4
+  '''DMY date format.'''
+  xlDYMFormat = 7
+  '''DYM date format.'''
+  xlEMDFormat = 10
+  '''EMD date format.'''
+  xlGeneralFormat = 1
+  '''General.'''
+  xlMDYFormat = 3
+  '''MDY date format.'''
+  xlMYDFormat = 6
+  '''MYD date format.'''
+  xlSkipColumn = 9
+  '''Column is not parsed.'''
+  xlTextFormat = 2
+  '''Text.'''
+  xlYDMFormat = 8
+  '''YDM date format.'''
+  xlYMDFormat = 5
+  '''YMD date format.'''
+
+@unique
+class XlTextParsingType(IntFlag):
+  '''Specifies the column format for the data in the text file that you are importing into a query table.'''
+
+  xlDelimited = 1
+  '''Default. Indicates that the file is delimited by delimiter characters.'''
+  xlFixedWidth = 2
+  '''Indicates that the data in the file is arranged in columns of fixed widths.'''
+
+@unique
+class XlPlatform(IntFlag):
+  '''Specifies the platform on which a text file originated.'''
+
+  xlMacintosh = 1
+  '''Macintosh'''
+  xlMSDOS = 3
+  '''MS-DOS'''
+  xlWindows = 2
+  '''Microsoft Windows'''
+
+@unique
+class XlTextQualifier(IntFlag):
+  '''Specifies the delimiter to use to specify text.'''
+
+  xlTextQualifierDoubleQuote = 1
+  '''Double quotation mark (").'''
+  xlTextQualifierNone = -4142
+  '''No delimiter.'''
+  xlTextQualifierSingleQuote = 2
+  '''Single quotation mark (').'''
+
+@unique
+class XlTextVisualLayoutType(IntFlag):
+  '''Specifies whether the visual layout of the text being imported is left-to-right or right-to-left.'''
+
+  xlTextVisualLTR = 1
+  '''Left-to-right'''
+  xlTextVisualRTL = 2
+  '''Right-to-left'''
+
+@unique
+class XlWebFormatting(IntFlag):
+  '''Specifies how much formatting from a webpage, if any, is applied when a webpage is imported into a query table.'''
+
+  xlWebFormattingAll = 1
+  '''All formatting is imported.'''
+  xlWebFormattingNone = 3
+  '''No formatting is imported.'''
+  xlWebFormattingRTF = 2
+  '''Rich Text Format - compatible formatting is imported.'''
+
+@unique
+class XlWebSelectionType(IntFlag):
+  '''Specifies whether an entire webpage, all tables on the webpage, or only a specific table is imported into a query table.'''
+
+  xlAllTables = 2
+  '''All tables'''
+  xlEntirePage = 1
+  '''Entire page'''
+  xlSpecifiedTables = 3
+  '''Specified tables'''
+
+@unique
+class XlDVAlertStyle(IntFlag):
+  '''Specifies the icon used in message boxes displayed during validation.'''
+
+  xlValidAlertInformation = 3
+  '''Information icon.'''
+  xlValidAlertStop = 1
+  '''Stop icon.'''
+  xlValidAlertWarning = 2
+  '''Warning icon.'''
+
+@unique
+class XlFormatConditionOperator(IntFlag):
+  '''Specifies the operator to use to compare a formula against the value in a cell or, for xlBetween and xlNotBetween, to compare two formulas.'''
+
+  xlBetween = 1
+  '''Between. Can be used only if two formulas are provided.'''
+  xlEqual = 3
+  '''Equal.'''
+  xlGreater = 5
+  '''Greater than.'''
+  xlGreaterEqual = 7
+  '''Greater than or equal to.'''
+  xlLess = 6
+  '''Less than.'''
+  xlLessEqual = 8
+  '''Less than or equal to.'''
+  xlNotBetween = 2
+  '''Not between. Can be used only if two formulas are provided.'''
+  xlNotEqual = 4
+  '''Not equal.'''
+
+@unique
+class XlIMEMode(IntFlag):
+  '''Specifies the description of the Japanese input rules.'''
+
+  xlIMEModeAlpha = 8
+  '''Half-width alphanumeric.'''
+  xlIMEModeAlphaFull = 7
+  '''Full-width alphanumeric.'''
+  xlIMEModeDisable = 3
+  '''Disable.'''
+  xlIMEModeHangul = 10
+  '''Hangul.'''
+  xlIMEModeHangulFull = 9
+  '''Full-width Hangul.'''
+  xlIMEModeHiragana = 4
+  '''Hiragana.'''
+  xlIMEModeKatakana = 5
+  '''Katakana.'''
+  xlIMEModeKatakanaHalf = 6
+  '''Half-width Katakana.'''
+  xlIMEModeNoControl = 0
+  '''No control.'''
+  xlIMEModeOff = 2
+  '''Off (English mode).'''
+  xlIMEModeOn = 1
+  '''Mode on.'''
+
+@unique
+class XlDVType(IntFlag):
+  '''Specifies the type of validation test to be performed in conjunction with values.'''
+
+  xlValidateCustom = 7
+  '''Data is validated using an arbitrary formula.'''
+  xlValidateDate = 4
+  '''Date values.'''
+  xlValidateDecimal = 2
+  '''Numeric values.'''
+  xlValidateInputOnly = 0
+  '''Validate only when user changes the value.'''
+  xlValidateList = 3
+  '''Value must be present in a specified list.'''
+  xlValidateTextLength = 6
+  '''Length of text.'''
+  xlValidateTime = 5
+  '''Time values.'''
+  xlValidateWholeNumber = 1
+  '''Whole numeric values.'''
+
+@unique
+class XlChartPictureType(IntFlag):
+  '''Specifies how pictures are displayed on a column, bar picture chart, or legend key.'''
+
+  xlStack = 2
+  '''Picture is sized to repeat a maximum of 15 times in the longest stacked bar.'''
+  xlStackScale = 3
+  '''Picture is sized to a specified number of units and repeated the length of the bar.'''
+  xlStretch = 1
+  '''Picture is stretched the full length of the stacked bar.'''
+
+@unique
+class XlChartElementPosition(IntFlag):
+  '''Specifies the position of the chart element.'''
+
+  xlChartElementPositionAutomatic = -4105
+  '''Automatically sets the position of the chart element.'''
+  xlChartElementPositionCustom = -4114
+  '''Specifies a specific position for the chart element.'''
+
+@unique
+class XlLegendPosition(IntFlag):
+  '''Specifies the position of the legend on a chart.'''
+
+  xlLegendPositionBottom = -4107
+  '''Below the chart.'''
+  xlLegendPositionCorner = 2
+  '''In the upper-right corner of the chart border.'''
+  xlLegendPositionCustom = -4161
+  '''A custom position.'''
+  xlLegendPositionLeft = -4131
+  '''Left of the chart.'''
+  xlLegendPositionRight = -4152
+  '''Right of the chart.'''
+  xlLegendPositionTop = -4160
+  '''Above the chart.'''
+
+@unique
+class XlPivotConditionScope(IntFlag):
+  '''This enumeration specifies the conditional formatting applied for filtering values from the PivotTable object.'''
+
+  xlDataFieldScope = 2
+  '''Based on the data in the specified fields.'''
+  xlFieldsScope = 1
+  '''Based on the specified fields.'''
+  xlSelectionScope = 0
+  '''Based on the specified selection criteria.'''
+
+@unique
+class XlContainsOperator(IntFlag):
+  '''Specifies the operator used in a function.'''
+
+  xlBeginsWith = 2
+  '''Begins with a specified value.'''
+  xlContains = 0
+  '''Contains a specified value.'''
+  xlDoesNotContain = 1
+  '''Does not contain the specified value.'''
+  xlEndsWith = 3
+  '''Endswith the specified value'''
+
+@unique
+class XlFormatConditionType(IntFlag):
+  '''Specifies whether the conditional format is based on a cell value or an expression.'''
+
+  xlAboveAverageCondition = 12
+  '''Above average condition'''
+  xlBlanksCondition = 10
+  '''Blanks condition'''
+  xlCellValue = 1
+  '''Cell value'''
+  xlColorScale = 3
+  '''Color scale'''
+  xlDataBar = 4
+  '''DataBar'''
+  xlErrorsCondition = 16
+  '''Errors condition'''
+  xlExpression = 2
+  '''Expression'''
+  xlIconSet = 6
+  '''Icon set'''
+  xlNoBlanksCondition = 13
+  '''No blanks condition'''
+  xlNoErrorsCondition = 17
+  '''No errors condition'''
+  xlTextString = 9
+  '''Text string'''
+  xlTimePeriod = 11
+  '''Time period'''
+  xlTop10 = 5
+  '''Top 10 values'''
+  xlUniqueValues = 8
+  '''Unique values'''
+
+@unique
+class XlCalculatedMemberType(IntFlag):
+  '''Specifies the type of a calculated member in a PivotTable.'''
+
+  xlCalculatedMeasure = 2
+  '''The member is a Multidimensional Expressions (MDX) expression that defines the measure.'''
+  xlCalculatedMember = 0
+  '''The member uses a Multidimensional Expression (MDX) formula.'''
+  xlCalculatedSet = 1
+  '''The member contains an MDX formula for a set in a cube field.'''
+
+@unique
+class XlSparklineRowCol(IntFlag):
+  '''Specifies how to plot the sparkline when the data on which it is based is in a square-shaped range.
+
+#REMARKS:
+
+The xlSparklineRowCol enumeration is used by the PlotBy property of the SparklineGroup object to determine how to plot chart in a sparkline when data on which it based is in a square-shaped range, such as A1:B2.
+
+Have questions or feedback about Office VBA or this documentation? Please see Office VBA support and feedback for guidance about the ways you can receive support and provide feedback.
+  '''
+
+  xlSparklineColumnsSquare = 2
+  '''Plot the data by columns.'''
+  xlSparklineNonSquare = 0
+  '''The sparkline is not bound to data in a square-shaped range.'''
+  xlSparklineRowsSquare = 1
+  '''Plot the data by rows.'''
+
+@unique
+class XlSparkType(IntFlag):
+  '''Specifies the type of sparkline.'''
+
+  xlSparkColumn = 2
+  '''A column chart sparkline.'''
+  xlSparkColumnStacked100 = 3
+  '''A win/loss chart sparkline.'''
+  xlSparkLine = 1
+  '''A line chart sparkline.'''
+
+@unique
+class XlTotalsCalculation(IntFlag):
+  '''Specifies the type of calculation in the Totals row of a list column.'''
+
+  xlTotalsCalculationAverage = 2
+  '''Average'''
+  xlTotalsCalculationCount = 3
+  '''Count of non-empty cells'''
+  xlTotalsCalculationCountNums = 4
+  '''Count of cells with numeric values'''
+  xlTotalsCalculationCustom = 9
+  '''Custom calculation'''
+  xlTotalsCalculationMax = 6
+  '''Maximum value in the list'''
+  xlTotalsCalculationMin = 5
+  '''Minimum value in the list'''
+  xlTotalsCalculationNone = 0
+  '''No calculation'''
+  xlTotalsCalculationStdDev = 7
+  '''Standard deviation value'''
+  xlTotalsCalculationSum = 1
+  '''Sum of all values in the list column'''
+  xlTotalsCalculationVar = 8
+  '''Variable'''
+
+@unique
+class XlTimeUnit(IntFlag):
+  '''Specifies the unit of time for chart axes and data series.'''
+
+  xlDays = 0
+  '''Days'''
+  xlMonths = 1
+  '''Months'''
+  xlYears = 2
+  '''Years'''
+
+@unique
+class XlCategoryType(IntFlag):
+  '''Specifies the type of the category axis.'''
+
+  xlAutomaticScale = -4105
+  '''Excel controls the axis type.'''
+  xlCategoryScale = 2
+  '''Axis groups data by an arbitrary set of categories.'''
+  xlTimeScale = 3
+  '''Axis groups data on a time scale.'''
+
+@unique
+class XlAxisCrosses(IntFlag):
+  '''Specifies the point on the specified axis where the other axis crosses.'''
+
+  xlAxisCrossesAutomatic = -4105
+  '''Microsoft Excel sets the axis crossing point.'''
+  xlAxisCrossesCustom = -4114
+  '''The CrossesAt property specifies the axis crossing point.'''
+  xlAxisCrossesMaximum = 2
+  '''The axis crosses at the maximum value.'''
+  xlAxisCrossesMinimum = 4
+  '''The axis crosses at the minimum value.'''
+
+@unique
+class XlDisplayUnit(IntFlag):
+  '''Specifies the display unit label for an axis.'''
+
+  xlHundredMillions = -8
+  '''Hundreds of millions.'''
+  xlHundreds = -2
+  '''Hundreds.'''
+  xlHundredThousands = -5
+  '''Hundreds of thousands.'''
+  xlMillionMillions = -10
+  '''Millions of millions.'''
+  xlMillions = -6
+  '''Millions.'''
+  xlTenMillions = -7
+  '''Tens of millions.'''
+  xlTenThousands = -4
+  '''Tens of thousands.'''
+  xlThousandMillions = -9
+  '''Thousands of millions.'''
+  xlThousands = -3
+  '''Thousands.'''
+
+@unique
+class XlTickMark(IntFlag):
+  '''Specifies the position of major and minor tick marks for an axis.'''
+
+  xlTickMarkCross = 4
+  '''Crosses the axis'''
+  xlTickMarkInside = 2
+  '''Inside the axis'''
+  xlTickMarkNone = -4142
+  '''No mark'''
+  xlTickMarkOutside = 3
+  '''Outside the axis'''
+
+@unique
+class XlScaleType(IntFlag):
+  '''Specifies the scale type of the value axis.'''
+
+  xlScaleLinear = -4132
+  '''Linear'''
+  xlScaleLogarithmic = -4133
+  '''Logarithmic'''
+
+@unique
+class XlTickLabelPosition(IntFlag):
+  '''Specifies the position of tick-mark labels on the specified axis.'''
+
+  xlTickLabelPositionHigh = -4127
+  '''Top or right side of the chart.'''
+  xlTickLabelPositionLow = -4134
+  '''Bottom or left side of the chart.'''
+  xlTickLabelPositionNextToAxis = 4
+  '''Next to axis (where axis is not at either side of the chart).'''
+  xlTickLabelPositionNone = -4142
+  '''No tick marks.'''
+
+@unique
+class XlAxisType(IntFlag):
+  '''Specifies the axis type.'''
+
+  xlCategory = 1
+  '''Axis displays categories.'''
+  xlSeriesAxis = 3
+  '''Axis displays data series.'''
+  xlValue = 2
+  '''Axis displays values.'''
+
+class XlBinsType(IntFlag):
+  '''Constants passed to and returned by the ChartGroup.BinsType property.'''
+
+
+@unique
+class XlSizeRepresents(IntFlag):
+  '''Specifies what the bubble size represents on a bubble chart.'''
+
+  xlSizeIsArea = 1
+  '''Area of the bubble.'''
+  xlSizeIsWidth = 2
+  '''Width of the bubble.'''
+
+@unique
+class XlChartSplitType(IntFlag):
+  '''Specifies the values displayed in the second chart in a pie chart or a Bar of Pie chart.'''
+
+  xlSplitByCustomSplit = 4
+  '''Arbitrary slides are displayed in the second chart.'''
+  xlSplitByPercentValue = 3
+  '''Second chart displays values less than some percentage of the total value. The percentage is specified by the SplitValue property.'''
+  xlSplitByPosition = 1
+  '''Second chart displays the smallest values in the data series. The number of values to display is specified by the SplitValue property.'''
+  xlSplitByValue = 2
+  '''Second chart displays values less than the value specified by the SplitValue property.'''
+
+class XlGeoMappingLevel(IntFlag):
+  '''Constants passed to and returned by the Series.GeoMappingLevel property.'''
+
+
+class XlGeoProjectionType(IntFlag):
+  '''Constants passed to and returned by the Series.GeoProjectionType property.'''
+
+
+@unique
+class XlMarkerStyle(IntFlag):
+  '''Specifies the marker style for a point or series in a line chart, scatter chart, or radar chart.'''
+
+  xlMarkerStyleAutomatic = -4105
+  '''Automatic markers'''
+  xlMarkerStyleCircle = 8
+  '''Circular markers'''
+  xlMarkerStyleDash = -4115
+  '''Long bar markers'''
+  xlMarkerStyleDiamond = 2
+  '''Diamond-shaped markers'''
+  xlMarkerStyleDot = -4118
+  '''Short bar markers'''
+  xlMarkerStyleNone = -4142
+  '''No markers'''
+  xlMarkerStylePicture = -4147
+  '''Picture markers'''
+  xlMarkerStylePlus = 9
+  '''Square markers with a plus sign'''
+  xlMarkerStyleSquare = 1
+  '''Square markers'''
+  xlMarkerStyleStar = 5
+  '''Square markers with an asterisk'''
+  xlMarkerStyleTriangle = 3
+  '''Triangular markers'''
+  xlMarkerStyleX = -4168
+  '''Square markers with an X'''
+
+class XlParentDataLabelOptions(IntFlag):
+  '''Constants passed to and returned by the Series.ParentDataLabelOption property.'''
+
+
+class XlRegionLabelOptions(IntFlag):
+  '''Constants passed to and returned by the Series.RegionLabelOptions property.'''
+
+
+@unique
+class XlFormControl(IntFlag):
+  '''Specifies the type of the form control.'''
+
+  xlButtonControl = 0
+  '''Button.'''
+  xlCheckBox = 1
+  '''Check box.'''
+  xlDropDown = 2
+  '''Combo box.'''
+  xlEditBox = 3
+  '''Text box.'''
+  xlGroupBox = 4
+  '''Group box.'''
+  xlLabel = 5
+  '''Label.'''
+  xlListBox = 6
+  '''List box.'''
+  xlOptionButton = 7
+  '''Option button.'''
+  xlScrollBar = 8
+  '''Scroll bar.'''
+  xlSpinner = 9
+  '''Spinner.'''
+
+@unique
+class XlConnectionType(IntFlag):
+  '''Specifies the type of database connection.'''
+
+  xlConnectionTypeDATAFEED = 6
+  '''Data Feed'''
+  xlConnectionTypeMODEL = 7
+  '''PowerPivot Model'''
+  xlConnectionTypeNOSOURCE = 9
+  '''No source'''
+  xlConnectionTypeODBC = 2
+  '''ODBC'''
+  xlConnectionTypeOLEDB = 1
+  '''OLEDB'''
+  xlConnectionTypeTEXT = 4
+  '''Text'''
+  xlConnectionTypeWEB = 5
+  '''Web'''
+  xlConnectionTypeWORKSHEET = 8
+  '''Worksheet'''
+  xlConnectionTypeXMLMAP = 3
+  '''XML MAP'''
+
+@unique
+class XlHtmlType(IntFlag):
+  '''Specifies the type of HTML generated by Excel when you save the specified item to a webpage and whether the item is static or interactive.'''
+
+  xlHtmlCalc = 1
+  '''Use the Spreadsheet component. Deprecated.'''
+  xlHtmlChart = 3
+  '''Use the Chart component. Deprecated.'''
+  xlHtmlList = 2
+  '''Use the PivotTable component. Deprecated.'''
+  xlHtmlStatic = 0
+  '''Use static (noninteractive) HTML for viewing only.'''
+
+@unique
+class XlSourceType(IntFlag):
+  '''Identifies the source object.'''
+
+  xlSourceAutoFilter = 3
+  '''An AutoFilter range'''
+  xlSourceChart = 5
+  '''A chart'''
+  xlSourcePivotTable = 6
+  '''A PivotTable report'''
+  xlSourcePrintArea = 2
+  '''A range of cells selected for printing'''
+  xlSourceQuery = 7
+  '''A query table (external data range)'''
+  xlSourceRange = 4
+  '''A range of cells'''
+  xlSourceSheet = 1
+  '''An entire worksheet'''
+  xlSourceWorkbook = 0
+  '''A workbook'''
+
+@unique
+class XlSlicerCrossFilterType(IntFlag):
+  '''Specifies the type of cross filtering used by the specified slicer cache and how it is visualized.'''
+
+  xlSlicerCrossFilterHideButtonsWithNoData = 4
+  '''Cross filtering is turned on for this slicer cache, any tile with no data for a filtering selection in other slicers connected to the same data source will be dimmed. Additionally, buttons will be hidden.'''
+  xlSlicerCrossFilterShowItemsWithDataAtTop = 2
+  '''Cross filtering is turned on for this slicer cache, any tile with no data for a filtering selection in other slicers connected to the same data source will be dimmed. Additionally, tiles with data are moved to the top in the slicer. (Default)'''
+  xlSlicerCrossFilterShowItemsWithNoData = 3
+  '''Cross filtering is turned on for this slicer cache, any tile with no data for a filtering selection in other slicers connected to the same data source will be dimmed.'''
+  xlSlicerNoCrossFilter = 1
+  '''Cross filtering is turned off entirely, so all tiles are displayed and active (not dimmed) regardless of filtering selections in other slicers.'''
+
+class XlSlicerCacheType(IntFlag):
+  '''Designates the type of slicer or slicer cache.'''
+
+
+@unique
+class XlSlicerSort(IntFlag):
+  '''Specifies whether items displayed in the slicer are sorted, and if they are sorted, whether they are sorted in ascending or descending order by item captions.'''
+
+  xlSlicerSortAscending = 2
+  '''Slicer items are sorted in ascending order by item captions.'''
+  xlSlicerSortDataSourceOrder = 1
+  '''Slicer items are displayed in the order provided by the data source.'''
+  xlSlicerSortDescending = 3
+  '''Slicer items are sorted in descending order by item captions.'''
+
+@unique
+class XlPivotTableSourceType(IntFlag):
+  '''Specifies the source of the report data.'''
+
+  xlConsolidation = 3
+  '''Multiple consolidation ranges.'''
+  xlDatabase = 1
+  '''Microsoft Excel list or database.'''
+  xlExternal = 2
+  '''Data from another application.'''
+  xlPivotTable = -4148
+  '''Same source as another PivotTable report.'''
+  xlScenario = 4
+  '''Data is based on scenarios created using the Scenario Manager.'''
+
+@unique
+class XlSummaryColumn(IntFlag):
+  '''Specifies the location of the summary columns in the outline.'''
+
+  xlSummaryOnLeft = -4131
+  '''The summary column will be positioned to the left of the detail columns in the outline.'''
+  xlSummaryOnRight = -4152
+  '''The summary column will be positioned to the right of the detail columns in the outline.'''
+
+@unique
+class XlSummaryRow(IntFlag):
+  '''Specifies the location of the summary rows in the outline.'''
+
+  xlSummaryAbove = 0
+  '''The summary row will be positioned above the detail rows in the outline.'''
+  xlSummaryBelow = 1
+  '''The summary row will be positioned below the detail rows in the outline.'''
+
+@unique
+class XlYesNoGuess(IntFlag):
+  '''Specifies whether or not the first row contains headers. Cannot be used when sorting PivotTable reports.'''
+
+  xlGuess = 0
+  '''Excel determines whether there is a header, and where it is, if there is one.'''
+  xlNo = 2
+  '''Default. The entire range should be sorted.'''
+  xlYes = 1
+  '''The entire range should not be sorted.'''
+
+@unique
+class XlSortOrientation(IntFlag):
+  '''Specifies the sort orientation.'''
+
+  xlSortColumns = 1
+  '''Sorts by column.'''
+  xlSortRows = 2
+  '''Sorts by row. This is the default value.'''
+
+@unique
+class XlSortMethod(IntFlag):
+  '''Specifies the type of sort.'''
+
+  xlPinYin = 1
+  '''Phonetic Chinese sort order for characters. This is the default value.'''
+  xlStroke = 2
+  '''Sort by the quantity of strokes in each character.'''
+
+@unique
+class XlPageBreakExtent(IntFlag):
+  '''Specifies whether a page break is full screen or applies only within the print area.'''
+
+  xlPageBreakFull = 1
+  '''Full screen.'''
+  xlPageBreakPartial = 2
+  '''Only within print area.'''
+
+@unique
+class XlCubeFieldSubType(IntFlag):
+  '''Specifies the subtype of the CubeField.'''
+
+  xlCubeAttribute = 4
+  '''Attribute'''
+  xlCubeCalculatedMeasure = 5
+  '''Calculated Measure'''
+  xlCubeHierarchy = 1
+  '''Hierarchy'''
+  xlCubeImplicitMeasure = 11
+  '''An implicit measure'''
+  xlCubeKPIGoal = 7
+  '''KPI Goal'''
+  xlCubeKPIStatus = 8
+  '''KPI Status'''
+  xlCubeKPITrend = 9
+  '''KPI Trend'''
+  xlCubeKPIValue = 6
+  '''KPI Value'''
+  xlCubeKPIWeight = 10
+  '''KPI Weight'''
+  xlCubeMeasure = 2
+  '''Measure'''
+  xlCubeSet = 3
+  '''Set'''
+
+@unique
+class XlCubeFieldType(IntFlag):
+  '''Specifies whether the OLAP field is a hierarchy, set, or measure field.'''
+
+  xlHierarchy = 1
+  '''OLAP field is a hierarchy.'''
+  xlMeasure = 2
+  '''OLAP field is a measure.'''
+  xlSet = 3
+  '''OLAP field is a set.'''
+
+@unique
+class XlPivotLineType(IntFlag):
+  '''Specifies the type of the PivotLine.'''
+
+  xlPivotLineBlank = 3
+  '''Blank line after each group.'''
+  xlPivotLineGrandTotal = 2
+  '''Grand Total line.'''
+  xlPivotLineRegular = 0
+  '''Regular PivotLine with pivot items.'''
+  xlPivotLineSubtotal = 1
+  '''Subtotal line.'''
+
+@unique
+class XlPivotTableMissingItems(IntFlag):
+  '''Specifies the maximum number of unique items allowed per PivotField.'''
+
+  xlMissingItemsDefault = -1
+  '''The default number of unique items per PivotField allowed.'''
+  xlMissingItemsMax = 32500
+  '''The maximum number of unique items per PivotField allowed (32,500) for a pre-Excel 2007 PivotTable.'''
+  xlMissingItemsMax2 = 1048576
+  '''The maximum number of unique items per PivotField allowed (1,048,576) for PivotTables in Excel 2007 and later.'''
+  xlMissingItemsNone = 0
+  '''No unique items per PivotField allowed (zero).'''
+
+@unique
+class XlTrendlineType(IntFlag):
+  '''Specifies how the trendline that smooths out fluctuations in the data is calculated.'''
+
+  xlExponential = 5
+  '''Uses an equation to calculate the least squares fit through points, for example, y=ab^x .'''
+  xlLinear = -4132
+  '''Uses the linear equation y = mx + b to calculate the least squares fit through points.'''
+  xlLogarithmic = -4133
+  '''Uses the equation y = c ln x + b to calculate the least squares fit through points.'''
+  xlMovingAvg = 6
+  '''Uses a sequence of averages computed from parts of the data series. The number of points equals the total number of points in the series less the number specified for the period.'''
+  xlPolynomial = 3
+  '''Uses an equation to calculate the least squares fit through points, for example, y = ax^6 + bx^5 + cx^4 + dx^3 + ex^2 + fx + g.'''
+  xlPower = 4
+  '''Uses an equation to calculate the least squares fit through points, for example, y = ax^b.'''
+
+@unique
+class XlParameterDataType(IntFlag):
+  '''Specifies the data type of a query parameter.'''
+
+  xlParamTypeBigInt = -5
+  '''Big integer.'''
+  xlParamTypeBinary = -2
+  '''Binary.'''
+  xlParamTypeBit = -7
+  '''Bit.'''
+  xlParamTypeChar = 1
+  '''String.'''
+  xlParamTypeDate = 9
+  '''Date.'''
+  xlParamTypeDecimal = 3
+  '''Decimal.'''
+  xlParamTypeDouble = 8
+  '''Double.'''
+  xlParamTypeFloat = 6
+  '''Float.'''
+  xlParamTypeInteger = 4
+  '''Integer.'''
+  xlParamTypeLongVarBinary = -4
+  '''Long binary.'''
+  xlParamTypeLongVarChar = -1
+  '''Long string.'''
+  xlParamTypeNumeric = 2
+  '''Numeric.'''
+  xlParamTypeReal = 7
+  '''Real.'''
+  xlParamTypeSmallInt = 5
+  '''Small integer.'''
+  xlParamTypeTime = 10
+  '''Time.'''
+  xlParamTypeTimestamp = 11
+  '''Time stamp.'''
+  xlParamTypeTinyInt = -6
+  '''Tiny integer.'''
+  xlParamTypeUnknown = 0
+  '''Type unknown.'''
+  xlParamTypeVarBinary = -3
+  '''Variable-length binary.'''
+  xlParamTypeVarChar = 12
+  '''Variable-length string.'''
+  xlParamTypeWChar = -8
+  '''Unicode character string.'''
+
+@unique
+class XlParameterType(IntFlag):
+  '''Specifies how to determine the value of the parameter for the specified query table.'''
+
+  xlConstant = 1
+  '''Uses the value specified by the Value argument.'''
+  xlPrompt = 0
+  '''Displays a dialog box that prompts the user for the value. The Value argument specifies the text shown in the dialog box.'''
+  xlRange = 2
+  '''Uses the value of the cell in the upper-left corner of the range. The Value argument specifies a Range object.'''
+
+@unique
+class XlOartHorizontalOverflow(IntFlag):
+  '''Specifies the horizontal overflow setting for a text frame.'''
+
+  xlOartHorizontalOverflowClip = 1
+  '''Hide text that does not fit horizontally in the text frame.'''
+  xlOartHorizontalOverflowOverflow = 0
+  '''Allow text to overflow the text frame horizontally.'''
+
+@unique
+class XlOartVerticalOverflow(IntFlag):
+  '''Specifies the vertical overflow setting for a text frame.'''
+
+  xlOartVerticalOverflowClip = 1
+  '''Hide text that does not fit vertically within the text frame.'''
+  xlOartVerticalOverflowEllipsis = 2
+  '''Hide text that does not fit vertically within the text frame, and add an ellipsis (...) at the end of the visible text.'''
+  xlOartVerticalOverflowOverflow = 0
+  '''Allow text to overflow the text frame vertically (can be from the top, bottom, or both depending on the text alignment).'''
+
+@unique
+class XlTickLabelOrientation(IntFlag):
+  '''Specifies the text orientation for tick-mark labels.'''
+
+  xlTickLabelOrientationAutomatic = -4105
+  '''Text orientation set by Excel.'''
+  xlTickLabelOrientationDownward = -4170
+  '''Text runs down.'''
+  xlTickLabelOrientationHorizontal = -4128
+  '''Characters run horizontally.'''
+  xlTickLabelOrientationUpward = -4171
+  '''Text runs up.'''
+  xlTickLabelOrientationVertical = -4166
+  '''Characters run vertically.'''
+
+@unique
+class XlEndStyleCap(IntFlag):
+  '''Specifies the end style for error bars.'''
+
+  xlCap = 1
+  '''Caps applied.'''
+  xlNoCap = 2
+  '''No caps applied.'''
+
+@unique
+class XlCredentialsMethod(IntFlag):
+  '''Specifies the type of credentials method used.'''
+
+  CredentialsMethodIntegrated = 0
+  '''Integrated'''
+  CredentialsMethodNone = 1
+  '''No credentials used'''
+  CredentialsMethodStored = 2
+  '''Use stored credentials'''
+
+@unique
+class XlPivotFilterType(IntFlag):
+  '''The type of filter applied.'''
+
+  xlBefore = 31
+  '''Filters for all dates before a specified date'''
+  xlBeforeOrEqualTo = 32
+  '''Filters for all dates on or before a specified date'''
+  xlAfter = 33
+  '''Filters for all dates after a specified date'''
+  xlAfterOrEqualTo = 34
+  '''Filters for all dates on or after a specified date'''
+  xlAllDatesInPeriodJanuary = 57
+  '''Filters for all dates in January'''
+  xlAllDatesInPeriodFebruary = 58
+  '''Filters for all dates in February'''
+  xlAllDatesInPeriodMarch = 59
+  '''Filters for all dates in March'''
+  xlAllDatesInPeriodApril = 60
+  '''Filters for all dates in April'''
+  xlAllDatesInPeriodMay = 61
+  '''Filters for all dates in May'''
+  xlAllDatesInPeriodJune = 62
+  '''Filters for all dates in June'''
+  xlAllDatesInPeriodJuly = 63
+  '''Filters for all dates in July'''
+  xlAllDatesInPeriodAugust = 64
+  '''Filters for all dates in August'''
+  xlAllDatesInPeriodSeptember = 65
+  '''Filters for all dates in September'''
+  xlAllDatesInPeriodOctober = 66
+  '''Filters for all dates in October'''
+  xlAllDatesInPeriodNovember = 67
+  '''Filters for all dates in November'''
+  xlAllDatesInPeriodDecember = 68
+  '''Filters for all dates in December'''
+  xlAllDatesInPeriodQuarter1 = 53
+  '''Filters for all dates in Quarter1'''
+  xlAllDatesInPeriodQuarter2 = 54
+  '''Filters for all dates in Quarter2'''
+  xlAllDatesInPeriodQuarter3 = 55
+  '''Filters for all dates in Quarter3'''
+  xlAllDatesInPeriodQuarter4 = 56
+  '''Filters for all dates in Quarter 4'''
+  xlBottomCount = 2
+  '''Filters for the specified number of values from the bottom of a list'''
+  xlBottomPercent = 4
+  '''Filters for the specified percentage of values from the bottom of a list'''
+  xlBottomSum = 6
+  '''Sum of the values from the bottom of the list'''
+  xlCaptionBeginsWith = 17
+  '''Filters for all captions beginning with the specified string'''
+  xlCaptionContains = 21
+  '''Filters for all captions that contain the specified string'''
+  xlCaptionDoesNotBeginWith = 18
+  '''Filters for all captions that don't begin with the specified string'''
+  xlCaptionDoesNotContain = 22
+  '''Filters for all captions that don't contain the specified string'''
+  xlCaptionDoesNotEndWith = 20
+  '''Filters for all captions that don't end with the specified string'''
+  xlCaptionDoesNotEqual = 16
+  '''Filters for all captions that don't match the specified string'''
+  xlCaptionEndsWith = 19
+  '''Filters for all captions that end with the specified string'''
+  xlCaptionEquals = 15
+  '''Filters for all captions that match the specified string'''
+  xlCaptionIsBetween = 27
+  '''Filters for all captions that are between a specified range of values'''
+  xlCaptionIsGreaterThan = 23
+  '''Filters for all captions that are greater than the specified value'''
+  xlCaptionIsGreaterThanOrEqualTo = 24
+  '''Filters for all captions that are greater than or match the specified value'''
+  xlCaptionIsLessThan = 25
+  '''Filters for all captions that are less than the specified value'''
+  xlCaptionIsLessThanOrEqualTo = 26
+  '''Filters for all captions that are less than or match the specified value'''
+  xlCaptionIsNotBetween = 28
+  '''Filters for all captions that are not between a specified range of values'''
+  xlDateBetween = 35
+  '''Filters for all dates that are between a specified range of dates'''
+  xlDateLastMonth = 45
+  '''Filters for all dates that apply to the previous month'''
+  xlDateLastQuarter = 48
+  '''Filters for all dates that apply to the previous quarter'''
+  xlDateLastWeek = 42
+  '''Filters for all dates that apply to the previous week'''
+  xlDateLastYear = 51
+  '''Filters for all dates that apply to the previous year'''
+  xlDateNextMonth = 43
+  '''Filters for all dates that apply to the next month'''
+  xlDateNextQuarter = 46
+  '''Filters for all dates that apply to the next quarter'''
+  xlDateNextWeek = 40
+  '''Filters for all dates that apply to the next week'''
+  xlDateNextYear = 49
+  '''Filters for all dates that apply to the next year'''
+  xlDateThisMonth = 44
+  '''Filters for all dates that apply to the current month'''
+  xlDateThisQuarter = 47
+  '''Filters for all dates that apply to the current quarter'''
+  xlDateThisWeek = 41
+  '''Filters for all dates that apply to the current week'''
+  xlDateThisYear = 50
+  '''Filters for all dates that apply to the current year'''
+  xlDateToday = 38
+  '''Filters for all dates that apply to the current date'''
+  xlDateTomorrow = 37
+  '''Filters for all dates that apply to the next day'''
+  xlDateYesterday = 39
+  '''Filters for all dates that apply to the previous day'''
+  xlNotSpecificDate = 30
+  '''Filters for all dates that don't match a specified date'''
+  xlSpecificDate = 29
+  '''Filters for all dates that match a specified date'''
+  xlTopCount = 1
+  '''Filters for the specified number of values from the top of a list'''
+  xlTopPercent = 3
+  '''Filters for the specified percentage of values from a list'''
+  xlTopSum = 5
+  '''Sum of the values from the top of the list'''
+  xlValueDoesNotEqual = 8
+  '''Filters for all values that don't match the specified value'''
+  xlValueEquals = 7
+  '''Filters for all values that match the specified value'''
+  xlValueIsBetween = 13
+  '''Filters for all values that are between a specified range of values'''
+  xlValueIsGreaterThan = 9
+  '''Filters for all values that are greater than the specified value'''
+  xlValueIsGreaterThanOrEqualTo = 10
+  '''Filters for all values that are greater than or match the specified value'''
+  xlValueIsLessThan = 11
+  '''Filters for all values that are less than the specified value'''
+  xlValueIsLessThanOrEqualTo = 12
+  '''Filters for all values that are less than or match the specified value'''
+  xlValueIsNotBetween = 14
+  '''Filters for all values that are not between a specified range of values'''
+  xlYearToDate = 52
+  '''Filters for all values that are within one year of a specified date'''
+
+class XlTimelineLevel(IntFlag):
+  '''One of the built-in hierarchy levels that Timeline supports.'''
+
+
+@unique
+class XlDataLabelPosition(IntFlag):
+  '''Specifies where the data label is positioned.'''
+
+  xlLabelPositionAbove = 0
+  '''Data label is positioned above the data point.'''
+  xlLabelPositionBelow = 1
+  '''Data label is positioned below the data point.'''
+  xlLabelPositionBestFit = 5
+  '''Microsoft Office Excel 2007 sets the position of the data label.'''
+  xlLabelPositionCenter = -4108
+  '''Data label is centered on the data point or is inside a bar or pie chart.'''
+  xlLabelPositionCustom = 7
+  '''Data label is in a custom position.'''
+  xlLabelPositionInsideBase = 4
+  '''Data label is positioned inside the data point at the bottom edge.'''
+  xlLabelPositionInsideEnd = 3
+  '''Data label is positioned inside the data point at the top edge.'''
+  xlLabelPositionLeft = -4131
+  '''Data label is positioned to the left of the data point.'''
+  xlLabelPositionMixed = 6
+  '''Data labels are in multiple positions.'''
+  xlLabelPositionOutsideEnd = 2
+  '''Data label is positioned outside the data point at the top edge.'''
+  xlLabelPositionRight = -4152
+  '''Data label is positioned to the right of the data point.'''
+
+@unique
+class XlDataLabelSeparator(IntFlag):
+  '''Specifies the separator used with data labels.'''
+
+  xlDataLabelSeparatorDefault = 1
+  '''Excel selects the separator.'''
+
+@unique
+class XlConditionValueTypes(IntFlag):
+  '''Specifies the types of condition values that can be used.'''
+
+  xlConditionValueAutomaticMax = 7
+  '''The longest data bar is proportional to the maximum value in the range.'''
+  xlConditionValueAutomaticMin = 6
+  '''The shortest data bar is proportional to the minimum value in the range.'''
+  xlConditionValueFormula = 4
+  '''Formula is used.'''
+  xlConditionValueHighestValue = 2
+  '''Highest value from the list of values.'''
+  xlConditionValueLowestValue = 1
+  '''Lowest value from the list of values.'''
+  xlConditionValueNone = -1
+  '''No conditional value.'''
+  xlConditionValueNumber = 0
+  '''Number is used.'''
+  xlConditionValuePercent = 3
+  '''Percentage is used.'''
+  xlConditionValuePercentile = 5
+  '''Percentile is used.'''
+
+@unique
+class XlAutoFilterOperator(IntFlag):
+  '''Specifies the operator to use to associate two criteria applied by a filter.'''
+
+  xlAnd = 1
+  '''Logical AND of Criteria1 and Criteria2'''
+  xlBottom10Items = 4
+  '''Lowest-valued items displayed (number of items specified in Criteria1)'''
+  xlBottom10Percent = 6
+  '''Lowest-valued items displayed (percentage specified in Criteria1)'''
+  xlFilterCellColor = 8
+  '''Color of the cell'''
+  xlFilterDynamic = 11
+  '''Dynamic filter'''
+  xlFilterFontColor = 9
+  '''Color of the font'''
+  xlFilterIcon = 10
+  '''Filter icon'''
+  xlFilterValues = 7
+  '''Filter values'''
+  xlOr = 2
+  '''Logical OR of Criteria1 or Criteria2'''
+  xlTop10Items = 3
+  '''Highest-valued items displayed (number of items specified in Criteria1)'''
+  xlTop10Percent = 5
+  '''Highest-valued items displayed (percentage specified in Criteria1)'''
+
+@unique
+class XlSortDataOption(IntFlag):
+  '''Specifies how to sort text.'''
+
+  xlSortNormal = 0
+  '''default. Sorts numeric and text data separately.'''
+  xlSortTextAsNumbers = 1
+  '''Treat text as numeric data for the sort.'''
+
+@unique
+class XlSortOn(IntFlag):
+  '''Specifies the parameter on which the data should be sorted.'''
+
+  SortOnCellColor = 1
+  '''Cell color.'''
+  SortOnFontColor = 2
+  '''Font color.'''
+  SortOnIcon = 3
+  '''Icon.'''
+  SortOnValues = 0
+  '''Values.'''
+
+@unique
+class XlSparkScale(IntFlag):
+  '''Specifies how the minimum or maximum value of the vertical axis of the sparkline is scaled relative to other sparklines in the group.
+
+#REMARKS:
+
+The constants of the xlSparkScale enumeration correspond to the settings of the Vertical Axis Minimum Value Options and the Vertical Axis Maximum Value Options on the Axis drop-down list on the Sparkline Tools Design tab of the ribbon.
+
+Have questions or feedback about Office VBA or this documentation? Please see Office VBA support and feedback for guidance about the ways you can receive support and provide feedback.
+  '''
+
+  xlSparkScaleCustom = 3
+  '''The minimum or maximum value for the vertical axis of the sparkline has a user-defined value.'''
+  xlSparkScaleGroup = 1
+  '''The minimum or maximum value for the vertical axes of all of the sparklines in the group have the same value.'''
+  xlSparkScaleSingle = 2
+  '''The minimum or maximum value for the vertical axis of each sparkline in the group is automatically set to its own calculated value.'''
+
+
+
 # all_cls 115
 class Application: pass
 class Range: pass
@@ -126,8 +3793,7 @@ class ModelConnection: pass
 class Ranges: pass
 class CalculatedMembers: pass
 
-# ole empty class.  177
-class AboveAverage: pass
+# ole empty class.  156
 class AddIn: pass
 class Adjustments: pass
 class AllowEditRange: pass
@@ -137,14 +3803,9 @@ class Axes: pass
 class Axis: pass
 class AxisTitle: pass
 class Border: pass
-class CalculatedFields: pass
-class CalculatedItems: pass
-class CalculatedMember: pass
 class CalloutFormat: pass
-class CategoryCollection: pass
 class Chart: pass
 class ChartArea: pass
-class ChartCategory: pass
 class ChartFormat: pass
 class ChartGroup: pass
 class ChartGroups: pass
@@ -158,19 +3819,16 @@ class ColorScaleCriteria: pass
 class ColorScaleCriterion: pass
 class Comment: pass
 class CommentThreaded: pass
-class ConditionValue: pass
 class ConnectorFormat: pass
 class ControlFormat: pass
 class CubeField: pass
 class CubeFields: pass
 class CustomProperty: pass
 class CustomView: pass
-class DataBarBorder: pass
 class DataFeedConnection: pass
 class DataLabel: pass
 class DataLabels: pass
 class DataTable: pass
-class Databar: pass
 class Dialog: pass
 class DisplayUnitLabel: pass
 class DownBars: pass
@@ -214,12 +3872,9 @@ class ModelTable: pass
 class ModelTableColumn: pass
 class ModelTableColumns: pass
 class Name: pass
-class NegativeBarFormat: pass
 class ODBCError: pass
 class OLEDBError: pass
 class OLEFormat: pass
-class OLEObject: pass
-class OLEObjects: pass
 class Parameter: pass
 class Parameters: pass
 class PictureFormat: pass
@@ -229,8 +3884,6 @@ class PivotCaches: pass
 class PivotCell: pass
 class PivotField: pass
 class PivotFields: pass
-class PivotFilter: pass
-class PivotFilters: pass
 class PivotFormula: pass
 class PivotFormulas: pass
 class PivotItem: pass
@@ -241,7 +3894,6 @@ class PivotLine: pass
 class PivotLines: pass
 class PivotTable: pass
 class PivotTableChangeList: pass
-class PivotValueCell: pass
 class PlotArea: pass
 class Point: pass
 class Points: pass
@@ -249,8 +3901,6 @@ class ProtectedViewWindow: pass
 class PublishObject: pass
 class QueryTable: pass
 class RecentFile: pass
-class Scenario: pass
-class Scenarios: pass
 class Series: pass
 class SeriesCollection: pass
 class SeriesLines: pass
@@ -276,7 +3926,6 @@ class SparkVerticalAxis: pass
 class Sparkline: pass
 class SparklineGroup: pass
 class TableObject: pass
-class TableStyleElement: pass
 class TextConnection: pass
 class TextEffectFormat: pass
 class TextFrame: pass
@@ -285,18 +3934,15 @@ class ThreeDFormat: pass
 class TickLabels: pass
 class TimelineState: pass
 class TimelineViewState: pass
-class Top10: pass
 class TreeviewControl: pass
 class Trendline: pass
 class Trendlines: pass
-class UniqueValues: pass
 class UpBars: pass
 class UserAccess: pass
 class UserAccessList: pass
 class VPageBreak: pass
 class ValueChange: pass
 class Walls: pass
-class Watch: pass
 class WorkbookQuery: pass
 class Worksheets: pass
 class XmlDataBinding: pass

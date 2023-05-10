@@ -14,6 +14,7 @@ module Cfg
   N_co_doc = "co_doc"
 
   N_e = "enumerations"
+  N_e_unique = "uniqued"
   N_e_doc = "e_doc"
   N_e_table_head = "e_table_head"
   N_e_table_rows = "e_table_rows"
@@ -74,9 +75,10 @@ VBAtype2pytype = {
   "OK" => "bool",
   "Cancel" => "bool",
 
-  "Nothing" => "Nothing",
-  "VOID" => "VOID",
-  "Void" => "Void",
+  "Nothing" => "None",
+  "VOID" => "None",
+  "Void" => "None",
+  "array" => "list",
 }
 
 # TODO
@@ -94,6 +96,27 @@ module OLE_TYPE
   PROPERTY = "property"
   METHOD = "method"
   EVENT = "event"
+end
+
+# TODO html contents css path
+module HTMLCSS
+  H1_TITLE = "div > h1"
+
+  ID_DOC_p = 'nav[id="center-doc-outline"] + p'
+  ID_DOC_p_pres = 'nav[id="center-doc-outline"] ~ p,pre'
+  ID_DOC_div = 'nav[id="center-doc-outline"] + div'
+  ID_DOC_table = 'nav[id="center-doc-outline"] +p +table'
+  ID_PROPERTY_VALUE_p = 'div > h2[id="property-value"] + p'
+  ID_RETURN_VALUE_p = 'div > h2[id="return-value"] + p'
+
+  ID_SYNTAX_ps = 'div > h2[id="syntax"] ~ p'
+  ID_REMARKS_ps = 'div > h2[id="remarks"] ~ p'
+  ID_EXAMPLE_p_pres = 'div > h2[id="example"] ~ p,pre'
+  ID_PARAMETERS_table = 'div > h2[id="parameters"] + table'
+
+  ID_EVENTS_ul = 'div > h2[id="events"] + ul'
+  ID_METHODS_ul = 'div > h2[id="methods"] + ul'
+  ID_PROPERTIES_ul = 'div > h2[id="properties"] + ul'
 end
 
 def url_remove_dotdot(u1)
@@ -239,7 +262,7 @@ class DownAPI
     url_info_kvs_proc_summ = @url_info_kvs.group_by { |url, kvs| kvs["UN_PROCESS"] }.map { |b, v| [b.to_s, v.size] }.sort.to_h
 
     all_data = {
-      "TODO" => "find ': null' check something not doc founded",
+      "TODO" => "find  ': null' and '#TODO FIXME' and '__UN'   check something problem",
       N_SUMM => {
         downloads: @links_all.size,
         parsed: @classes.size + @methods.size + @properties.size,
@@ -281,9 +304,9 @@ class DownAPI
     @url_info_kvs[url] ||= {}
 
     hh = Nokogiri::HTML txt
-    page_title = hh.css "div > h1"
+    page_title = hh.css ::HTMLCSS::H1_TITLE
     if page_title.size < 1
-      @url_info_kvs[url]["UN_PROCESS"] = "todo NOT GET TITLE"
+      @url_info_kvs[url]["UN_PROCESS"] = "todo NOT GET H1_TITLE"
       return
     end
     app_name, objtype, obj_name = add_url_info(url, page_title[0].text)
@@ -294,21 +317,23 @@ class DownAPI
       return
     end
 
+    iffo = { meta: { url: url, fn: File.basename(url_fn(url)), size: txt.size } }
+
     case objtype
     when ::OLE_TYPE::PROPERTY
-      parse_property_html(url, hh, obj_name)
+      parse_property_html(url, hh, obj_name, iffo)
     when ::OLE_TYPE::METHOD
-      parse_method_html(url, hh, obj_name)
+      parse_method_html(url, hh, obj_name, iffo)
     when ::OLE_TYPE::OBJECT
-      es, ms, ps = parse_object_html(url, hh, obj_name)
+      es, ms, ps = parse_object_html(url, hh, obj_name, iffo)
       # TODO not need
       # es.map { |t,href| @links_all[href] = ::OLE_TYPE::EVENT }
       ps.map { |t, href| @links_all[href] = ::OLE_TYPE::PROPERTY }
       ms.map { |t, href| @links_all[href] = ::OLE_TYPE::METHOD }
     when ::OLE_TYPE::COLLECTION
-      process_collection_html(url, hh, app_name, objtype, obj_name)
+      parse_collection_html(url, hh, app_name, objtype, obj_name, iffo)
     when ::OLE_TYPE::ENUMERATION
-      process_enumeration_html(url, hh, obj_name)
+      parse_enumeration_html(url, hh, obj_name, iffo)
     else
       @url_info_kvs[url]["UN_PROCESS"] = "todo EXCEL OBJ OTHER"
     end
@@ -317,7 +342,7 @@ class DownAPI
 
   protected
 
-  def assert(x, msg)
+  def assert(x, msg = "")
     if !x
       raise %{#{msg} Failed}
     end
@@ -433,19 +458,21 @@ class DownAPI
     raise "No implement yet"  # TODO FIXME
   end
 
-  def foreach_a_add_to_links(retss, url)
-    retss.each do |ret|
-      aas = ret.css("a")
-      aas.map { |a|
-        aurl = a["href"]
-        url2 = baseurl_to_fullurl(url_base(url), aurl)
-        if url2
-          @links_all[url2] = ::OLE_TYPE::OBJECT
-        else
-          @links_skips.add %{empty url:#{url}}
-        end
-        a.text.strip
-      }
+  def foreach_a_add_to_links(url, *vsss)
+    vsss.each do |vss|
+      vss.each do |ret|
+        aas = ret.css("a")
+        aas.map { |a|
+          aurl = a["href"]
+          url2 = baseurl_to_fullurl(url_base(url), aurl)
+          if url2
+            @links_all[url2] = ::OLE_TYPE::OBJECT
+          else
+            @links_skips.add %{empty url:#{url}}
+          end
+          a.text.strip
+        }
+      end
     end
   end
 
@@ -470,62 +497,74 @@ class DownAPI
     [app_name, obj_type, obj_name]
   end
 
-  def process_collection_html(url, hh, app_name, objtype, obj_name)
+  def parse_collection_html(url, hh, app_name, objtype, obj_name, iffo)
     if app_name == ::OLE_APPNAME::EXCEL && objtype == ::OLE_TYPE::COLLECTION
       obj_name = "VBA_" + ::OLE_TYPE::COLLECTION
     end
-    @collection[obj_name] = iffo = { N_co_doc => nil }
+    assert(@collection[obj_name] == nil)
+    @collection[obj_name] = iffo.update({ N_co_doc => nil })
 
-    retss = hh.css 'nav[id="center-doc-outline"] ~ p,pre'
-    if retss.size > 0
-      iffo[N_co_doc] = retss.map { |e| e.text.strip }.join("\n\n")
-      foreach_a_add_to_links(retss, url)
+    docss = hh.css ::HTMLCSS::ID_DOC_p_pres
+    if docss.size > 0
+      iffo[N_co_doc] = docss.map { |e| e.text.strip }.join("\n\n")
     end
+    foreach_a_add_to_links(url, docss)
   end
 
-  def process_enumeration_html(url, hh, obj_name)
-    @enumeration[obj_name] = iffo = { N_e_doc => nil }
+  def parse_enumeration_html(url, hh, obj_name, iffo)
+    assert(@enumeration[obj_name] == nil)
+    @enumeration[obj_name] = iffo.update({ N_e_doc => nil })
 
-    retss = hh.css 'nav[id="center-doc-outline"] + p'
-    if retss.size > 0
-      iffo[N_e_doc] = retss[0].text.strip
+    docss1 = hh.css ::HTMLCSS::ID_DOC_p
+    if docss1.size > 0
+      iffo[N_e_doc] = docss1[0].text.strip
     end
 
-    retss = hh.css 'nav[id="center-doc-outline"] +p +table'
-    if retss.size > 0
-      foreach_a_add_to_links(retss, url)
+    docss2 = hh.css ::HTMLCSS::ID_DOC_table
+    if docss2.size > 0
       ts = hh.css "table"
-      tab1 = retss[0]
+      tab1 = docss2[0]
 
       th = tab1.css("th").map(&:text)
       if th[0..2] != %w{Name Value Description}
         iffo[N_e_table_format_incorrect] = true
       end
       rows = tab1.css("tr").map { |tr| tr.css("td").map(&:text) } - [[]]
+      rows = rows.map do |row|
+        if row[1].include?(" ")
+          row[1] = row[1].sub(" ", " #TODO FIXME") # Most enumeration is Long
+        end
+        row
+      end
       iffo[N_e_table_head] = th
       iffo[N_e_table_rows] = rows
+      vs1 = rows.map { |row| row[1] }
+      vs2 = vs1.uniq
+      if vs1 == vs2
+        iffo[N_e_unique] = true
+      end
     else
       iffo[N_e_table_head] = []
       iffo[N_e_table_rows] = []
       @enumeration_table_not_found += 1
     end
 
-    retss = hh.css 'div > h2[id="remarks"] ~ p'
-    if retss.size > 0
-      iffo[N_e_remarks_doc] = retss.map { |e| e.text.strip }.join("\n\n")
-      foreach_a_add_to_links(retss, url)
+    remarkss = hh.css ::HTMLCSS::ID_REMARKS_ps
+    if remarkss.size > 0
+      iffo[N_e_remarks_doc] = remarkss.map { |e| e.text.strip }.join("\n\n")
     end
+    foreach_a_add_to_links(url, docss1, docss2, remarkss)
   end
 
-  def parse_property_html(url, hh, prop_name)
-    @properties[prop_name] = iffo = { N_p_doc => nil, N_p_type => nil }
+  def parse_property_html(url, hh, prop_name, iffo)
+    assert(@properties[prop_name] == nil)
+    @properties[prop_name] = iffo.update({ N_p_doc => nil, N_p_type => nil })
 
-    retss = hh.css 'div > h2[id="return-value"] + p'
-    if retss.size > 0
-      foreach_a_add_to_links(retss, url)
-      ty = retss[0].text.strip
+    returnss = hh.css ::HTMLCSS::ID_RETURN_VALUE_p
+    if returnss.size > 0
+      ty = returnss[0].text.strip
       iffo[N_p_return_doc] = ty
-      ty = find_property_type_name(retss, url)
+      ty = find_property_type_name(returnss, url)
       if ty
         iffo[N_p_type] = ty
       else
@@ -533,12 +572,11 @@ class DownAPI
       end
     end
 
-    retss = hh.css 'div > h2[id="property-value"] + p'
-    if retss.size > 0
-      foreach_a_add_to_links(retss, url)
-      ty = retss[0].text.strip
+    propss = hh.css ::HTMLCSS::ID_PROPERTY_VALUE_p
+    if propss.size > 0
+      ty = propss[0].text.strip
       iffo[N_p_property_value_doc] = ty
-      ty = find_property_type_name(retss, url)
+      ty = find_property_type_name(propss, url)
       if ty
         iffo[N_p_type] = ty
       else
@@ -546,200 +584,277 @@ class DownAPI
       end
     end
 
-    retss = hh.css 'nav[id="center-doc-outline"] + p'
-    if retss.size > 0
-      iffo[N_p_doc] = retss[0].text.strip
-      foreach_a_add_to_links(retss, url)
-      ty = find_property_type_name(retss, url)
+    docss1 = hh.css ::HTMLCSS::ID_DOC_p
+    if docss1.size > 0
+      iffo[N_p_doc] = docss1[0].text.strip
+      ty = find_property_type_name(docss1, url)
       iffo[N_p_type] = ty if !iffo[N_p_type] && ty
     else
-      retss = hh.css 'nav[id="center-doc-outline"] + div'
-      if retss.size > 0
-        iffo[N_p_doc] = retss[0].text.strip
-        ty = find_property_type_name(retss, url)
+      docss1 = hh.css ::HTMLCSS::ID_DOC_div
+      if docss1.size > 0
+        iffo[N_p_doc] = docss1[0].text.strip
+        ty = find_property_type_name(docss1, url)
         iffo[N_p_type] = ty if !iffo[N_p_type] && ty
       end
     end
 
-    retss = hh.css 'div > h2[id="syntax"] ~ p'
-    if retss.size > 0
-      iffo[N_p_syntax_doc] = retss.map { |e| e.text.strip }.join("\n\n")
-      foreach_a_add_to_links(retss, url)
+    syntaxss = hh.css ::HTMLCSS::ID_SYNTAX_ps
+    if syntaxss.size > 0
+      iffo[N_p_syntax_doc] = syntaxss.map { |e| e.text.strip }.join("\n\n")
+      if !iffo[N_p_type]
+        ty = find_property_type_name(syntaxss, url)
+        iffo[N_p_type] = ty if ty
+      end
     end
 
-    retss = hh.css 'div > h2[id="remarks"] ~ p'
-    if retss.size > 0
-      iffo[N_p_remarks_doc] = retss.map { |e| e.text.strip }.join("\n\n")
-      foreach_a_add_to_links(retss, url)
+    remarkss = hh.css ::HTMLCSS::ID_REMARKS_ps
+    if remarkss.size > 0
+      iffo[N_p_remarks_doc] = remarkss.map { |e| e.text.strip }.join("\n\n")
     end
 
-    retss = hh.css 'div > h2[id="example"] ~ p,pre'
-    if retss.size > 0
-      iffo[N_p_example_doc] = retss.map { |e| e.text.strip }.join("\n\n")
-      foreach_a_add_to_links(retss, url)
+    exampless = hh.css ::HTMLCSS::ID_EXAMPLE_p_pres
+    if exampless.size > 0
+      iffo[N_p_example_doc] = exampless.map { |e| e.text.strip }.join("\n\n")
     end
 
+    foreach_a_add_to_links(url, returnss, propss, docss1, syntaxss, remarkss, exampless)
     iffo[N_p_type] = "__UNKNOWN_TYPE__" unless iffo[N_p_type]
   end
 
-  def find_property_type_name(retss, url)
-    # TODO FIXME
-
-    retss.map do |res|
-      ty = res.text.strip
-      if VBAtype2pytype.has_key?(ty)
-        return VBAtype2pytype[ty]
-      elsif ty !~ /\s/
-        return ty
-      end
-
-      if /by the collection/i =~ ty
-        return nil  # collection
-      end
-    end
-
-    tys = retss.map { |e| e.css "strong,a" }
-      .flatten
+  def proc_aas(res)
+    tys = res.css("strong,a")
       .map { |e| e.text }
       .reject { |e| e.include?(" ") }
       .map { |e| VBAtype2pytype.has_key?(e) ? VBAtype2pytype[e] : e }
-      .uniq
-
-    if tys.size == 0
-      return nil
-    elsif tys.size == 1
-      ty = tys[0]
-      if %w{Nothing VOID Void}.include?(ty)
-        return nil
-      end
-      return ty
-    else
-      return nil
-    end
+      .uniq.join(" | ")
+    tys = "Any | None" if tys == "None"
+    tys
   end
 
-  def find_method_type_name(retss, url)
+  def find_property_type_name(vss, url)
     # TODO FIXME
-    retss.map do |res|
+
+    vss.map do |res|
       ty = res.text.strip
+
+      if %r{Note.*is deprecated and is not intended}im =~ ty
+        return "__DEPRECATED_WARNNING__"
+      end
+
       if VBAtype2pytype.has_key?(ty)
         return VBAtype2pytype[ty]
-      elsif ty !~ /\s/
+      elsif ty !~ /\s|\./ # TODO
         return ty
       end
 
-      if /by the collection/i =~ ty
-        return nil  # collection
+      if %r{Can be.*Read/write Long}i =~ ty
+        tys = proc_aas(res)
+        return tys if tys != ""
+      end
+      if %r{Read/write Long}i =~ ty
+        tys = proc_aas(res)
+        return tys if tys != ""
+      end
+      if %r{Read-only\.}i =~ ty
+        tys = proc_aas(res)
+        return tys if tys != ""
+      end
+      if %r{(?:Read-only|Read/write) (\w+)}i =~ ty
+        clsn = $1
+        if VBAtype2pytype.has_key?(clsn)
+          return VBAtype2pytype[clsn]
+        elsif /\s/ !~ clsn
+          return clsn
+        end
+      end
+
+      if %r{^\w+ object}i =~ ty
+        return VBAtype2pytype["object"]
+      end
+      if %r{Returns an (\w+).*that represents}i =~ ty || %r{Returns a (\w+) value}i =~ ty
+        e = $1
+        e = [VBAtype2pytype.has_key?(e) ? VBAtype2pytype[e] : e]
+        if %r{Returns Nothing} =~ ty
+          e << "None"
+        end
+        return e.join(" | ")
+      end
+      if %r{Returns an object that represents.*Returns Nothing}i =~ ty
+        tys = [VBAtype2pytype["object"], "None"]
+        return tys.join(" | ")
+      end
+      if %r{Returns an? .*? object that represents the}i =~ ty
+        return VBAtype2pytype["object"]
+      end
+      if %r{specified object.*Read.*\.}i =~ ty
+        return VBAtype2pytype["object"]
+      end
+      if %r{Returns an? single object}i =~ ty
+        return VBAtype2pytype["object"]
+      end
+      if %r{Read-only\.}i =~ ty
+        return VBAtype2pytype["object"]
+      end
+      if %r{Returns the array}i =~ ty
+        return VBAtype2pytype["array"]
+      end
+      if %r{Returns or sets a (\w+) value}i =~ ty
+        e = $1
+        return VBAtype2pytype.has_key?(e) ? VBAtype2pytype[e] : e
       end
     end
 
-    tys = retss.map { |e| e.css "strong,a" }
-      .flatten
-      .map { |e| e.text }
-      .reject { |e| e.include?(" ") }
-      .map { |e| VBAtype2pytype.has_key?(e) ? VBAtype2pytype[e] : e }
-      .uniq
+    %w{a strong}.each do |xxx|
+      tys = vss.map { |e| e.css xxx }
+        .flatten
+        .map { |e| e.text }
+        .reject { |e| e.include?(" ") }
+        .map { |e| VBAtype2pytype.has_key?(e) ? VBAtype2pytype[e] : e }
+        .uniq
 
-    if tys.size == 0
-      return nil
-    elsif tys.size == 1
-      return tys[0]
-    else
-      return tys.join("_or_")
+      if tys.size == 0
+      elsif tys.size == 1
+        return tys[0]
+      else
+        return tys.join(" | ")
+      end
     end
+
+    nil
   end
 
-  def parse_method_html(url, hh, method_name)
-    @methods[method_name] = iffo = { N_m_doc => nil, N_m_return => nil }
+  def find_method_type_name(vss, url)
+    # TODO FIXME
+    vss.map do |res|
+      ty = res.text.strip
+      if VBAtype2pytype.has_key?(ty)
+        return VBAtype2pytype[ty]
+      elsif ty !~ /\s|\./ # TODO
+        return ty
+      end
 
-    retss = hh.css 'div > h2[id="return-value"] + p'
-    if retss.size > 0
-      ty = find_method_type_name(retss, url)
+      tys = proc_aas(res)
+      return tys if tys != ""
+
+      if %r{Creates an? new }i =~ ty
+        return VBAtype2pytype["object"]
+      end
+      if %r{An? Object value that represents}i =~ ty
+        return VBAtype2pytype["object"]
+      end
+      if %r{Returns an? single object}i =~ ty
+        return VBAtype2pytype["object"]
+      end
+    end
+
+    %w{a strong}.each do |xxx|
+      tys = vss.map { |e| e.css xxx }
+        .flatten
+        .map { |e| e.text }
+        .reject { |e| e.include?(" ") }
+        .map { |e| VBAtype2pytype.has_key?(e) ? VBAtype2pytype[e] : e }
+        .uniq
+
+      if tys.size == 0
+      elsif tys.size == 1
+        return tys[0]
+      else
+        return tys.join(" | ")
+      end
+    end
+
+    nil
+  end
+
+  def parse_method_html(url, hh, method_name, iffo)
+    assert(@methods[method_name] == nil)
+    @methods[method_name] = iffo.update({ N_m_doc => nil, N_m_return => nil })
+
+    returnss = hh.css ::HTMLCSS::ID_RETURN_VALUE_p
+    if returnss.size > 0
+      ty = find_method_type_name(returnss, url)
       if ty
         iffo[N_m_return] = ty
       else
         iffo[N_m_return] = "__UN_PARSED_TYPE__" # un parsed string
       end
-      iffo[N_m_return_doc] = retss.text.strip
-      foreach_a_add_to_links(retss, url)
+      iffo[N_m_return_doc] = returnss.text.strip
+    else
+      iffo[N_m_return] = "None"
     end
 
-    retss = hh.css 'nav[id="center-doc-outline"] + p'
-    if retss.size > 0
-      iffo[N_m_doc] = retss[0].text.strip
+    docss = hh.css ::HTMLCSS::ID_DOC_p
+    if docss.size > 0
+      iffo[N_m_doc] = docss[0].text.strip
       unless iffo[N_m_return]
-        ty = find_method_type_name(retss, url)
+        ty = find_method_type_name(docss, url)
         iffo[N_m_return] = ty if ty
       end
-      foreach_a_add_to_links(retss, url)
     end
 
-    retss = hh.css 'div > h2[id="parameters"] + table'
-    if retss.size > 0
-      iffo[N_m_parameters_doc] = retss[0].text.gsub(/((\r)?\n){3,}/, "\n\n").gsub(/(?<!\n)\n(?!\n)/, " ").strip
+    parameterss = hh.css ::HTMLCSS::ID_PARAMETERS_table
+    if parameterss.size > 0
+      iffo[N_m_parameters_doc] = parameterss[0].text.gsub(/((\r)?\n){3,}/, "\n\n").gsub(/(?<!\n)\n(?!\n)/, " ").strip
     end
 
-    retss = hh.css 'div > h2[id="remarks"] ~ p'
-    if retss.size > 0
-      iffo[N_m_remarks_doc] = retss.map { |e| e.text.strip }.join("\n\n")
-      foreach_a_add_to_links(retss, url)
+    remarkss = hh.css ::HTMLCSS::ID_REMARKS_ps
+    if remarkss.size > 0
+      iffo[N_m_remarks_doc] = remarkss.map { |e| e.text.strip }.join("\n\n")
     end
 
-    retss = hh.css 'div > h2[id="example"] ~ p,pre'
-    if retss.size > 0
-      iffo[N_m_example_doc] = retss.map { |e| e.text.strip }.join("\n\n")
-      foreach_a_add_to_links(retss, url)
+    exampless = hh.css ::HTMLCSS::ID_EXAMPLE_p_pres
+    if exampless.size > 0
+      iffo[N_m_example_doc] = exampless.map { |e| e.text.strip }.join("\n\n")
     end
 
     iffo.delete(N_m_return) if iffo[N_m_return] == nil
   end
 
-  def parse_object_html(url, hh, cls_name)
-    @classes[cls_name] = iffo = { N_c_doc => nil }
+  def parse_object_html(url, hh, cls_name, iffo)
+    assert(@classes[cls_name] == nil)
+    @classes[cls_name] = iffo.update({ N_c_doc => nil })
 
-    retss = hh.css 'nav[id="center-doc-outline"] + p'
-    if retss.size > 0
-      iffo[N_c_doc] = retss[0].text.strip
-      foreach_a_add_to_links(retss, url)
+    docss = hh.css ::HTMLCSS::ID_DOC_p
+    if docss.size > 0
+      iffo[N_c_doc] = docss[0].text.strip
     end
-    retss = hh.css 'div > h2[id="remarks"] ~ p'
-    if retss.size > 0
-      iffo[N_c_remarks_doc] = retss.map { |e| e.text.strip }.join("\n\n")
-      foreach_a_add_to_links(retss, url)
-    end
-
-    retss = hh.css 'div > h2[id="example"] ~ p,pre'
-    if retss.size > 0
-      iffo[N_c_example_doc] = retss.map { |e| e.text.strip }.join("\n\n")
-      foreach_a_add_to_links(retss, url)
+    remarkss = hh.css ::HTMLCSS::ID_REMARKS_ps
+    if remarkss.size > 0
+      iffo[N_c_remarks_doc] = remarkss.map { |e| e.text.strip }.join("\n\n")
     end
 
-    events = hh.css 'div > h2[id="events"] + ul'
-    assert(events.size <= 1, %{events ul > 1, #{events.size}  #{url}})
-    methods = hh.css 'div > h2[id="methods"] + ul'
-    assert(methods.size <= 1, %{methods ul > 1, #{methods.size}  #{url}})
-    properties = hh.css 'div > h2[id="properties"] + ul'
-    assert(properties.size <= 1, %{properties ul > 1, #{properties.size}  #{url}})
+    exampless = hh.css ::HTMLCSS::ID_EXAMPLE_p_pres
+    if exampless.size > 0
+      iffo[N_c_example_doc] = exampless.map { |e| e.text.strip }.join("\n\n")
+    end
+    foreach_a_add_to_links(url, docss, remarkss, exampless, docss, remarkss)
+
+    eventss = hh.css ::HTMLCSS::ID_EVENTS_ul
+    assert(eventss.size <= 1, %{eventss ul > 1, #{eventss.size}  #{url}})
+    methodss = hh.css ::HTMLCSS::ID_METHODS_ul
+    assert(methodss.size <= 1, %{methodss ul > 1, #{methodss.size}  #{url}})
+    propertiess = hh.css ::HTMLCSS::ID_PROPERTIES_ul
+    assert(propertiess.size <= 1, %{propertiess ul > 1, #{propertiess.size}  #{url}})
 
     baseurl = url_base(url)
-    events = if events.size > 0
-        a2arr(baseurl, events[0].css("a"))
+    eventss = if eventss.size > 0
+        a2arr(baseurl, eventss[0].css("a"))
       else
         []
       end
-    methods = if methods.size > 0
-        a2arr(baseurl, methods[0].css("a"))
+    methodss = if methodss.size > 0
+        a2arr(baseurl, methodss[0].css("a"))
       else
         []
       end
-    properties = if properties.size > 0
-        a2arr(baseurl, properties[0].css("a"))
+    propertiess = if propertiess.size > 0
+        a2arr(baseurl, propertiess[0].css("a"))
       else
         []
       end
-    STDERR.puts %{ HTML #{txt.size} bytes. SUMMARY: events #{events.size},  methods #{methods.size}, properties #{properties.size}} if $DEBUG
+    STDERR.puts %{ HTML #{txt.size} bytes. SUMMARY: events #{eventss.size},  methods #{methodss.size}, properties #{propertiess.size}} if $DEBUG
 
-    [events, methods, properties]
+    [eventss, methodss, propertiess]
   end
 end
 
