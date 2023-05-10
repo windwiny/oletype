@@ -9,6 +9,7 @@ module Cfg
   OUT_EXCEL_INFO_FN = "excel.info.json"
 
   N_SUMM = "summary"
+  N_META = "meta"
 
   N_co = "collections"
   N_co_doc = "co_doc"
@@ -54,7 +55,7 @@ VBAtype2pytype = {
   "Boolean" => "bool",
   "Byte" => "VBA_Byte",
   "Currency" => "VBA_Currency",
-  "Date" => "datetime.datetime",
+  "Date" => "Date", #"datetime.datetime",
   "Decimal" => "VBA_Decimal",
   "Double" => "float",
   "Integer" => "int",
@@ -65,20 +66,33 @@ VBAtype2pytype = {
   "Single" => "float",
   "String" => "str",
   "Variant" => "VBA_Variant",
+  "String-Variant" => "VBA_Variant",
 
-  "OBJECT" => "VBA_OBJECT",
-  "object" => "VBA_object",
+  "OBJECT" => "VBA_Object",
+  "object" => "VBA_Object",
   "BOOL" => "bool",
   "Bool" => "bool",
   "True" => "bool",
   "False" => "bool",
   "OK" => "bool",
   "Cancel" => "bool",
+  "True/False" => "bool",
+  "unique" => "UNIQUE",  #TODO
 
   "Nothing" => "None",
   "VOID" => "None",
   "Void" => "None",
   "array" => "list",
+
+  "INT32" => "int",
+  "constants" => "constants",
+  "currency" => "currency",
+  "date" => "Date",
+  "general" => "general",
+  "integer" => "int",
+  "null" => "None",
+  "points" => "points",
+  "single" => "float",
 }
 
 # TODO
@@ -167,7 +181,7 @@ end
 class MyHash < Hash
   def []=(x, y)
     if self.has_key?(x)
-      if self[x] != y
+      if self[x] != nil && self[x] != y
         raise "MyHASH ERROR has #{x}, \n v:#{y}, \nov:#{self[x]}"
       end
     end
@@ -193,8 +207,6 @@ class DownAPI
     @enumeration_table_not_found = 0
 
     @classes = MyHash.new
-    @properties = MyHash.new
-    @methods = MyHash.new
 
     if __FILE__ == $0
       at_exit { finish() }
@@ -261,24 +273,27 @@ class DownAPI
     url_info_kvs_summ = @url_info_kvs.group_by { |url, kvs| kvs["type"] }.map { |ty, v| [ty.to_s, v.size] }.sort.to_h
     url_info_kvs_proc_summ = @url_info_kvs.group_by { |url, kvs| kvs["UN_PROCESS"] }.map { |b, v| [b.to_s, v.size] }.sort.to_h
 
+    ms = @classes.map { |clsn, kvs| kvs.map { |mem, kvs2| Hash === kvs2 && kvs2.has_key?("m_doc") ? "#{clsn}.#{mem}" : nil } }.flatten.compact
+    ps = @classes.map { |clsn, kvs| kvs.map { |mem, kvs2| Hash === kvs2 && kvs2.has_key?("p_doc") ? "#{clsn}.#{mem}" : nil } }.flatten.compact
+
     all_data = {
       "TODO" => "find  ': null' and '#TODO FIXME' and '__UN'   check something problem",
       N_SUMM => {
         downloads: @links_all.size,
-        parsed: @classes.size + @methods.size + @properties.size,
+        parsed: @classes.size + ms.size + ps.size,
         parse_skips: @url_info_kvs.select { |url, kvs| kvs.has_key?("UN_PROCESS") }.size,
         N_co => @collection.size,
         N_e => @enumeration.size,
         N_c => @classes.size,
-        N_m => @methods.size,
-        N_p => @properties.size,
+        N_m => ms.size,
+        N_p => ps.size,
         enumeration_table_not_found: @enumeration_table_not_found,
       },
       N_co => @collection,
       N_e => @enumeration,
       N_c => @classes,
-      N_m => @methods,
-      N_p => @properties,
+      "#{N_c}_#{N_m}" => ms,
+      "#{N_c}_#{N_p}" => ps,
       urls: {
         urls_summ: %{links all: #{@links_all.size} undown:#{@undown.size} skips:#{@links_skips.size} url_info_kvs:#{@url_info_kvs.size}},
         url_info_kvs_summ: url_info_kvs_summ,
@@ -317,7 +332,7 @@ class DownAPI
       return
     end
 
-    iffo = { meta: { url: url, fn: File.basename(url_fn(url)), size: txt.size } }
+    iffo = { N_META => { url: url, fn: File.basename(url_fn(url)), size: txt.size } }
 
     case objtype
     when ::OLE_TYPE::PROPERTY
@@ -557,8 +572,12 @@ class DownAPI
   end
 
   def parse_property_html(url, hh, prop_name, iffo)
-    assert(@properties[prop_name] == nil)
-    @properties[prop_name] = iffo.update({ N_p_doc => nil, N_p_type => nil })
+    nns = prop_name.split(".")
+    assert(nns.size == 2)
+    clsn, mem = nns
+    @classes[clsn] ||= MyHash.new
+    assert(@classes[clsn][mem] == nil)
+    @classes[clsn][mem] = iffo.update({ N_p_doc => nil, N_p_type => nil })
 
     returnss = hh.css ::HTMLCSS::ID_RETURN_VALUE_p
     if returnss.size > 0
@@ -618,6 +637,9 @@ class DownAPI
     end
 
     foreach_a_add_to_links(url, returnss, propss, docss1, syntaxss, remarkss, exampless)
+    if iffo[N_p_type] && iffo[N_p_type].include?("-")
+      iffo[N_p_type].gsub!("-", "")
+    end
     iffo[N_p_type] = "__UNKNOWN_TYPE__" unless iffo[N_p_type]
   end
 
@@ -767,8 +789,12 @@ class DownAPI
   end
 
   def parse_method_html(url, hh, method_name, iffo)
-    assert(@methods[method_name] == nil)
-    @methods[method_name] = iffo.update({ N_m_doc => nil, N_m_return => nil })
+    nns = method_name.split(".")
+    assert(nns.size == 2)
+    clsn, mem = nns
+    @classes[clsn] ||= MyHash.new
+    assert(@classes[clsn][mem] == nil)
+    @classes[clsn][mem] = iffo.update({ N_m_doc => nil, N_m_return => nil })
 
     returnss = hh.css ::HTMLCSS::ID_RETURN_VALUE_p
     if returnss.size > 0
@@ -807,12 +833,18 @@ class DownAPI
       iffo[N_m_example_doc] = exampless.map { |e| e.text.strip }.join("\n\n")
     end
 
+    if iffo[N_m_return] && iffo[N_m_return].include?("-")
+      iffo[N_m_return].gsub!("-", "")
+    end
     iffo.delete(N_m_return) if iffo[N_m_return] == nil
   end
 
   def parse_object_html(url, hh, cls_name, iffo)
-    assert(@classes[cls_name] == nil)
-    @classes[cls_name] = iffo.update({ N_c_doc => nil })
+    @classes[cls_name] ||= MyHash.new
+    # @classes[cls_name] = iffo.update({ N_c_doc => nil })
+    assert(!@classes[cls_name].has_key?(N_c_doc))
+    @classes[cls_name].update(iffo.update({ N_c_doc => nil }))
+    iffo = @classes[cls_name]
 
     docss = hh.css ::HTMLCSS::ID_DOC_p
     if docss.size > 0
