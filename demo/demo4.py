@@ -12,11 +12,10 @@ exapp.Visible = True
 
 et: excel.Workbook = exapp.Workbooks.Add()
 
-wb: excel._Workbook = exapp.ActiveWorkbook
+wb: excel.Workbook = exapp.ActiveWorkbook
 
 
-ws = wb.ActiveSheet
-ws.Buttons
+ws:excel.Worksheet = wb.ActiveSheet
 
 ws.Name = 'test1'
 
@@ -30,7 +29,7 @@ r.Value = [
 ws.Select(r)
 
 ws.Shapes.AddChart2()
-
+wb.Save()
 wb.Saved = True
 
 

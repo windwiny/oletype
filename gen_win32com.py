@@ -10,7 +10,7 @@ class Cfg():
     OUT_EXCEL_INFO_FN = "excel.info.json"
 
     N_SUMM = "summary"
-    N_meta = 'meta'
+    N_META = 'meta'
 
     N_co = "collections"
     N_co_doc = "co_doc"
@@ -33,6 +33,10 @@ class Cfg():
     N_m_return = "m_return"
     N_m_return_doc = "m_return_doc"
     N_m_parameters_doc = "m_parameters_doc"
+    N_m_parameters_as = "m_parameters_as"
+    N_m_p_table = "m_p_table"
+    N_m_p_table_head = "m_p_table_head"
+    N_m_p_table_rows = "m_p_table_rows"
     N_m_remarks_doc = "m_remarks_doc"
     N_m_example_doc = "m_example_doc"
 
@@ -45,8 +49,8 @@ class Cfg():
     N_p_remarks_doc = "p_remarks_doc"
     N_p_example_doc = "p_example_doc"
 
-    OUT_EXCEL_PYI_FN = "oletype/excel.pyi"
     OUT_EXCEL_PY_FN = "oletype/excel.py"
+    OUT_EXCEL_PYI_FN = OUT_EXCEL_PY_FN + "i"
     MYPKGNAME = "excel."
     MYPKGNAME = ""
 
@@ -177,21 +181,24 @@ def get_cln_property_comment(objinfo: dict) -> str | None:
 def conv2cls(cls_name: str,
              ole_info_kvs: dict,
              unfoundcls: set,
-             ) -> str:
+             ) -> tuple:
     '''from dict find cls attrs, methods, unknown properties, and errors'''
     cl_info_kvs = ole_info_kvs[Cfg.N_c][cls_name]
     Cfg.num += 1
+    SP2 = ' ' * 2
+    SP4 = SP2 * 2
 
-    ff = io.StringIO()
-
+    c_ns = []
     p_ns = []
     m_ns = []
     for na in sorted(cl_info_kvs.keys()):
-        if na == Cfg.N_meta:
+        if na == Cfg.N_META:
             continue
         objinfo = cl_info_kvs[na]
         if dict != type(objinfo):
             continue
+        if 'cic' in objinfo:
+            c_ns.append(na)
         if Cfg.N_p_doc in objinfo:
             p_ns.append(na)
         elif Cfg.N_m_doc in objinfo:
@@ -200,67 +207,90 @@ def conv2cls(cls_name: str,
             print(f'unknown objinfo {objinfo.keys()}', file=sys.stderr)
 
     print(f" {cls_name} \t {len(p_ns) } {len(m_ns)}", file=sys.stderr)
-    if len(p_ns) > 0:
-        print('  def __init__(self):', file=ff)
-    for na in p_ns:
-        objinfo = cl_info_kvs[na]
-        ty = objinfo[Cfg.N_p_type]
-        if ty:
-            for ii in ty.split('|'):
-                ii = ii.strip()
-                unfoundcls.add(ii)
-        comments = get_cln_property_comment(objinfo)
-        ind = '    '
-        indsuff = f"\n{ind}" if (comments and ('\n' in comments or comments[-1] in "'\"")) else ''
-        comments = f"\n{ind}'''{comments}{indsuff}'''\n" if comments else ''
-        print(f"    self.{na}: {ty}{comments}", file=ff)
-    print(file=ff)
 
-    print(f'# {cls_name} ns', file=ff)
-    for na in m_ns:
-        objinfo = cl_info_kvs[na]
-        ret = objinfo.get(Cfg.N_m_return)
-        ars = ''  # TODO FIXME
-        if ret is not None:
-            if ret:
-                for ii in str(ret).split('|'):
+    ofpyi = io.StringIO()
+    ofpy = io.StringIO()
+    if len(c_ns) > 0:
+        Print1(f'{SP2}# {cls_name} cs', file=ofpyi)
+        for na in c_ns:
+            objinfo = cl_info_kvs[na]
+
+        Print1(f'{SP2}# {cls_name} cs end', file=ofpyi)
+        Print2(file1=ofpyi, file2=ofpy)
+
+    if len(p_ns) > 0:
+        Print1(f'{SP2}# {cls_name} ps', file=ofpyi)
+        Print2(f'{SP2}def __init__(self):', file1=ofpyi, file2=ofpy)
+        for na in p_ns:
+            objinfo = cl_info_kvs[na]
+            ty = objinfo[Cfg.N_p_type]
+            if ty:
+                for ii in ty.split('|'):
                     ii = ii.strip()
                     unfoundcls.add(ii)
-            rets = ' -> ' + str(ret)
-        else:
-            rets = ''
-        comments = get_cln_method_comment(objinfo)
-        ind = '    '
-        indsuff = f"\n{ind}" if (comments and ('\n' in comments or comments[-1] in "'\"")) else ''
-        comments = f"\n{ind}'''{comments}{indsuff}'''\n" if comments else '  pass\n'
-        print(f"  def {na}(self{(', ' + ars) if ars else ''}){rets}:{comments}", file=ff)
-    print(f'# {cls_name} ns end', file=ff)
-    print(file=ff)
+            comments = get_cln_property_comment(objinfo)
+            indsuff = f"\n{SP4}" if (comments and ('\n' in comments or comments[-1] in "'\"")) else ''
+            comments = f"\n{SP4}'''{comments}{indsuff}'''\n" if comments else ''
+            Print1(f"{SP4}self.{na}: {ty}{comments}", file=ofpyi)
+            if ty is None or ty in Cfg.BUILTINS_CLASS:
+                ty2 = f"{ty}"
+            else:
+                ty2 = f"None \t#{ty}"
+            Print1(f"{SP4}self.{na}: {ty2}".expandtabs(12), file=ofpy)   # TODO
+        Print1(f'{SP2}# {cls_name} ps end', file=ofpyi)
+        Print2(file1=ofpyi, file2=ofpy)
 
-    var_methodss = ff.getvalue()
+    if len(m_ns) > 0:
+        Print1(f'{SP2}# {cls_name} ns', file=ofpyi)
+        for na in m_ns:
+            objinfo = cl_info_kvs[na]
+            ret = objinfo.get(Cfg.N_m_return)
+            pars = objinfo.get(Cfg.N_m_parameters_as)
+            if pars:
+                ars = pars
+            else:
+                ars = []
+            if ret is not None:
+                if ret:
+                    for ii in str(ret).split('|'):
+                        ii = ii.strip()
+                        unfoundcls.add(ii)
+                rets = ' -> ' + str(ret)
+            else:
+                rets = ''
+            comments = get_cln_method_comment(objinfo)
+            indsuff = f"\n{SP4}" if (comments and ('\n' in comments or comments[-1] in "'\"")) else ''
+            comments = f"\n{SP4}'''{comments}{indsuff}'''\n" if comments else '  ...\n'
+            Print1(f"{SP2}def {na}(self, {', '.join(ars)}){rets}:{comments}", file=ofpyi)
+            Print1(f"{SP2}def {na}(self, {', '.join(ars)}) -> None: pass \t#{ret}".expandtabs(22), file=ofpy)
+        Print1(f'{SP2}# {cls_name} ns end', file=ofpyi)
+        Print2(file1=ofpyi, file2=ofpy)
 
-    # header
-    ff = io.StringIO()
-    print(file=ff)
-    # print(f'# num={Cfg.num}', file=ff)
-    print(f'class {cls_name}:', file=ff)
+    var_methodssi = ofpyi.getvalue()
+    var_methodss = ofpy.getvalue()
+    ofpyi = io.StringIO()
+    ofpy = io.StringIO()
+
+    # class header
+    Print2(f'class {cls_name}:', file1=ofpyi, file2=ofpy)
     comments = get_cln_class_comment(cl_info_kvs)
     if comments:
-        ind = '  '
-        indsuff = f"\n{ind}" if ('\n' in comments or comments[-1] in "'\"") else ''
-        print(f"{ind}'''{comments}{indsuff}'''\n", file=ff)
-    print(file=ff)
-
+        indsuff = f"\n{SP2}" if ('\n' in comments or comments[-1] in "'\"") else ''
+        Print1(f"{SP2}'''{comments}{indsuff}'''\n", file=ofpyi)
+    Print1(f"{SP2}'''just need name'''", file=ofpy)
+    Print2(file1=ofpyi, file2=ofpy)
 
     # var methods
-    print(var_methodss, file=ff)
-    print(file=ff)
+    Print1(var_methodssi, file=ofpyi)
+    Print1(var_methodss, file=ofpy)
+    Print2(file1=ofpyi, file2=ofpy)
 
-    # print(f'# Summary "{ex.__class__.__mro__}", attrs:{len(o_attrs)}, methods:{len(o_methods)}, unknowns:{len(o_unknowns)},   ok:{len(o_attrs) + len(o_methods) + len(o_unknowns)}, e_noattr:{len(e_noattr)}, e_eerror:{ len(e_ee)}', file=ff)
-    return ff.getvalue()
+    # print(f'# Summary "{ex.__class__.__mro__}", attrs:{len(o_attrs)}, methods:{len(o_methods)}, unknowns:{len(o_unknowns)},   ok:{len(o_attrs) + len(o_methods) + len(o_unknowns)}, e_noattr:{len(e_noattr)}, e_eerror:{ len(e_ee)}', file=ofpyi)
+    return (ofpyi.getvalue(), ofpy.getvalue())
 
 
 def out_collection(ff, ole_info_kvs: dict):
+    SP2 = ' ' * 2
     for k in ole_info_kvs[Cfg.N_co]:
         kvs: dict = ole_info_kvs[Cfg.N_co][k]
         print(f'class {k}:', file=ff)
@@ -269,13 +299,13 @@ def out_collection(ff, ole_info_kvs: dict):
         if e_doc:
             sss.append(e_doc)
         comments = "\n\n".join(sss)
-        ind = '  '
-        indsuff = f'\n{ind}' if ('\n' in comments or comments[-1] in "'\"") else ''
-        print(f"{ind}'''{comments}{indsuff}'''\n", file=ff)
+        indsuff = f'\n{SP2}' if ('\n' in comments or comments[-1] in "'\"") else ''
+        print(f"{SP2}'''{comments}{indsuff}'''\n", file=ff)
     pass
 
 
 def out_enumeration(ff, ole_info_kvs: dict):
+    SP2 = ' ' * 2
     for k in ole_info_kvs[Cfg.N_e]:
 
         kvs: dict = ole_info_kvs[Cfg.N_e][k]
@@ -292,21 +322,21 @@ def out_enumeration(ff, ole_info_kvs: dict):
         if e_remarks_doc:
             sss.append('#REMARKS:\n\n' + e_remarks_doc)
         comments = "\n\n".join(sss)
-        ind = '  '
-        indsuff = f'\n{ind}' if ('\n' in comments or comments[-1] in "'\"") else ''
-        print(f"{ind}'''{comments}{indsuff}'''\n", file=ff)
+        indsuff = f'\n{SP2}' if ('\n' in comments or comments[-1] in "'\"") else ''
+        print(f"{SP2}'''{comments}{indsuff}'''\n", file=ff)
 
         e_table_rows = kvs.get(Cfg.N_e_table_rows)
-        for ii in e_table_rows:
-            if not ii:
-                continue
-            try:
-                n, v, desc = ii[0], ii[1], ii[2]
-                print(f"  {n} = {v}", file=ff)
-                print(
-                    f"  '''{desc}{ '  '+' '.join([str(i) for i in ii[3:]]) if len(ii)>3 else '' }'''", file=ff)
-            except:
-                print(f'ERR ii {ii}', file=sys.stderr)
+        if e_table_rows:
+            for ii in e_table_rows:
+                if not ii:
+                    continue
+                try:
+                    n, v, desc = ii[0], ii[1], ii[2]
+                    print(f"{SP2}{n} = {v}", file=ff)
+                    print(
+                        f"{SP2}'''{desc}{ '  '+' '.join([str(i) for i in ii[3:]]) if len(ii)>3 else '' }'''", file=ff)
+                except:
+                    print(f'ERR ii {ii}', file=sys.stderr)
         print(file=ff)
     pass
 
@@ -332,81 +362,83 @@ def out_collection_enumeration(ff, ole_info_kvs: dict) -> list:
     return c
 
 
-def output_to_pyi_typehints(fn: str,
-                            ole_info_kvs: dict,
-                            ):
+def Print1(*values, file):
+    print(*values, file=file)
+
+
+def Print2(*values, file1, file2):
+    print(*values, file=file1)
+    print(*values, file=file2)
+
+
+def output_to_pyi_typehints(pyifn: str, pyfn: str, ole_info_kvs: dict):
     '''all_cls_kvs.each -->   output  to pyi file'''
-    ff = io.StringIO()
+    if ole_info_kvs:
 
-    # head
-    print(Cfg.OUTFILE_HEADER, file=ff)
-    print(file=ff)
-    print(Cfg.IMPORTS, file=ff)
-    print(file=ff)
+        unfoundcls = set()
 
-    coeks = out_collection_enumeration(ff, ole_info_kvs)
-    print(file=ff)
-
-    unfoundcls = set()
-
-    clsns = sorted(ole_info_kvs[Cfg.N_c].keys())
-    print(f'# ole cls  {len(clsns)}', file=ff)
-    for clsn in clsns:
-        clss = conv2cls(clsn, ole_info_kvs, unfoundcls)
-        print(clss, file=ff)
-    print(f'# ole cls end', file=ff)
-    print(file=ff)
-
-
-    # unfoundcls
-    nns = sorted([str(i) for i in unfoundcls])
-    print(f'# unfoundcls', file=ff)
-    for cls_name in nns:
-        if not cls_name:
-            continue
-        if '.' not in cls_name:
-            if cls_name in Cfg.BUILTINS_CLASS or cls_name in clsns or cls_name in coeks:
-                continue
-            print(f'class {cls_name}: pass', file=ff)
-        else:
-            if cls_name[0] in 'abcdefghijklmnopqrstuvwxyz':
-                continue
-            nss = cls_name.split('.')
-            indi = 0
-            for i in range(len(nss)-1):
-                cls_name = nss[i]
-                if cls_name in Cfg.BUILTINS_CLASS:
-                    continue
-                print(f'{" "*indi}class {cls_name}:', file=ff)
-                indi += 2
-            print(f'{" "*indi}class {nss[-1]}: pass', file=ff)
-    print(f'# unfoundcls  end', file=ff)
-    print(file=ff)
-
-    # get all
-    data = ff.getvalue()
-
-    # output all define
-    with open(fn, 'w', encoding='utf-8') as fout:
-        print(data, file=fout)
-
-
-def output_to_py_src(fn: str,
-                     ole_info_kvs: dict
-                     ):
-    '''all_cls_kvs.each -> "class XX: pass"'''
-    with open(fn, 'w', encoding='utf-8') as ff:
-        print(Cfg.OUTFILE_HEADER, file=ff)
-        print(file=ff)
-        print(Cfg.IMPORTS, file=ff)
-
-        out_collection_enumeration(ff, ole_info_kvs)
-        print(file=ff)
-
+        ofpyi = io.StringIO()
+        ofpy = io.StringIO()
+        # defined cls
         clsns = sorted(ole_info_kvs[Cfg.N_c].keys())
+        Print2(f'# ole cls  {len(clsns)}', file1=ofpyi, file2=ofpy)
         for clsn in clsns:
-            print(f'class {clsn}: pass', file=ff)
-        print(file=ff)
+            clssi, clss = conv2cls(clsn, ole_info_kvs, unfoundcls)
+            Print1(clssi, file=ofpyi)
+            Print1(clss, file=ofpy)
+        Print2(f'# ole cls end', file1=ofpyi, file2=ofpy)
+        Print2(file1=ofpyi, file2=ofpy)
+
+        strpyi = ofpyi.getvalue()
+        strpy = ofpy.getvalue()
+        ofpyi = io.StringIO()
+        ofpy = io.StringIO()
+
+        # file header
+        Print2(Cfg.OUTFILE_HEADER, file1=ofpyi, file2=ofpy)
+        Print2(file1=ofpyi, file2=ofpy)
+        Print2(Cfg.IMPORTS, file1=ofpyi, file2=ofpy)
+        Print2(file1=ofpyi, file2=ofpy)
+
+        coeks = out_collection_enumeration(ofpyi, ole_info_kvs)
+        out_collection_enumeration(ofpy, ole_info_kvs)
+        Print2(file1=ofpyi, file2=ofpy)
+
+        # unfoundcls
+        nns = sorted([str(i) for i in unfoundcls])
+        Print2(f'# unfoundcls', file1=ofpyi, file2=ofpy)
+        for cls_name in nns:
+            if not cls_name:
+                continue
+            if '.' not in cls_name:
+                if cls_name in Cfg.BUILTINS_CLASS or cls_name in clsns or cls_name in coeks:
+                    continue
+                Print2(f'class {cls_name}: pass', file1=ofpyi, file2=ofpy)
+            else:
+                continue # TODO FIXME SKIP
+                if cls_name[0] in 'abcdefghijklmnopqrstuvwxyz':
+                    continue
+                nss = cls_name.split('.')
+                indi = 0
+                for i in range(len(nss)-1):
+                    cls_name = nss[i]
+                    if cls_name in Cfg.BUILTINS_CLASS:
+                        continue
+                    Print2(f'{" "*indi}class {cls_name}:', file1=ofpyi, file2=ofpy)
+                    indi += 2
+                Print2(f'{" "*indi}class {nss[-1]}: pass', file1=ofpyi, file2=ofpy)
+        Print2(f'# unfoundcls  end', file1=ofpyi, file2=ofpy)
+        Print2(file1=ofpyi, file2=ofpy)
+
+        # get def cls
+        Print1(strpyi, file=ofpyi)
+        Print1(strpy, file=ofpy)
+        Print2(file1=ofpyi, file2=ofpy)
+
+        # output all define
+        with open(pyifn, 'w', encoding='utf-8') as fpyi, open(pyfn, 'w', encoding='utf-8') as fpy:
+            print(ofpyi.getvalue(), file=fpyi)
+            print(ofpy.getvalue(), file=fpy)
 
 
 # ------------------------------------------------------------------------
@@ -418,8 +450,7 @@ def runit():
     load_info_from_json(Cfg.OUT_EXCEL_INFO_FN, ole_info_kvs)
     print('------------------------------------------', file=sys.stderr)
 
-    output_to_pyi_typehints(Cfg.OUT_EXCEL_PYI_FN, ole_info_kvs)
-    output_to_py_src(Cfg.OUT_EXCEL_PY_FN, ole_info_kvs)
+    output_to_pyi_typehints(Cfg.OUT_EXCEL_PYI_FN, Cfg.OUT_EXCEL_PY_FN, ole_info_kvs)
 
 
 if __name__ == '__main__':

@@ -14,6 +14,7 @@
 from enum import IntFlag, unique
 import datetime
 
+
 # list collection  1
 class VBA_Collection:
   '''The Item property of a collection returns a single object from that collection. The following example sets the firstBook variable to a Workbook object that represents the first workbook in the Workbooks collection.
@@ -3680,251 +3681,6740 @@ Have questions or feedback about Office VBA or this documentation? Please see Of
 # list enumeration  end
 
 
-class AddIn: pass
-class AddIns: pass
-class AddIns2: pass
-class Adjustments: pass
-class AllowEditRange: pass
-class AllowEditRanges: pass
-class Application: pass
-class Areas: pass
-class Author: pass
-class AutoCorrect: pass
-class AutoFilter: pass
-class AutoRecover: pass
-class Axes: pass
-class Axis: pass
-class AxisTitle: pass
-class Border: pass
-class Borders: pass
-class CalculatedMembers: pass
-class CalloutFormat: pass
-class Characters: pass
-class Chart: pass
-class ChartArea: pass
-class ChartFormat: pass
-class ChartGroup: pass
-class ChartGroups: pass
-class ChartObject: pass
-class ChartObjects: pass
-class ChartTitle: pass
-class Charts: pass
-class ColorFormat: pass
-class ColorScale: pass
-class ColorScaleCriteria: pass
-class ColorScaleCriterion: pass
-class Comment: pass
-class CommentThreaded: pass
-class Comments: pass
-class CommentsThreaded: pass
-class Connections: pass
-class ConnectorFormat: pass
-class ControlFormat: pass
-class CubeField: pass
-class CubeFields: pass
-class CustomProperties: pass
-class CustomProperty: pass
-class CustomView: pass
-class CustomViews: pass
-class DataFeedConnection: pass
-class DataLabel: pass
-class DataLabels: pass
-class DataTable: pass
-class DefaultWebOptions: pass
-class Dialog: pass
-class Dialogs: pass
-class DisplayFormat: pass
-class DisplayUnitLabel: pass
-class DownBars: pass
-class DropLines: pass
-class Error: pass
-class ErrorBars: pass
-class ErrorCheckingOptions: pass
-class Errors: pass
-class FileExportConverter: pass
-class FileExportConverters: pass
-class FillFormat: pass
-class Filter: pass
-class Filters: pass
-class Floor: pass
-class Font: pass
-class FormatColor: pass
-class FormatCondition: pass
-class FormatConditions: pass
-class FreeformBuilder: pass
-class Graphic: pass
-class Gridlines: pass
-class GroupShapes: pass
-class HPageBreak: pass
-class HPageBreaks: pass
-class HiLoLines: pass
-class Hyperlink: pass
-class Hyperlinks: pass
-class Icon: pass
-class IconCriteria: pass
-class IconCriterion: pass
-class IconSet: pass
-class IconSetCondition: pass
-class IconSets: pass
-class Interior: pass
-class LeaderLines: pass
-class Legend: pass
-class LegendEntries: pass
-class LegendEntry: pass
-class LegendKey: pass
-class LineFormat: pass
-class LinkFormat: pass
-class ListColumn: pass
-class ListColumns: pass
-class ListObject: pass
-class ListObjects: pass
-class ListRow: pass
-class ListRows: pass
-class Model: pass
-class Model3DFormat: pass
-class ModelFormatBoolean: pass
-class ModelFormatCurrency: pass
-class ModelFormatDate: pass
-class ModelFormatDecimalNumber: pass
-class ModelFormatGeneral: pass
-class ModelFormatPercentageNumber: pass
-class ModelFormatScientificNumber: pass
-class ModelFormatWholeNumber: pass
-class ModelMeasure: pass
-class ModelMeasures: pass
-class ModelRelationship: pass
-class ModelRelationships: pass
-class ModelTable: pass
-class ModelTableColumn: pass
-class ModelTableColumns: pass
-class ModelTables: pass
-class MultiThreadedCalculation: pass
-class Name: pass
-class Names: pass
-class ODBCError: pass
-class ODBCErrors: pass
-class OLEDBError: pass
-class OLEDBErrors: pass
-class OLEFormat: pass
-class Outline: pass
-class Page: pass
-class PageSetup: pass
-class Pages: pass
-class Pane: pass
-class Panes: pass
-class Parameter: pass
-class Parameters: pass
-class Phonetic: pass
-class Phonetics: pass
-class PictureFormat: pass
-class PivotAxis: pass
-class PivotCache: pass
-class PivotCaches: pass
-class PivotCell: pass
-class PivotField: pass
-class PivotFields: pass
-class PivotFormula: pass
-class PivotFormulas: pass
-class PivotItem: pass
-class PivotItemList: pass
-class PivotItems: pass
-class PivotLayout: pass
-class PivotLine: pass
-class PivotLines: pass
-class PivotTable: pass
-class PivotTableChangeList: pass
-class PivotTables: pass
-class PlotArea: pass
-class Point: pass
-class Points: pass
-class ProtectedViewWindow: pass
-class ProtectedViewWindows: pass
-class Protection: pass
-class PublishObject: pass
-class PublishObjects: pass
-class Queries: pass
-class QueryTable: pass
-class QueryTables: pass
-class QuickAnalysis: pass
-class RTD: pass
-class Range: pass
-class RecentFile: pass
-class RecentFiles: pass
-class Series: pass
-class SeriesCollection: pass
-class SeriesLines: pass
-class ShadowFormat: pass
-class Shape: pass
-class ShapeNode: pass
-class ShapeNodes: pass
-class ShapeRange: pass
-class Shapes: pass
-class SheetViews: pass
-class Sheets: pass
-class Slicer: pass
-class SlicerCache: pass
-class SlicerCacheLevel: pass
-class SlicerCacheLevels: pass
-class SlicerCaches: pass
-class SlicerItem: pass
-class SlicerItems: pass
-class SlicerPivotTables: pass
-class Slicers: pass
-class Sort: pass
-class SortField: pass
-class SortFields: pass
-class SparkAxes: pass
-class SparkColor: pass
-class SparkHorizontalAxis: pass
-class SparkPoints: pass
-class SparkVerticalAxis: pass
-class Sparkline: pass
-class SparklineGroup: pass
-class SparklineGroups: pass
-class Speech: pass
-class SpellingOptions: pass
-class Style: pass
-class Styles: pass
-class Tab: pass
-class TableObject: pass
-class TableStyles: pass
-class TextConnection: pass
-class TextEffectFormat: pass
-class TextFrame: pass
-class TextFrame2: pass
-class ThreeDFormat: pass
-class TickLabels: pass
-class TimelineState: pass
-class TimelineViewState: pass
-class TreeviewControl: pass
-class Trendline: pass
-class Trendlines: pass
-class UpBars: pass
-class UsedObjects: pass
-class UserAccess: pass
-class UserAccessList: pass
-class VPageBreak: pass
-class VPageBreaks: pass
-class Validation: pass
-class ValueChange: pass
-class Walls: pass
-class Watches: pass
-class WebOptions: pass
-class Window: pass
-class Windows: pass
-class Workbook: pass
-class WorkbookConnection: pass
-class WorkbookQuery: pass
-class Workbooks: pass
-class Worksheet: pass
-class WorksheetFunction: pass
-class Worksheets: pass
-class XPath: pass
-class XmlDataBinding: pass
-class XmlMap: pass
-class XmlMaps: pass
-class XmlNamespace: pass
-class XmlNamespaces: pass
-class XmlSchema: pass
-class XmlSchemas: pass
+# unfoundcls
+class ACTIONS: pass
+class ADJUSTMENTS: pass
+class ADOConnection: pass
+class APPLICATION: pass
+class AboveAverage: pass
+class Add: pass
+class AllocationMethod: pass
+class CALCULATEDMEMBER: pass
+class CHART: pass
+class COMAddIns: pass
+class CUBEFIELD: pass
+class CalculatedFields: pass
+class CalculatedItems: pass
+class CalculatedMember: pass
+class ChartFillFormat: pass
+class Color: pass
+class CommandBars: pass
+class Crop: pass
+class CustomXMLParts: pass
+class DATAFEEDCONNECTION: pass
+class DATE: pass
+class Databar: pass
+class Date: pass
+class Developer: pass
+class DocumentInspectors: pass
+class DocumentLibraryVersions: pass
+class DocumentProperties: pass
+class Enabled: pass
+class FileDialog: pass
+class FileFormat: pass
+class FixedDecimal: pass
+class GenerateTableRefs: pass
+class GlowFormat: pass
+class HasDisplayUnitLabel: pass
+class Hidden: pass
+class IAssistance: pass
+class IncludeNewItemsInFilter: pass
+class Item: pass
+class LISTOBJECT: pass
+class LanguageSettings: pass
+class LocalConnection: pass
+class MODEL: pass
+class MODELCONNECTION: pass
+class MODELRELATIONSHIP: pass
+class MODELRELATIONSHIPS: pass
+class MODELTABLE: pass
+class MODELTABLECOLUMN: pass
+class MODELTABLECOLUMNS: pass
+class MODELTABLES: pass
+class MSOAUTOSHAPETYPE: pass
+class MetaProperties: pass
+class MsoArrowheadLength: pass
+class MsoArrowheadStyle: pass
+class MsoArrowheadWidth: pass
+class MsoAutoShapeType: pass
+class MsoAutoSize: pass
+class MsoAutomationSecurity: pass
+class MsoBackgroundStyleIndex: pass
+class MsoBevelType: pass
+class MsoBlackWhiteMode: pass
+class MsoCalloutAngleType: pass
+class MsoCalloutDropType: pass
+class MsoCalloutType: pass
+class MsoColorType: pass
+class MsoConnectorType: pass
+class MsoEditingType: pass
+class MsoEncoding: pass
+class MsoExtrusionColorType: pass
+class MsoFeatureInstall: pass
+class MsoFileValidationMode: pass
+class MsoFillType: pass
+class MsoGradientColorType: pass
+class MsoGradientStyle: pass
+class MsoGraphicStyleIndex: pass
+class MsoHorizontalAnchor: pass
+class MsoLightRigType: pass
+class MsoLineDashStyle: pass
+class MsoLineStyle: pass
+class MsoPathFormat: pass
+class MsoPatternType: pass
+class MsoPictureColorType: pass
+class MsoPresetCamera: pass
+class MsoPresetExtrusionDirection: pass
+class MsoPresetGradientType: pass
+class MsoPresetLightingDirection: pass
+class MsoPresetLightingSoftness: pass
+class MsoPresetMaterial: pass
+class MsoPresetTextEffect: pass
+class MsoPresetTextEffectShape: pass
+class MsoPresetTexture: pass
+class MsoPresetThreeDFormat: pass
+class MsoScreenSize: pass
+class MsoSegmentType: pass
+class MsoShadowStyle: pass
+class MsoShadowType: pass
+class MsoShapeStyleIndex: pass
+class MsoShapeType: pass
+class MsoTargetBrowser: pass
+class MsoTextEffectAlignment: pass
+class MsoTextOrientation: pass
+class MsoTextureType: pass
+class MsoThemeColorIndex: pass
+class MsoTriState: pass
+class MsoVerticalAnchor: pass
+class MsoWarpFormat: pass
+class NewFile: pass
+class ODBCConnection: pass
+class OLAP: pass
+class OLEDBConnection: pass
+class PIVOTLINECELLS: pass
+class PIVOTVALUECELL: pass
+class PictureType: pass
+class QUICKANALYSIS: pass
+class RANGE: pass
+class RGB: pass
+class Ranges: pass
+class Recordset: pass
+class ReflectionFormat: pass
+class Refresh: pass
+class Replace: pass
+class Research: pass
+class Ruler2: pass
+class SHAPE: pass
+class SLICERS: pass
+class SPARKPOINTS: pass
+class STRING: pass
+class SensitivityLabel: pass
+class SensitivityLabelPolicy: pass
+class ServerPolicy: pass
+class SheetView: pass
+class SmartArt: pass
+class SmartArtColors: pass
+class SmartArtLayouts: pass
+class SmartArtQuickStyles: pass
+class SmartDocument: pass
+class SoftEdgeFormat: pass
+class SourceCaption: pass
+class TABLEOBJECT: pass
+class TEXTCONNECTION: pass
+class TIMELINESTATE: pass
+class TIMELINEVIEWSTATE: pass
+class TableStyle: pass
+class TableStyle2: pass
+class TextColumn2: pass
+class TextRange2: pass
+class Top10: pass
+class TransparentBackground: pass
+class TypeName: pass
+class UNIQUE: pass
+class UniqueValues: pass
+class UseLocalConnection: pass
+class VARIANT: pass
+class VBA_Object: pass
+class VBA_Variant: pass
+class VBE: pass
+class VBProject: pass
+class WORKBOOKCONNECTION: pass
+class WORKSHEETDATACONNECTION: pass
+class Watch: pass
+class WebPageFonts: pass
+class WorkFlowTasks: pass
+class WorkflowTemplates: pass
+class XLCATEGORYLABELLEVEL: pass
+class XLCELLINSERTIONMODE: pass
+class XLCMDTYPE: pass
+class XLCREATOR: pass
+class XLCREDENTIALSMETHOD: pass
+class XLCutCopyMode: pass
+class XLDISPLAYBLANKSAS: pass
+class XLPIVOTFILTERTYPE: pass
+class XLPLATFORM: pass
+class XLSERIESNAMELEVEL: pass
+class XLSLICERCACHETYPE: pass
+class XLSPARKLINEROWCOL: pass
+class XLTEXTPARSINGTYPE: pass
+class XLTEXTQUALIFIER: pass
+class XLTEXTVISUALLAYOUTTYPE: pass
+class XLTIMELINELEVEL: pass
+class XMLMap: pass
+class XlCreator: pass
+class XlFilterStatus: pass
+class XlReadingOrder: pass
+class XlUpdateLink: pass
+class XlXmlExportResult: pass
+class XlXmlImportResult: pass
+class __DEPRECATED_WARNNING__: pass
+class __UNKNOWN_TYPE_SEE_DOC__: pass
+class constants: pass
+class currency: pass
+class general: pass
+class points: pass
+class recommended: pass
+class xlAutomatic: pass
+class xlCap: pass
+class xlColorIndexAutomatic: pass
+class xlColorIndexNone: pass
+class xlColumns: pass
+class xlContext: pass
+class xlDownThenOver: pass
+class xlExcelMenus: pass
+class xlExtended: pass
+class xlLTR: pass
+class xlLogicalCursor: pass
+class xlLotusHelp: pass
+class xlNoCap: pass
+class xlNone: pass
+class xlOverThenDown: pass
+class xlPageBreakAutomatic: pass
+class xlPageBreakManual: pass
+class xlPageBreakNone: pass
+class xlRTL: pass
+class xlRows: pass
+class xlSimple: pass
+class xlSizeIsArea: pass
+class xlSizeIsWidth: pass
+class xlStackScale: pass
+class xlVisualCursor: pass
+# unfoundcls  end
+
+# ole cls  247
+class AddIn:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.CLSID: None    #UNIQUE
+    self.Creator: None  #XlCreator
+    self.FullName: str
+    self.Installed: bool
+    self.IsOpen: bool
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.Path: str
+    self.progID: str
+
+
+
+
+class AddIns:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: None  #XlCreator
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, FileName, CopyFile) -> None: pass                 #AddIn
+
+
+
+
+class AddIns2:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, FileName, CopyFile) -> None: pass                 #AddIn
+
+
+
+
+class Adjustments:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: float
+    self.Parent: None   #VBA_Object
+
+
+
+
+class AllowEditRange:
+  '''just need name'''
+
+  def __init__(self):
+    self.Range: None    #Range
+    self.Title: str
+    self.Users: None    #UserAccessList
+
+  def ChangePassword(self, Password) -> None: pass                #None
+  def Delete(self, ) -> None: pass          #None
+  def Unprotect(self, Password) -> None: pass                     #None
+
+
+
+
+class AllowEditRanges:
+  '''just need name'''
+
+  def __init__(self):
+    self.Count: int
+    self.Item: None     #VBA_Object
+
+  def Add(self, Title, Range, Password) -> None: pass             #AllowEditRange
+
+
+
+
+class Application:
+  '''just need name'''
+
+  def __init__(self):
+    self.ActiveCell: None           #Range
+    self.ActiveChart: None          #VBA_Object
+    self.ActiveEncryptionSession: int
+    self.ActivePrinter: str
+    self.ActiveProtectedViewWindow: None        #ProtectedViewWindow | None
+    self.ActiveSheet: None          #VBA_Object | None
+    self.ActiveWindow: None         #Window | None
+    self.ActiveWorkbook: None       #Workbook | None
+    self.AddIns: None   #AddIns | AddIns | Developer
+    self.AddIns2: None  #AddIns2
+    self.AlertBeforeOverwriting: bool
+    self.AltStartupPath: str
+    self.AlwaysUseClearType: bool
+    self.Application: None          #Application
+    self.ArbitraryXMLSupportAvailable: bool
+    self.AskToUpdateLinks: bool
+    self.Assistance: None           #IAssistance
+    self.AutoCorrect: None          #AutoCorrect
+    self.AutoFormatAsYouTypeReplaceHyperlinks: bool
+    self.AutoPercentEntry: bool
+    self.AutoRecover: None          #AutoRecover
+    self.AutomationSecurity: None   #MsoAutomationSecurity
+    self.Build: int
+    self.COMAddIns: None            #COMAddIns
+    self.CalculateBeforeSave: bool
+    self.Calculation: None          #XlCalculation
+    self.CalculationInterruptKey: None          #XlCalculationInterruptKey
+    self.CalculationState: None     #XlCalculationState
+    self.CalculationVersion: int
+    self.Caller: None   #Application
+    self.CanPlaySounds: None        #Application
+    self.CanRecordSounds: None      #Application
+    self.Caption: str
+    self.CellDragAndDrop: bool
+    self.Cells: None    #Range
+    self.ChartDataPointTrack: bool
+    self.Charts: None   #Sheets
+    self.ClipboardFormats: None     #VBA_Variant
+    self.ClusterConnector: str
+    self.Columns: None  #Range
+    self.CommandBars: None          #CommandBars
+    self.CommandUnderlines: None    #XlCommandUnderlines | int
+    self.ConstrainNumeric: bool
+    self.ControlCharacters: bool
+    self.CopyObjectsWithCells: bool
+    self.Creator: None  #XlCreator
+    self.Cursor: None   #XlMousePointer
+    self.CursorMovement: None       #xlVisualCursor | xlLogicalCursor | int
+    self.CustomListCount: int
+    self.CutCopyMode: None          #bool | XLCutCopyMode | int
+    self.DDEAppReturnCode: int
+    self.DataEntryMode: int
+    self.DecimalSeparator: str
+    self.DefaultFilePath: str
+    self.DefaultSaveFormat: None    #FileFormat | int
+    self.DefaultSheetDirection: None            #XlReadingOrder | xlRTL | xlLTR | int
+    self.DefaultWebOptions: None    #DefaultWebOptions
+    self.DeferAsyncQueries: bool
+    self.Dialogs: None  #Dialogs
+    self.DisplayAlerts: bool
+    self.DisplayClipboardWindow: bool
+    self.DisplayCommentIndicator: None          #XlCommentDisplayMode
+    self.DisplayDocumentActionTaskPane: bool
+    self.DisplayDocumentInformationPanel: bool
+    self.DisplayExcel4Menus: bool
+    self.DisplayFormulaAutoComplete: bool
+    self.DisplayFormulaBar: bool
+    self.DisplayFullScreen: bool
+    self.DisplayFunctionToolTips: bool
+    self.DisplayInsertOptions: bool
+    self.DisplayNoteIndicator: bool
+    self.DisplayPasteOptions: bool
+    self.DisplayRecentFiles: bool
+    self.DisplayScrollBars: bool
+    self.DisplayStatusBar: bool
+    self.EditDirectlyInCell: bool
+    self.EnableAnimations: None     #__DEPRECATED_WARNNING__
+    self.EnableAutoComplete: bool
+    self.EnableCancelKey: None      #XlEnableCancelKey
+    self.EnableCheckFileExtensions: bool
+    self.EnableEvents: bool
+    self.EnableLargeOperationAlert: bool
+    self.EnableLivePreview: bool
+    self.EnableMacroAnimations: bool
+    self.EnableSound: bool
+    self.ErrorCheckingOptions: None             #ErrorCheckingOptions
+    self.Excel4IntlMacroSheets: None            #Sheets
+    self.Excel4MacroSheets: None    #Sheets
+    self.ExtendList: bool
+    self.FeatureInstall: None       #MsoFeatureInstall
+    self.FileConverters: None       #VBA_Variant
+    self.FileDialog: None           #FileDialog
+    self.FileExportConverters: None             #FileExportConverters
+    self.FileValidation: None       #MsoFileValidationMode
+    self.FileValidationPivot: None  #XlFileValidationPivotMode
+    self.FindFormat: None           #Application
+    self.FixedDecimal: bool
+    self.FixedDecimalPlaces: None   #FixedDecimal | bool | int
+    self.FlashFill: bool
+    self.FlashFillMode: bool
+    self.FormulaBarHeight: int
+    self.GenerateGetPivotData: bool
+    self.GenerateTableRefs: None    #GenerateTableRefs
+    self.Height: float
+    self.HighQualityModeForGraphics: None       #Application
+    self.Hinstance: int
+    self.HinstancePtr: None         #VBA_Variant
+    self.IgnoreRemoteRequests: bool
+    self.Interactive: bool
+    self.International: None        #VBA_Variant
+    self.IsSandboxed: bool
+    self.Iteration: bool
+    self.LanguageSettings: None     #LanguageSettings
+    self.LargeOperationCellThousandCount: int
+    self.Left: float
+    self.LibraryPath: str
+    self.MailSession: None          #VBA_Variant
+    self.MailSystem: None           #XlMailSystem
+    self.MapPaperSize: bool
+    self.MathCoprocessorAvailable: bool
+    self.MaxChange: float
+    self.MaxIterations: int
+    self.MeasurementUnit: None      #XlMeasurementUnits
+    self.MergeInstances: bool
+    self.MouseAvailable: bool
+    self.MoveAfterReturn: bool
+    self.MoveAfterReturnDirection: None         #XlDirection
+    self.MultiThreadedCalculation: None         #MultiThreadedCalculation
+    self.Name: str
+    self.Names: None    #Names
+    self.NetworkTemplatesPath: str
+    self.NewWorkbook: None          #NewFile
+    self.ODBCErrors: None           #ODBCErrors
+    self.ODBCTimeout: int
+    self.OLEDBErrors: None          #OLEDBErrors
+    self.OnWindow: str
+    self.OperatingSystem: str
+    self.OrganizationName: str
+    self.Parent: None   #VBA_Object
+    self.Path: str
+    self.PathSeparator: str
+    self.PivotTableSelection: bool
+    self.PreviousSelections: None   #VBA_Variant
+    self.PrintCommunication: bool
+    self.ProductCode: str
+    self.PromptForSummaryInfo: bool
+    self.ProtectedViewWindows: None             #ProtectedViewWindows
+    self.QuickAnalysis: None        #QUICKANALYSIS
+    self.RTD: None      #RTD
+    self.Range: None    #Range
+    self.Ready: bool
+    self.RecentFiles: None          #RecentFiles
+    self.RecordRelative: bool
+    self.ReferenceStyle: None       #XlReferenceStyle
+    self.RegisteredFunctions: None  #VBA_Variant
+    self.ReplaceFormat: None        #Replace
+    self.RollZoom: bool
+    self.Rows: None     #Range
+    self.ScreenUpdating: bool
+    self.Selection: None            #TypeName
+    self.SensitivityLabelPolicy: None           #SensitivityLabelPolicy
+    self.Sheets: None   #Sheets
+    self.SheetsInNewWorkbook: int
+    self.ShowChartTipNames: bool
+    self.ShowChartTipValues: bool
+    self.ShowDevTools: bool
+    self.ShowMenuFloaties: bool
+    self.ShowQuickAnalysis: bool
+    self.ShowSelectionFloaties: bool
+    self.ShowStartupDialog: bool
+    self.ShowToolTips: bool
+    self.SmartArtColors: None       #SmartArtColors
+    self.SmartArtLayouts: None      #SmartArtLayouts
+    self.SmartArtQuickStyles: None  #SmartArtQuickStyles
+    self.Speech: None   #Speech
+    self.SpellingOptions: None      #VBA_Object
+    self.StandardFont: str
+    self.StandardFontSize: int
+    self.StartupPath: str
+    self.StatusBar: str
+    self.TemplatesPath: str
+    self.ThisCell: None             #Range
+    self.ThisWorkbook: None         #Workbook
+    self.ThousandsSeparator: str
+    self.Top: float
+    self.TransitionMenuKey: str
+    self.TransitionMenuKeyAction: None          #xlExcelMenus | xlLotusHelp | int
+    self.TransitionNavigKeys: bool
+    self.UsableHeight: float
+    self.UsableWidth: float
+    self.UseClusterConnector: bool
+    self.UseSystemSeparators: bool
+    self.UsedObjects: None          #UsedObjects
+    self.UserControl: bool
+    self.UserLibraryPath: str
+    self.UserName: str
+    self.VBE: None      #VBE
+    self.Value: str
+    self.Version: str
+    self.Visible: bool
+    self.WarnOnFunctionNameConflict: bool
+    self.Watches: None  #Watches
+    self.Width: float
+    self.WindowState: None          #XlWindowState
+    self.Windows: None  #Windows
+    self.WindowsForPens: bool
+    self.Workbooks: None            #Workbooks
+    self.WorksheetFunction: None    #WorksheetFunction
+    self.Worksheets: None           #Sheets
+    self.hWnd: int
+
+  def ActivateMicrosoftApp(self, Index) -> None: pass             #None
+  def AddCustomList(self, ListArray, ByRow) -> None: pass         #None
+  def Calculate(self, ) -> None: pass       #None
+  def CalculateFull(self, ) -> None: pass   #None
+  def CalculateFullRebuild(self, ) -> None: pass                  #None
+  def CalculateUntilAsyncQueriesDone(self, ) -> None: pass        #None
+  def CentimetersToPoints(self, Centimeters) -> None: pass        #float
+  def CheckAbort(self, KeepAbort) -> None: pass                   #None
+  def CheckSpelling(self, Word, CustomDictionary, IgnoreUppercase) -> None: pass        #bool
+  def ConvertFormula(self, Formula, FromReferenceStyle, ToReferenceStyle, ToAbsolute, RelativeTo) -> None: pass                     #VBA_Variant
+  def DDEExecute(self, Channel, String) -> None: pass             #None
+  def DDEInitiate(self, App, Topic) -> None: pass                 #int
+  def DDEPoke(self, Channel, Item, Data) -> None: pass            #None
+  def DDERequest(self, Channel, Item) -> None: pass               #VBA_Variant
+  def DDETerminate(self, Channel) -> None: pass                   #None
+  def DeleteCustomList(self, ListNum) -> None: pass               #None
+  def DisplayXMLSourcePane(self, XmlMap) -> None: pass            #None
+  def DoubleClick(self, ) -> None: pass     #None
+  def Evaluate(self, Name) -> None: pass    #VBA_Variant
+  def ExecuteExcel4Macro(self, String) -> None: pass              #VBA_Variant
+  def FindFile(self, ) -> None: pass        #bool
+  def GetCustomListContents(self, ListNum) -> None: pass          #VBA_Variant
+  def GetCustomListNum(self, ListArray) -> None: pass             #int
+  def GetOpenFilename(self, FileFilter, FilterIndex, Title, ButtonText, MultiSelect) -> None: pass            #VBA_Variant
+  def GetPhonetic(self, Text) -> None: pass                       #str
+  def GetSaveAsFilename(self, InitialFilename, FileFilter, FilterIndex, Title, ButtonText) -> None: pass      #VBA_Variant
+  def Goto(self, Reference, Scroll) -> None: pass                 #None
+  def Help(self, HelpFile, HelpContextID) -> None: pass           #None
+  def InchesToPoints(self, Inches) -> None: pass                  #float
+  def InputBox(self, Prompt, Title, Default, Left, Top, HelpFile, HelpContextID, Type) -> None: pass          #VBA_Variant
+  def Intersect(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass  #Range
+  def MacroOptions(self, Macro, Description, HasMenu, MenuText, HasShortcutKey, ShortcutKey, Category, StatusBar, HelpContextID, HelpFile, ArgumentDescriptions) -> None: pass  #None
+  def MailLogoff(self, ) -> None: pass      #None
+  def MailLogon(self, Name, Password, DownloadNewMail) -> None: pass                    #None
+  def NextLetter(self, ) -> None: pass      #Workbook
+  def OnKey(self, Key, Procedure) -> None: pass                   #None
+  def OnRepeat(self, Text, Procedure) -> None: pass               #None
+  def OnTime(self, EarliestTime, Procedure, LatestTime, Schedule) -> None: pass         #None
+  def OnUndo(self, Text, Procedure) -> None: pass                 #None
+  def Quit(self, ) -> None: pass            #None
+  def RecordMacro(self, BasicCode, XlmCode) -> None: pass         #None
+  def RegisterXLL(self, FileName) -> None: pass                   #bool
+  def Repeat(self, ) -> None: pass          #None
+  def Run(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass        #VBA_Variant
+  def SendKeys(self, Keys, Wait) -> None: pass                    #None
+  def SharePointVersion(self, bstrUrl) -> None: pass              #int
+  def Undo(self, ) -> None: pass            #None
+  def Union(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass      #Range
+  def Volatile(self, Volatile) -> None: pass                      #None
+  def Wait(self, Time) -> None: pass        #bool
+
+
+
+
+class Areas:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+
+
+
+class Author:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.ProviderID: str
+    self.UserID: str
+
+
+
+
+class AutoCorrect:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AutoExpandListRange: bool
+    self.AutoFillFormulasInLists: bool
+    self.CapitalizeNamesOfDays: bool
+    self.CorrectCapsLock: bool
+    self.CorrectSentenceCap: bool
+    self.Creator: int
+    self.DisplayAutoCorrectOptions: bool
+    self.Parent: None   #VBA_Object
+    self.ReplaceText: bool
+    self.ReplacementList: list
+    self.TwoInitialCapitals: bool
+
+  def AddReplacement(self, What, Replacement) -> None: pass       #VBA_Variant
+  def DeleteReplacement(self, What) -> None: pass                 #VBA_Variant
+
+
+
+
+class AutoFilter:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.FilterMode: bool
+    self.Filters: None  #Filters
+    self.Parent: None   #VBA_Object
+    self.Range: None    #VBA_Object
+    self.Sort: None     #AutoFilter
+
+  def ApplyFilter(self, ) -> None: pass     #None
+  def ShowAllData(self, ) -> None: pass     #None
+
+
+
+
+class AutoRecover:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Enabled: bool
+    self.Parent: None   #VBA_Object
+    self.Path: str
+    self.Time: None     #AutoRecover | int
+
+
+
+
+class Axes:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Item(self, Type, AxisGroup) -> None: pass                   #Axis
+
+
+
+
+class Axis:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AxisBetweenCategories: bool
+    self.AxisGroup: None            #XlAxisGroup
+    self.AxisTitle: None            #AxisTitle
+    self.BaseUnit: None             #XlTimeUnit
+    self.BaseUnitIsAuto: bool
+    self.Border: None   #VBA_Object
+    self.CategoryNames: None        #VBA_Variant
+    self.CategoryType: None         #XlCategoryType
+    self.Creator: int
+    self.Crosses: int
+    self.CrossesAt: float
+    self.DisplayUnit: None          #XlDisplayUnit
+    self.DisplayUnitCustom: float
+    self.DisplayUnitLabel: None     #DisplayUnitLabel | None | HasDisplayUnitLabel | bool
+    self.Format: None   #ChartFormat
+    self.HasDisplayUnitLabel: bool
+    self.HasMajorGridlines: bool
+    self.HasMinorGridlines: bool
+    self.HasTitle: bool
+    self.Height: float
+    self.Left: float
+    self.LogBase: float
+    self.MajorGridlines: None       #Gridlines
+    self.MajorTickMark: None        #XlTickMark
+    self.MajorUnit: float
+    self.MajorUnitIsAuto: bool
+    self.MajorUnitScale: None       #XlTimeUnit
+    self.MaximumScale: float
+    self.MaximumScaleIsAuto: bool
+    self.MinimumScale: float
+    self.MinimumScaleIsAuto: bool
+    self.MinorGridlines: None       #Gridlines
+    self.MinorTickMark: None        #XlTickMark
+    self.MinorUnit: float
+    self.MinorUnitIsAuto: bool
+    self.MinorUnitScale: None       #XlTimeUnit
+    self.Parent: None   #VBA_Object
+    self.ReversePlotOrder: bool
+    self.ScaleType: None            #XlScaleType
+    self.TickLabelPosition: None    #XlTickLabelPosition
+    self.TickLabelSpacing: int
+    self.TickLabelSpacingIsAuto: bool
+    self.TickLabels: None           #TickLabels
+    self.TickMarkSpacing: int
+    self.Top: float
+    self.Type: None     #XlAxisType
+    self.Width: float
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class AxisTitle:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Caption: str
+    self.Characters: None           #Characters
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Formula: str
+    self.FormulaLocal: str
+    self.FormulaR1C1: str
+    self.FormulaR1C1Local: str
+    self.Height: float
+    self.HorizontalAlignment: None  #VBA_Variant
+    self.IncludeInLayout: bool
+    self.Left: float
+    self.Name: str
+    self.Orientation: None          #VBA_Variant
+    self.Parent: None   #VBA_Object
+    self.Position: None             #XlChartElementPosition
+    self.ReadingOrder: None         #XlReadingOrder | xlRTL | xlLTR | xlContext | int
+    self.Shadow: bool
+    self.Text: str
+    self.Top: float
+    self.VerticalAlignment: None    #VBA_Variant
+    self.Width: float
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class Border:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Color: None    #VBA_Variant
+    self.ColorIndex: None           #VBA_Variant
+    self.Creator: int
+    self.LineStyle: None            #XlLineStyle
+    self.Parent: None   #VBA_Object
+    self.ThemeColor: None           #VBA_Variant
+    self.TintAndShade: float
+    self.Weight: None   #XlBorderWeight
+
+
+
+
+class Borders:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Color: None    #VBA_Variant
+    self.ColorIndex: None           #VBA_Variant
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #Border
+    self.LineStyle: None            #XlLineStyle
+    self.Parent: None   #VBA_Object
+    self.ThemeColor: None           #VBA_Variant
+    self.TintAndShade: float
+    self.Value: None    #__UNKNOWN_TYPE_SEE_DOC__
+    self.Weight: None   #XlBorderWeight
+
+
+
+
+class CalculatedMembers:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Name, Formula, SolveOrder, Type, Dynamic, DisplayFolder, HierarchizeDistinct) -> None: pass   #CalculatedMember
+  def AddCalculatedMember(self, Name, Formula, SolveOrder, Type, DisplayFolder, MeasureGroup, ParentHierarchy, ParentMember, NumberFormat) -> None: pass  #CALCULATEDMEMBER
+
+
+
+
+class CalloutFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Accent: None   #MsoTriState
+    self.Angle: None    #MsoCalloutAngleType
+    self.Application: None          #Application
+    self.AutoAttach: None           #MsoTriState
+    self.AutoLength: None           #MsoTriState
+    self.Border: None   #MsoTriState
+    self.Creator: int
+    self.Drop: float
+    self.DropType: None             #MsoCalloutDropType
+    self.Gap: float
+    self.Length: float
+    self.Parent: None   #VBA_Object
+    self.Type: None     #MsoCalloutType
+
+  def AutomaticLength(self, ) -> None: pass                       #None
+  def CustomDrop(self, Drop) -> None: pass  #None
+  def CustomLength(self, Length) -> None: pass                    #None
+  def PresetDrop(self, DropType) -> None: pass                    #None
+
+
+
+
+class Characters:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Caption: str
+    self.Count: int
+    self.Creator: int
+    self.Font: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+    self.PhoneticCharacters: str
+    self.Text: str
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Insert(self, String) -> None: pass    #VBA_Variant
+
+
+
+
+class Chart:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AutoScaling: bool
+    self.BackWall: None             #Walls
+    self.BarShape: None             #XlBarShape
+    self.CategoryLabelLevel: None   #XLCATEGORYLABELLEVEL
+    self.ChartArea: None            #ChartArea
+    self.ChartColor: None           #VARIANT
+    self.ChartStyle: None           #VBA_Variant
+    self.ChartTitle: None           #ChartTitle
+    self.ChartType: None            #XlChartType
+    self.CodeName: str
+    self.Creator: int
+    self.DataTable: None            #DataTable
+    self.DepthPercent: int
+    self.DisplayBlanksAs: None      #XlDisplayBlanksAs | int
+    self.Elevation: int
+    self.Floor: None    #Floor
+    self.GapDepth: int
+    self.HasAxis: None  #VBA_Variant
+    self.HasDataTable: bool
+    self.HasLegend: bool
+    self.HasTitle: bool
+    self.HeightPercent: int
+    self.Hyperlinks: None           #Hyperlinks
+    self.Index: int
+    self.Legend: None   #Legend
+    self.MailEnvelope: None         #Chart
+    self.Name: str
+    self.Next: None     #VBA_Object
+    self.PageSetup: None            #PageSetup
+    self.Parent: None   #VBA_Object
+    self.Perspective: int
+    self.PivotLayout: None          #PivotLayout
+    self.PlotArea: None             #PlotArea
+    self.PlotBy: None   #XlRowCol | xlColumns | xlRows | int
+    self.PlotVisibleOnly: bool
+    self.Previous: None             #VBA_Object
+    self.PrintedCommentPages: int
+    self.ProtectContents: bool
+    self.ProtectData: bool
+    self.ProtectDrawingObjects: bool
+    self.ProtectFormatting: bool
+    self.ProtectSelection: bool
+    self.ProtectionMode: bool
+    self.RightAngleAxes: bool
+    self.Rotation: None             #VBA_Variant
+    self.SeriesNameLevel: None      #XLSERIESNAMELEVEL
+    self.Shapes: None   #Shapes
+    self.ShowAllFieldButtons: bool
+    self.ShowAxisFieldButtons: bool
+    self.ShowDataLabelsOverMaximum: bool
+    self.ShowExpandCollapseEntireFieldButtons: bool
+    self.ShowLegendFieldButtons: bool
+    self.ShowReportFilterFieldButtons: bool
+    self.ShowValueFieldButtons: bool
+    self.SideWall: None             #Walls
+    self.Tab: None      #Tab
+    self.Visible: None  #XlSheetVisibility
+    self.Walls: None    #Walls
+
+  def Activate(self, ) -> None: pass        #None
+  def ApplyChartTemplate(self, FileName) -> None: pass            #None
+  def ApplyDataLabels(self, Type, LegendKey, AutoText, HasLeaderLines, ShowSeriesName, ShowCategoryName, ShowValue, ShowPercentage, ShowBubbleSize, Separator) -> None: pass    #None
+  def ApplyLayout(self, Layout, ChartType) -> None: pass          #None
+  def Axes(self, Type, AxisGroup) -> None: pass                   #VBA_Object
+  def ChartGroups(self, Index) -> None: pass                      #VBA_Object
+  def ChartObjects(self, Index) -> None: pass                     #VBA_Object
+  def ChartWizard(self, Source, Gallery, Format, PlotBy, CategoryLabels, SeriesLabels, HasLegend, Title, CategoryTitle, ValueTitle, ExtraTitle) -> None: pass                   #None
+  def CheckSpelling(self, CustomDictionary, IgnoreUppercase, AlwaysSuggest, SpellLang) -> None: pass          #None
+  def ClearToMatchColorStyle(self, ) -> None: pass                #None
+  def ClearToMatchStyle(self, ) -> None: pass                     #None
+  def Copy(self, Before, After) -> None: pass                     #None
+  def CopyPicture(self, Appearance, Format, Size) -> None: pass   #None
+  def Delete(self, ) -> None: pass          #None
+  def Evaluate(self, Name) -> None: pass    #VBA_Variant
+  def Export(self, FileName, FilterName, Interactive) -> None: pass                     #bool
+  def ExportAsFixedFormat(self, Type, FileName, Quality, IncludeDocProperties, IgnorePrintAreas, From, To, OpenAfterPublish, FixedFormatExtClassPtr) -> None: pass              #None
+  def FullSeriesCollection(self, Index) -> None: pass             #VBA_Object
+  def GetChartElement(self, x, y, ElementID, Arg1, Arg2) -> None: pass                  #None
+  def Location(self, Where, Name) -> None: pass                   #VBA_Object
+  def Move(self, Before, After) -> None: pass                     #None
+  def OLEObjects(self, Index) -> None: pass                       #VBA_Object
+  def Paste(self, Type) -> None: pass       #None
+  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName, IgnorePrintAreas) -> None: pass  #VBA_Variant
+  def PrintPreview(self, EnableChanges) -> None: pass             #None
+  def Protect(self, Password, DrawingObjects, Contents, Scenarios, UserInterfaceOnly) -> None: pass           #None
+  def Refresh(self, ) -> None: pass         #None
+  def SaveAs(self, FileName, FileFormat, Password, WriteResPassword, ReadOnlyRecommended, CreateBackup, AddToMru, TextCodepage, TextVisualLayout, Local) -> None: pass          #None
+  def SaveChartTemplate(self, FileName) -> None: pass             #None
+  def Select(self, Replace) -> None: pass   #None
+  def SeriesCollection(self, Index) -> None: pass                 #VBA_Object
+  def SetBackgroundPicture(self, FileName) -> None: pass          #None
+  def SetDefaultChart(self, Name) -> None: pass                   #None
+  def SetElement(self, Element) -> None: pass                     #None
+  def SetSourceData(self, Source, PlotBy) -> None: pass           #None
+  def Unprotect(self, Password) -> None: pass                     #None
+
+
+
+
+class ChartArea:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Height: float
+    self.Left: float
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.RoundedCorners: bool
+    self.Shadow: bool
+    self.Top: float
+    self.Width: float
+
+  def Clear(self, ) -> None: pass           #VBA_Variant
+  def ClearContents(self, ) -> None: pass   #VBA_Variant
+  def ClearFormats(self, ) -> None: pass    #VBA_Variant
+  def Copy(self, ) -> None: pass            #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class ChartFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Adjustments: None          #ADJUSTMENTS
+    self.Application: None          #Application
+    self.AutoShapeType: None        #MSOAUTOSHAPETYPE
+    self.Creator: None  #XlCreator
+    self.Fill: None     #FillFormat
+    self.Glow: None     #GlowFormat
+    self.Line: None     #LineFormat
+    self.Parent: None   #VBA_Object
+    self.PictureFormat: None        #PictureFormat
+    self.Shadow: None   #ShadowFormat
+    self.SoftEdge: None             #SoftEdgeFormat
+    self.TextFrame2: None           #TextFrame2
+    self.ThreeD: None   #ThreeDFormat
+
+
+
+
+class ChartGroup:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AxisGroup: None            #XlAxisGroup
+    self.BinWidthValue: float
+    self.BinsCountValue: int
+    self.BinsOverflowEnabled: bool
+    self.BinsOverflowValue: float
+    self.BinsType: None             #XlBinsType
+    self.BinsUnderflowEnabled: bool
+    self.BinsUnderflowValue: float
+    self.BubbleScale: int
+    self.Creator: int
+    self.DoughnutHoleSize: int
+    self.DownBars: None             #DownBars
+    self.DropLines: None            #DropLines
+    self.FirstSliceAngle: int
+    self.GapWidth: None             #ChartGroup
+    self.Has3DShading: bool
+    self.HasDropLines: bool
+    self.HasHiLoLines: bool
+    self.HasRadarAxisLabels: bool
+    self.HasSeriesLines: bool
+    self.HasUpDownBars: bool
+    self.HiLoLines: None            #HiLoLines
+    self.Index: int
+    self.Overlap: int
+    self.Parent: None   #VBA_Object
+    self.RadarAxisLabels: None      #TickLabels
+    self.SecondPlotSize: int
+    self.SeriesLines: None          #SeriesLines
+    self.ShowNegativeBubbles: bool
+    self.SizeRepresents: None       #XlSizeRepresents | xlSizeIsArea | xlSizeIsWidth | int
+    self.SplitType: None            #XlChartSplitType
+    self.SplitValue: None           #VBA_Variant
+    self.UpBars: None   #UpBars
+    self.VaryByCategories: bool
+
+  def CategoryCollection(self, Index) -> None: pass               #VBA_Object
+  def FullCategoryCollection(self, Index) -> None: pass           #VBA_Object
+  def SeriesCollection(self, Index) -> None: pass                 #VBA_Object
+
+
+
+
+class ChartGroups:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Item(self, Index) -> None: pass       #ChartGroup
+
+
+
+
+class ChartObject:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.BottomRightCell: None      #Range
+    self.Chart: None    #Chart
+    self.Creator: int
+    self.Height: float
+    self.Index: int
+    self.Left: float
+    self.Locked: bool
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.Placement: None            #VBA_Variant
+    self.PrintObject: bool
+    self.ProtectChartObject: bool
+    self.RoundedCorners: bool
+    self.Shadow: bool
+    self.ShapeRange: None           #ShapeRange
+    self.Top: float
+    self.TopLeftCell: None          #Range
+    self.Visible: bool
+    self.Width: float
+    self.ZOrder: int
+
+  def Activate(self, ) -> None: pass        #VBA_Variant
+  def BringToFront(self, ) -> None: pass    #VBA_Variant
+  def Copy(self, ) -> None: pass            #VBA_Variant
+  def CopyPicture(self, Appearance, Format) -> None: pass         #VBA_Variant
+  def Cut(self, ) -> None: pass             #VBA_Variant
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Duplicate(self, ) -> None: pass       #VBA_Object
+  def Select(self, Replace) -> None: pass   #VBA_Variant
+  def SendToBack(self, ) -> None: pass      #VBA_Variant
+
+
+
+
+class ChartObjects:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Height: float
+    self.Left: float
+    self.Locked: bool
+    self.Parent: None   #VBA_Object
+    self.Placement: None            #VBA_Variant
+    self.PrintObject: bool
+    self.ProtectChartObject: bool
+    self.ShapeRange: None           #ShapeRange
+    self.Top: float
+    self.Visible: bool
+    self.Width: float
+
+  def Add(self, Left, Width) -> None: pass  #ChartObject
+  def Copy(self, ) -> None: pass            #VBA_Variant
+  def CopyPicture(self, Appearance, Format) -> None: pass         #VBA_Variant
+  def Cut(self, ) -> None: pass             #VBA_Variant
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Duplicate(self, ) -> None: pass       #VBA_Object
+  def Item(self, Index) -> None: pass       #VBA_Object
+  def Select(self, Replace) -> None: pass   #VBA_Variant
+
+
+
+
+class ChartTitle:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Caption: str
+    self.Characters: None           #Characters
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Formula: str
+    self.FormulaLocal: str
+    self.FormulaR1C1: str
+    self.FormulaR1C1Local: str
+    self.Height: float
+    self.HorizontalAlignment: None  #VBA_Variant
+    self.IncludeInLayout: bool
+    self.Left: float
+    self.Name: str
+    self.Orientation: None          #VBA_Variant
+    self.Parent: None   #VBA_Object
+    self.Position: None             #XlChartElementPosition
+    self.ReadingOrder: None         #XlReadingOrder | xlRTL | xlLTR | xlContext | int
+    self.Shadow: bool
+    self.Text: str
+    self.Top: float
+    self.VerticalAlignment: None    #VBA_Variant
+    self.Width: float
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class Charts:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.HPageBreaks: None          #HPageBreaks
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+    self.VPageBreaks: None          #VPageBreaks
+    self.Visible: None  #VBA_Variant
+
+  def Add2(self, Before, After, Count, NewLayout) -> None: pass   #CHART
+  def Copy(self, Before, After) -> None: pass                     #None
+  def Delete(self, ) -> None: pass          #None
+  def Move(self, Before, After) -> None: pass                     #None
+  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName, IgnorePrintAreas) -> None: pass  #VBA_Variant
+  def PrintPreview(self, EnableChanges) -> None: pass             #None
+  def Select(self, Replace) -> None: pass   #None
+
+
+
+
+class ColorFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Brightness: float
+    self.Creator: int
+    self.ObjectThemeColor: None     #MsoThemeColorIndex
+    self.Parent: None   #VBA_Object
+    self.RGB: int
+    self.SchemeColor: None          #int | Color
+    self.TintAndShade: float
+    self.Type: None     #MsoColorType
+
+
+
+
+class ColorScale:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AppliesTo: None            #Range
+    self.ColorScaleCriteria: None   #ColorScaleCriteria | ColorScaleCriterion
+    self.Creator: int
+    self.Formula: str
+    self.PTCondition: bool
+    self.Parent: None   #VBA_Object
+    self.Priority: None             #ColorScale
+    self.ScopeType: None            #XlPivotConditionScope
+    self.StopIfTrue: bool
+    self.Type: None     #XlFormatConditionType
+
+  def Delete(self, ) -> None: pass          #None
+  def ModifyAppliesToRange(self, Range) -> None: pass             #None
+  def SetFirstPriority(self, ) -> None: pass                      #None
+  def SetLastPriority(self, ) -> None: pass                       #None
+
+
+
+
+class ColorScaleCriteria:
+  '''just need name'''
+
+  def __init__(self):
+    self.Count: int
+    self.Item: None     #ColorScaleCriterion | ColorScaleCriteria
+
+
+
+
+class ColorScaleCriterion:
+  '''just need name'''
+
+  def __init__(self):
+    self.FormatColor: None          #FormatColor
+    self.Index: int
+    self.Type: None     #XlConditionValueTypes
+    self.Value: None    #VBA_Variant
+
+
+
+
+class Comment:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Author: str
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+    self.Shape: None    #VBA_Object
+    self.Visible: bool
+
+  def Delete(self, ) -> None: pass          #None
+  def Next(self, ) -> None: pass            #Comment
+  def Previous(self, ) -> None: pass        #Comment
+  def Text(self, Text, Start, Overwrite) -> None: pass            #str
+
+
+
+
+class CommentThreaded:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Author: None   #Author | CommentThreaded
+    self.Creator: int
+    self.Date: None     #VBA_Variant
+    self.Parent: None   #VBA_Object
+    self.Replies: None  #CommentsThreaded
+
+  def AddReply(self, Text) -> None: pass    #CommentThreaded
+  def Delete(self, ) -> None: pass          #None
+  def Next(self, ) -> None: pass            #CommentThreaded
+  def Previous(self, ) -> None: pass        #CommentThreaded
+  def Text(self, Text, Start, Overwrite) -> None: pass            #str
+
+
+
+
+class Comments:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Item(self, Index) -> None: pass       #Comment
+
+
+
+
+class CommentsThreaded:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Item(self, Index) -> None: pass       #CommentThreaded
+
+
+
+
+class Connections:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Name, Description, ConnectionString, CommandText, lCmdtype, CreateModelConnection, ImportRelationships) -> None: pass                     #WorkbookConnection
+  def AddFromFile(self, FileName, CreateModelConnection, ImportRelationships) -> None: pass                   #WorkbookConnection
+  def Item(self, Index) -> None: pass       #WorkbookConnection
+
+
+
+
+class ConnectorFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.BeginConnected: None       #MsoTriState
+    self.BeginConnectedShape: None  #Shape
+    self.BeginConnectionSite: int
+    self.Creator: int
+    self.EndConnected: None         #MsoTriState
+    self.EndConnectedShape: None    #Shape
+    self.EndConnectionSite: int
+    self.Parent: None   #VBA_Object
+    self.Type: None     #MsoConnectorType
+
+  def BeginConnect(self, ConnectedShape, ConnectionSite) -> None: pass                  #None
+  def BeginDisconnect(self, ) -> None: pass                       #None
+  def EndConnect(self, ConnectedShape, ConnectionSite) -> None: pass                    #None
+  def EndDisconnect(self, ) -> None: pass   #None
+
+
+
+
+class ControlFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.DropDownLines: int
+    self.Enabled: bool
+    self.LargeChange: int
+    self.LinkedCell: str
+    self.ListCount: int
+    self.ListFillRange: str
+    self.ListIndex: int
+    self.LockedText: bool
+    self.Max: int
+    self.Min: int
+    self.MultiSelect: None          #constants | xlNone | xlSimple | xlExtended | int
+    self.Parent: None   #VBA_Object
+    self.PrintObject: bool
+    self.SmallChange: int
+    self.Value: int
+
+  def AddItem(self, Text, Index) -> None: pass                    #None
+  def List(self, Index) -> None: pass       #VBA_Variant
+  def RemoveAllItems(self, ) -> None: pass  #None
+  def RemoveItem(self, Index, Count) -> None: pass                #None
+
+
+
+
+class CubeField:
+  '''just need name'''
+
+  def __init__(self):
+    self.AllItemsVisible: bool
+    self.Application: None          #Application
+    self.Caption: str
+    self.Creator: int
+    self.CubeFieldSubType: None     #VBA_Object
+    self.CubeFieldType: None        #XlCubeFieldType
+    self.CurrentPageName: str
+    self.DragToColumn: bool
+    self.DragToData: bool
+    self.DragToHide: bool
+    self.DragToPage: bool
+    self.DragToRow: bool
+    self.EnableMultiplePageItems: bool
+    self.FlattenHierarchies: bool
+    self.HasMemberProperties: bool
+    self.HierarchizeDistinct: bool
+    self.IncludeNewItemsInFilter: None          #IncludeNewItemsInFilter
+    self.IsDate: bool
+    self.LayoutForm: None           #XlLayoutFormType
+    self.LayoutSubtotalLocation: None           #XlSubtotalLocationType
+    self.Name: str
+    self.Orientation: None          #XlPivotFieldOrientation
+    self.Parent: None   #VBA_Object
+    self.PivotFields: None          #PivotFields
+    self.Position: int
+    self.ShowInFieldList: bool
+    self.TreeviewControl: None      #TreeviewControl | CubeField
+    self.Value: str
+
+  def AddMemberPropertyField(self, Property, PropertyOrder, PropertyDisplayedIn) -> None: pass                #None
+  def AutoGroup(self, Orientation, Position) -> None: pass        #None
+  def ClearManualFilter(self, ) -> None: pass                     #None
+  def CreatePivotFields(self, ) -> None: pass                     #None
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class CubeFields:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def AddSet(self, Name, Caption) -> None: pass                   #CubeField
+  def GetMeasure(self, AttributeHierarchy, Function, Caption) -> None: pass             #CUBEFIELD
+
+
+
+
+class CustomProperties:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Name, Value) -> None: pass  #CustomProperty
+
+
+
+
+class CustomProperty:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.Value: None    #__UNKNOWN_TYPE_SEE_DOC__
+
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class CustomView:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.PrintSettings: bool
+    self.RowColSettings: bool
+
+  def Delete(self, ) -> None: pass          #None
+  def Show(self, ) -> None: pass            #None
+
+
+
+
+class CustomViews:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, ViewName, PrintSettings, RowColSettings) -> None: pass                  #CustomView
+  def Item(self, Index) -> None: pass       #CustomView
+
+
+
+
+class DataFeedConnection:
+  '''just need name'''
+
+  def __init__(self):
+    self.AlwaysUseConnectionFile: bool
+    self.Application: None          #APPLICATION
+    self.CommandText: None          #VARIANT
+    self.CommandType: None          #XLCMDTYPE
+    self.Connection: None           #VARIANT
+    self.Creator: None  #XLCREATOR
+    self.EnableRefresh: bool
+    self.Parent: None   #VBA_Object
+    self.RefreshDate: None          #DATE
+    self.RefreshOnFileOpen: bool
+    self.RefreshPeriod: int
+    self.Refreshing: bool
+    self.SavePassword: bool
+    self.ServerCredentialsMethod: None          #XLCREDENTIALSMETHOD
+    self.SourceConnectionFile: None             #STRING
+    self.SourceDataFile: None       #STRING
+
+  def CancelRefresh(self, ) -> None: pass   #None
+  def Refresh(self, ) -> None: pass         #None
+  def SaveAsODC(self, ODCFileName, Description, Keywords) -> None: pass                 #None
+
+
+
+
+class DataLabel:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AutoText: bool
+    self.Caption: str
+    self.Characters: None           #Characters
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Formula: str
+    self.FormulaLocal: str
+    self.FormulaR1C1: str
+    self.FormulaR1C1Local: str
+    self.Height: float
+    self.HorizontalAlignment: None  #VBA_Variant
+    self.Left: float
+    self.Name: str
+    self.NumberFormat: str
+    self.NumberFormatLinked: bool
+    self.NumberFormatLocal: None    #VBA_Variant
+    self.Orientation: None          #VBA_Variant
+    self.Parent: None   #VBA_Object
+    self.Position: None             #XlDataLabelPosition
+    self.ReadingOrder: None         #XlReadingOrder | xlRTL | xlLTR | xlContext | int
+    self.Separator: None            #VBA_Variant
+    self.Shadow: bool
+    self.ShowBubbleSize: bool
+    self.ShowCategoryName: bool
+    self.ShowLegendKey: bool
+    self.ShowPercentage: bool
+    self.ShowRange: bool
+    self.ShowSeriesName: bool
+    self.ShowValue: bool
+    self.Text: str
+    self.Top: float
+    self.VerticalAlignment: None    #VBA_Variant
+    self.Width: float
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class DataLabels:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AutoText: bool
+    self.Count: int
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.HorizontalAlignment: None  #VBA_Variant
+    self.Name: str
+    self.NumberFormat: str
+    self.NumberFormatLinked: bool
+    self.NumberFormatLocal: None    #VBA_Variant
+    self.Orientation: None          #VBA_Variant
+    self.Parent: None   #VBA_Object
+    self.Position: None             #XlDataLabelPosition
+    self.ReadingOrder: None         #XlReadingOrder | xlRTL | xlLTR | xlContext | int
+    self.Separator: None            #VBA_Variant
+    self.Shadow: bool
+    self.ShowBubbleSize: bool
+    self.ShowCategoryName: bool
+    self.ShowLegendKey: bool
+    self.ShowPercentage: bool
+    self.ShowRange: bool
+    self.ShowSeriesName: bool
+    self.ShowValue: bool
+    self.VerticalAlignment: None    #VBA_Variant
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Item(self, Index) -> None: pass       #DataLabel
+  def Propagate(self, Index) -> None: pass  #None
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class DataTable:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Border: None   #VBA_Object
+    self.Creator: int
+    self.Font: None     #VBA_Object
+    self.Format: None   #ChartFormat
+    self.HasBorderHorizontal: bool
+    self.HasBorderOutline: bool
+    self.HasBorderVertical: bool
+    self.Parent: None   #VBA_Object
+    self.ShowLegendKey: bool
+
+  def Delete(self, ) -> None: pass          #None
+  def Select(self, ) -> None: pass          #None
+
+
+
+
+class DefaultWebOptions:
+  '''just need name'''
+
+  def __init__(self):
+    self.AllowPNG: bool
+    self.AlwaysSaveInDefaultEncoding: bool
+    self.Application: None          #Application
+    self.CheckIfOfficeIsHTMLEditor: bool
+    self.Creator: int
+    self.DownloadComponents: bool
+    self.Encoding: None             #MsoEncoding
+    self.FolderSuffix: str
+    self.Fonts: None    #WebPageFonts
+    self.LoadPictures: bool
+    self.LocationOfComponents: str
+    self.OrganizeInFolder: bool
+    self.Parent: None   #VBA_Object
+    self.PixelsPerInch: int
+    self.RelyOnCSS: bool
+    self.RelyOnVML: bool
+    self.SaveHiddenData: bool
+    self.SaveNewWebPagesAsWebArchives: bool
+    self.ScreenSize: None           #MsoScreenSize
+    self.TargetBrowser: None        #MsoTargetBrowser
+    self.UpdateLinksOnSave: bool
+    self.UseLongFileNames: bool
+
+
+
+
+class Dialog:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Show(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass       #bool
+
+
+
+
+class Dialogs:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+
+
+
+class DisplayFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.AddIndent: None            #VBA_Variant
+    self.Application: None          #Application
+    self.Borders: None  #Borders
+    self.Characters: None           #Characters
+    self.Creator: int
+    self.Font: None     #Font
+    self.FormulaHidden: None        #VBA_Variant
+    self.HorizontalAlignment: None  #VBA_Variant
+    self.IndentLevel: None          #VBA_Variant
+    self.Interior: None             #Interior
+    self.Locked: None   #VBA_Variant
+    self.MergeCells: None           #VBA_Variant
+    self.NumberFormat: None         #VBA_Variant
+    self.NumberFormatLocal: None    #VBA_Variant
+    self.Orientation: None          #VBA_Variant
+    self.Parent: None   #VBA_Object
+    self.ReadingOrder: int
+    self.ShrinkToFit: None          #VBA_Variant
+    self.Style: None    #VBA_Variant
+    self.VerticalAlignment: None    #VBA_Variant
+    self.WrapText: None             #VBA_Variant
+
+
+
+
+class DisplayUnitLabel:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Caption: str
+    self.Characters: None           #Characters
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Formula: str
+    self.FormulaLocal: str
+    self.FormulaR1C1: str
+    self.FormulaR1C1Local: str
+    self.Height: float
+    self.HorizontalAlignment: None  #VBA_Variant
+    self.Left: float
+    self.Name: str
+    self.Orientation: None          #VBA_Variant
+    self.Parent: None   #VBA_Object
+    self.Position: None             #XlChartElementPosition
+    self.ReadingOrder: None         #XlReadingOrder | xlRTL | xlLTR | xlContext | int
+    self.Shadow: bool
+    self.Text: str
+    self.Top: float
+    self.VerticalAlignment: None    #VBA_Variant
+    self.Width: float
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class DownBars:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Name: str
+    self.Parent: None   #VBA_Object
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class DropLines:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Border: None   #VBA_Object
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Name: str
+    self.Parent: None   #VBA_Object
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class Error:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Ignore: bool
+    self.Parent: None   #VBA_Object
+    self.Value: bool
+
+
+
+
+class ErrorBars:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Border: None   #VBA_Object
+    self.Creator: int
+    self.EndStyle: None             #XlEndStyleCap | xlCap | xlNoCap | int
+    self.Format: None   #ChartFormat
+    self.Name: str
+    self.Parent: None   #VBA_Object
+
+  def ClearFormats(self, ) -> None: pass    #VBA_Variant
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class ErrorCheckingOptions:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.BackgroundChecking: bool
+    self.Creator: int
+    self.EmptyCellReferences: bool
+    self.EvaluateToError: bool
+    self.InconsistentFormula: bool
+    self.InconsistentTableFormula: bool
+    self.IndicatorColorIndex: None  #XlColorIndex
+    self.ListDataValidation: bool
+    self.NumberAsText: bool
+    self.OmittedCells: bool
+    self.Parent: None   #VBA_Object
+    self.TextDate: bool
+    self.UnlockedFormulaCells: bool
+
+
+
+
+class Errors:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Item: None     #Error
+    self.Parent: None   #VBA_Object
+
+
+
+
+class FileExportConverter:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Description: str
+    self.Extensions: str
+    self.FileFormat: None           #FileExportConverter
+    self.Parent: None   #VBA_Object | FileExportConverter
+
+
+
+
+class FileExportConverters:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #FileExportConverter
+    self.Parent: None   #VBA_Object | FileExportConverters
+
+
+
+
+class FillFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.BackColor: None            #ColorFormat
+    self.Creator: int
+    self.ForeColor: None            #ColorFormat
+    self.GradientAngle: float
+    self.GradientColorType: None    #MsoGradientColorType
+    self.GradientDegree: float
+    self.GradientStops: None        #VBA_Object
+    self.GradientStyle: None        #MsoGradientStyle
+    self.GradientVariant: int
+    self.Parent: None   #VBA_Object
+    self.Pattern: None  #MsoPatternType
+    self.PictureEffects: None       #VBA_Object
+    self.PresetGradientType: None   #MsoPresetGradientType
+    self.PresetTexture: None        #MsoPresetTexture
+    self.RotateWithObject: None     #MsoTriState
+    self.TextureAlignment: None     #FillFormat
+    self.TextureHorizontalScale: float
+    self.TextureName: str
+    self.TextureOffsetX: float
+    self.TextureOffsetY: float
+    self.TextureTile: None          #MsoTriState
+    self.TextureType: None          #MsoTextureType
+    self.TextureVerticalScale: float
+    self.Transparency: float
+    self.Type: None     #MsoFillType
+    self.Visible: None  #MsoTriState
+
+  def OneColorGradient(self, Style, Variant, Degree) -> None: pass                      #None
+  def Patterned(self, Pattern) -> None: pass                      #None
+  def PresetGradient(self, Style, Variant, PresetGradientType) -> None: pass            #None
+  def PresetTextured(self, PresetTexture) -> None: pass           #None
+  def Solid(self, ) -> None: pass           #None
+  def TwoColorGradient(self, Style, Variant) -> None: pass        #None
+  def UserPicture(self, PictureFile) -> None: pass                #None
+  def UserTextured(self, TextureFile) -> None: pass               #None
+
+
+
+
+class Filter:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Criteria1: None            #VBA_Variant
+    self.Criteria2: None            #VBA_Variant
+    self.On: bool
+    self.Operator: None             #XlAutoFilterOperator
+    self.Parent: None   #VBA_Object
+
+
+
+
+class Filters:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+
+
+
+class Floor:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.PictureType: None          #VBA_Variant
+    self.Thickness: int
+
+  def ClearFormats(self, ) -> None: pass    #VBA_Variant
+  def Paste(self, ) -> None: pass           #None
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class Font:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Background: None           #VBA_Variant
+    self.Bold: None     #VBA_Variant
+    self.Color: None    #VBA_Variant
+    self.ColorIndex: None           #VBA_Variant
+    self.Creator: int
+    self.FontStyle: str
+    self.Italic: bool
+    self.Name: None     #VBA_Variant
+    self.Parent: None   #VBA_Object
+    self.Size: None     #VBA_Variant
+    self.Strikethrough: bool
+    self.Subscript: None            #VBA_Variant
+    self.Superscript: None          #VBA_Variant
+    self.ThemeColor: None           #VBA_Variant
+    self.ThemeFont: None            #XlThemeFont
+    self.TintAndShade: float
+    self.Underline: None            #VBA_Variant
+
+
+
+
+class FormatColor:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Color: None    #FormatColor | RGB
+    self.ColorIndex: None           #XlColorIndex
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+    self.ThemeColor: None           #XlThemeColor
+    self.TintAndShade: float
+
+
+
+
+class FormatCondition:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AppliesTo: None            #Range
+    self.Borders: None  #Borders
+    self.Creator: int
+    self.DateOperator: None         #FormatCondition
+    self.Font: None     #VBA_Object
+    self.Formula1: str
+    self.Formula2: str
+    self.Interior: None             #Interior
+    self.NumberFormat: None         #VBA_Variant
+    self.Operator: int
+    self.PTCondition: bool
+    self.Parent: None   #VBA_Object
+    self.Priority: None             #FormatCondition
+    self.ScopeType: None            #XlPivotConditionScope
+    self.StopIfTrue: bool
+    self.Text: str
+    self.TextOperator: None         #XlContainsOperator
+    self.Type: int
+
+  def Delete(self, ) -> None: pass          #None
+  def Modify(self, Type, Operator, Formula1, Formula2) -> None: pass                    #None
+  def ModifyAppliesToRange(self, Range) -> None: pass             #None
+  def SetFirstPriority(self, ) -> None: pass                      #None
+  def SetLastPriority(self, ) -> None: pass                       #None
+
+
+
+
+class FormatConditions:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Type, Operator, Formula1, Formula2) -> None: pass                       #FormatCondition
+  def AddAboveAverage(self, ) -> None: pass                       #AboveAverage
+  def AddColorScale(self, ColorScaleType) -> None: pass           #ColorScale
+  def AddDatabar(self, ) -> None: pass      #Databar
+  def AddIconSetCondition(self, ) -> None: pass                   #IconSetCondition
+  def AddTop10(self, ) -> None: pass        #Top10
+  def AddUniqueValues(self, ) -> None: pass                       #UniqueValues
+  def Delete(self, ) -> None: pass          #None
+  def Item(self, Index) -> None: pass       #VBA_Object
+
+
+
+
+class FreeformBuilder:
+  '''just need name'''
+
+  def ConvertToShape(self, ) -> None: pass  #Shape
+
+
+
+
+class Graphic:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Brightness: float
+    self.ColorType: None            #MsoPictureColorType
+    self.Contrast: float
+    self.Creator: int
+    self.CropBottom: float
+    self.CropLeft: float
+    self.CropRight: float
+    self.CropTop: float
+    self.Filename: str
+    self.Height: float
+    self.LockAspectRatio: None      #MsoTriState
+    self.Parent: None   #VBA_Object
+    self.Width: float
+
+
+
+
+class Gridlines:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Border: None   #VBA_Object
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Name: str
+    self.Parent: None   #VBA_Object
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class GroupShapes:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+    self.Range: None    #ShapeRange | Shapes
+
+  def Item(self, Index) -> None: pass       #Shape
+
+
+
+
+class HPageBreak:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Extent: int
+    self.Location: None             #Range
+    self.Parent: None   #VBA_Object
+    self.Type: None     #XlPageBreak
+
+  def Delete(self, ) -> None: pass          #None
+  def DragOff(self, Direction, RegionIndex) -> None: pass         #None
+
+
+
+
+class HPageBreaks:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Before) -> None: pass       #HPageBreak
+
+
+
+
+class HiLoLines:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Border: None   #VBA_Object
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Name: str
+    self.Parent: None   #VBA_Object
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class Hyperlink:
+  '''just need name'''
+
+  def __init__(self):
+    self.Address: str
+    self.Application: None          #Application
+    self.Creator: int
+    self.EmailSubject: str
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.Range: None    #VBA_Object
+    self.ScreenTip: str
+    self.Shape: None    #VBA_Object
+    self.SubAddress: str
+    self.TextToDisplay: str
+    self.Type: int
+
+  def AddToFavorites(self, ) -> None: pass  #None
+  def CreateNewDocument(self, FileName, EditNow, Overwrite) -> None: pass               #None
+  def Delete(self, ) -> None: pass          #None
+  def Follow(self, NewWindow, AddHistory, ExtraInfo, Method, HeaderInfo) -> None: pass  #None
+
+
+
+
+class Hyperlinks:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Anchor, Address, SubAddress, ScreenTip, TextToDisplay) -> None: pass    #Hyperlink
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class Icon:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Index: None    #int | Icon | IconSet
+    self.Parent: None   #VBA_Object
+
+
+
+
+class IconCriteria:
+  '''just need name'''
+
+  def __init__(self):
+    self.Count: int
+    self.Item: None     #IconCriterion | IconCriteria
+
+
+
+
+class IconCriterion:
+  '''just need name'''
+
+  def __init__(self):
+    self.Icon: None     #IconCriterion | IconSet
+    self.Index: int
+    self.Operator: None             #XlFormatConditionOperator
+    self.Type: None     #XlConditionValueTypes
+    self.Value: None    #VBA_Variant
+
+
+
+
+class IconSet:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.ID: None       #XlIconSet
+    self.Item: None     #Icon
+    self.Parent: None   #VBA_Object
+
+
+
+
+class IconSetCondition:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AppliesTo: None            #Range
+    self.Creator: int
+    self.Formula: str
+    self.IconCriteria: None         #IconCriteria
+    self.IconSet: None  #IconSets
+    self.PTCondition: bool
+    self.Parent: None   #VBA_Object
+    self.PercentileValues: bool
+    self.Priority: None             #IconSetCondition
+    self.ReverseOrder: bool
+    self.ScopeType: None            #XlPivotConditionScope
+    self.ShowIconOnly: bool
+    self.StopIfTrue: bool
+    self.Type: None     #XlFormatConditionType
+
+  def Delete(self, ) -> None: pass          #None
+  def ModifyAppliesToRange(self, Range) -> None: pass             #None
+  def SetFirstPriority(self, ) -> None: pass                      #None
+  def SetLastPriority(self, ) -> None: pass                       #None
+
+
+
+
+class IconSets:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #IconSet | IconSets
+    self.Parent: None   #VBA_Object
+
+
+
+
+class Interior:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Color: None    #VBA_Variant
+    self.ColorIndex: None           #VBA_Variant
+    self.Creator: int
+    self.Gradient: None             #VBA_Object
+    self.InvertIfNegative: None     #VBA_Variant
+    self.Parent: None   #VBA_Object
+    self.Pattern: None  #VBA_Variant
+    self.PatternColor: None         #VBA_Variant
+    self.PatternColorIndex: None    #XlColorIndex | xlColorIndexAutomatic | xlColorIndexNone | int
+    self.PatternThemeColor: None    #VBA_Variant
+    self.PatternTintAndShade: None  #VBA_Variant
+    self.ThemeColor: None           #VBA_Variant
+    self.TintAndShade: float
+
+
+
+
+class LeaderLines:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Border: None   #VBA_Object
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Parent: None   #VBA_Object
+
+  def Delete(self, ) -> None: pass          #None
+  def Select(self, ) -> None: pass          #None
+
+
+
+
+class Legend:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Height: float
+    self.IncludeInLayout: bool
+    self.Left: float
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.Position: None             #XlLegendPosition
+    self.Shadow: bool
+    self.Top: float
+    self.Width: float
+
+  def Clear(self, ) -> None: pass           #VBA_Variant
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def LegendEntries(self, Index) -> None: pass                    #VBA_Object
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class LegendEntries:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Item(self, Index) -> None: pass       #LegendEntry
+
+
+
+
+class LegendEntry:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Font: None     #VBA_Object
+    self.Format: None   #ChartFormat
+    self.Height: float
+    self.Index: int
+    self.Left: float
+    self.LegendKey: None            #VBA_Object
+    self.Parent: None   #VBA_Object
+    self.Top: float
+    self.Width: float
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class LegendKey:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Height: float
+    self.InvertIfNegative: bool
+    self.Left: float
+    self.MarkerBackgroundColor: None            #RGB | int
+    self.MarkerBackgroundColorIndex: None       #XlColorIndex | xlColorIndexAutomatic | xlColorIndexNone | int
+    self.MarkerForegroundColor: None            #RGB | int
+    self.MarkerForegroundColorIndex: None       #XlColorIndex | xlColorIndexAutomatic | xlColorIndexNone | int
+    self.MarkerSize: None           #points | int
+    self.MarkerStyle: None          #XlMarkerStyle
+    self.Parent: None   #VBA_Object
+    self.PictureType: None          #XlChartPictureType
+    self.PictureUnit2: float
+    self.Shadow: bool
+    self.Smooth: bool
+    self.Top: float
+    self.Width: float
+
+  def ClearFormats(self, ) -> None: pass    #VBA_Variant
+  def Delete(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class LineFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.BackColor: None            #ColorFormat
+    self.BeginArrowheadLength: None             #MsoArrowheadLength
+    self.BeginArrowheadStyle: None  #MsoArrowheadStyle
+    self.BeginArrowheadWidth: None  #MsoArrowheadWidth
+    self.Creator: int
+    self.DashStyle: None            #MsoLineDashStyle | int
+    self.EndArrowheadLength: None   #MsoArrowheadLength
+    self.EndArrowheadStyle: None    #MsoArrowheadStyle
+    self.EndArrowheadWidth: None    #MsoArrowheadWidth
+    self.ForeColor: None            #ColorFormat
+    self.InsetPen: None             #MsoTriState
+    self.Parent: None   #VBA_Object
+    self.Pattern: None  #MsoPatternType
+    self.Style: None    #MsoLineStyle
+    self.Transparency: float
+    self.Visible: None  #MsoTriState
+    self.Weight: float
+
+
+
+
+class LinkFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AutoUpdate: bool
+    self.Creator: int
+    self.Locked: bool
+    self.Parent: None   #VBA_Object
+
+  def Update(self, ) -> None: pass          #None
+
+
+
+
+class ListColumn:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.DataBodyRange: None        #Range
+    self.Index: int
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.Range: None    #VBA_Object
+    self.Total: None    #ListColumn
+    self.TotalsCalculation: None    #XlTotalsCalculation
+    self.XPath: None    #XPath | Range
+
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class ListColumns:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Position) -> None: pass     #ListColumn
+
+
+
+
+class ListObject:
+  '''just need name'''
+
+  def __init__(self):
+    self.Active: bool
+    self.AlternativeText: str
+    self.Application: None          #Application
+    self.AutoFilter: None           #VBA_Object
+    self.Comment: str
+    self.Creator: int
+    self.DataBodyRange: None        #Range
+    self.DisplayName: str
+    self.DisplayRightToLeft: bool
+    self.HeaderRowRange: None       #Range
+    self.InsertRowRange: None       #Range
+    self.ListColumns: None          #ListColumns | ListObject
+    self.ListRows: None             #ListRows | ListObject
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.QueryTable: None           #QueryTable | ListObject
+    self.Range: None    #VBA_Object
+    self.SharePointURL: str
+    self.ShowAutoFilter: bool
+    self.ShowAutoFilterDropDown: bool
+    self.ShowHeaders: bool
+    self.ShowTableStyleColumnStripes: bool
+    self.ShowTableStyleFirstColumn: bool
+    self.ShowTableStyleLastColumn: bool
+    self.ShowTableStyleRowStripes: bool
+    self.ShowTotals: bool
+    self.Slicers: None  #SLICERS
+    self.Sort: None     #ListObject
+    self.SourceType: None           #XlListObjectSourceType
+    self.Summary: str
+    self.TableObject: None          #TABLEOBJECT
+    self.TableStyle: None           #VBA_Variant
+    self.TotalsRowRange: None       #Range | ListObject
+    self.XmlMap: None   #XmlMap
+
+  def Delete(self, ) -> None: pass          #None
+  def ExportToVisio(self, ) -> None: pass   #None
+  def Publish(self, Target, LinkSource) -> None: pass             #str
+  def Refresh(self, ) -> None: pass         #None
+  def Resize(self, Range) -> None: pass     #None
+  def Unlink(self, ) -> None: pass          #None
+  def Unlist(self, ) -> None: pass          #None
+
+
+
+
+class ListObjects:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, SourceType, Source, LinkSource, XlListObjectHasHeaders, Destination, TableStyleName) -> None: pass                  #ListObject
+
+
+
+
+class ListRow:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Index: int
+    self.Parent: None   #VBA_Object
+    self.Range: None    #VBA_Object
+
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class ListRows:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Position, AlwaysInsert) -> None: pass             #ListRow
+
+
+
+
+class Model:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #APPLICATION
+    self.Creator: None  #XLCREATOR
+    self.DataModelConnection: None  #WORKBOOKCONNECTION
+    self.ModelFormatBoolean: None   #ModelFormatBoolean | bool
+    self.ModelFormatCurrency: None  #ModelFormatCurrency | currency
+    self.ModelFormatDate: None      #ModelFormatDate | Date
+    self.ModelFormatDecimalNumber: None         #ModelFormatDecimalNumber
+    self.ModelFormatGeneral: None   #ModelFormatGeneral | general
+    self.ModelFormatPercentageNumber: None      #ModelFormatPercentageNumber
+    self.ModelFormatScientificNumber: None      #ModelFormatScientificNumber
+    self.ModelFormatWholeNumber: None           #ModelFormatWholeNumber
+    self.ModelMeasures: None        #ModelMeasures
+    self.ModelRelationships: None   #MODELRELATIONSHIPS
+    self.ModelTables: None          #MODELTABLES
+    self.Name: None     #STRING
+    self.Parent: None   #VBA_Object
+
+  def AddConnection(self, ConnectionToDataSource) -> None: pass   #WORKBOOKCONNECTION
+  def CreateModelWorkbookConnection(self, ModelTable) -> None: pass                     #WORKBOOKCONNECTION
+  def Initialize(self, ) -> None: pass      #None
+  def Refresh(self, ) -> None: pass         #None
+
+
+
+
+class Model3DFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #VBA_Object
+    self.AutoFit: None  #Model3DFormat
+    self.CameraPositionX: float
+    self.CameraPositionY: float
+    self.CameraPositionZ: float
+    self.Creator: int
+    self.FieldOfView: float
+    self.LookAtPointX: float
+    self.LookAtPointY: float
+    self.LookAtPointZ: float
+    self.Parent: None   #VBA_Object
+    self.RotationX: float
+    self.RotationY: float
+    self.RotationZ: float
+
+  def IncrementRotationX(self, Increment) -> None: pass           #None
+  def IncrementRotationY(self, Increment) -> None: pass           #None
+  def IncrementRotationZ(self, Increment) -> None: pass           #None
+  def ResetModel(self, ResetSize) -> None: pass                   #None
+
+
+
+
+class ModelFormatBoolean:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+
+
+
+class ModelFormatCurrency:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.DecimalPlaces: int
+    self.Parent: None   #VBA_Object
+    self.Symbol: str
+
+
+
+
+class ModelFormatDate:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.FormatString: str
+    self.Parent: None   #VBA_Object
+
+
+
+
+class ModelFormatDecimalNumber:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.DecimalPlaces: int
+    self.Parent: None   #VBA_Object
+    self.UseThousandSeparator: bool
+
+
+
+
+class ModelFormatGeneral:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+
+
+
+class ModelFormatPercentageNumber:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.DecimalPlaces: int
+    self.Parent: None   #VBA_Object
+    self.UseThousandSeparator: bool
+
+
+
+
+class ModelFormatScientificNumber:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.DecimalPlaces: int
+    self.Parent: None   #VBA_Object
+
+
+
+
+class ModelFormatWholeNumber:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+    self.UseThousandSeparator: bool
+
+
+
+
+class ModelMeasure:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AssociatedTable: None      #ModelTable
+    self.Creator: int
+    self.Description: str
+    self.FormatInformation: None    #VBA_Variant
+    self.Formula: str
+    self.Name: str
+    self.Parent: None   #VBA_Object
+
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class ModelMeasures:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, MeasureName, AssociatedTable, Formula, FormatInformation, Description) -> None: pass          #ModelMeasure
+  def Item(self, Index) -> None: pass       #ModelMeasure
+
+
+
+
+class ModelRelationship:
+  '''just need name'''
+
+  def __init__(self):
+    self.Active: bool
+    self.Application: None          #APPLICATION
+    self.Creator: None  #XLCREATOR
+    self.ForeignKeyColumn: None     #MODELTABLECOLUMN
+    self.ForeignKeyTable: None      #MODELTABLE
+    self.Parent: None   #VBA_Object
+    self.PrimaryKeyColumn: None     #MODELTABLECOLUMN
+    self.PrimaryKeyTable: None      #MODELTABLE
+
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class ModelRelationships:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #APPLICATION
+    self.Count: int
+    self.Creator: None  #XLCREATOR
+    self.Parent: None   #VBA_Object
+
+  def Add(self, ForeignKeyColumn, PrimaryKeyColumn) -> None: pass                       #MODELRELATIONSHIP
+  def DetectRelationships(self, PivotTable) -> None: pass         #None
+  def Item(self, Index) -> None: pass       #ModelRelationship
+
+
+
+
+class ModelTable:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #APPLICATION
+    self.Creator: None  #XLCREATOR
+    self.ModelTableColumns: None    #MODELTABLECOLUMNS
+    self.Name: None     #STRING
+    self.Parent: None   #VBA_Object
+    self.RecordCount: int
+    self.SourceName: None           #STRING
+    self.SourceWorkbookConnection: None         #WORKBOOKCONNECTION
+
+  def Refresh(self, ) -> None: pass         #None
+
+
+
+
+class ModelTableColumn:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #APPLICATION
+    self.Creator: None  #XLCREATOR
+    self.DataType: int
+    self.Name: None     #STRING
+    self.Parent: None   #VBA_Object
+
+
+
+
+class ModelTableColumns:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #APPLICATION
+    self.Count: int
+    self.Creator: None  #XLCREATOR
+    self.Parent: None   #VBA_Object
+
+  def Item(self, Index) -> None: pass       #MODELTABLECOLUMN
+
+
+
+
+class ModelTables:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #APPLICATION
+    self.Count: int
+    self.Creator: None  #XLCREATOR
+    self.Parent: None   #VBA_Object
+
+  def Item(self, Index) -> None: pass       #MODELTABLE
+
+
+
+
+class MultiThreadedCalculation:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Enabled: None  #Enabled | MultiThreadedCalculation
+    self.Parent: None   #VBA_Object
+    self.ThreadCount: None          #MultiThreadedCalculation
+    self.ThreadMode: None           #XlThreadMode
+
+
+
+
+class Name:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Category: str
+    self.CategoryLocal: str
+    self.Comment: str
+    self.Creator: int
+    self.Index: int
+    self.MacroType: None            #XlXLMMacroType
+    self.Name: str
+    self.NameLocal: str
+    self.Parent: None   #VBA_Object
+    self.RefersTo: str
+    self.RefersToLocal: str
+    self.RefersToR1C1: str
+    self.RefersToR1C1Local: str
+    self.RefersToRange: None        #Range | Name
+    self.ShortcutKey: str
+    self.ValidWorkbookParameter: bool
+    self.Value: str
+    self.Visible: bool
+    self.WorkbookParameter: bool
+
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class Names:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Name, RefersTo, Visible, MacroType, ShortcutKey, Category, NameLocal, RefersToLocal, CategoryLocal, RefersToR1C1, RefersToR1C1Local) -> None: pass              #Name
+  def Item(self, Index, IndexLocal, RefersTo) -> None: pass       #Name
+
+
+
+
+class ODBCError:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.ErrorString: str
+    self.Parent: None   #VBA_Object
+    self.SqlState: str
+
+
+
+
+class ODBCErrors:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Item(self, Index) -> None: pass       #ODBCError
+
+
+
+
+class OLEDBError:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.ErrorString: str
+    self.Native: int
+    self.Number: int
+    self.Parent: None   #VBA_Object
+    self.SqlState: str
+    self.Stage: int
+
+
+
+
+class OLEDBErrors:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Item(self, Index) -> None: pass       #OLEDBError
+
+
+
+
+class OLEFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Object: None   #VBA_Object
+    self.Parent: None   #VBA_Object
+    self.progID: str
+
+  def Activate(self, ) -> None: pass        #None
+  def Verb(self, Verb) -> None: pass        #None
+
+
+
+
+class Outline:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AutomaticStyles: bool
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+    self.SummaryColumn: None        #XlSummaryColumn
+    self.SummaryRow: None           #XlSummaryRow
+
+  def ShowLevels(self, RowLevels, ColumnLevels) -> None: pass     #VBA_Variant
+
+
+
+
+class Page:
+  '''just need name'''
+
+  def __init__(self):
+    self.CenterFooter: None         #Page
+    self.CenterHeader: None         #Page
+    self.LeftFooter: None           #Page
+    self.LeftHeader: None           #Page
+    self.RightFooter: None          #Page
+    self.RightHeader: None          #Page
+
+
+
+
+class PageSetup:
+  '''just need name'''
+
+  def __init__(self):
+    self.AlignMarginsHeaderFooter: bool
+    self.Application: None          #Application
+    self.BlackAndWhite: bool
+    self.BottomMargin: float
+    self.CenterFooter: str
+    self.CenterFooterPicture: None  #VBA_Object
+    self.CenterHeader: str
+    self.CenterHeaderPicture: None  #VBA_Object
+    self.CenterHorizontally: bool
+    self.CenterVertically: bool
+    self.Creator: int
+    self.DifferentFirstPageHeaderFooter: bool
+    self.Draft: bool
+    self.EvenPage: None             #PageSetup
+    self.FirstPage: None            #PageSetup
+    self.FirstPageNumber: None      #xlAutomatic | Constants | int
+    self.FitToPagesTall: None       #VBA_Variant
+    self.FitToPagesWide: None       #VBA_Variant
+    self.FooterMargin: float
+    self.HeaderMargin: float
+    self.LeftFooter: None           #PageSetup
+    self.LeftFooterPicture: None    #VBA_Object
+    self.LeftHeader: None           #PageSetup
+    self.LeftHeaderPicture: None    #VBA_Object
+    self.LeftMargin: float
+    self.OddAndEvenPagesHeaderFooter: bool
+    self.Order: None    #XlOrder
+    self.Orientation: None          #XlPageOrientation
+    self.Pages: None    #Pages
+    self.PaperSize: None            #XlPaperSize
+    self.Parent: None   #VBA_Object
+    self.PrintArea: str
+    self.PrintComments: None        #XlPrintLocation
+    self.PrintErrors: None          #XlPrintErrors
+    self.PrintGridlines: bool
+    self.PrintHeadings: bool
+    self.PrintNotes: bool
+    self.PrintQuality: None         #VBA_Variant
+    self.PrintTitleColumns: str
+    self.PrintTitleRows: str
+    self.RightFooter: str
+    self.RightFooterPicture: None   #VBA_Object
+    self.RightHeader: str
+    self.RightHeaderPicture: None   #VBA_Object
+    self.RightMargin: float
+    self.ScaleWithDocHeaderFooter: bool
+    self.TopMargin: float
+    self.Zoom: None     #VBA_Variant
+
+
+
+
+class Pages:
+  '''just need name'''
+
+  def __init__(self):
+    self.Count: int
+    self.Item: None     #Page
+
+
+
+
+class Pane:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Index: int
+    self.Parent: None   #VBA_Object
+    self.ScrollColumn: int
+    self.ScrollRow: int
+    self.VisibleRange: None         #Range
+
+  def Activate(self, ) -> None: pass        #bool
+  def LargeScroll(self, Down, Up, ToRight, ToLeft) -> None: pass  #VBA_Variant
+  def PointsToScreenPixelsX(self, Points) -> None: pass           #int
+  def PointsToScreenPixelsY(self, Points) -> None: pass           #int
+  def ScrollIntoView(self, Left, Top, Width, Height, Start) -> None: pass               #None
+  def SmallScroll(self, Down, Up, ToRight, ToLeft) -> None: pass  #VBA_Variant
+
+
+
+
+class Panes:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+
+
+
+class Parameter:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.DataType: None             #XlParameterDataType
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.PromptString: str
+    self.RefreshOnChange: bool
+    self.SourceRange: None          #Range
+    self.Type: None     #XlParameterType
+    self.Value: None    #VBA_Variant
+
+  def SetParam(self, Type, Value) -> None: pass                   #None
+
+
+
+
+class Parameters:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Name, iDataType) -> None: pass                    #Parameter
+  def Delete(self, ) -> None: pass          #None
+  def Item(self, Index) -> None: pass       #Parameter
+
+
+
+
+class Phonetic:
+  '''just need name'''
+
+  def __init__(self):
+    self.Alignment: int
+    self.Application: None          #Application
+    self.CharacterType: None        #XlPhoneticCharacterType
+    self.Creator: int
+    self.Font: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+    self.Text: str
+    self.Visible: bool
+
+
+
+
+class Phonetics:
+  '''just need name'''
+
+  def __init__(self):
+    self.Alignment: int
+    self.Application: None          #Application
+    self.CharacterType: None        #XlPhoneticCharacterType
+    self.Count: int
+    self.Creator: int
+    self.Font: None     #VBA_Object
+    self.Item: None     #VBA_Object
+    self.Length: int
+    self.Parent: None   #VBA_Object
+    self.Start: int
+    self.Text: str
+    self.Visible: bool
+
+  def Add(self, Start, Length, Text) -> None: pass                #None
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class PictureFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Brightness: float
+    self.ColorType: None            #PictureFormat | MsoPictureColorType
+    self.Contrast: float
+    self.Creator: int
+    self.Crop: None     #Crop | PictureFormat
+    self.CropBottom: float
+    self.CropLeft: float
+    self.CropRight: float
+    self.CropTop: float
+    self.Parent: None   #VBA_Object
+    self.TransparencyColor: None    #TransparentBackground | bool | int
+    self.TransparentBackground: None            #MsoTriState
+
+  def IncrementBrightness(self, Increment) -> None: pass          #None
+  def IncrementContrast(self, Increment) -> None: pass            #None
+
+
+
+
+class PivotAxis:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Parent: None   #PivotAxis
+    self.PivotLines: None           #PivotLines | PivotAxis
+
+
+
+
+class PivotCache:
+  '''just need name'''
+
+  def __init__(self):
+    self.ADOConnection: None        #ADOConnection
+    self.Application: None          #Application
+    self.BackgroundQuery: bool
+    self.CommandText: None          #VBA_Variant
+    self.CommandType: None          #XlCmdType
+    self.Connection: None           #PivotCache | UseLocalConnection | LocalConnection
+    self.Creator: int
+    self.EnableRefresh: bool
+    self.Index: int
+    self.IsConnected: bool
+    self.LocalConnection: str
+    self.MaintainConnection: bool
+    self.MemoryUsed: int
+    self.MissingItemsLimit: None    #XlPivotTableMissingItems
+    self.OLAP: bool
+    self.OptimizeCache: bool
+    self.Parent: None   #VBA_Object
+    self.QueryType: None            #XlQueryType
+    self.RecordCount: int
+    self.Recordset: None            #Recordset
+    self.RefreshDate: None          #Date
+    self.RefreshName: str
+    self.RefreshOnFileOpen: bool
+    self.RefreshPeriod: int
+    self.RobustConnect: None        #XlRobustConnect
+    self.SavePassword: bool
+    self.SourceConnectionFile: str
+    self.SourceData: None           #VBA_Variant
+    self.SourceDataFile: str
+    self.SourceType: None           #XlPivotTableSourceType
+    self.UpgradeOnRefresh: bool
+    self.UseLocalConnection: bool
+    self.Version: None  #XlPivotTableVersionList
+    self.WorkbookConnection: None   #PivotCache
+
+  def CreatePivotChart(self, ChartDestination, XlChartType, Left, Top, Width, Height) -> None: pass           #Shape
+  def CreatePivotTable(self, TableDestination, TableName, ReadData, DefaultVersion) -> None: pass             #PivotTable
+  def MakeConnection(self, ) -> None: pass  #None
+  def Refresh(self, ) -> None: pass         #None
+  def ResetTimer(self, ) -> None: pass      #None
+  def SaveAsODC(self, ODCFileName, Description, Keywords) -> None: pass                 #None
+
+
+
+
+class PivotCaches:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Create(self, SourceType, SourceData, Version) -> None: pass                       #PivotCache
+  def Item(self, Index) -> None: pass       #PivotCache
+
+
+
+
+class PivotCell:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.CellChanged: None          #XlCellChangedState
+    self.ColumnItems: None          #PivotItemList
+    self.Creator: int
+    self.CustomSubtotalFunction: None           #XlConsolidationFunction
+    self.DataField: None            #PivotField
+    self.DataSourceValue: None      #VBA_Variant
+    self.MDX: str
+    self.Parent: None   #VBA_Object
+    self.PivotCellType: None        #XlPivotCellType
+    self.PivotColumnLine: None      #PivotLine
+    self.PivotField: None           #VBA_Object
+    self.PivotItem: None            #VBA_Object
+    self.PivotRowLine: None         #PivotLine
+    self.PivotTable: None           #VBA_Object
+    self.Range: None    #VBA_Object
+    self.RowItems: None             #PivotItemList
+    self.ServerActions: None        #ACTIONS
+
+  def AllocateChange(self, ) -> None: pass  #None
+  def DiscardChange(self, ) -> None: pass   #None
+
+
+
+
+class PivotField:
+  '''just need name'''
+
+  def __init__(self):
+    self.AllItemsVisible: bool
+    self.Application: None          #Application
+    self.AutoShowCount: int
+    self.AutoShowField: str
+    self.AutoShowRange: int
+    self.AutoShowType: int
+    self.AutoSortCustomSubtotal: None           #VBA_Object
+    self.AutoSortField: str
+    self.AutoSortOrder: int
+    self.AutoSortPivotLine: None    #PivotLine
+    self.BaseField: None            #VBA_Variant
+    self.BaseItem: None             #VBA_Variant
+    self.Calculation: None          #XlPivotFieldCalculation
+    self.Caption: str
+    self.ChildField: None           #PivotField
+    self.ChildItems: None           #PivotItem | PivotItems
+    self.Creator: int
+    self.CubeField: None            #CubeField
+    self.CurrentPage: None          #PivotItem
+    self.CurrentPageList: None      #VBA_Variant
+    self.CurrentPageName: str
+    self.DataRange: None            #Range
+    self.DataType: None             #XlPivotFieldDataType
+    self.DatabaseSort: bool
+    self.DisplayAsCaption: None     #VBA_Object
+    self.DisplayAsTooltip: bool
+    self.DisplayInReport: bool
+    self.DragToColumn: bool
+    self.DragToData: bool
+    self.DragToHide: bool
+    self.DragToPage: bool
+    self.DragToRow: bool
+    self.DrilledDown: bool
+    self.EnableItemSelection: bool
+    self.EnableMultiplePageItems: bool
+    self.Formula: str
+    self.Function: None             #XlConsolidationFunction
+    self.GroupLevel: None           #VBA_Object
+    self.Hidden: bool
+    self.HiddenItems: None          #PivotItem | PivotItems
+    self.HiddenItemsList: None      #VBA_Variant
+    self.IncludeNewItemsInFilter: bool
+    self.IsCalculated: bool
+    self.IsMemberProperty: bool
+    self.LabelRange: None           #Range
+    self.LayoutBlankLine: bool
+    self.LayoutCompactRow: bool
+    self.LayoutForm: None           #XlLayoutFormType
+    self.LayoutPageBreak: bool
+    self.LayoutSubtotalLocation: None           #XlSubtotalLocationType
+    self.MemberPropertyCaption: bool
+    self.MemoryUsed: int
+    self.Name: str
+    self.NumberFormat: str
+    self.Orientation: None          #XlPivotFieldOrientation
+    self.Parent: None   #VBA_Object
+    self.ParentField: None          #PivotField
+    self.ParentItems: None          #PivotItem | PivotItems
+    self.PivotFilters: None         #PivotField
+    self.Position: None             #VBA_Variant
+    self.PropertyOrder: int
+    self.PropertyParentField: None  #PivotField
+    self.RepeatLabels: bool
+    self.ServerBased: bool
+    self.ShowAllItems: bool
+    self.ShowDetail: bool
+    self.ShowingInAxis: None        #VBA_Object
+    self.SourceCaption: None        #SourceCaption
+    self.SourceName: str
+    self.StandardFormula: str
+    self.SubtotalName: str
+    self.Subtotals: None            #VBA_Variant
+    self.TotalLevels: int
+    self.UseMemberPropertyAsCaption: bool
+    self.Value: str
+    self.VisibleItems: None         #PivotItem | PivotItems
+    self.VisibleItemsList: None     #VBA_Variant
+
+  def AddPageItem(self, Item, ClearList) -> None: pass            #None
+  def AutoGroup(self, ) -> None: pass       #None
+  def AutoShow(self, Type, Range, Count, Field) -> None: pass     #None
+  def AutoSort(self, Order, Field, PivotLine, CustomSubtotal) -> None: pass             #None
+  def CalculatedItems(self, ) -> None: pass                       #CalculatedItems
+  def ClearAllFilters(self, ) -> None: pass                       #None
+  def ClearLabelFilters(self, ) -> None: pass                     #None
+  def ClearManualFilter(self, ) -> None: pass                     #None
+  def ClearValueFilters(self, ) -> None: pass                     #None
+  def Delete(self, ) -> None: pass          #None
+  def DrillTo(self, PivotFieldName) -> None: pass                 #None
+  def PivotItems(self, Index) -> None: pass                       #VBA_Variant
+
+
+
+
+class PivotFields:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Item(self, Index) -> None: pass       #VBA_Object
+
+
+
+
+class PivotFormula:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Formula: str
+    self.Index: int
+    self.Parent: None   #VBA_Object
+    self.StandardFormula: str
+    self.Value: str
+
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class PivotFormulas:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Formula, UseStandardFormula) -> None: pass        #PivotFormula
+  def Item(self, Index) -> None: pass       #PivotFormula
+
+
+
+
+class PivotItem:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Caption: str
+    self.ChildItems: None           #PivotItem | PivotItems
+    self.Creator: int
+    self.DataRange: None            #Range
+    self.DrilledDown: bool
+    self.Formula: str
+    self.IsCalculated: bool
+    self.LabelRange: None           #Range
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.ParentItem: None           #PivotItem | PivotField
+    self.ParentShowDetail: bool
+    self.Position: int
+    self.RecordCount: int
+    self.ShowDetail: None           #VBA_Variant
+    self.SourceName: None           #VBA_Variant
+    self.SourceNameStandard: str
+    self.StandardFormula: str
+    self.Value: str
+    self.Visible: bool
+
+  def Delete(self, ) -> None: pass          #None
+  def DrillTo(self, PivotItemName) -> None: pass                  #None
+
+
+
+
+class PivotItemList:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Item(self, Index) -> None: pass       #PivotItem
+
+
+
+
+class PivotItems:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Name) -> None: pass         #None
+  def Item(self, Index) -> None: pass       #VBA_Object
+
+
+
+
+class PivotLayout:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+    self.PivotTable: None           #VBA_Object
+
+
+
+
+class PivotLine:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.LineType: None             #XlPivotLineType
+    self.Parent: None   #PivotLine
+    self.PivotLineCells: None       #PivotCell
+    self.PivotLineCellsFull: None   #PIVOTLINECELLS
+    self.Position: None             #PivotLine
+
+
+
+
+class PivotLines:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: None    #PivotLines
+    self.Creator: int
+    self.Item: None     #PivotLines
+    self.Parent: None   #PivotLines
+
+
+
+
+class PivotTable:
+  '''just need name'''
+
+  def __init__(self):
+    self.ActiveFilters: None        #VBA_Object
+    self.Allocation: None           #XlAllocation
+    self.AllocationMethod: None     #XlAllocationMethod
+    self.AllocationValue: None      #XlAllocationValue
+    self.AllocationWeightExpression: None       #PivotTable | AllocationMethod
+    self.AllowMultipleFilters: bool
+    self.AlternativeText: str
+    self.Application: None          #Application
+    self.CacheIndex: int
+    self.CalculatedMembers: None    #CalculatedMembers
+    self.CalculatedMembersInFilters: bool
+    self.ChangeList: None           #PivotTableChangeList
+    self.ColumnFields: None         #PivotField | PivotFields
+    self.ColumnGrand: bool
+    self.ColumnRange: None          #Range
+    self.CompactLayoutColumnHeader: str
+    self.CompactLayoutRowHeader: str
+    self.CompactRowIndent: None     #PivotTable
+    self.Creator: int
+    self.CubeFields: None           #CubeFields | CubeField
+    self.DataBodyRange: None        #Range
+    self.DataFields: None           #PivotField | PivotFields
+    self.DataLabelRange: None       #Range
+    self.DataPivotField: None       #PivotField
+    self.DisplayContextTooltips: bool
+    self.DisplayEmptyColumn: bool
+    self.DisplayEmptyRow: bool
+    self.DisplayErrorString: bool
+    self.DisplayFieldCaptions: None             #PivotTable
+    self.DisplayImmediateItems: bool
+    self.DisplayMemberPropertyTooltips: bool
+    self.DisplayNullString: bool
+    self.EnableDataValueEditing: bool
+    self.EnableDrilldown: bool
+    self.EnableFieldDialog: bool
+    self.EnableFieldList: bool
+    self.EnableWizard: bool
+    self.EnableWriteback: bool
+    self.ErrorString: str
+    self.FieldListSortAscending: bool
+    self.GrandTotalName: str
+    self.HasAutoFormat: bool
+    self.Hidden: bool
+    self.HiddenFields: None         #PivotField | PivotFields
+    self.InGridDropZones: bool
+    self.InnerDetail: str
+    self.LayoutRowDefault: None     #XlLayoutRowType
+    self.Location: None             #str | PivotTable
+    self.MDX: str
+    self.ManualUpdate: bool
+    self.MergeLabels: bool
+    self.Name: str
+    self.NullString: str
+    self.PageFieldOrder: None       #XlOrder | xlDownThenOver | xlOverThenDown | int
+    self.PageFieldStyle: str
+    self.PageFieldWrapCount: int
+    self.PageFields: None           #PivotField | PivotFields
+    self.PageRange: None            #Range
+    self.PageRangeCells: None       #Range
+    self.Parent: None   #VBA_Object
+    self.PivotChart: None           #SHAPE
+    self.PivotColumnAxis: None      #PivotAxis
+    self.PivotFormulas: None        #PivotFormulas
+    self.PivotRowAxis: None         #PivotAxis
+    self.PivotSelection: str
+    self.PivotSelectionStandard: str
+    self.PreserveFormatting: bool
+    self.PrintDrillIndicators: bool
+    self.PrintTitles: bool
+    self.RefreshDate: None          #Date
+    self.RefreshName: str
+    self.RepeatItemsOnEachPrintedPage: bool
+    self.RowFields: None            #PivotField | PivotFields
+    self.RowGrand: bool
+    self.RowRange: None             #Range
+    self.SaveData: bool
+    self.SelectionMode: None        #XlPTSelectionMode
+    self.ShowDrillIndicators: bool
+    self.ShowPageMultipleItemLabel: bool
+    self.ShowTableStyleColumnHeaders: bool
+    self.ShowTableStyleColumnStripes: bool
+    self.ShowTableStyleLastColumn: bool
+    self.ShowTableStyleRowHeaders: bool
+    self.ShowTableStyleRowStripes: bool
+    self.ShowValuesRow: None        #PivotTable
+    self.Slicers: None  #Slicers
+    self.SmallGrid: bool
+    self.SortUsingCustomLists: bool
+    self.SourceData: None           #VBA_Variant
+    self.SubtotalHiddenPageItems: bool
+    self.Summary: None  #PivotTable
+    self.TableRange1: None          #Range
+    self.TableRange2: None          #Range
+    self.TableStyle2: None          #TableStyle2
+    self.Tag: str
+    self.TotalsAnnotation: bool
+    self.VacatedStyle: str
+    self.Value: str
+    self.Version: None  #XlPivotTableVersionList
+    self.ViewCalculatedMembers: bool
+    self.VisibleFields: None        #PivotField | PivotFields
+    self.VisualTotals: bool
+    self.VisualTotalsForSets: bool
+
+  def AddDataField(self, Field, Caption, Function) -> None: pass  #PivotField
+  def AddFields(self, RowFields, ColumnFields, PageFields, AddToTable) -> None: pass    #VBA_Variant
+  def AllocateChanges(self, ) -> None: pass                       #None
+  def CalculatedFields(self, ) -> None: pass                      #CalculatedFields
+  def ChangeConnection(self, conn) -> None: pass                  #None
+  def ChangePivotCache(self, bstr) -> None: pass                  #None
+  def ClearAllFilters(self, ) -> None: pass                       #None
+  def ClearTable(self, ) -> None: pass      #None
+  def CommitChanges(self, ) -> None: pass   #None
+  def ConvertToFormulas(self, ConvertFilters) -> None: pass       #None
+  def CreateCubeFile(self, File, Measures, Levels, Members, Properties) -> None: pass   #str
+  def DiscardChanges(self, ) -> None: pass  #None
+  def DrillDown(self, PivotItem, PivotLine) -> None: pass         #None
+  def DrillTo(self, PivotItem, CubeField, PivotLine) -> None: pass                      #None
+  def DrillUp(self, PivotItem, PivotLine, LevelUniqueName) -> None: pass                #None
+  def GetData(self, Name) -> None: pass     #float
+  def GetPivotData(self, DataField, Field1, Item1, Field2, Item2, Field3, Item3, Field4, Item4, Field5, Item5, Field6, Item6, Field7, Item7, Field8, Item8, Field9, Item9, Field10, Item10, Field11, Item11, Field12, Item12, Field13, Item13, Field14, Item14) -> None: pass                 #Range
+  def ListFormulas(self, ) -> None: pass    #None
+  def PivotCache(self, ) -> None: pass      #PivotCache
+  def PivotFields(self, Index) -> None: pass                      #VBA_Object
+  def PivotSelect(self, Name, Mode, UseStandardName) -> None: pass                      #None
+  def PivotTableWizard(self, SourceType, SourceData, TableDestination, TableName, RowGrand, ColumnGrand, SaveData, HasAutoFormat, AutoPage, Reserved, BackgroundQuery, OptimizeCache, PageFieldOrder, PageFieldWrapCount, ReadData, Connection) -> None: pass           #None
+  def PivotValueCell(self, RowLine, ColumnLine) -> None: pass     #PIVOTVALUECELL
+  def RefreshDataSourceValues(self, ) -> None: pass               #None
+  def RefreshTable(self, ) -> None: pass    #bool
+  def RepeatAllLabels(self, Repeat) -> None: pass                 #None
+  def RowAxisLayout(self, RowLayout) -> None: pass                #None
+  def ShowPages(self, PageField) -> None: pass                    #VBA_Variant
+  def SubtotalLocation(self, Location) -> None: pass              #None
+  def Update(self, ) -> None: pass          #None
+
+
+
+
+class PivotTableChangeList:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: float
+    self.Parent: None   #PivotTable | PivotTableChangeList
+
+  def Add(self, Tuple, Value, AllocationValue, AllocationMethod, AllocationWeightExpression) -> None: pass    #ValueChange
+
+
+
+
+class PivotTables:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, PivotCache, TableDestination, TableName, ReadData, DefaultVersion) -> None: pass              #PivotTable
+  def Item(self, Index) -> None: pass       #PivotTable
+
+
+
+
+class PlotArea:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Height: float
+    self.InsideHeight: float
+    self.InsideLeft: float
+    self.InsideTop: float
+    self.InsideWidth: float
+    self.Left: float
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.Position: None             #XlChartElementPosition
+    self.Top: float
+    self.Width: float
+
+  def ClearFormats(self, ) -> None: pass    #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class Point:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.ApplyPictToEnd: bool
+    self.ApplyPictToFront: bool
+    self.ApplyPictToSides: bool
+    self.Creator: int
+    self.DataLabel: None            #DataLabel
+    self.Explosion: int
+    self.Format: None   #ChartFormat
+    self.Has3DEffect: bool
+    self.HasDataLabel: bool
+    self.Height: float
+    self.InvertIfNegative: bool
+    self.IsTotal: bool
+    self.Left: float
+    self.MarkerBackgroundColor: int
+    self.MarkerBackgroundColorIndex: None       #XlColorIndex | xlColorIndexAutomatic | xlColorIndexNone | int
+    self.MarkerForegroundColor: int
+    self.MarkerForegroundColorIndex: None       #XlColorIndex | xlColorIndexAutomatic | xlColorIndexNone | int
+    self.MarkerSize: None           #points | int
+    self.MarkerStyle: None          #XlMarkerStyle
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.PictureType: None          #XlChartPictureType
+    self.PictureUnit2: float
+    self.SecondaryPlot: bool
+    self.Shadow: bool
+    self.Top: float
+    self.Width: float
+
+  def ApplyDataLabels(self, Type, LegendKey, AutoText, HasLeaderLines, ShowSeriesName, ShowCategoryName, ShowValue, ShowPercentage, ShowBubbleSize, Separator) -> None: pass    #None
+  def ClearFormats(self, ) -> None: pass    #VBA_Variant
+  def Copy(self, ) -> None: pass            #VBA_Variant
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Paste(self, ) -> None: pass           #VBA_Variant
+  def PieSliceLocation(self, loc, Index) -> None: pass            #float
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class Points:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Item(self, Index) -> None: pass       #Point
+
+
+
+
+class ProtectedViewWindow:
+  '''just need name'''
+
+  def __init__(self):
+    self.Caption: None  #VBA_Variant
+    self.EnableResize: bool
+    self.Height: float
+    self.Left: float
+    self.SourceName: str
+    self.SourcePath: str
+    self.Top: float
+    self.Visible: bool
+    self.Width: None    #points
+    self.WindowState: None          #XlProtectedViewWindowState
+    self.Workbook: None             #Workbook
+
+  def Activate(self, ) -> None: pass        #None
+  def Close(self, ) -> None: pass           #bool
+  def Edit(self, WriteResPassword, UpdateLinks) -> None: pass     #Workbook
+
+
+
+
+class ProtectedViewWindows:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Open(self, FileName, Password, AddToMru, RepairMode) -> None: pass                #ProtectedViewWindow
+
+
+
+
+class Protection:
+  '''just need name'''
+
+  def __init__(self):
+    self.AllowDeletingColumns: bool
+    self.AllowDeletingRows: bool
+    self.AllowEditRanges: None      #AllowEditRanges
+    self.AllowFiltering: bool
+    self.AllowFormattingCells: bool
+    self.AllowFormattingColumns: bool
+    self.AllowFormattingRows: bool
+    self.AllowInsertingColumns: bool
+    self.AllowInsertingHyperlinks: bool
+    self.AllowInsertingRows: bool
+    self.AllowSorting: bool
+    self.AllowUsingPivotTables: bool
+
+
+
+
+class PublishObject:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AutoRepublish: bool
+    self.Creator: int
+    self.DivID: str
+    self.Filename: str
+    self.HtmlType: None             #XlHtmlType
+    self.Parent: None   #VBA_Object
+    self.Sheet: str
+    self.Source: None   #VBA_Variant
+    self.SourceType: None           #XlSourceType
+    self.Title: str
+
+  def Delete(self, ) -> None: pass          #None
+  def Publish(self, Create) -> None: pass   #None
+
+
+
+
+class PublishObjects:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, SourceType, FileName, Sheet, Source, HtmlType, DivID, Title) -> None: pass                    #PublishObject
+  def Delete(self, ) -> None: pass          #None
+  def Publish(self, ) -> None: pass         #None
+
+
+
+
+class Queries:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.FastCombine: bool
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Name, Formula, Description) -> None: pass         #WorkbookQuery
+  def Item(self, NameOrIndex) -> None: pass                       #WorkbookQuery
+
+
+
+
+class QueryTable:
+  '''just need name'''
+
+  def __init__(self):
+    self.AdjustColumnWidth: bool
+    self.Application: None          #Application
+    self.BackgroundQuery: bool
+    self.CommandText: None          #VBA_Variant
+    self.CommandType: None          #XlCmdType
+    self.Connection: None           #QueryTable | Refresh | Add | ListObject
+    self.Creator: int
+    self.Destination: None          #Range
+    self.EditWebPage: None          #VBA_Variant
+    self.EnableEditing: bool
+    self.EnableRefresh: bool
+    self.FetchedRowOverflow: bool
+    self.FieldNames: bool
+    self.FillAdjacentFormulas: bool
+    self.ListObject: None           #ListObject
+    self.MaintainConnection: bool
+    self.Name: str
+    self.Parameters: None           #Parameters
+    self.Parent: None   #VBA_Object
+    self.PostText: str
+    self.PreserveColumnInfo: bool
+    self.PreserveFormatting: bool
+    self.QueryType: None            #XlQueryType
+    self.Recordset: None            #Recordset
+    self.RefreshOnFileOpen: bool
+    self.RefreshPeriod: int
+    self.RefreshStyle: None         #XlCellInsertionMode
+    self.Refreshing: bool
+    self.ResultRange: None          #Range
+    self.RobustConnect: None        #XlRobustConnect
+    self.RowNumbers: bool
+    self.SaveData: bool
+    self.SavePassword: bool
+    self.Sort: None     #VBA_Object
+    self.SourceConnectionFile: str
+    self.SourceDataFile: str
+    self.TextFileColumnDataTypes: None          #VBA_Variant
+    self.TextFileCommaDelimiter: bool
+    self.TextFileConsecutiveDelimiter: bool
+    self.TextFileDecimalSeparator: str
+    self.TextFileFixedColumnWidths: None        #VBA_Variant
+    self.TextFileOtherDelimiter: str
+    self.TextFileParseType: None    #XlTextParsingType
+    self.TextFilePlatform: None     #XlPlatform
+    self.TextFilePromptOnRefresh: bool
+    self.TextFileSemicolonDelimiter: bool
+    self.TextFileSpaceDelimiter: bool
+    self.TextFileStartRow: int
+    self.TextFileTabDelimiter: bool
+    self.TextFileTextQualifier: None            #XlTextQualifier
+    self.TextFileThousandsSeparator: str
+    self.TextFileTrailingMinusNumbers: bool
+    self.TextFileVisualLayout: None             #XlTextVisualLayoutType
+    self.WebConsecutiveDelimitersAsOne: bool
+    self.WebDisableDateRecognition: bool
+    self.WebDisableRedirections: bool
+    self.WebFormatting: None        #XlWebFormatting
+    self.WebPreFormattedTextToColumns: bool
+    self.WebSelectionType: None     #XlWebSelectionType
+    self.WebSingleBlockTextImport: bool
+    self.WebTables: str
+    self.WorkbookConnection: None   #WorkbookConnection
+
+  def CancelRefresh(self, ) -> None: pass   #None
+  def Delete(self, ) -> None: pass          #None
+  def Refresh(self, BackgroundQuery) -> None: pass                #bool
+  def ResetTimer(self, ) -> None: pass      #None
+  def SaveAsODC(self, ODCFileName, Description, Keywords) -> None: pass                 #None
+
+
+
+
+class QueryTables:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Connection, Destination, Sql) -> None: pass       #QueryTable
+  def Item(self, Index) -> None: pass       #QueryTable
+
+
+
+
+class QuickAnalysis:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #APPLICATION
+    self.Creator: None  #XLCREATOR
+    self.Parent: None   #VBA_Object
+
+  def Hide(self, XlQuickAnalysisMode) -> None: pass               #None
+  def Show(self, XlQuickAnalysisMode) -> None: pass               #None
+
+
+
+
+class RTD:
+  '''just need name'''
+
+  def __init__(self):
+    self.ThrottleInterval: int
+
+  def RefreshData(self, ) -> None: pass     #None
+  def RestartServers(self, ) -> None: pass  #None
+
+
+
+
+class Range:
+  '''just need name'''
+
+  def __init__(self):
+    self.AddIndent: None            #VBA_Variant
+    self.Address: str
+    self.AddressLocal: str
+    self.AllowEdit: bool
+    self.Application: None          #Application
+    self.Areas: None    #Areas
+    self.Borders: None  #Borders
+    self.Cells: None    #VBA_Object
+    self.Characters: None           #Characters
+    self.Column: int
+    self.ColumnWidth: float
+    self.Columns: None  #VBA_Object
+    self.Comment: None  #VBA_Object
+    self.CommentThreaded: None      #VBA_Object
+    self.Count: int
+    self.CountLarge: None           #VBA_Variant
+    self.Creator: int
+    self.CurrentArray: None         #Range
+    self.CurrentRegion: None        #Range
+    self.Dependents: None           #Range
+    self.DirectDependents: None     #Range
+    self.DirectPrecedents: None     #Range
+    self.DisplayFormat: None        #DisplayFormat
+    self.End: None      #Range
+    self.EntireColumn: None         #Range
+    self.EntireRow: None            #Range
+    self.Errors: None   #Range | Errors
+    self.Font: None     #VBA_Object
+    self.FormatConditions: None     #FormatConditions
+    self.Formula: None  #VBA_Variant
+    self.FormulaArray: None         #VBA_Variant
+    self.FormulaHidden: None        #VBA_Variant
+    self.FormulaLocal: None         #VBA_Variant
+    self.FormulaR1C1: None          #VBA_Variant
+    self.FormulaR1C1Local: None     #VBA_Variant
+    self.HasArray: None             #VBA_Variant
+    self.HasFormula: None           #VBA_Variant
+    self.HasRichDataType: None      #VBA_Variant
+    self.Height: None   #float | points
+    self.Hidden: None   #VBA_Variant
+    self.HorizontalAlignment: None  #VBA_Object
+    self.Hyperlinks: None           #Hyperlinks
+    self.ID: str
+    self.IndentLevel: None          #VBA_Variant
+    self.Interior: None             #Interior
+    self.Item: None     #Range
+    self.Left: None     #VBA_Variant
+    self.LinkedDataTypeState: None  #XlLinkedDataTypeState
+    self.ListHeaderRows: int
+    self.ListObject: None           #ListObject
+    self.LocationInTable: int
+    self.Locked: None   #VBA_Variant
+    self.MDX: str
+    self.MergeArea: None            #VBA_Variant
+    self.MergeCells: None           #VBA_Variant
+    self.Name: None     #VBA_Variant
+    self.Next: None     #VBA_Object
+    self.NumberFormat: None         #VBA_Variant
+    self.NumberFormatLocal: None    #VBA_Variant
+    self.Offset: None   #Range
+    self.Orientation: None          #VBA_Variant
+    self.OutlineLevel: None         #VBA_Variant
+    self.PageBreak: None            #XlPageBreak | xlPageBreakAutomatic | xlPageBreakManual | xlPageBreakNone | int
+    self.Parent: None   #VBA_Object
+    self.Phonetic: None             #Phonetic
+    self.Phonetics: None            #Phonetics
+    self.PivotCell: None            #PivotCell
+    self.PivotField: None           #VBA_Object
+    self.PivotItem: None            #VBA_Object
+    self.PivotTable: None           #VBA_Object
+    self.Precedents: None           #Range
+    self.PrefixCharacter: None      #VBA_Variant
+    self.Previous: None             #VBA_Object
+    self.QueryTable: None           #VBA_Object
+    self.Range: None    #Range
+    self.ReadingOrder: None         #XlReadingOrder | xlRTL | xlLTR | xlContext | int
+    self.Resize: None   #Range
+    self.Row: int
+    self.RowHeight: float
+    self.Rows: None     #VBA_Object
+    self.ServerActions: None        #Range
+    self.ShowDetail: None           #VBA_Variant
+    self.ShrinkToFit: None          #VBA_Variant
+    self.SoundNote: None            #Range
+    self.SparklineGroups: None      #SparklineGroups
+    self.Style: None    #VBA_Variant
+    self.Summary: None  #VBA_Variant
+    self.Text: str
+    self.Top: None      #VBA_Variant
+    self.UseStandardHeight: None    #VBA_Variant
+    self.UseStandardWidth: None     #VBA_Variant
+    self.Validation: None           #Validation
+    self.Value: None    #VBA_Variant
+    self.Value2: None   #VBA_Variant
+    self.VerticalAlignment: None    #VBA_Object
+    self.Width: None    #float | points
+    self.Worksheet: None            #Worksheet
+    self.WrapText: None             #VBA_Variant
+    self.XPath: None    #XPath | Range
+
+  def Activate(self, ) -> None: pass        #VBA_Variant
+  def AddComment(self, Text) -> None: pass  #Comment
+  def AddCommentThreaded(self, Text) -> None: pass                #CommentThreaded
+  def AdvancedFilter(self, Action, CriteriaRange, CopyToRange, Unique) -> None: pass    #VBA_Variant
+  def AllocateChanges(self, ) -> None: pass                       #None
+  def ApplyNames(self, Names, IgnoreRelativeAbsolute, UseRowColumnNames, OmitColumn, OmitRow, Order, AppendLast) -> None: pass      #VBA_Variant
+  def ApplyOutlineStyles(self, ) -> None: pass                    #VBA_Variant
+  def AutoComplete(self, String) -> None: pass                    #str
+  def AutoFill(self, Destination, Type) -> None: pass             #VBA_Variant
+  def AutoFilter(self, Field, Criteria1, Operator, Criteria2, SubField, VisibleDropDown) -> None: pass        #VBA_Variant
+  def AutoFit(self, ) -> None: pass         #VBA_Variant
+  def AutoOutline(self, ) -> None: pass     #VBA_Variant
+  def BorderAround(self, LineStyle, Weight, ColorIndex, Color, ThemeColor) -> None: pass                      #VBA_Variant
+  def Calculate(self, ) -> None: pass       #VBA_Variant
+  def CalculateRowMajorOrder(self, ) -> None: pass                #VBA_Variant
+  def CheckSpelling(self, CustomDictionary, IgnoreUppercase, AlwaysSuggest, SpellLang) -> None: pass          #VBA_Variant
+  def Clear(self, ) -> None: pass           #VBA_Variant
+  def ClearComments(self, ) -> None: pass   #None
+  def ClearContents(self, ) -> None: pass   #VBA_Variant
+  def ClearFormats(self, ) -> None: pass    #VBA_Variant
+  def ClearHyperlinks(self, ) -> None: pass                       #None
+  def ClearNotes(self, ) -> None: pass      #VBA_Variant
+  def ClearOutline(self, ) -> None: pass    #VBA_Variant
+  def ColumnDifferences(self, Comparison) -> None: pass           #Range
+  def Consolidate(self, Sources, Function, TopRow, LeftColumn, CreateLinks) -> None: pass                     #VBA_Variant
+  def ConvertToLinkedDataType(self, ServiceID, LanguageCulture) -> None: pass           #None
+  def Copy(self, Destination) -> None: pass                       #VBA_Variant
+  def CopyFromRecordset(self, Data, MaxRows, MaxColumns) -> None: pass                  #int
+  def CopyPicture(self, Appearance, Format) -> None: pass         #VBA_Variant
+  def CreateNames(self, Top, Left, Bottom, Right) -> None: pass   #VBA_Variant
+  def Cut(self, Destination) -> None: pass  #VBA_Variant
+  def DataSeries(self, Rowcol, Type, Date, Step, Stop, Trend) -> None: pass             #VBA_Variant
+  def DataTypeToText(self, ) -> None: pass  #None
+  def Delete(self, Shift) -> None: pass     #VBA_Variant
+  def DialogBox(self, ) -> None: pass       #VBA_Variant
+  def Dirty(self, ) -> None: pass           #None
+  def DiscardChanges(self, ) -> None: pass  #None
+  def EditionOptions(self, Type, Option, Name, Reference, Appearance, ChartSize, Format) -> None: pass        #VBA_Variant
+  def ExportAsFixedFormat(self, Type, FileName, Quality, IncludeDocProperties, IgnorePrintAreas, From, To, OpenAfterPublish, FixedFormatExtClassPtr) -> None: pass              #None
+  def FillDown(self, ) -> None: pass        #VBA_Variant
+  def FillLeft(self, ) -> None: pass        #VBA_Variant
+  def FillRight(self, ) -> None: pass       #VBA_Variant
+  def FillUp(self, ) -> None: pass          #VBA_Variant
+  def Find(self, What, After, LookIn, LookAt, SearchOrder, SearchDirection, MatchCase, MatchByte, SearchFormat) -> None: pass       #Range
+  def FindNext(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass   #Range
+  def FindPrevious(self, Before) -> None: pass                    #Range
+  def FlashFill(self, ) -> None: pass       #None
+  def FunctionWizard(self, ) -> None: pass  #VBA_Variant
+  def Group(self, Start, End, By, Periods) -> None: pass          #VBA_Variant
+  def Insert(self, Shift, CopyOrigin) -> None: pass               #VBA_Variant
+  def InsertIndent(self, InsertAmount) -> None: pass              #None
+  def Justify(self, ) -> None: pass         #VBA_Variant
+  def ListNames(self, ) -> None: pass       #VBA_Variant
+  def Merge(self, Across) -> None: pass     #None
+  def NavigateArrow(self, TowardPrecedent, ArrowNumber, LinkNumber) -> None: pass       #VBA_Variant
+  def NoteText(self, Text, Start, Length) -> None: pass           #str
+  def Parse(self, ParseLine, Destination) -> None: pass           #VBA_Variant
+  def PasteSpecial(self, Paste, Operation, SkipBlanks, Transpose) -> None: pass         #VBA_Variant
+  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName) -> None: pass                    #VBA_Variant
+  def PrintPreview(self, EnableChanges) -> None: pass             #VBA_Variant
+  def RemoveDuplicates(self, Columns, Header) -> None: pass       #None
+  def RemoveSubtotal(self, ) -> None: pass  #VBA_Variant
+  def Replace(self, What, Replacement, LookAt, SearchOrder, MatchCase, MatchByte, SearchFormat, ReplaceFormat) -> None: pass        #bool
+  def RowDifferences(self, Comparison) -> None: pass              #Range
+  def Run(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass        #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+  def SetCellDataTypeFromCell(self, Range, LanguageCulture) -> None: pass               #None
+  def SetPhonetic(self, ) -> None: pass     #None
+  def Show(self, ) -> None: pass            #VBA_Variant
+  def ShowCard(self, ) -> None: pass        #None
+  def ShowDependents(self, Remove) -> None: pass                  #VBA_Variant
+  def ShowErrors(self, ) -> None: pass      #VBA_Variant
+  def ShowPrecedents(self, Remove) -> None: pass                  #VBA_Variant
+  def Sort(self, Key1, Order1, Key2, Type, Order2, Key3, Order3, Header, OrderCustom, MatchCase, Orientation, SortMethod, DataOption1, DataOption2, DataOption3) -> None: pass  #VBA_Variant
+  def SortSpecial(self, SortMethod, Key1, Order1, Type, Key2, Order2, Key3, Order3, Header, OrderCustom, MatchCase, Orientation, DataOption1, DataOption2, DataOption3) -> None: pass                 #VBA_Variant
+  def Speak(self, SpeakDirection, SpeakFormulas) -> None: pass    #None
+  def SpecialCells(self, Type, Value) -> None: pass               #Range
+  def SubscribeTo(self, Edition, Format) -> None: pass            #VBA_Variant
+  def Subtotal(self, GroupBy, Function, TotalList, Replace, PageBreaks, SummaryBelowData) -> None: pass       #VBA_Variant
+  def Table(self, RowInput, ColumnInput) -> None: pass            #VBA_Variant
+  def TextToColumns(self, Destination, DataType, TextQualifier, ConsecutiveDelimiter, Tab, Semicolon, Comma, Space, Other, OtherChar, FieldInfo, DecimalSeparator, ThousandsSeparator, TrailingMinusNumbers) -> None: pass  #VBA_Variant
+  def UnMerge(self, ) -> None: pass         #None
+  def Ungroup(self, ) -> None: pass         #VBA_Variant
+
+
+
+
+class RecentFile:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Index: int
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.Path: str
+
+  def Delete(self, ) -> None: pass          #None
+  def Open(self, ) -> None: pass            #Workbook
+
+
+
+
+class RecentFiles:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Maximum: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Name) -> None: pass         #RecentFile
+
+
+
+
+class Series:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.ApplyPictToEnd: bool
+    self.ApplyPictToFront: bool
+    self.ApplyPictToSides: bool
+    self.AxisGroup: None            #XlAxisGroup
+    self.BarShape: None             #XlBarShape
+    self.BubbleSizes: None          #VBA_Variant
+    self.ChartType: None            #XlChartType
+    self.Creator: int
+    self.ErrorBars: None            #ErrorBars
+    self.Explosion: int
+    self.Format: None   #ChartFormat
+    self.Formula: str
+    self.FormulaLocal: str
+    self.FormulaR1C1: str
+    self.FormulaR1C1Local: str
+    self.GeoMappingLevel: None      #XlGeoMappingLevel
+    self.GeoProjectionType: None    #XlGeoProjectionType
+    self.Has3DEffect: bool
+    self.HasDataLabels: bool
+    self.HasErrorBars: bool
+    self.HasLeaderLines: bool
+    self.InvertColor: int
+    self.InvertColorIndex: int
+    self.InvertIfNegative: bool
+    self.IsFiltered: bool
+    self.LeaderLines: None          #LeaderLines
+    self.MarkerBackgroundColor: int
+    self.MarkerBackgroundColorIndex: None       #XlColorIndex | xlColorIndexAutomatic | xlColorIndexNone | int
+    self.MarkerForegroundColor: int
+    self.MarkerForegroundColorIndex: None       #XlColorIndex | xlColorIndexAutomatic | xlColorIndexNone | int
+    self.MarkerSize: None           #points | int
+    self.MarkerStyle: None          #XlMarkerStyle
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.ParentDataLabelOption: None            #XlParentDataLabelOptions
+    self.PictureType: None          #XlChartPictureType
+    self.PictureUnit2: float
+    self.PlotColorIndex: int
+    self.PlotOrder: int
+    self.QuartileCalculationInclusiveMedian: bool
+    self.RegionLabelOptions: None   #XlRegionLabelOptions
+    self.Shadow: bool
+    self.Smooth: bool
+    self.Type: int
+    self.Values: None   #VBA_Variant
+    self.XValues: None  #VBA_Variant
+
+  def ApplyDataLabels(self, Type, LegendKey, AutoText, HasLeaderLines, ShowSeriesName, ShowCategoryName, ShowValue, ShowPercentage, ShowBubbleSize, Separator) -> None: pass    #None
+  def ClearFormats(self, ) -> None: pass    #VBA_Variant
+  def Copy(self, ) -> None: pass            #VBA_Variant
+  def DataLabels(self, Index) -> None: pass                       #VBA_Object
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def ErrorBar(self, Direction, Include, Type, Amount, MinusValues) -> None: pass       #VBA_Variant
+  def Paste(self, ) -> None: pass           #VBA_Variant
+  def Points(self, Index) -> None: pass     #VBA_Object
+  def Select(self, ) -> None: pass          #VBA_Variant
+  def Trendlines(self, Index) -> None: pass                       #VBA_Object
+
+
+
+
+class SeriesCollection:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Source, Rowcol, SeriesLabels, CategoryLabels, Replace) -> None: pass    #Series
+  def Extend(self, Source, RowCol, CategoryLabels) -> None: pass  #VBA_Variant
+  def Item(self, Index) -> None: pass       #Series
+  def NewSeries(self, ) -> None: pass       #Series
+  def Paste(self, RowCol, SeriesLabels, CategoryLabels, Replace, NewSeries) -> None: pass                     #VBA_Variant
+
+
+
+
+class SeriesLines:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Border: None   #VBA_Object
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Name: str
+    self.Parent: None   #VBA_Object
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class ShadowFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Blur: float
+    self.Creator: int
+    self.ForeColor: None            #ColorFormat
+    self.Obscured: bool
+    self.OffsetX: float
+    self.OffsetY: float
+    self.Parent: None   #VBA_Object
+    self.RotateWithShape: None      #MsoTriState
+    self.Size: float
+    self.Style: None    #MsoShadowStyle
+    self.Transparency: float
+    self.Type: None     #MsoShadowType
+    self.Visible: None  #MsoTriState
+
+  def IncrementOffsetX(self, Increment) -> None: pass             #None
+  def IncrementOffsetY(self, Increment) -> None: pass             #None
+
+
+
+
+class Shape:
+  '''just need name'''
+
+  def __init__(self):
+    self.Adjustments: None          #Adjustments
+    self.AlternativeText: str
+    self.Application: None          #Application
+    self.AutoShapeType: None        #MsoAutoShapeType
+    self.BackgroundStyle: None      #MsoBackgroundStyleIndex
+    self.BlackWhiteMode: None       #MsoBlackWhiteMode
+    self.BottomRightCell: None      #Range
+    self.Callout: None  #CalloutFormat | Shape
+    self.Chart: None    #Chart
+    self.Child: None    #MsoTriState
+    self.ConnectionSiteCount: int
+    self.Connector: None            #MsoTriState
+    self.ConnectorFormat: None      #ConnectorFormat | Shape
+    self.ControlFormat: None        #ControlFormat
+    self.Creator: int
+    self.Decorative: None           #VBA_Object
+    self.Fill: None     #FillFormat | ChartFillFormat
+    self.FormControlType: None      #XlFormControl
+    self.Glow: None     #GlowFormat
+    self.GraphicStyle: None         #MsoGraphicStyleIndex
+    self.GroupItems: None           #GroupShapes | Item | Shape
+    self.HasChart: None             #MsoTriState
+    self.HasSmartArt: None          #MsoTriState
+    self.Height: float
+    self.HorizontalFlip: None       #MsoTriState
+    self.Hyperlink: None            #VBA_Object
+    self.ID: int
+    self.Left: float
+    self.Line: None     #LineFormat
+    self.LinkFormat: None           #LinkFormat
+    self.LockAspectRatio: None      #MsoTriState
+    self.Locked: bool
+    self.Model3D: None  #Model3DFormat
+    self.Name: str
+    self.Nodes: None    #ShapeNodes
+    self.OLEFormat: None            #OLEFormat
+    self.OnAction: str
+    self.Parent: None   #VBA_Object
+    self.ParentGroup: None          #VBA_Object
+    self.PictureFormat: None        #PictureFormat | Shape
+    self.Placement: None            #XlPlacement
+    self.Reflection: None           #ReflectionFormat
+    self.Rotation: float
+    self.Shadow: None   #ShadowFormat
+    self.ShapeStyle: None           #MsoShapeStyleIndex
+    self.SmartArt: None             #SmartArt
+    self.SoftEdge: None             #SoftEdgeFormat
+    self.TextEffect: None           #TextEffectFormat
+    self.TextFrame: None            #TextFrame
+    self.TextFrame2: None           #TextFrame2
+    self.ThreeD: None   #ThreeDFormat
+    self.Title: str
+    self.Top: float
+    self.TopLeftCell: None          #Range
+    self.Type: None     #MsoShapeType
+    self.VerticalFlip: None         #MsoTriState
+    self.Vertices: None             #VBA_Variant
+    self.Visible: None  #MsoTriState
+    self.Width: float
+    self.ZOrderPosition: int
+
+  def Apply(self, ) -> None: pass           #None
+  def Copy(self, ) -> None: pass            #None
+  def CopyPicture(self, Appearance, Format) -> None: pass         #None
+  def Cut(self, ) -> None: pass             #None
+  def Delete(self, ) -> None: pass          #None
+  def Duplicate(self, ) -> None: pass       #Shape
+  def Flip(self, FlipCmd) -> None: pass     #None
+  def IncrementLeft(self, Increment) -> None: pass                #None
+  def IncrementRotation(self, Increment) -> None: pass            #None
+  def IncrementTop(self, Increment) -> None: pass                 #None
+  def PickUp(self, ) -> None: pass          #None
+  def RerouteConnections(self, ) -> None: pass                    #None
+  def ScaleHeight(self, Factor, RelativeToOriginalSize, Scale) -> None: pass            #None
+  def ScaleWidth(self, Factor, RelativeToOriginalSize, Scale) -> None: pass             #None
+  def Select(self, Replace) -> None: pass   #None
+  def SetShapesDefaultProperties(self, ) -> None: pass            #None
+  def Ungroup(self, ) -> None: pass         #ShapeRange
+  def ZOrder(self, ZOrderCmd) -> None: pass                       #None
+
+
+
+
+class ShapeNode:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.EditingType: None          #MsoEditingType
+    self.Parent: None   #VBA_Object
+    self.Points: None   #VBA_Variant
+    self.SegmentType: None          #MsoSegmentType
+
+
+
+
+class ShapeNodes:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Delete(self, Index) -> None: pass     #None
+  def Insert(self, Index, SegmentType, EditingType, X1, Y1, X2, Y2, X3, Y3) -> None: pass                     #None
+  def Item(self, Index) -> None: pass       #ShapeNode
+  def SetEditingType(self, Index, EditingType) -> None: pass      #None
+  def SetPosition(self, Index, X1, Y1) -> None: pass              #None
+  def SetSegmentType(self, Index, SegmentType) -> None: pass      #None
+
+
+
+
+class ShapeRange:
+  '''just need name'''
+
+  def __init__(self):
+    self.Adjustments: None          #Adjustments
+    self.AlternativeText: str
+    self.Application: None          #Application
+    self.AutoShapeType: None        #MsoAutoShapeType
+    self.BackgroundStyle: None      #MsoBackgroundStyleIndex
+    self.BlackWhiteMode: None       #MsoBlackWhiteMode
+    self.Callout: None  #CalloutFormat | ShapeRange
+    self.Chart: None    #Chart
+    self.Child: None    #MsoTriState
+    self.ConnectionSiteCount: int
+    self.Connector: None            #MsoTriState
+    self.ConnectorFormat: None      #ConnectorFormat | ShapeRange
+    self.Count: int
+    self.Creator: int
+    self.Decorative: None           #VBA_Object
+    self.Fill: None     #FillFormat | ChartFillFormat
+    self.Glow: None     #GlowFormat
+    self.GraphicStyle: None         #MsoGraphicStyleIndex
+    self.GroupItems: None           #GroupShapes | Item | ShapeRange
+    self.HasChart: None             #MsoTriState
+    self.Height: float
+    self.HorizontalFlip: None       #MsoTriState
+    self.ID: int
+    self.Left: float
+    self.Line: None     #LineFormat
+    self.LockAspectRatio: None      #MsoTriState
+    self.Model3D: None  #Model3DFormat
+    self.Name: str
+    self.Nodes: None    #ShapeNodes
+    self.Parent: None   #VBA_Object
+    self.ParentGroup: None          #VBA_Object
+    self.PictureFormat: None        #PictureFormat | ShapeRange
+    self.Reflection: None           #ReflectionFormat
+    self.Rotation: float
+    self.Shadow: None   #ShadowFormat
+    self.ShapeStyle: None           #MsoShapeStyleIndex
+    self.SoftEdge: None             #SoftEdgeFormat
+    self.TextEffect: None           #TextEffectFormat
+    self.TextFrame: None            #TextFrame
+    self.TextFrame2: None           #TextFrame2
+    self.ThreeD: None   #ThreeDFormat
+    self.Title: str
+    self.Top: float
+    self.Type: None     #MsoShapeType
+    self.VerticalFlip: None         #MsoTriState
+    self.Vertices: None             #VBA_Variant
+    self.Visible: None  #MsoTriState
+    self.Width: float
+    self.ZOrderPosition: int
+
+  def Align(self, AlignCmd, RelativeTo) -> None: pass             #None
+  def Apply(self, ) -> None: pass           #None
+  def Delete(self, ) -> None: pass          #None
+  def Distribute(self, DistributeCmd, RelativeTo) -> None: pass   #None
+  def Duplicate(self, ) -> None: pass       #None
+  def Flip(self, FlipCmd) -> None: pass     #None
+  def Group(self, ) -> None: pass           #Shape
+  def IncrementLeft(self, Increment) -> None: pass                #None
+  def IncrementRotation(self, Increment) -> None: pass            #None
+  def IncrementTop(self, Increment) -> None: pass                 #None
+  def Item(self, Index) -> None: pass       #Shape
+  def PickUp(self, ) -> None: pass          #None
+  def Regroup(self, ) -> None: pass         #Shape
+  def RerouteConnections(self, ) -> None: pass                    #None
+  def ScaleHeight(self, Factor, RelativeToOriginalSize, Scale) -> None: pass            #None
+  def ScaleWidth(self, Factor, RelativeToOriginalSize, Scale) -> None: pass             #None
+  def Select(self, Replace) -> None: pass   #None
+  def SetShapesDefaultProperties(self, ) -> None: pass            #None
+  def Ungroup(self, ) -> None: pass         #ShapeRange
+  def ZOrder(self, ZOrderCmd) -> None: pass                       #None
+
+
+
+
+class Shapes:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+    self.Range: None    #ShapeRange
+
+  def Add3DModel(self, FileName, LinkToFile, SaveWithDocument, Left, Top, Width, Height) -> None: pass        #Shape
+  def AddCallout(self, Type, Left, Top, Width, Height) -> None: pass                    #Shape
+  def AddChart2(self, Style, XlChartType, Left, Top, Width, Height, NewLayout) -> None: pass                  #Shape
+  def AddConnector(self, Type, BeginX, BeginY, EndX, EndY) -> None: pass                #Shape
+  def AddCurve(self, SafeArrayOfPoints) -> None: pass             #Shape
+  def AddFormControl(self, Type, Left, Top, Width, Height) -> None: pass                #Shape
+  def AddLabel(self, Orientation, Left, Top, Width, Height) -> None: pass               #Shape
+  def AddLine(self, BeginX, BeginY, EndX, EndY) -> None: pass     #Shape
+  def AddOLEObject(self, ClassType, FileName, Link, DisplayAsIcon, IconFileName, IconIndex, IconLabel, Left, Top, Width, Height) -> None: pass            #Shape
+  def AddPicture(self, FileName, LinkToFile, SaveWithDocument, Left, Top, Width, Height) -> None: pass        #Shape
+  def AddPicture2(self, FileName, LinkToFile, SaveWithDocument, Left, Top, Width, Height, compress) -> None: pass                   #Shape
+  def AddPolyline(self, SafeArrayOfPoints) -> None: pass          #Shape
+  def AddShape(self, Type, Left, Top, Width, Height) -> None: pass                      #Shape
+  def AddSmartArt(self, Layout, Left, Top, Width, Height) -> None: pass                 #Shape
+  def AddTextEffect(self, PresetTextEffect, Text, FontName, FontSize, FontBold, FontItalic, Left, Top) -> None: pass                #Shape
+  def AddTextbox(self, Orientation, Left, Top, Width, Height) -> None: pass             #Shape
+  def BuildFreeform(self, EditingType, X1, Y1) -> None: pass      #FreeformBuilder
+  def Item(self, Index) -> None: pass       #Shape
+  def SelectAll(self, ) -> None: pass       #None
+
+
+
+
+class SheetViews:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #SheetView
+    self.Parent: None   #VBA_Object
+
+
+
+
+class Sheets:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.HPageBreaks: None          #HPageBreaks
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+    self.VPageBreaks: None          #VPageBreaks
+    self.Visible: None  #VBA_Variant
+
+  def Add(self, Before, After, Count, Type) -> None: pass         #VBA_Object
+  def Add2(self, Before, After, Count, NewLayout) -> None: pass   #VBA_Object
+  def Copy(self, Before, After) -> None: pass                     #None
+  def Delete(self, ) -> None: pass          #None
+  def FillAcrossSheets(self, Range, Type) -> None: pass           #None
+  def Move(self, Before, After) -> None: pass                     #None
+  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName, IgnorePrintAreas) -> None: pass  #VBA_Variant
+  def PrintPreview(self, EnableChanges) -> None: pass             #None
+  def Select(self, Replace) -> None: pass   #None
+
+
+
+
+class Slicer:
+  '''just need name'''
+
+  def __init__(self):
+    self.ActiveItem: None           #SlicerItem
+    self.Application: None          #Application
+    self.Caption: str
+    self.ColumnWidth: float
+    self.Creator: int
+    self.DisableMoveResizeUI: bool
+    self.DisplayHeader: bool
+    self.Height: float
+    self.Left: float
+    self.Locked: bool
+    self.Name: str
+    self.NumberOfColumns: int
+    self.Parent: None   #Worksheet
+    self.RowHeight: float
+    self.Shape: None    #Shape
+    self.SlicerCache: None          #SlicerCache
+    self.SlicerCacheLevel: None     #SlicerCacheLevel
+    self.SlicerCacheType: None      #XLSLICERCACHETYPE
+    self.Style: None    #VBA_Variant
+    self.TimelineViewState: None    #TIMELINEVIEWSTATE
+    self.Top: float
+    self.Width: float
+
+  def Copy(self, ) -> None: pass            #None
+  def Cut(self, ) -> None: pass             #None
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class SlicerCache:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.CrossFilterType: None      #XlSlicerCrossFilterType
+    self.FilterCleared: bool
+    self.Index: None    #SlicerCache | SlicerCaches
+    self.List: bool
+    self.ListObject: None           #LISTOBJECT
+    self.Name: str
+    self.OLAP: bool
+    self.Parent: None   #SlicerCaches | SlicerCache
+    self.PivotTables: None          #PivotTables
+    self.RequireManualUpdate: bool
+    self.ShowAllItems: bool
+    self.SlicerCacheLevels: None    #SlicerCacheLevel
+    self.SlicerCacheType: None      #XLSLICERCACHETYPE
+    self.SlicerItems: None          #SlicerItems
+    self.Slicers: None  #Slicers
+    self.SortItems: None            #XlSlicerSort
+    self.SortUsingCustomLists: None             #SlicerCache | OLAP
+    self.SourceName: str
+    self.SourceType: None           #XlPivotTableSourceType
+    self.TimelineState: None        #TIMELINESTATE
+    self.VisibleSlicerItems: None   #SlicerItems
+    self.VisibleSlicerItemsList: None           #VBA_Variant
+    self.WorkbookConnection: None   #WorkbookConnection
+
+  def ClearAllFilters(self, ) -> None: pass                       #None
+  def ClearDateFilter(self, ) -> None: pass                       #None
+  def ClearManualFilter(self, ) -> None: pass                     #None
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class SlicerCacheLevel:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.CrossFilterType: None      #XlSlicerCrossFilterType
+    self.Name: str
+    self.Ordinal: int
+    self.Parent: None   #SlicerCache | SlicerCacheLevel
+    self.SlicerItems: None          #SlicerItems
+    self.SortItems: None            #XlSlicerSort
+    self.VisibleSlicerItemsList: None           #VBA_Variant
+
+
+
+
+class SlicerCacheLevels:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #SlicerCacheLevel
+    self.Parent: None   #SlicerCache | SlicerCacheLevels
+
+
+
+
+class SlicerCaches:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #SlicerCache
+    self.Parent: None   #Workbook
+
+  def Add(self, Source, SourceField, Name, SlicerCacheType) -> None: pass               #SlicerCache
+
+
+
+
+class SlicerItem:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Caption: str
+    self.Creator: int
+    self.HasData: bool
+    self.Name: str
+    self.Parent: None   #SlicerCache
+    self.Selected: bool
+    self.SourceName: None           #VBA_Variant
+    self.SourceNameStandard: str
+    self.Value: str
+
+
+
+
+class SlicerItems:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #SlicerItem
+    self.Parent: None   #SlicerCache
+
+
+
+
+class SlicerPivotTables:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #PivotTable
+    self.Parent: None   #SlicerCache | SlicerPivotTables
+
+  def AddPivotTable(self, PivotTable) -> None: pass               #None
+  def RemovePivotTable(self, PivotTable) -> None: pass            #None
+
+
+
+
+class Slicers:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #Slicer
+    self.Parent: None   #SlicerCache | Slicers
+
+  def Add(self, SlicerDestination, Level, Name, Caption, Top, Left, Width, Height) -> None: pass              #Slicer
+
+
+
+
+class Sort:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Header: None   #XlYesNoGuess
+    self.MatchCase: bool
+    self.Orientation: None          #XlSortOrientation
+    self.Parent: None   #VBA_Object
+    self.Rng: None      #VBA_Object
+    self.SortFields: None           #SortFields | Sort
+    self.SortMethod: None           #XlSortMethod
+
+  def Apply(self, ) -> None: pass           #None
+  def SetRange(self, Rng) -> None: pass     #None
+
+
+
+
+class SortField:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.CustomOrder: None          #VBA_Variant
+    self.DataOption: None           #XlSortDataOption
+    self.Key: None      #VBA_Object
+    self.Order: None    #SortField
+    self.Parent: None   #VBA_Object
+    self.Priority: None             #SortField
+    self.SortOn: None   #XlSortOn
+    self.SortOnValue: None          #SortField
+
+  def Delete(self, ) -> None: pass          #None
+  def ModifyKey(self, Key) -> None: pass    #None
+  def SetIcon(self, Icon) -> None: pass     #None
+
+
+
+
+class SortFields:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #SortField
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Key, SortOn, Order, CustomOrder, DataOption) -> None: pass              #SortField
+  def Add2(self, Key, SortOn, Order, CustomOrder, DataOption, SubField) -> None: pass   #SortField
+  def Clear(self, ) -> None: pass           #None
+
+
+
+
+class SparkAxes:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Horizontal: None           #SparkHorizontalAxis
+    self.Parent: None   #SparklineGroup
+    self.Vertical: None             #SparkVerticalAxis
+
+
+
+
+class SparkColor:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Color: None    #FormatColor
+    self.Creator: int
+    self.Parent: None   #SparklineGroup
+    self.Visible: bool
+
+
+
+
+class SparkHorizontalAxis:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Axis: None     #SparkColor
+    self.Creator: int
+    self.IsDateAxis: bool
+    self.Parent: None   #SparklineGroup
+    self.RightToLeftPlotOrder: bool
+
+
+
+
+class SparkPoints:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Firstpoint: None           #SparkColor
+    self.Highpoint: None            #SparkColor
+    self.Lastpoint: None            #SparkColor
+    self.Lowpoint: None             #SparkColor
+    self.Markers: None  #SparkColor
+    self.Negative: None             #SparkColor
+    self.Parent: None   #SparklineGroup
+
+
+
+
+class SparkVerticalAxis:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.CustomMaxScaleValue: None  #VBA_Variant
+    self.CustomMinScaleValue: None  #VBA_Variant
+    self.MaxScaleType: None         #XlSparkScale
+    self.MinScaleType: None         #XlSparkScale
+    self.Parent: None   #SparklineGroup
+
+
+
+
+class Sparkline:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Location: None             #Range
+    self.Parent: None   #SparklineGroup
+    self.SourceData: str
+
+  def ModifyLocation(self, Range) -> None: pass                   #None
+  def ModifySourceData(self, Formula) -> None: pass               #None
+
+
+
+
+class SparklineGroup:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Axes: None     #SparkAxes
+    self.Count: int
+    self.Creator: int
+    self.DateRange: str
+    self.DisplayBlanksAs: None      #XLDISPLAYBLANKSAS
+    self.DisplayHidden: bool
+    self.Item: None     #Sparkline
+    self.LineWeight: None           #VBA_Variant
+    self.Location: None             #Range
+    self.Parent: None   #VBA_Object
+    self.PlotBy: None   #XLSPARKLINEROWCOL
+    self.Points: None   #SPARKPOINTS
+    self.SeriesColor: None          #FormatColor
+    self.SourceData: str
+    self.Type: None     #XlSparkType
+
+  def Delete(self, ) -> None: pass          #None
+  def Modify(self, Location, SourceData) -> None: pass            #None
+  def ModifyDateRange(self, DateRange) -> None: pass              #None
+  def ModifyLocation(self, Location) -> None: pass                #None
+  def ModifySourceData(self, SourceData) -> None: pass            #None
+
+
+
+
+class SparklineGroups:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #SparklineGroup
+    self.Parent: None   #Range
+
+  def Add(self, Type, SourceData) -> None: pass                   #SparklineGroup
+  def Clear(self, ) -> None: pass           #None
+  def ClearGroups(self, ) -> None: pass     #None
+  def Group(self, Location) -> None: pass   #None
+  def Ungroup(self, ) -> None: pass         #None
+
+
+
+
+class Speech:
+  '''just need name'''
+
+  def __init__(self):
+    self.Direction: None            #XlSpeakDirection
+    self.SpeakCellOnEnter: bool
+
+  def Speak(self, Text, SpeakAsync, SpeakXML, Purge) -> None: pass                      #None
+
+
+
+
+class SpellingOptions:
+  '''just need name'''
+
+  def __init__(self):
+    self.ArabicModes: None          #XlArabicModes
+    self.ArabicStrictAlefHamza: bool
+    self.ArabicStrictFinalYaa: bool
+    self.ArabicStrictTaaMarboota: bool
+    self.BrazilReform: None         #XlPortugueseReform
+    self.DictLang: int
+    self.GermanPostReform: bool
+    self.HebrewModes: None          #XlHebrewModes
+    self.IgnoreCaps: bool
+    self.IgnoreFileNames: bool
+    self.IgnoreMixedDigits: bool
+    self.KoreanCombineAux: bool
+    self.KoreanProcessCompound: bool
+    self.KoreanUseAutoChangeList: bool
+    self.PortugalReform: None       #XlPortugueseReform
+    self.RussianStrictE: bool
+    self.SpanishModes: None         #XlSpanishModes
+    self.SuggestMainOnly: bool
+    self.UserDict: str
+
+
+
+
+class Style:
+  '''just need name'''
+
+  def __init__(self):
+    self.AddIndent: bool
+    self.Application: None          #Application
+    self.Borders: None  #Borders
+    self.BuiltIn: bool
+    self.Creator: int
+    self.Font: None     #VBA_Object
+    self.FormulaHidden: bool
+    self.HorizontalAlignment: None  #XlHAlign
+    self.IncludeAlignment: bool
+    self.IncludeBorder: bool
+    self.IncludeFont: bool
+    self.IncludeNumber: bool
+    self.IncludePatterns: bool
+    self.IncludeProtection: bool
+    self.IndentLevel: int
+    self.Interior: None             #Interior
+    self.Locked: bool
+    self.MergeCells: None           #VBA_Variant
+    self.Name: str
+    self.NameLocal: str
+    self.NumberFormat: str
+    self.NumberFormatLocal: str
+    self.Orientation: None          #XlOrientation
+    self.Parent: None   #VBA_Object
+    self.ReadingOrder: None         #XlReadingOrder | xlRTL | xlLTR | xlContext | int
+    self.ShrinkToFit: bool
+    self.Value: str
+    self.VerticalAlignment: None    #XlVAlign
+    self.WrapText: bool
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class Styles:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Name) -> None: pass         #Style
+  def Merge(self, Workbook) -> None: pass   #VBA_Variant
+
+
+
+
+class Tab:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Color: None    #VBA_Variant
+    self.ColorIndex: None           #VBA_Variant
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+    self.ThemeColor: None           #XlThemeColor
+    self.TintAndShade: float
+
+
+
+
+class TableObject:
+  '''just need name'''
+
+  def __init__(self):
+    self.AdjustColumnWidth: bool
+    self.Application: None          #APPLICATION
+    self.Creator: None  #XLCREATOR
+    self.Destination: None          #RANGE
+    self.EnableEditing: bool
+    self.EnableRefresh: bool
+    self.FetchedRowOverflow: bool
+    self.ListObject: None           #LISTOBJECT
+    self.Parent: None   #VBA_Object
+    self.PreserveColumnInfo: bool
+    self.PreserveFormatting: bool
+    self.RefreshStyle: None         #XLCELLINSERTIONMODE
+    self.ResultRange: None          #RANGE
+    self.RowNumbers: bool
+    self.WorkbookConnection: None   #WORKBOOKCONNECTION
+
+  def Delete(self, ) -> None: pass          #None
+  def Refresh(self, ) -> None: pass         #bool
+
+
+
+
+class TableStyles:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, TableStyleName) -> None: pass                     #TableStyle
+  def Item(self, Index) -> None: pass       #TableStyle
+
+
+
+
+class TextConnection:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #APPLICATION
+    self.Connection: None           #VARIANT
+    self.Creator: None  #XLCREATOR
+    self.Parent: None   #VBA_Object
+    self.TextFileColumnDataTypes: None          #VARIANT
+    self.TextFileCommaDelimiter: bool
+    self.TextFileConsecutiveDelimiter: bool
+    self.TextFileDecimalSeparator: None         #STRING
+    self.TextFileFixedColumnWidths: None        #VARIANT
+    self.TextFileHeaderRow: bool
+    self.TextFileOtherDelimiter: None           #STRING
+    self.TextFileParseType: None    #XLTEXTPARSINGTYPE
+    self.TextFilePlatform: None     #XLPLATFORM
+    self.TextFilePromptOnRefresh: bool
+    self.TextFileSemicolonDelimiter: bool
+    self.TextFileSpaceDelimiter: bool
+    self.TextFileStartRow: int
+    self.TextFileTabDelimiter: bool
+    self.TextFileTextQualifier: None            #XLTEXTQUALIFIER
+    self.TextFileThousandsSeparator: None       #STRING
+    self.TextFileTrailingMinusNumbers: bool
+    self.TextFileVisualLayout: None             #XLTEXTVISUALLAYOUTTYPE
+
+
+
+
+class TextEffectFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Alignment: None            #MsoTextEffectAlignment
+    self.Application: None          #Application
+    self.Creator: int
+    self.FontBold: None             #MsoTriState
+    self.FontItalic: None           #MsoTriState
+    self.FontName: str
+    self.FontSize: float
+    self.KernedPairs: None          #MsoTriState
+    self.NormalizedHeight: None     #MsoTriState
+    self.Parent: None   #VBA_Object
+    self.PresetShape: None          #MsoPresetTextEffectShape
+    self.PresetTextEffect: None     #MsoPresetTextEffect
+    self.RotatedChars: None         #MsoTriState
+    self.Text: str
+    self.Tracking: float
+
+  def ToggleVerticalText(self, ) -> None: pass                    #None
+
+
+
+
+class TextFrame:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AutoMargins: bool
+    self.AutoSize: bool
+    self.Creator: int
+    self.HorizontalAlignment: None  #XlHAlign
+    self.HorizontalOverflow: None   #XlOartHorizontalOverflow
+    self.MarginBottom: float
+    self.MarginLeft: float
+    self.MarginRight: float
+    self.MarginTop: float
+    self.Orientation: int
+    self.Parent: None   #VBA_Object
+    self.ReadingOrder: None         #XlReadingOrder | xlRTL | xlLTR | xlContext | int
+    self.VerticalAlignment: None    #XlVAlign
+    self.VerticalOverflow: None     #XlOartVerticalOverflow
+
+  def Characters(self, Start, Length) -> None: pass               #Characters
+
+
+
+
+class TextFrame2:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AutoSize: None             #MsoAutoSize
+    self.Column: None   #TextColumn2
+    self.Creator: int
+    self.HasText: None  #MsoTriState
+    self.HorizontalAnchor: None     #MsoHorizontalAnchor
+    self.MarginBottom: float
+    self.MarginLeft: float
+    self.MarginRight: float
+    self.MarginTop: float
+    self.NoTextRotation: None       #MsoTriState
+    self.Orientation: None          #MsoTextOrientation
+    self.Parent: None   #VBA_Object
+    self.PathFormat: None           #MsoPathFormat
+    self.Ruler: None    #Ruler2
+    self.TextRange: None            #TextRange2
+    self.ThreeD: None   #ThreeDFormat
+    self.VerticalAnchor: None       #MsoVerticalAnchor
+    self.WarpFormat: None           #MsoWarpFormat
+    self.WordArtformat: None        #MsoPresetTextEffect
+    self.WordWrap: None             #MsoTriState
+
+  def DeleteText(self, ) -> None: pass      #None
+
+
+
+
+class ThreeDFormat:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.BevelBottomDepth: float
+    self.BevelBottomInset: float
+    self.BevelBottomType: None      #MsoBevelType
+    self.BevelTopDepth: float
+    self.BevelTopInset: float
+    self.BevelTopType: None         #MsoBevelType
+    self.ContourColor: None         #ColorFormat
+    self.ContourWidth: float
+    self.Creator: int
+    self.Depth: float
+    self.ExtrusionColor: None       #ColorFormat
+    self.ExtrusionColorType: None   #MsoExtrusionColorType
+    self.FieldOfView: float
+    self.LightAngle: float
+    self.Parent: None   #VBA_Object
+    self.Perspective: None          #MsoTriState
+    self.PresetCamera: None         #MsoPresetCamera
+    self.PresetExtrusionDirection: None         #MsoPresetExtrusionDirection
+    self.PresetLighting: None       #MsoLightRigType
+    self.PresetLightingDirection: None          #MsoPresetLightingDirection
+    self.PresetLightingSoftness: None           #MsoPresetLightingSoftness
+    self.PresetMaterial: None       #MsoPresetMaterial
+    self.PresetThreeDFormat: None   #MsoPresetThreeDFormat
+    self.ProjectText: None          #MsoTriState
+    self.RotationX: float
+    self.RotationY: float
+    self.RotationZ: float
+    self.Visible: None  #MsoTriState
+    self.Z: float
+
+  def IncrementRotationHorizontal(self, Increment) -> None: pass  #None
+  def IncrementRotationVertical(self, Increment) -> None: pass    #None
+  def IncrementRotationX(self, Increment) -> None: pass           #None
+  def IncrementRotationY(self, Increment) -> None: pass           #None
+  def IncrementRotationZ(self, Increment) -> None: pass           #None
+  def ResetRotation(self, ) -> None: pass   #None
+  def SetExtrusionDirection(self, PresetExtrusionDirection) -> None: pass               #None
+  def SetPresetCamera(self, PresetCamera) -> None: pass           #None
+  def SetThreeDFormat(self, PresetThreeDFormat) -> None: pass     #None
+
+
+
+
+class TickLabels:
+  '''just need name'''
+
+  def __init__(self):
+    self.Alignment: int
+    self.Application: None          #Application
+    self.Creator: int
+    self.Depth: int
+    self.Font: None     #VBA_Object
+    self.Format: None   #ChartFormat
+    self.MultiLevel: bool
+    self.Name: str
+    self.NumberFormat: str
+    self.NumberFormatLinked: bool
+    self.NumberFormatLocal: None    #VBA_Variant
+    self.Offset: int
+    self.Orientation: int
+    self.Parent: None   #VBA_Object
+    self.ReadingOrder: None         #XlReadingOrder | xlRTL | xlLTR | xlContext | int
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class TimelineState:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #APPLICATION
+    self.Creator: None  #XLCREATOR
+    self.EndDate: None  #VARIANT
+    self.FilterType: None           #XLPIVOTFILTERTYPE
+    self.FilterValue1: None         #VARIANT
+    self.FilterValue2: None         #VARIANT
+    self.Parent: None   #VBA_Object
+    self.SingleRangeFilterState: bool
+    self.StartDate: None            #VARIANT
+
+  def SetFilterDateRange(self, StartDate, EndDate) -> None: pass  #XlFilterStatus
+
+
+
+
+class TimelineViewState:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #APPLICATION
+    self.Creator: None  #XLCREATOR
+    self.Level: None    #XLTIMELINELEVEL
+    self.Parent: None   #VBA_Object
+    self.ShowHeader: bool
+    self.ShowHorizontalScrollbar: bool
+    self.ShowSelectionLabel: bool
+    self.ShowTimeLevel: bool
+
+
+
+
+class TreeviewControl:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Drilled: None  #TreeviewControl | Hidden
+    self.Hidden: None   #VBA_Variant
+    self.Parent: None   #VBA_Object
+
+
+
+
+class Trendline:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Backward2: float
+    self.Border: None   #VBA_Object
+    self.Creator: int
+    self.DataLabel: None            #DataLabel
+    self.DisplayEquation: bool
+    self.DisplayRSquared: bool
+    self.Format: None   #ChartFormat
+    self.Forward2: float
+    self.Index: int
+    self.Intercept: float
+    self.InterceptIsAuto: bool
+    self.Name: str
+    self.NameIsAuto: bool
+    self.Order: int
+    self.Parent: None   #VBA_Object
+    self.Period: int
+    self.Type: None     #XlTrendlineType
+
+  def ClearFormats(self, ) -> None: pass    #VBA_Variant
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class Trendlines:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Type, Order, Period, Forward, Backward, Intercept, DisplayEquation, DisplayRSquared, Name) -> None: pass            #Trendline
+  def Item(self, Index) -> None: pass       #Trendline
+
+
+
+
+class UpBars:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Name: str
+    self.Parent: None   #VBA_Object
+
+  def Delete(self, ) -> None: pass          #VBA_Variant
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class UsedObjects:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+
+
+
+class UserAccess:
+  '''just need name'''
+
+  def __init__(self):
+    self.AllowEdit: bool
+    self.Name: str
+
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class UserAccessList:
+  '''just need name'''
+
+  def __init__(self):
+    self.Count: int
+    self.Item: None     #VBA_Object
+
+  def Add(self, Name, AllowEdit) -> None: pass                    #UserAccess
+  def DeleteAll(self, ) -> None: pass       #None
+
+
+
+
+class VPageBreak:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Extent: int
+    self.Location: None             #Range
+    self.Parent: None   #VBA_Object
+    self.Type: None     #XlPageBreak
+
+  def Delete(self, ) -> None: pass          #None
+  def DragOff(self, Direction, RegionIndex) -> None: pass         #None
+
+
+
+
+class VPageBreaks:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Before) -> None: pass       #VPageBreak
+
+
+
+
+class Validation:
+  '''just need name'''
+
+  def __init__(self):
+    self.AlertStyle: None           #XlDVAlertStyle
+    self.Application: None          #Application
+    self.Creator: int
+    self.ErrorMessage: str
+    self.ErrorTitle: str
+    self.Formula1: str
+    self.Formula2: str
+    self.IMEMode: None  #XlIMEMode | int
+    self.IgnoreBlank: bool
+    self.InCellDropdown: bool
+    self.InputMessage: str
+    self.InputTitle: str
+    self.Operator: int
+    self.Parent: None   #VBA_Object
+    self.ShowError: bool
+    self.ShowInput: bool
+    self.Type: int
+    self.Value: bool
+
+  def Add(self, Type, AlertStyle, Operator, Formula1, Formula2) -> None: pass           #None
+  def Delete(self, ) -> None: pass          #None
+  def Modify(self, Type, AlertStyle, Operator, Formula1, Formula2) -> None: pass        #None
+
+
+
+
+class ValueChange:
+  '''just need name'''
+
+  def __init__(self):
+    self.AllocationMethod: None     #XlAllocationMethod
+    self.AllocationValue: None      #XlAllocationValue
+    self.AllocationWeightExpression: str
+    self.Application: None          #Application
+    self.Creator: int
+    self.Order: int
+    self.Parent: None   #VBA_Object
+    self.PivotCell: None            #PivotCell
+    self.Tuple: str
+    self.Value: float
+    self.VisibleInPivotTable: bool
+
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class Walls:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Format: None   #ChartFormat
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.PictureType: None          #VBA_Variant
+    self.PictureUnit: None          #PictureType | xlStackScale | int
+    self.Thickness: int
+
+  def ClearFormats(self, ) -> None: pass    #VBA_Variant
+  def Paste(self, ) -> None: pass           #None
+  def Select(self, ) -> None: pass          #VBA_Variant
+
+
+
+
+class Watches:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Source) -> None: pass       #Watch
+  def Delete(self, ) -> None: pass          #None
+
+
+
+
+class WebOptions:
+  '''just need name'''
+
+  def __init__(self):
+    self.AllowPNG: bool
+    self.Application: None          #Application
+    self.Creator: int
+    self.DownloadComponents: bool
+    self.Encoding: None             #MsoEncoding
+    self.FolderSuffix: str
+    self.LocationOfComponents: str
+    self.OrganizeInFolder: bool
+    self.Parent: None   #VBA_Object
+    self.PixelsPerInch: int
+    self.RelyOnCSS: bool
+    self.RelyOnVML: bool
+    self.ScreenSize: None           #MsoScreenSize
+    self.TargetBrowser: None        #MsoTargetBrowser
+    self.UseLongFileNames: bool
+
+  def UseDefaultFolderSuffix(self, ) -> None: pass                #None
+
+
+
+
+class Window:
+  '''just need name'''
+
+  def __init__(self):
+    self.ActiveCell: None           #Range
+    self.ActiveChart: None          #VBA_Object
+    self.ActivePane: None           #Pane
+    self.ActiveSheet: None          #VBA_Object | None
+    self.ActiveSheetView: None      #VBA_Object
+    self.Application: None          #Application
+    self.AutoFilterDateGrouping: bool
+    self.Caption: None  #VBA_Variant
+    self.Creator: int
+    self.DisplayFormulas: bool
+    self.DisplayGridlines: bool
+    self.DisplayHeadings: bool
+    self.DisplayHorizontalScrollBar: bool
+    self.DisplayOutline: bool
+    self.DisplayRightToLeft: bool
+    self.DisplayRuler: bool
+    self.DisplayVerticalScrollBar: bool
+    self.DisplayWhitespace: bool
+    self.DisplayWorkbookTabs: bool
+    self.DisplayZeros: bool
+    self.EnableResize: bool
+    self.FreezePanes: bool
+    self.GridlineColor: int
+    self.GridlineColorIndex: None   #XlColorIndex
+    self.Height: float
+    self.Index: int
+    self.Left: float
+    self.OnWindow: str
+    self.Panes: None    #Panes
+    self.Parent: None   #VBA_Object
+    self.RangeSelection: None       #Range
+    self.ScrollColumn: int
+    self.ScrollRow: int
+    self.SelectedSheets: None       #Sheets
+    self.Selection: None            #Windows
+    self.SheetViews: None           #SheetViews
+    self.Split: bool
+    self.SplitColumn: int
+    self.SplitHorizontal: float
+    self.SplitRow: int
+    self.SplitVertical: float
+    self.TabRatio: float
+    self.Top: float
+    self.Type: None     #XlWindowType
+    self.UsableHeight: float
+    self.UsableWidth: float
+    self.View: None     #XlWindowView
+    self.Visible: bool
+    self.VisibleRange: None         #Range
+    self.Width: float
+    self.WindowNumber: int
+    self.WindowState: None          #XlWindowState
+    self.Zoom: None     #VBA_Variant
+    self.hWnd: int
+
+  def Activate(self, ) -> None: pass        #VBA_Variant
+  def ActivateNext(self, ) -> None: pass    #VBA_Variant
+  def ActivatePrevious(self, ) -> None: pass                      #VBA_Variant
+  def Close(self, SaveChanges, FileName, RouteWorkbook) -> None: pass                   #bool
+  def LargeScroll(self, Down, Up, ToRight, ToLeft) -> None: pass  #VBA_Variant
+  def NewWindow(self, ) -> None: pass       #Window
+  def PointsToScreenPixelsX(self, Points) -> None: pass           #int
+  def PointsToScreenPixelsY(self, Points) -> None: pass           #int
+  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName) -> None: pass                    #VBA_Variant
+  def PrintPreview(self, EnableChanges) -> None: pass             #VBA_Variant
+  def RangeFromPoint(self, x, y) -> None: pass                    #VBA_Object
+  def ScrollIntoView(self, Left, Top, Width, Height, Start) -> None: pass               #None
+  def ScrollWorkbookTabs(self, Sheets, Position) -> None: pass    #VBA_Variant
+  def SmallScroll(self, Down, Up, ToRight, ToLeft) -> None: pass  #VBA_Variant
+
+
+
+
+class Windows:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+    self.SyncScrollingSideBySide: bool
+
+  def Arrange(self, ArrangeStyle, ActiveWorkbook, SyncHorizontal, SyncVertical) -> None: pass                 #VBA_Variant
+  def BreakSideBySide(self, ) -> None: pass                       #bool
+  def CompareSideBySideWith(self, WindowName) -> None: pass       #bool
+  def ResetPositionsSideBySide(self, ) -> None: pass              #None
+
+
+
+
+class Workbook:
+  '''just need name'''
+
+  def __init__(self):
+    self.AccuracyVersion: int
+    self.ActiveChart: None          #VBA_Object
+    self.ActiveSheet: None          #VBA_Object
+    self.ActiveSlicer: None         #Slicer
+    self.Application: None          #Application
+    self.AutoSaveOn: bool
+    self.AutoUpdateFrequency: int
+    self.AutoUpdateSaveChanges: bool
+    self.BuiltinDocumentProperties: None        #DocumentProperties
+    self.CalculationVersion: int
+    self.CaseSensitive: bool
+    self.ChangeHistoryDuration: int
+    self.ChartDataPointTrack: bool
+    self.Charts: None   #Sheets
+    self.CheckCompatibility: bool
+    self.CodeName: str
+    self.Colors: None   #VBA_Variant
+    self.CommandBars: None          #CommandBars
+    self.ConflictResolution: None   #XlSaveConflictResolution
+    self.Connections: None          #Connections
+    self.ConnectionsDisabled: bool
+    self.Container: None            #VBA_Object
+    self.ContentTypeProperties: None            #MetaProperties
+    self.CreateBackup: bool
+    self.Creator: int
+    self.CustomDocumentProperties: None         #DocumentProperties
+    self.CustomViews: None          #CustomViews
+    self.CustomXMLParts: None       #CustomXMLParts
+    self.Date1904: bool
+    self.DefaultPivotTableStyle: None           #TableStyles
+    self.DefaultSlicerStyle: None   #VBA_Variant
+    self.DefaultTableStyle: None    #VBA_Variant
+    self.DefaultTimelineStyle: None             #VARIANT
+    self.DisplayDrawingObjects: int
+    self.DisplayInkComments: bool
+    self.DoNotPromptForConvert: bool
+    self.DocumentInspectors: None   #DocumentInspectors
+    self.DocumentLibraryVersions: None          #DocumentLibraryVersions
+    self.EnableAutoRecover: bool
+    self.EncryptionProvider: str
+    self.EnvelopeVisible: bool
+    self.Excel4IntlMacroSheets: None            #Sheets
+    self.Excel4MacroSheets: None    #Sheets
+    self.Excel8CompatibilityMode: bool
+    self.FileFormat: None           #XlFileFormat
+    self.Final: bool
+    self.ForceFullCalculation: bool
+    self.FullName: str
+    self.FullNameURLEncoded: str
+    self.HasPassword: bool
+    self.HasVBProject: bool
+    self.HighlightChangesOnScreen: bool
+    self.IconSets: None             #IconSets
+    self.InactiveListBorderVisible: bool
+    self.IsAddin: bool
+    self.IsInplace: bool
+    self.KeepChangeHistory: bool
+    self.ListChangesOnNewSheet: bool
+    self.Mailer: None   #Workbook
+    self.Model: None    #MODEL
+    self.MultiUserEditing: bool
+    self.Name: str
+    self.Names: None    #Names
+    self.Parent: None   #VBA_Object
+    self.Password: str
+    self.PasswordEncryptionAlgorithm: str
+    self.PasswordEncryptionFileProperties: bool
+    self.PasswordEncryptionKeyLength: int
+    self.PasswordEncryptionProvider: str
+    self.Path: str
+    self.Permission: None           #VBA_Object
+    self.PersonalViewListSettings: bool
+    self.PersonalViewPrintSettings: bool
+    self.PivotTables: None          #VBA_Object
+    self.PrecisionAsDisplayed: bool
+    self.ProtectStructure: bool
+    self.ProtectWindows: bool
+    self.PublishObjects: None       #PublishObjects
+    self.Queries: None  #Queries | Workbook
+    self.ReadOnly: bool
+    self.ReadOnlyRecommended: None  #recommended
+    self.RemovePersonalInformation: bool
+    self.Research: None             #Research
+    self.RevisionNumber: int
+    self.SaveLinkValues: bool
+    self.Saved: bool
+    self.SensitivityLabel: None     #SensitivityLabel
+    self.ServerPolicy: None         #ServerPolicy
+    self.ServerViewableItems: None  #VBA_Object
+    self.SharedWorkspace: None      #VBA_Object
+    self.Sheets: None   #Sheets
+    self.ShowConflictHistory: bool
+    self.ShowPivotChartActiveFields: bool
+    self.ShowPivotTableFieldList: bool
+    self.Signatures: None           #VBA_Object
+    self.SlicerCaches: None         #SlicerCaches
+    self.SmartDocument: None        #SmartDocument
+    self.Styles: None   #Styles
+    self.Sync: None     #VBA_Object
+    self.TableStyles: None          #TableStyles
+    self.TemplateRemoveExtData: bool
+    self.Theme: None    #VBA_Object
+    self.UpdateLinks: None          #XlUpdateLink
+    self.UpdateRemoteReferences: bool
+    self.UseWholeCellCriteria: bool
+    self.UseWildcards: bool
+    self.UserStatus: None           #VBA_Variant
+    self.VBASigned: bool
+    self.VBProject: None            #VBProject
+    self.WebOptions: None           #WebOptions
+    self.Windows: None  #Windows
+    self.Worksheets: None           #Worksheets
+    self.WritePassword: str
+    self.WriteReserved: bool
+    self.WriteReservedBy: str
+    self.XmlMaps: None  #XmlMaps
+    self.XmlNamespaces: None        #XmlNamespaces
+
+  def AcceptAllChanges(self, When, Who, Where) -> None: pass      #None
+  def Activate(self, ) -> None: pass        #None
+  def AddToFavorites(self, ) -> None: pass  #None
+  def ApplyTheme(self, FileName) -> None: pass                    #None
+  def BreakLink(self, Name, Type) -> None: pass                   #None
+  def CanCheckIn(self, ) -> None: pass      #bool
+  def ChangeFileAccess(self, Mode, WritePassword, Notify) -> None: pass                 #None
+  def ChangeLink(self, Name, NewName, Type) -> None: pass         #None
+  def CheckIn(self, SaveChanges, Comments, MakePublic) -> None: pass                    #None
+  def CheckInWithVersion(self, SaveChanges, Comments, MakePublic, VersionType) -> None: pass                  #None
+  def Close(self, SaveChanges, FileName, RouteWorkbook) -> None: pass                   #None
+  def ConvertComments(self, ) -> None: pass                       #None
+  def CreateForecastSheet(self, Timeline, Values, ForecastStart, ForecastEnd, ConfInt, Seasonality, DataCompletion, Aggregation, ChartType, ShowStatsTable) -> None: pass       #None
+  def DeleteNumberFormat(self, NumberFormat) -> None: pass        #None
+  def EnableConnections(self, ) -> None: pass                     #None
+  def EndReview(self, ) -> None: pass       #None
+  def ExclusiveAccess(self, ) -> None: pass                       #bool
+  def ExportAsFixedFormat(self, Type, FileName, Quality, IncludeDocProperties, IgnorePrintAreas, From, To, OpenAfterPublish, FixedFormatExtClassPtr) -> None: pass              #None
+  def FollowHyperlink(self, Address, SubAddress, NewWindow, AddHistory, ExtraInfo, Method, HeaderInfo) -> None: pass                #None
+  def ForwardMailer(self, ) -> None: pass   #None
+  def GetWorkflowTasks(self, ) -> None: pass                      #WorkFlowTasks
+  def GetWorkflowTemplates(self, ) -> None: pass                  #WorkflowTemplates
+  def HighlightChangesOptions(self, When, Who, Where) -> None: pass                     #None
+  def LinkInfo(self, Name, LinkInfo, Type, EditionRef) -> None: pass                    #VBA_Variant
+  def LinkSources(self, Type) -> None: pass                       #VBA_Variant
+  def LockServerFile(self, ) -> None: pass  #None
+  def MergeWorkbook(self, FileName) -> None: pass                 #None
+  def NewWindow(self, ) -> None: pass       #Window
+  def OpenLinks(self, Name, ReadOnly, Type) -> None: pass         #None
+  def PivotCaches(self, ) -> None: pass     #PivotCaches
+  def Post(self, DestName) -> None: pass    #None
+  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName, IgnorePrintAreas) -> None: pass  #VBA_Variant
+  def PrintPreview(self, EnableChanges) -> None: pass             #None
+  def Protect(self, Password, Structure, Windows) -> None: pass   #None
+  def ProtectSharing(self, FileName, Password, WriteResPassword, ReadOnlyRecommended, CreateBackup, SharingPassword, FileFormat) -> None: pass            #None
+  def PublishToDocs(self, ) -> None: pass   #None
+  def PurgeChangeHistoryNow(self, Days, SharingPassword) -> None: pass                  #None
+  def RefreshAll(self, ) -> None: pass      #None
+  def RejectAllChanges(self, When, Who, Where) -> None: pass      #None
+  def ReloadAs(self, Encoding) -> None: pass                      #None
+  def RemoveDocumentInformation(self, RemoveDocInfoType) -> None: pass                  #None
+  def RemoveUser(self, Index) -> None: pass                       #None
+  def Reply(self, ) -> None: pass           #None
+  def ReplyAll(self, ) -> None: pass        #None
+  def ReplyWithChanges(self, ShowMessage) -> None: pass           #None
+  def ResetColors(self, ) -> None: pass     #None
+  def RunAutoMacros(self, Which) -> None: pass                    #None
+  def Save(self, ) -> None: pass            #None
+  def SaveAs(self, FileName, FileFormat, Password, WriteResPassword, ReadOnlyRecommended, CreateBackup, AccessMode, ConflictResolution, AddToMru, TextCodepage, TextVisualLayout, Local) -> None: pass                      #None
+  def SaveAsXMLData(self, FileName, Map) -> None: pass            #None
+  def SaveCopyAs(self, FileName) -> None: pass                    #None
+  def SendFaxOverInternet(self, Recipients, Subject, ShowMessage) -> None: pass         #None
+  def SendForReview(self, Recipients, Subject, ShowMessage, IncludeAttachment) -> None: pass                  #None
+  def SendMail(self, Recipients, Subject, ReturnReceipt) -> None: pass                  #None
+  def SendMailer(self, FileFormat, Priority) -> None: pass        #None
+  def SetLinkOnData(self, Name, Procedure) -> None: pass          #None
+  def SetPasswordEncryptionOptions(self, PasswordEncryptionProvider, PasswordEncryptionAlgorithm, PasswordEncryptionKeyLength, PasswordEncryptionFileProperties) -> None: pass  #None
+  def ToggleFormsDesign(self, ) -> None: pass                     #None
+  def Unprotect(self, Password) -> None: pass                     #None
+  def UnprotectSharing(self, SharingPassword) -> None: pass       #None
+  def UpdateFromFile(self, ) -> None: pass  #None
+  def UpdateLink(self, Name, Type) -> None: pass                  #None
+  def WebPagePreview(self, ) -> None: pass  #None
+  def XmlImport(self, Url, ImportMap, Overwrite, Destination) -> None: pass             #XlXmlImportResult
+  def XmlImportXml(self, Data, ImportMap, Overwrite, Destination) -> None: pass         #XlXmlImportResult
+
+
+
+
+class WorkbookConnection:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.DataFeedConnection: None   #DATAFEEDCONNECTION
+    self.Description: str
+    self.InModel: bool
+    self.ModelConnection: None      #MODELCONNECTION
+    self.ModelTables: None          #MODELTABLES
+    self.Name: str
+    self.ODBCConnection: None       #ODBCConnection
+    self.OLEDBConnection: None      #OLEDBConnection
+    self.Parent: None   #VBA_Object
+    self.Ranges: None   #Ranges
+    self.RefreshWithRefreshAll: bool
+    self.TextConnection: None       #TEXTCONNECTION
+    self.Type: None     #XlConnectionType
+    self.WorksheetDataConnection: None          #WORKSHEETDATACONNECTION
+
+  def Delete(self, ) -> None: pass          #None
+  def Refresh(self, ) -> None: pass         #None
+
+
+
+
+class WorkbookQuery:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Description: str
+    self.Formula: str
+    self.Name: str
+    self.Parent: None   #VBA_Object
+
+  def Delete(self, DeleteConnection) -> None: pass                #None
+
+
+
+
+class Workbooks:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Template) -> None: pass     #Workbook
+  def CanCheckOut(self, FileName) -> None: pass                   #bool
+  def CheckOut(self, FileName) -> None: pass                      #None
+  def Close(self, ) -> None: pass           #None
+  def Open(self, FileName, UpdateLinks, ReadOnly, Format, Password, WriteResPassword, IgnoreReadOnlyRecommended, Origin, Delimiter, Editable, Notify, Converter, AddToMru, Local, CorruptLoad) -> None: pass                #Workbook
+  def OpenDatabase(self, FileName, CommandText, CommandType, BackgroundQuery, ImportDataAs) -> None: pass     #Workbook
+  def OpenText(self, FileName, Origin, StartRow, DataType, TextQualifier, ConsecutiveDelimiter, Tab, Semicolon, Comma, Space, Other, OtherChar, FieldInfo, TextVisualLayout, DecimalSeparator, ThousandsSeparator, TrailingMinusNumbers, Local) -> None: pass           #None
+  def OpenXML(self, FileName, Stylesheets, LoadOption) -> None: pass                    #Workbook
+
+
+
+
+class Worksheet:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.AutoFilter: None           #AutoFilter
+    self.AutoFilterMode: bool
+    self.Cells: None    #Range
+    self.CircularReference: None    #VBA_Object
+    self.CodeName: str
+    self.Columns: None  #Range
+    self.Comments: None             #Comments
+    self.CommentsThreaded: None     #CommentsThreaded
+    self.ConsolidationFunction: int
+    self.ConsolidationOptions: None             #VBA_Variant
+    self.ConsolidationSources: None             #VBA_Variant
+    self.Creator: int
+    self.CustomProperties: None     #CustomProperties
+    self.DisplayPageBreaks: bool
+    self.DisplayRightToLeft: bool
+    self.EnableAutoFilter: bool
+    self.EnableCalculation: bool
+    self.EnableFormatConditionsCalculation: bool
+    self.EnableOutlining: bool
+    self.EnablePivotTable: bool
+    self.EnableSelection: None      #XlEnableSelection
+    self.FilterMode: bool
+    self.HPageBreaks: None          #HPageBreaks
+    self.Hyperlinks: None           #Hyperlinks
+    self.Index: int
+    self.ListObjects: None          #ListObjects
+    self.MailEnvelope: None         #Worksheet
+    self.Name: str
+    self.Names: None    #Names
+    self.Next: None     #VBA_Object
+    self.Outline: None  #Outline
+    self.PageSetup: None            #PageSetup
+    self.Parent: None   #VBA_Object
+    self.Previous: None             #VBA_Object
+    self.PrintedCommentPages: int
+    self.ProtectContents: bool
+    self.ProtectDrawingObjects: bool
+    self.ProtectScenarios: bool
+    self.Protection: None           #VBA_Object
+    self.ProtectionMode: bool
+    self.QueryTables: None          #QueryTables
+    self.Range: None    #Range
+    self.Rows: None     #Range
+    self.ScrollArea: str
+    self.Shapes: None   #Shapes
+    self.Sort: None     #Sort
+    self.StandardHeight: float
+    self.StandardWidth: float
+    self.Tab: None      #Tab
+    self.TransitionExpEval: bool
+    self.TransitionFormEntry: bool
+    self.Type: None     #XlSheetType
+    self.UsedRange: None            #Range
+    self.VPageBreaks: None          #VPageBreaks
+    self.Visible: None  #XlSheetVisibility
+
+  def Activate(self, ) -> None: pass        #None
+  def Calculate(self, ) -> None: pass       #None
+  def ChartObjects(self, Index) -> None: pass                     #VBA_Object
+  def CheckSpelling(self, CustomDictionary, IgnoreUppercase, AlwaysSuggest, SpellLang) -> None: pass          #None
+  def CircleInvalid(self, ) -> None: pass   #None
+  def ClearArrows(self, ) -> None: pass     #None
+  def ClearCircles(self, ) -> None: pass    #None
+  def Copy(self, Before, After) -> None: pass                     #None
+  def Delete(self, ) -> None: pass          #bool
+  def Evaluate(self, Name) -> None: pass    #VBA_Variant
+  def ExportAsFixedFormat(self, Type, FileName, Quality, IncludeDocProperties, IgnorePrintAreas, From, To, OpenAfterPublish, FixedFormatExtClassPtr) -> None: pass              #None
+  def Move(self, Before, After) -> None: pass                     #None
+  def OLEObjects(self, Index) -> None: pass                       #VBA_Object
+  def Paste(self, Destination, Link) -> None: pass                #None
+  def PasteSpecial(self, Format, Link, DisplayAsIcon, IconFileName, IconIndex, IconLabel, NoHTMLFormatting) -> None: pass           #None
+  def PivotTableWizard(self, SourceType, SourceData, TableDestination, TableName, RowGrand, ColumnGrand, SaveData, HasAutoFormat, AutoPage, Reserved, BackgroundQuery, OptimizeCache, PageFieldOrder, PageFieldWrapCount, ReadData, Connection) -> None: pass           #PivotTable
+  def PivotTables(self, Index) -> None: pass                      #VBA_Object
+  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName, IgnorePrintAreas) -> None: pass  #VBA_Variant
+  def PrintPreview(self, EnableChanges) -> None: pass             #None
+  def Protect(self, Password, DrawingObjects, Contents, Scenarios, UserInterfaceOnly, AllowFormattingCells, AllowFormattingColumns, AllowFormattingRows, AllowInsertingColumns, AllowInsertingRows, AllowInsertingHyperlinks, AllowDeletingColumns, AllowDeletingRows, AllowSorting, AllowFiltering, AllowUsingPivotTables) -> None: pass                       #None
+  def ResetAllPageBreaks(self, ) -> None: pass                    #None
+  def SaveAs(self, FileName, FileFormat, Password, WriteResPassword, ReadOnlyRecommended, CreateBackup, AddToMru, TextCodepage, TextVisualLayout, Local) -> None: pass          #None
+  def Scenarios(self, Index) -> None: pass  #VBA_Object
+  def Select(self, Replace) -> None: pass   #None
+  def SetBackgroundPicture(self, FileName) -> None: pass          #None
+  def ShowAllData(self, ) -> None: pass     #None
+  def ShowDataForm(self, ) -> None: pass    #None
+  def Unprotect(self, Password) -> None: pass                     #None
+  def XmlDataQuery(self, XPath, SelectionNamespaces, Map) -> None: pass                 #Range
+  def XmlMapQuery(self, XPath, SelectionNamespaces, Map) -> None: pass                  #Range
+
+
+
+
+class WorksheetFunction:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+
+  def AccrInt(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> None: pass             #float
+  def AccrIntM(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass  #float
+  def Acos(self, Arg1) -> None: pass        #float
+  def Acosh(self, Arg1) -> None: pass       #float
+  def Acot(self, Arg1) -> None: pass        #float
+  def Acoth(self, Arg1) -> None: pass       #float
+  def Aggregate(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass  #float
+  def AmorDegrc(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> None: pass           #float
+  def AmorLinc(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> None: pass            #float
+  def And(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass        #bool
+  def Arabic(self, Arg1) -> None: pass      #float
+  def Asc(self, Arg1) -> None: pass         #str
+  def Asin(self, Arg1) -> None: pass        #float
+  def Asinh(self, Arg1) -> None: pass       #float
+  def Atan2(self, Arg1, Arg2) -> None: pass                       #float
+  def Atanh(self, Arg1) -> None: pass       #float
+  def AveDev(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass     #float
+  def Average(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass    #float
+  def AverageIf(self, Arg1, Arg2, Arg3) -> None: pass             #float
+  def AverageIfs(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass                       #float
+  def BahtText(self, Arg1) -> None: pass    #str
+  def Base(self, Arg1, Arg2, Arg3) -> None: pass                  #str
+  def BesselI(self, Arg1, Arg2) -> None: pass                     #float
+  def BesselJ(self, Arg1, Arg2) -> None: pass                     #float
+  def BesselK(self, Arg1, Arg2) -> None: pass                     #float
+  def BesselY(self, Arg1, Arg2) -> None: pass                     #float
+  def BetaDist(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass  #float
+  def BetaInv(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass   #float
+  def Beta_Dist(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> None: pass                 #float
+  def Beta_Inv(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass  #float
+  def Bin2Dec(self, Arg1) -> None: pass     #str
+  def Bin2Hex(self, Arg1, Arg2) -> None: pass                     #str
+  def Bin2Oct(self, Arg1, Arg2) -> None: pass                     #str
+  def BinomDist(self, Arg1, Arg2, Arg3, Arg4) -> None: pass       #float
+  def Binom_Dist(self, Arg1, Arg2, Arg3, Arg4) -> None: pass      #float
+  def Binom_Dist_Range(self, Arg1, Arg2, Arg3, Arg4) -> None: pass                      #float
+  def Binom_Inv(self, Arg1, Arg2, Arg3) -> None: pass             #float
+  def Bitand(self, Arg1, Arg2) -> None: pass                      #float
+  def Bitlshift(self, Arg1, Arg2) -> None: pass                   #float
+  def Bitor(self, Arg1, Arg2) -> None: pass                       #float
+  def Bitrshift(self, Arg1, Arg2) -> None: pass                   #float
+  def Bitxor(self, Arg1, Arg2) -> None: pass                      #float
+  def Ceiling(self, Arg1, Arg2) -> None: pass                     #float
+  def Ceiling_Math(self, Arg1, Arg2, Arg3) -> None: pass          #float
+  def Ceiling_Precise(self, Arg1, Arg2) -> None: pass             #float
+  def ChiDist(self, Arg1, Arg2) -> None: pass                     #float
+  def ChiInv(self, Arg1, Arg2) -> None: pass                      #float
+  def ChiSq_Dist(self, Arg1, Arg2, Arg3) -> None: pass            #float
+  def ChiSq_Dist_RT(self, Arg1, Arg2) -> None: pass               #float
+  def ChiSq_Inv(self, Arg1, Arg2) -> None: pass                   #float
+  def ChiSq_Inv_RT(self, Arg1, Arg2) -> None: pass                #float
+  def ChiSq_Test(self, Arg1, Arg2) -> None: pass                  #float
+  def ChiTest(self, Arg1, Arg2) -> None: pass                     #float
+  def Choose(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass     #VBA_Variant
+  def Clean(self, Arg1) -> None: pass       #str
+  def Combin(self, Arg1, Arg2) -> None: pass                      #float
+  def Combina(self, Arg1, Arg2) -> None: pass                     #float
+  def Complex(self, Arg1, Arg2, Arg3) -> None: pass               #str
+  def Confidence(self, Arg1, Arg2, Arg3) -> None: pass            #float
+  def Confidence_Norm(self, Arg1, Arg2, Arg3) -> None: pass       #float
+  def Confidence_T(self, Arg1, Arg2, Arg3) -> None: pass          #float
+  def Convert(self, Arg1, Arg2, Arg3) -> None: pass               #float
+  def Correl(self, Arg1, Arg2) -> None: pass                      #float
+  def Cosh(self, Arg1) -> None: pass        #float
+  def Cot(self, Arg1) -> None: pass         #float
+  def Coth(self, Arg1) -> None: pass        #float
+  def Count(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass      #float
+  def CountA(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass     #float
+  def CountBlank(self, Arg1) -> None: pass  #float
+  def CountIf(self, Arg1, Arg2) -> None: pass                     #float
+  def CountIfs(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass   #float
+  def CoupDayBs(self, Arg1, Arg2, Arg3, Arg4) -> None: pass       #float
+  def CoupDays(self, Arg1, Arg2, Arg3, Arg4) -> None: pass        #float
+  def CoupDaysNc(self, Arg1, Arg2, Arg3, Arg4) -> None: pass      #float
+  def CoupNcd(self, Arg1, Arg2, Arg3, Arg4) -> None: pass         #float
+  def CoupNum(self, Arg1, Arg2, Arg3, Arg4) -> None: pass         #float
+  def CoupPcd(self, Arg1, Arg2, Arg3, Arg4) -> None: pass         #float
+  def Covar(self, Arg1, Arg2) -> None: pass                       #float
+  def Covariance_P(self, Arg1, Arg2) -> None: pass                #float
+  def Covariance_S(self, Arg1, Arg2) -> None: pass                #float
+  def CritBinom(self, Arg1, Arg2, Arg3) -> None: pass             #float
+  def Csc(self, Arg1) -> None: pass         #float
+  def Csch(self, Arg1) -> None: pass        #float
+  def CumIPmt(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> None: pass                   #float
+  def CumPrinc(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> None: pass                  #float
+  def DAverage(self, Arg1, Arg2, Arg3) -> None: pass              #float
+  def DCount(self, Arg1, Arg2, Arg3) -> None: pass                #float
+  def DCountA(self, Arg1, Arg2, Arg3) -> None: pass               #float
+  def DGet(self, Arg1, Arg2, Arg3) -> None: pass                  #VBA_Variant
+  def DMax(self, Arg1, Arg2, Arg3) -> None: pass                  #float
+  def DMin(self, Arg1, Arg2, Arg3) -> None: pass                  #float
+  def DProduct(self, Arg1, Arg2, Arg3) -> None: pass              #float
+  def DStDev(self, Arg1, Arg2, Arg3) -> None: pass                #float
+  def DStDevP(self, Arg1, Arg2, Arg3) -> None: pass               #float
+  def DSum(self, Arg1, Arg2, Arg3) -> None: pass                  #float
+  def DVar(self, Arg1, Arg2, Arg3) -> None: pass                  #float
+  def DVarP(self, Arg1, Arg2, Arg3) -> None: pass                 #float
+  def Days(self, Arg1, Arg2) -> None: pass  #float
+  def Days360(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass    #float
+  def Db(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass        #float
+  def Dbcs(self, Arg1) -> None: pass        #str
+  def Ddb(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass       #float
+  def Dec2Bin(self, Arg1, Arg2) -> None: pass                     #str
+  def Dec2Hex(self, Arg1, Arg2) -> None: pass                     #str
+  def Dec2Oct(self, Arg1, Arg2) -> None: pass                     #str
+  def Decimal(self, Arg1, Arg2) -> None: pass                     #float
+  def Degrees(self, Arg1) -> None: pass     #float
+  def Delta(self, Arg1, Arg2) -> None: pass                       #float
+  def DevSq(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass      #float
+  def Disc(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass      #float
+  def Dollar(self, Arg1, Arg2) -> None: pass                      #str
+  def DollarDe(self, Arg1, Arg2) -> None: pass                    #float
+  def DollarFr(self, Arg1, Arg2) -> None: pass                    #float
+  def Duration(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> None: pass                  #float
+  def EDate(self, Arg1, Arg2) -> None: pass                       #float
+  def Effect(self, Arg1, Arg2) -> None: pass                      #float
+  def EncodeUrl(self, Arg1) -> None: pass   #VBA_Variant
+  def EoMonth(self, Arg1, Arg2) -> None: pass                     #float
+  def Erf(self, Arg1, Arg2) -> None: pass   #float
+  def ErfC(self, Arg1, Arg2) -> None: pass  #float
+  def ErfC_Precise(self, Arg1) -> None: pass                      #float
+  def Erf_Precise(self, Arg1) -> None: pass                       #float
+  def Even(self, Arg1) -> None: pass        #float
+  def ExponDist(self, Arg1, Arg2, Arg3) -> None: pass             #float
+  def Expon_Dist(self, Arg1, Arg2, Arg3) -> None: pass            #float
+  def FDist(self, Arg1, Arg2, Arg3) -> None: pass                 #float
+  def FInv(self, Arg1, Arg2, Arg3) -> None: pass                  #float
+  def FTest(self, Arg1, Arg2) -> None: pass                       #float
+  def FVSchedule(self, Arg1, Arg2) -> None: pass                  #float
+  def F_Dist(self, Arg1, Arg2, Arg3, Arg4) -> None: pass          #float
+  def F_Dist_RT(self, Arg1, Arg2, Arg3) -> None: pass             #float
+  def F_Inv(self, Arg1, Arg2, Arg3) -> None: pass                 #float
+  def F_Inv_RT(self, Arg1, Arg2, Arg3) -> None: pass              #float
+  def F_Test(self, Arg1, Arg2) -> None: pass                      #float
+  def Fact(self, Arg1) -> None: pass        #float
+  def FactDouble(self, Arg1) -> None: pass  #float
+  def FilterXML(self, Arg1, Arg2) -> None: pass                   #VBA_Variant
+  def Find(self, Arg1, Arg2, Arg3) -> None: pass                  #float
+  def FindB(self, Arg1, Arg2, Arg3) -> None: pass                 #float
+  def Fisher(self, Arg1) -> None: pass      #float
+  def FisherInv(self, Arg1) -> None: pass   #float
+  def Fixed(self, Arg1, Arg2, Arg3) -> None: pass                 #str
+  def Floor(self, Arg1, Arg2) -> None: pass                       #float
+  def Floor_Math(self, Arg1, Arg2, Arg3) -> None: pass            #float
+  def Floor_Precise(self, Arg1, Arg2) -> None: pass               #float
+  def Forecast(self, Arg1, Arg2, Arg3) -> None: pass              #float
+  def Forecast_ETS(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> None: pass              #float
+  def Forecast_ETS_ConfInt(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> None: pass                      #float
+  def Forecast_ETS_STAT(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> None: pass         #float
+  def Forecast_ETS_Seasonality(self, Arg1, Arg2, Arg3, Arg4) -> None: pass              #float
+  def Forecast_Linear(self, Arg1, Arg2, Arg3) -> None: pass       #float
+  def Frequency(self, Arg1, Arg2) -> None: pass                   #VBA_Variant
+  def Fv(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass        #float
+  def Gamma(self, Arg1) -> None: pass       #float
+  def GammaDist(self, Arg1, Arg2, Arg3, Arg4) -> None: pass       #float
+  def GammaInv(self, Arg1, Arg2, Arg3) -> None: pass              #float
+  def GammaLn(self, Arg1) -> None: pass     #float
+  def GammaLn_Precise(self, Arg1) -> None: pass                   #float
+  def Gamma_Dist(self, Arg1, Arg2, Arg3, Arg4) -> None: pass      #float
+  def Gamma_Inv(self, Arg1, Arg2, Arg3) -> None: pass             #float
+  def Gauss(self, Arg1) -> None: pass       #float
+  def Gcd(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass        #float
+  def GeStep(self, Arg1, Arg2) -> None: pass                      #float
+  def GeoMean(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass    #float
+  def Growth(self, Arg1, Arg2, Arg3, Arg4) -> None: pass          #VBA_Variant
+  def HLookup(self, Arg1, Arg2, Arg3, Arg4) -> None: pass         #VBA_Variant
+  def HarMean(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass    #float
+  def Hex2Bin(self, Arg1, Arg2) -> None: pass                     #str
+  def Hex2Dec(self, Arg1) -> None: pass     #str
+  def Hex2Oct(self, Arg1, Arg2) -> None: pass                     #str
+  def HypGeomDist(self, Arg1, Arg2, Arg3, Arg4) -> None: pass     #float
+  def HypGeom_Dist(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass                    #float
+  def ISO_Ceiling(self, Arg1, Arg2) -> None: pass                 #float
+  def IfError(self, Arg1, Arg2) -> None: pass                     #VBA_Variant
+  def IfNa(self, Arg1, Arg2) -> None: pass  #VBA_Variant
+  def ImAbs(self, Arg1) -> None: pass       #str
+  def ImArgument(self, Arg1) -> None: pass  #str
+  def ImConjugate(self, Arg1) -> None: pass                       #str
+  def ImCos(self, Arg1) -> None: pass       #str
+  def ImCosh(self, Arg1) -> None: pass      #str
+  def ImCot(self, Arg1) -> None: pass       #str
+  def ImCsc(self, Arg1) -> None: pass       #str
+  def ImCsch(self, Arg1) -> None: pass      #str
+  def ImDiv(self, Arg1, Arg2) -> None: pass                       #str
+  def ImExp(self, Arg1) -> None: pass       #str
+  def ImLn(self, Arg1) -> None: pass        #str
+  def ImLog10(self, Arg1) -> None: pass     #str
+  def ImLog2(self, Arg1) -> None: pass      #str
+  def ImPower(self, Arg1, Arg2) -> None: pass                     #str
+  def ImProduct(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass  #str
+  def ImReal(self, Arg1) -> None: pass      #float
+  def ImSec(self, Arg1) -> None: pass       #str
+  def ImSech(self, Arg1) -> None: pass      #str
+  def ImSin(self, Arg1) -> None: pass       #str
+  def ImSinh(self, Arg1) -> None: pass      #str
+  def ImSqrt(self, Arg1) -> None: pass      #str
+  def ImSub(self, Arg1, Arg2) -> None: pass                       #str
+  def ImSum(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass      #str
+  def ImTan(self, Arg1) -> None: pass       #str
+  def Imaginary(self, Arg1) -> None: pass   #float
+  def Index(self, Arg1, Arg2, Arg3, Arg4) -> None: pass           #VBA_Variant
+  def IntRate(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass   #float
+  def Intercept(self, Arg1, Arg2) -> None: pass                   #float
+  def Ipmt(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> None: pass                      #float
+  def Irr(self, Arg1, Arg2) -> None: pass   #float
+  def IsErr(self, Arg1) -> None: pass       #bool
+  def IsError(self, Arg1) -> None: pass     #bool
+  def IsEven(self, Arg1) -> None: pass      #bool
+  def IsFormula(self, Arg1) -> None: pass   #bool
+  def IsLogical(self, Arg1) -> None: pass   #bool
+  def IsNA(self, Arg1) -> None: pass        #bool
+  def IsNonText(self, Arg1) -> None: pass   #bool
+  def IsNumber(self, Arg1) -> None: pass    #bool
+  def IsOdd(self, Arg1) -> None: pass       #bool
+  def IsText(self, Arg1) -> None: pass      #bool
+  def IsoWeekNum(self, Arg1, Arg2) -> None: pass                  #float
+  def Ispmt(self, Arg1, Arg2, Arg3, Arg4) -> None: pass           #float
+  def Kurt(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass       #float
+  def Large(self, Arg1, Arg2) -> None: pass                       #float
+  def Lcm(self, Arg1) -> None: pass         #float
+  def LinEst(self, Arg1, Arg2, Arg3, Arg4) -> None: pass          #VBA_Variant
+  def Ln(self, Arg1) -> None: pass          #float
+  def Log(self, Arg1, Arg2) -> None: pass   #float
+  def Log10(self, Arg1) -> None: pass       #float
+  def LogEst(self, Arg1, Arg2, Arg3, Arg4) -> None: pass          #VBA_Variant
+  def LogInv(self, Arg1, Arg2, Arg3) -> None: pass                #float
+  def LogNormDist(self, Arg1, Arg2, Arg3) -> None: pass           #float
+  def LogNorm_Dist(self, Arg1, Arg2, Arg3, Arg4) -> None: pass    #float
+  def LogNorm_Inv(self, Arg1, Arg2, Arg3) -> None: pass           #float
+  def Lookup(self, Arg1, Arg2, Arg3) -> None: pass                #VBA_Variant
+  def MDeterm(self, Arg1) -> None: pass     #float
+  def MDuration(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> None: pass                 #float
+  def MInverse(self, Arg1) -> None: pass    #VBA_Variant
+  def MIrr(self, Arg1, Arg2, Arg3) -> None: pass                  #float
+  def MMult(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass      #VBA_Variant
+  def MRound(self, Arg1, Arg2) -> None: pass                      #float
+  def Match(self, Arg1, Arg2, Arg3) -> None: pass                 #float
+  def Max(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass        #float
+  def Median(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass     #float
+  def Min(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass        #float
+  def Mode(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass       #float
+  def Mode_Mult(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass  #VBA_Variant
+  def Mode_Sngl(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass  #float
+  def MultiNomial(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass                      #float
+  def Munit(self, Arg1) -> None: pass       #VBA_Variant
+  def NPer(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass      #float
+  def NegBinomDist(self, Arg1, Arg2, Arg3) -> None: pass          #float
+  def NegBinom_Dist(self, Arg1, Arg2, Arg3, Arg4) -> None: pass   #float
+  def NetworkDays(self, Arg1, Arg2, Arg3) -> None: pass           #float
+  def NetworkDays_Intl(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass                 #float
+  def Nominal(self, Arg1, Arg2) -> None: pass                     #float
+  def NormDist(self, Arg1, Arg2, Arg3, Arg4) -> None: pass        #float
+  def NormInv(self, Arg1, Arg2, Arg3) -> None: pass               #float
+  def NormSDist(self, Arg1) -> None: pass   #float
+  def NormSInv(self, Arg1) -> None: pass    #float
+  def Norm_Dist(self, Arg1, Arg2, Arg3, Arg4) -> None: pass       #float
+  def Norm_Inv(self, Arg1, Arg2, Arg3) -> None: pass              #float
+  def Norm_S_Dist(self, Arg1, Arg2) -> None: pass                 #float
+  def Norm_S_Inv(self, Arg1) -> None: pass  #float
+  def Npv(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass        #float
+  def NumberValue(self, Arg1, Arg2, Arg3) -> None: pass           #float
+  def Oct2Bin(self, Arg1, Arg2) -> None: pass                     #str
+  def Oct2Dec(self, Arg1) -> None: pass     #str
+  def Oct2Hex(self, Arg1, Arg2) -> None: pass                     #str
+  def Odd(self, Arg1) -> None: pass         #float
+  def OddFPrice(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> None: pass                     #float
+  def OddFYield(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> None: pass                     #float
+  def OddLPrice(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> None: pass     #float
+  def OddLYield(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> None: pass     #float
+  def Or(self, Arg1) -> None: pass          #bool
+  def PDuration(self, Arg1, Arg2, Arg3) -> None: pass             #float
+  def Pearson(self, Arg1, Arg2) -> None: pass                     #float
+  def PercentRank(self, Arg1, Arg2, Arg3) -> None: pass           #float
+  def PercentRank_Exc(self, Arg1, Arg2, Arg3) -> None: pass       #float
+  def PercentRank_Inc(self, Arg1, Arg2, Arg3) -> None: pass       #float
+  def Percentile(self, Arg1, Arg2) -> None: pass                  #float
+  def Percentile_Exc(self, Arg1, Arg2) -> None: pass              #float
+  def Percentile_Inc(self, Arg1, Arg2) -> None: pass              #float
+  def Permut(self, Arg1, Arg2) -> None: pass                      #float
+  def Permutationa(self, Arg1, Arg2) -> None: pass                #float
+  def Phi(self, Arg1) -> None: pass         #float
+  def Phonetic(self, Arg1) -> None: pass    #float
+  def Pi(self, ) -> None: pass              #float
+  def Pmt(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass       #float
+  def Poisson(self, Arg1, Arg2, Arg3) -> None: pass               #float
+  def Poisson_Dist(self, Arg1, Arg2, Arg3) -> None: pass          #float
+  def Power(self, Arg1, Arg2) -> None: pass                       #float
+  def Ppmt(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> None: pass                      #float
+  def Price(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> None: pass               #float
+  def PriceDisc(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass                       #float
+  def PriceMat(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> None: pass                  #float
+  def Prob(self, Arg1, Arg2, Arg3, Arg4) -> None: pass            #float
+  def Product(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass    #float
+  def Proper(self, Arg1) -> None: pass      #str
+  def Pv(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass        #float
+  def Quartile(self, Arg1, Arg2) -> None: pass                    #float
+  def Quartile_Exc(self, Arg1, Arg2) -> None: pass                #float
+  def Quartile_Inc(self, Arg1, Arg2) -> None: pass                #float
+  def Quotient(self, Arg1, Arg2) -> None: pass                    #float
+  def RSq(self, Arg1, Arg2) -> None: pass   #float
+  def RTD(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass        #VBA_Variant
+  def Radians(self, Arg1) -> None: pass     #float
+  def RandBetween(self, Arg1, Arg2) -> None: pass                 #float
+  def Rank(self, Arg1, Arg2, Arg3) -> None: pass                  #float
+  def Rank_Avg(self, Arg1, Arg2, Arg3) -> None: pass              #float
+  def Rank_Eq(self, Arg1, Arg2, Arg3) -> None: pass               #float
+  def Rate(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> None: pass                      #float
+  def Received(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass  #float
+  def Replace(self, Arg1, Arg2, Arg3, Arg4) -> None: pass         #str
+  def ReplaceB(self, Arg1, Arg2, Arg3, Arg4) -> None: pass        #str
+  def Rept(self, Arg1, Arg2) -> None: pass  #str
+  def Roman(self, Arg1, Arg2) -> None: pass                       #str
+  def Round(self, Arg1, Arg2) -> None: pass                       #float
+  def RoundDown(self, Arg1, Arg2) -> None: pass                   #float
+  def RoundUp(self, Arg1, Arg2) -> None: pass                     #float
+  def Rri(self, Arg1, Arg2, Arg3) -> None: pass                   #float
+  def Search(self, Arg1, Arg2, Arg3) -> None: pass                #float
+  def SearchB(self, Arg1, Arg2, Arg3) -> None: pass               #float
+  def Sec(self, Arg1) -> None: pass         #float
+  def Sech(self, Arg1) -> None: pass        #float
+  def SeriesSum(self, Arg1, Arg2, Arg3, Arg4) -> None: pass       #float
+  def Sinh(self, Arg1) -> None: pass        #float
+  def Skew(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass       #float
+  def Skew_p(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass     #float
+  def Sln(self, Arg1, Arg2, Arg3) -> None: pass                   #float
+  def Slope(self, Arg1, Arg2) -> None: pass                       #float
+  def Small(self, Arg1, Arg2) -> None: pass                       #float
+  def SqrtPi(self, Arg1) -> None: pass      #float
+  def StDev(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass      #float
+  def StDevP(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass     #float
+  def StDev_P(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass    #float
+  def StDev_S(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass    #float
+  def StEyx(self, Arg1, Arg2) -> None: pass                       #float
+  def Standardize(self, Arg1, Arg2, Arg3) -> None: pass           #float
+  def Substitute(self, Arg1, Arg2, Arg3, Arg4) -> None: pass      #str
+  def Subtotal(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass   #float
+  def Sum(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass        #float
+  def SumIf(self, Arg1, Arg2, Arg3) -> None: pass                 #float
+  def SumIfs(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass     #float
+  def SumProduct(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass                       #float
+  def SumSq(self, Arg1) -> None: pass       #float
+  def SumX2MY2(self, Arg1, Arg2) -> None: pass                    #float
+  def SumX2PY2(self, Arg1, Arg2) -> None: pass                    #float
+  def SumXMY2(self, Arg1, Arg2) -> None: pass                     #float
+  def Syd(self, Arg1, Arg2, Arg3, Arg4) -> None: pass             #float
+  def TBillEq(self, Arg1, Arg2, Arg3) -> None: pass               #float
+  def TBillPrice(self, Arg1, Arg2, Arg3) -> None: pass            #float
+  def TBillYield(self, Arg1, Arg2, Arg3) -> None: pass            #float
+  def TDist(self, Arg1, Arg2, Arg3) -> None: pass                 #float
+  def TInv(self, Arg1, Arg2) -> None: pass  #float
+  def TTest(self, Arg1, Arg2, Arg3, Arg4) -> None: pass           #float
+  def T_Dist(self, Arg1, Arg2, Arg3) -> None: pass                #float
+  def T_Dist_2T(self, Arg1, Arg2) -> None: pass                   #float
+  def T_Dist_RT(self, Arg1, Arg2) -> None: pass                   #float
+  def T_Inv(self, Arg1, Arg2) -> None: pass                       #float
+  def T_Inv_2T(self, Arg1, Arg2) -> None: pass                    #float
+  def T_Test(self, Arg1, Arg2, Arg3, Arg4) -> None: pass          #float
+  def Tanh(self, Arg1) -> None: pass        #float
+  def Text(self, Arg1, Arg2) -> None: pass  #str
+  def Transpose(self, Arg1) -> None: pass   #VBA_Variant
+  def Trend(self, Arg1, Arg2, Arg3, Arg4) -> None: pass           #VBA_Variant
+  def Trim(self, Arg1) -> None: pass        #str
+  def TrimMean(self, Arg1, Arg2) -> None: pass                    #float
+  def USDollar(self, Arg1, Arg2) -> None: pass                    #str
+  def Unichar(self, Arg1) -> None: pass     #str
+  def Unicode(self, Arg1) -> None: pass     #float
+  def VLookup(self, Arg1, Arg2, Arg3, Arg4) -> None: pass         #VBA_Variant
+  def Var(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass        #float
+  def VarP(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass       #float
+  def Var_P(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass      #float
+  def Var_S(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass      #float
+  def Vdb(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> None: pass                 #float
+  def WebService(self, Url) -> None: pass   #VBA_Variant
+  def WeekNum(self, Arg1, Arg2) -> None: pass                     #float
+  def Weekday(self, Arg1, Arg2) -> None: pass                     #float
+  def Weibull(self, Arg1, Arg2, Arg3, Arg4) -> None: pass         #float
+  def Weibull_Dist(self, Arg1, Arg2, Arg3, Arg4) -> None: pass    #float
+  def WorkDay(self, Arg1, Arg2, Arg3) -> None: pass               #float
+  def WorkDay_Intl(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass                     #float
+  def Xirr(self, Arg1, Arg2, Arg3) -> None: pass                  #float
+  def Xnpv(self, Arg1, Arg2) -> None: pass  #float
+  def Xor(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass        #bool
+  def YearFrac(self, Arg1, Arg2, Arg3) -> None: pass              #float
+  def YieldDisc(self, Arg1, Arg2, Arg3, Arg4, Arg5) -> None: pass                       #float
+  def YieldMat(self, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> None: pass                  #float
+  def ZTest(self, Arg1, Arg2, Arg3) -> None: pass                 #float
+  def Z_Test(self, Arg1, Arg2, Arg3) -> None: pass                #float
+
+
+
+
+class Worksheets:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.HPageBreaks: None          #HPageBreaks
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+    self.VPageBreaks: None          #VPageBreaks
+    self.Visible: None  #VBA_Variant
+
+  def Add(self, Before, After, Count, Type) -> None: pass         #VBA_Object
+  def Add2(self, Before, After, Count, NewLayout) -> None: pass   #VBA_Object
+  def Copy(self, Before, After) -> None: pass                     #None
+  def Delete(self, ) -> None: pass          #None
+  def FillAcrossSheets(self, Range, Type) -> None: pass           #None
+  def Move(self, Before, After) -> None: pass                     #None
+  def PrintOut(self, From, To, Copies, Preview, ActivePrinter, PrintToFile, Collate, PrToFileName, IgnorePrintAreas) -> None: pass  #VBA_Variant
+  def PrintPreview(self, EnableChanges) -> None: pass             #None
+  def Select(self, Replace) -> None: pass   #None
+
+
+
+
+class XPath:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Map: None      #XmlMap | XPath
+    self.Parent: None   #VBA_Object
+    self.Repeating: bool
+    self.Value: str
+
+  def Clear(self, ) -> None: pass           #None
+  def SetValue(self, Map, XPath, SelectionNamespace, Repeating) -> None: pass           #None
+
+
+
+
+class XmlDataBinding:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+    self.SourceUrl: str
+
+  def ClearSettings(self, ) -> None: pass   #None
+  def LoadSettings(self, Url) -> None: pass                       #None
+  def Refresh(self, ) -> None: pass         #XlXmlImportResult
+
+
+
+
+class XmlMap:
+  '''just need name'''
+
+  def __init__(self):
+    self.AdjustColumnWidth: bool
+    self.AppendOnImport: bool
+    self.Application: None          #Application
+    self.Creator: int
+    self.DataBinding: None          #XmlDataBinding
+    self.IsExportable: None         #XPath
+    self.Name: str
+    self.Parent: None   #VBA_Object
+    self.PreserveColumnFilter: bool
+    self.PreserveNumberFormatting: bool
+    self.RootElementName: str
+    self.RootElementNamespace: None             #XmlNamespace
+    self.SaveDataSourceDefinition: bool
+    self.Schemas: None  #XmlSchemas | XmlMap
+    self.ShowImportExportValidationErrors: bool
+    self.WorkbookConnection: None   #XMLMap
+
+  def Delete(self, ) -> None: pass          #None
+  def Export(self, Url, Overwrite) -> None: pass                  #XlXmlExportResult
+  def ExportXml(self, Data) -> None: pass   #XlXmlExportResult
+  def Import(self, Url, Overwrite) -> None: pass                  #XlXmlImportResult
+  def ImportXml(self, __UN_PARSE__, __UN_PARSE1__) -> None: pass  #XlXmlImportResult
+
+
+
+
+class XmlMaps:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+  def Add(self, Schema, RootElementName) -> None: pass            #XmlMap
+
+
+
+
+class XmlNamespace:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Parent: None   #VBA_Object
+    self.Prefix: str
+    self.Uri: str
+
+
+
+
+class XmlNamespaces:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+    self.Value: str
+
+  def InstallManifest(self, Path, InstallForAllUsers) -> None: pass                     #None
+
+
+
+
+class XmlSchema:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Creator: int
+    self.Name: str
+    self.Namespace: None            #XmlNamespace
+    self.Parent: None   #VBA_Object
+    self.XML: str
+
+
+
+
+class XmlSchemas:
+  '''just need name'''
+
+  def __init__(self):
+    self.Application: None          #Application
+    self.Count: int
+    self.Creator: int
+    self.Item: None     #VBA_Object
+    self.Parent: None   #VBA_Object
+
+
+
+
+# ole cls end
+
+
+
 

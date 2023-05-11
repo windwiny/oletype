@@ -15,8 +15,8 @@ vv:excel.Workbook = exapp.Workbooks.Add()
 print('vv', vv)
 vv.HasMailer
 
-wb: excel._Workbook = exapp.ActiveWorkbook
-ws = wb.ActiveSheet
+wb: excel.Workbook = exapp.ActiveWorkbook
+ws:excel.Worksheet = wb.ActiveSheet
 
 print('ws',excel.Workbooks)
 

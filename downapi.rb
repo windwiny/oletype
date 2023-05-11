@@ -32,6 +32,10 @@ module Cfg
   N_m_return = "m_return"
   N_m_return_doc = "m_return_doc"
   N_m_parameters_doc = "m_parameters_doc"
+  N_m_parameters_as = "m_parameters_as"
+  N_m_p_table = "m_p_table"
+  N_m_p_table_head = "m_p_table_head"
+  N_m_p_table_rows = "m_p_table_rows"
   N_m_remarks_doc = "m_remarks_doc"
   N_m_example_doc = "m_example_doc"
 
@@ -285,8 +289,8 @@ class DownAPI
         N_co => @collection.size,
         N_e => @enumeration.size,
         N_c => @classes.size,
-        N_m => ms.size,
-        N_p => ps.size,
+        "#{N_c}_#{N_m}" => ms.size,
+        "#{N_c}_#{N_p}" => ps.size,
         enumeration_table_not_found: @enumeration_table_not_found,
       },
       N_co => @collection,
@@ -313,6 +317,29 @@ class DownAPI
   end
 
   protected
+
+  def vbt2pyt(e)
+    if !e
+      return e
+    end
+    if e.include?(".") && !e.include?(" ")
+      tss = e.split(".")
+      xxx = @classes
+      tss.each_slice(2) do |x, y|
+        xxx[x] ||= {}
+        xxx[x]["cic"] ||= []
+        xxx[x]["cic"] << y unless xxx[x]["cic"].include?(y)
+        xxx = xxx[x]
+      end
+      return "__UNKNOWN_TYPE_SEE_DOC__" # TODO FIXME
+      return e
+    end
+    if VBAtype2pytype.has_key?(e)
+      VBAtype2pytype[e]
+    else
+      e
+    end
+  end
 
   def process_page(url, objtype2)
     txt = download_page(url)
@@ -633,7 +660,7 @@ class DownAPI
 
     exampless = hh.css ::HTMLCSS::ID_EXAMPLE_p_pres
     if exampless.size > 0
-      iffo[N_p_example_doc] = exampless.map { |e| e.text.strip }.join("\n\n")
+      iffo[N_p_example_doc] = exampless.map { |e| txt = e.text.strip; e.name == "pre" ? txt.gsub("\n", "\n\n") : txt }.join("\n\n")
     end
 
     foreach_a_add_to_links(url, returnss, propss, docss1, syntaxss, remarkss, exampless)
@@ -647,13 +674,18 @@ class DownAPI
     tys = res.css("strong,a")
       .map { |e| e.text }
       .reject { |e| e.include?(" ") }
-      .map { |e| VBAtype2pytype.has_key?(e) ? VBAtype2pytype[e] : e }
+      .map { |e| vbt2pyt(e) }
       .uniq.join(" | ")
     tys = "Any | None" if tys == "None"
     tys
   end
 
   def find_property_type_name(vss, url)
+    ee = _find_property_type_name(vss, url)
+    ee = vbt2pyt(ee)
+  end
+
+  def _find_property_type_name(vss, url)
     # TODO FIXME
 
     vss.map do |res|
@@ -691,38 +723,38 @@ class DownAPI
       end
 
       if %r{^\w+ object}i =~ ty
-        return VBAtype2pytype["object"]
+        return "object"
       end
       if %r{Returns an (\w+).*that represents}i =~ ty || %r{Returns a (\w+) value}i =~ ty
         e = $1
-        e = [VBAtype2pytype.has_key?(e) ? VBAtype2pytype[e] : e]
+        e = [vbt2pyt(e)]
         if %r{Returns Nothing} =~ ty
           e << "None"
         end
         return e.join(" | ")
       end
       if %r{Returns an object that represents.*Returns Nothing}i =~ ty
-        tys = [VBAtype2pytype["object"], "None"]
+        tys = ["object", "None"]
         return tys.join(" | ")
       end
       if %r{Returns an? .*? object that represents the}i =~ ty
-        return VBAtype2pytype["object"]
+        return "object"
       end
       if %r{specified object.*Read.*\.}i =~ ty
-        return VBAtype2pytype["object"]
+        return "object"
       end
       if %r{Returns an? single object}i =~ ty
-        return VBAtype2pytype["object"]
+        return "object"
       end
       if %r{Read-only\.}i =~ ty
-        return VBAtype2pytype["object"]
+        return "object"
       end
       if %r{Returns the array}i =~ ty
         return VBAtype2pytype["array"]
       end
       if %r{Returns or sets a (\w+) value}i =~ ty
         e = $1
-        return VBAtype2pytype.has_key?(e) ? VBAtype2pytype[e] : e
+        return vbt2pyt(e)
       end
     end
 
@@ -731,7 +763,7 @@ class DownAPI
         .flatten
         .map { |e| e.text }
         .reject { |e| e.include?(" ") }
-        .map { |e| VBAtype2pytype.has_key?(e) ? VBAtype2pytype[e] : e }
+        .map { |e| vbt2pyt(e) }
         .uniq
 
       if tys.size == 0
@@ -746,6 +778,12 @@ class DownAPI
   end
 
   def find_method_type_name(vss, url)
+    e = _find_method_type_name(vss, url)
+    e = vbt2pyt(e)
+    e
+  end
+
+  def _find_method_type_name(vss, url)
     # TODO FIXME
     vss.map do |res|
       ty = res.text.strip
@@ -759,13 +797,13 @@ class DownAPI
       return tys if tys != ""
 
       if %r{Creates an? new }i =~ ty
-        return VBAtype2pytype["object"]
+        return "object"
       end
       if %r{An? Object value that represents}i =~ ty
-        return VBAtype2pytype["object"]
+        return "object"
       end
       if %r{Returns an? single object}i =~ ty
-        return VBAtype2pytype["object"]
+        return "object"
       end
     end
 
@@ -774,7 +812,7 @@ class DownAPI
         .flatten
         .map { |e| e.text }
         .reject { |e| e.include?(" ") }
-        .map { |e| VBAtype2pytype.has_key?(e) ? VBAtype2pytype[e] : e }
+        .map { |e| vbt2pyt(e) }
         .uniq
 
       if tys.size == 0
@@ -821,6 +859,21 @@ class DownAPI
     parameterss = hh.css ::HTMLCSS::ID_PARAMETERS_table
     if parameterss.size > 0
       iffo[N_m_parameters_doc] = parameterss[0].text.gsub(/((\r)?\n){3,}/, "\n\n").gsub(/(?<!\n)\n(?!\n)/, " ").strip
+      tab1 = parameterss[0]
+      th = tab1.css("th").map(&:text)
+      rows = tab1.css("tr").map { |tr| tr.css("td").map(&:text) } - [[]]
+      iffo[N_m_p_table] = { N_m_p_table_head => th, N_m_p_table_rows => rows }
+      pars = rows.map { |row| row[0] }.map do |par|
+        if par =~ /\W/
+          "*" + par.gsub(/\s/, "").gsub(/\W/, "_")
+        else
+          par
+        end
+      end
+      if pars.any? { |par| par !~ /^[a-zA-Z_]/ }
+        pars = %w{__UN_PARSE__ __UN_PARSE1__}  # TODO FIXME
+      end
+      iffo[N_m_parameters_as] = pars
     end
 
     remarkss = hh.css ::HTMLCSS::ID_REMARKS_ps
@@ -830,7 +883,7 @@ class DownAPI
 
     exampless = hh.css ::HTMLCSS::ID_EXAMPLE_p_pres
     if exampless.size > 0
-      iffo[N_m_example_doc] = exampless.map { |e| e.text.strip }.join("\n\n")
+      iffo[N_m_example_doc] = exampless.map { |e| txt = e.text.strip; e.name == "pre" ? txt.gsub("\n", "\n\n") : txt }.join("\n\n")
     end
 
     if iffo[N_m_return] && iffo[N_m_return].include?("-")
@@ -857,7 +910,7 @@ class DownAPI
 
     exampless = hh.css ::HTMLCSS::ID_EXAMPLE_p_pres
     if exampless.size > 0
-      iffo[N_c_example_doc] = exampless.map { |e| e.text.strip }.join("\n\n")
+      iffo[N_c_example_doc] = exampless.map { |e| txt = e.text.strip; e.name == "pre" ? txt.gsub("\n", "\n\n") : txt }.join("\n\n")
     end
     foreach_a_add_to_links(url, docss, remarkss, exampless, docss, remarkss)
 

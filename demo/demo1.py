@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     ee.Workbooks.Add()
     # ws:excel._Worksheet =
-    ws = ee.ActiveSheet
+    ws:excel.Worksheet = ee.ActiveSheet
     # rg = ws.Select('A3')
     rg = ws.UsedRange
     rg.Value2
